@@ -1,0 +1,54 @@
+:hivemq-github-link: https://github.com/hivemq
+:hivemq-link: http://www.hivemq.com
+:hivemq-extensions-docu-link: http://www.hivemq.com/docs/latest/extensions/
+:hivemq-extensions-directory: http://www.hivemq.com/extensions/
+
+== HiveMQ Extension SDK
+
+The enterprise MQTT broker HiveMQ offers this free and open source Extension SDK. This allows everyone to extend HiveMQ and add custom functionality via extensions.
+
+With custom HiveMQ extensions, it's easy to add functionality like writing messages to databases, integrate with other service buses, collect statistics, add fine-grained security and virtually anything you else you can imagine.
+
+Extension development for HiveMQ is as easy as writing a Java main method once you grasp the core concepts.
+
+=== Using the SDK
+
+An extensive HiveMQ extension documentation is available {hivemq-extensions-docu-link}[on the official HiveMQ website]. It covers the core concepts and shows how to set up your development environment.
+
+You can also clone our example open source HiveMQ extension at {hivemq-github-link}[in our Github page].
+
+
+=== Maven Repository
+
+The hivemq-extension-sdk is available in Maven central, so no special configuration is needed.
+
+
+=== Using the SDK
+
+To use the SDK, add the following dependency to your Maven project:
+
+
+[source,xml]
+----
+    <dependency>
+        <groupId>com.hivemq</groupId>
+        <artifactId>hivemq-extension-sdk</artifactId>
+        <version>4.0.0</version>
+    </dependency>
+
+
+----
+
+=== Extension Development Documentation
+
+Please visit {hivemq-extensions-docu-link}[our website] for the documentation how to develop extensions.
+
+=== Example Extensions
+
+Many example extensions are available, most of them as open source. You can find an overview of officially supported extensions {hivemq-extensions-directory}[here]:
+
+You can find many example extensions by browsing {hivemq-github-link}[here on Github].
+
+=== Need help ?
+
+If you need help with custom HiveMQ extensions please contact support@hivemq.com.
