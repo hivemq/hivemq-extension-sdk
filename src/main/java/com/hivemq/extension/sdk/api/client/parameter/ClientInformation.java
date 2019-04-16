@@ -34,7 +34,5 @@ public interface ClientInformation {
      * @return The client id of the MQTT client.
      * @since 4.0.0
      */
-    @NotNull
-    String getClientId();
-
+    @NotNull String getClientId();
 }

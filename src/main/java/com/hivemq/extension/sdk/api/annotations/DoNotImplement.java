@@ -24,7 +24,7 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.CLASS;
 
 /**
- * Documents that this interface must not be implemented by a extension.<br>
+ * Documents that this interface must not be implemented by an extension.<br>
  * Usually an implementation is provided by HiveMQ.
  *
  * @author Silvio Giebl

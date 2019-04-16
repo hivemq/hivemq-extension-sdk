@@ -51,8 +51,7 @@ public interface TopicSubscription {
      * @return The topic filter of the subscription.
      * @since 4.0.0
      */
-    @NotNull
-    String getTopicFilter();
+    @NotNull String getTopicFilter();
 
     /**
      * The quality of service level of the subscription.
@@ -60,8 +59,7 @@ public interface TopicSubscription {
      * @return The quality of service level of the subscription.
      * @since 4.0.0
      */
-    @NotNull
-    Qos getQos();
+    @NotNull Qos getQos();
 
     /**
      * The retain as published flag indicates if the client wants the retain flag preserved for received messages to the
@@ -91,7 +89,5 @@ public interface TopicSubscription {
      * @return An {@link Optional} containing the subscription identifier if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<Integer> getSubscriptionIdentifier();
-
+    @NotNull Optional<Integer> getSubscriptionIdentifier();
 }

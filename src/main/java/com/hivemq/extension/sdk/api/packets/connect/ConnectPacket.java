@@ -16,12 +16,12 @@
 
 package com.hivemq.extension.sdk.api.packets.connect;
 
-import com.hivemq.extension.sdk.api.packets.general.MqttVersion;
-import com.hivemq.extension.sdk.api.packets.general.UserProperties;
-import com.hivemq.extension.sdk.api.services.publish.Publish;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.packets.general.MqttVersion;
+import com.hivemq.extension.sdk.api.packets.general.UserProperties;
+import com.hivemq.extension.sdk.api.services.publish.Publish;
 
 import java.nio.ByteBuffer;
 import java.util.Optional;
@@ -42,8 +42,7 @@ public interface ConnectPacket {
      * @return The MQTT version.
      * @since 4.0.0
      */
-    @NotNull
-    MqttVersion getMqttVersion();
+    @NotNull MqttVersion getMqttVersion();
 
     /**
      * The client identifier the client wants to use.
@@ -53,8 +52,7 @@ public interface ConnectPacket {
      * @return The client identifier.
      * @since 4.0.0
      */
-    @NotNull
-    String getClientId();
+    @NotNull String getClientId();
 
     /**
      * Flag that indicates if the existing session for the client should be continued (<b>false</b>) or the existing
@@ -62,8 +60,8 @@ public interface ConnectPacket {
      * <p>
      * For an MQTT 3 client, this MQTT 5 property can be interpreted as followed:
      * <ul>
-     *   <li>cleanSession = true -&gt; cleanStart = true</li>
-     *   <li>cleanSession = false -&gt; cleanStart = false</li>
+     * <li>cleanSession = true -&gt; cleanStart = true</li>
+     * <li>cleanSession = false -&gt; cleanStart = false</li>
      * </ul>
      *
      * @return The clean start flag.
@@ -84,8 +82,9 @@ public interface ConnectPacket {
      * <p>
      * For an MQTT 3 client, this MQTT 5 property can be interpreted as followed:
      * <ul>
-     *   <li>cleanSession = true -&gt; sessionExpiryInterval = 0</li>
-     *   <li>cleanSession = false -&gt; sessionExpiryInterval = The configured {@code <session-expiry>} in the {@code <mqtt>} config in the config.xml. Default: 4294967295</li>
+     * <li>cleanSession = true -&gt; sessionExpiryInterval = 0</li>
+     * <li>cleanSession = false -&gt; sessionExpiryInterval = The configured {@code <session-expiry>} in the {@code
+     * <mqtt>} config in the config.xml. Default: 4294967295</li>
      * </ul>
      *
      * @return The session expiry interval.
@@ -167,8 +166,7 @@ public interface ConnectPacket {
      * @return An {@link Optional} that contains the authentication method if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getAuthenticationMethod();
+    @NotNull Optional<String> getAuthenticationMethod();
 
     /**
      * If this property is present, the {@link ByteBuffer} contains the data used for the extended authentication.
@@ -179,8 +177,7 @@ public interface ConnectPacket {
      * @return An {@link Optional} that contains the authentication data if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<ByteBuffer> getAuthenticationData();
+    @NotNull Optional<ByteBuffer> getAuthenticationData();
 
     /**
      * The user properties from the CONNECT packet.
@@ -190,8 +187,7 @@ public interface ConnectPacket {
      * @return The user properties.
      * @since 4.0.0
      */
-    @NotNull
-    UserProperties getUserProperties();
+    @NotNull UserProperties getUserProperties();
 
     /**
      * If this property is present, this is the username for the client.
@@ -199,8 +195,7 @@ public interface ConnectPacket {
      * @return An {@link Optional} that contains the username if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getUserName();
+    @NotNull Optional<String> getUserName();
 
     /**
      * If this property is present, this is the password for the client.
@@ -208,6 +203,5 @@ public interface ConnectPacket {
      * @return An {@link Optional} that contains the password if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<ByteBuffer> getPassword();
+    @NotNull Optional<ByteBuffer> getPassword();
 }

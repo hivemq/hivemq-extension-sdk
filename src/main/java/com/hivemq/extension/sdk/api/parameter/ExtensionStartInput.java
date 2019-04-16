@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * Input object for the start of a extension.
+ * Input object for the start of an extension.
  *
  * @author Christoph Schäbel
  * @since 4.0.0
@@ -38,8 +38,7 @@ public interface ExtensionStartInput {
      * @return A {@link ExtensionInformation} containing detailed information about this extension.
      * @since 4.0.0
      */
-    @NotNull
-    ExtensionInformation getExtensionInformation();
+    @NotNull ExtensionInformation getExtensionInformation();
 
     /**
      * @return A {@link Map} of all currently enabled extensions. <br/>
@@ -47,16 +46,13 @@ public interface ExtensionStartInput {
      * The value is a {@link ExtensionInformation} containing detailed information about each extension.
      * @since 4.0.0
      */
-    @NotNull
-    Map<String, ExtensionInformation> getEnabledExtensions();
+    @NotNull Map<String, @NotNull ExtensionInformation> getEnabledExtensions();
 
     /**
      * @return The previously enabled version of this extension or Optional.empty if this extension was not enabled before.
-     * A extension is identified by its ID. A previous version is only returned if this extension has been disabled at
+     * An extension is identified by its ID. A previous version is only returned if this extension has been disabled at
      * runtime. Information about previous extension versions is not retained across a server restart.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getPreviousVersion();
-
+    @NotNull Optional<String> getPreviousVersion();
 }

@@ -38,6 +38,5 @@ public interface ClientInitializer {
      *                         TopicPermission}s.
      * @since 4.0.0
      */
-    void initialize(@NotNull final InitializerInput initializerInput, @NotNull final ClientContext clientContext);
-
+    void initialize(@NotNull InitializerInput initializerInput, @NotNull ClientContext clientContext);
 }

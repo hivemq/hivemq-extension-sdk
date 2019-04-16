@@ -20,7 +20,7 @@ import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
- * Output object for the start of a extension.
+ * Output object for the start of an extension.
  *
  * @author Christoph Schäbel
  * @since 4.0.0
@@ -37,5 +37,4 @@ public interface ExtensionStartOutput {
      * @since 4.0.0
      */
     void preventExtensionStartup(@NotNull String reason);
-
 }

@@ -23,9 +23,9 @@ import com.hivemq.extension.sdk.api.events.client.parameters.*;
  * A {@link ClientLifecycleEventListener} contains methods that allow custom logic to be executed when:
  *
  * <ul>
- *    <li>A client starts an MQTT connection</li>
- *    <li>The authentication for a client is successful</li>
- *    <li>A client is disconnected</li>
+ * <li>A client starts an MQTT connection</li>
+ * <li>The authentication for a client is successful</li>
+ * <li>A client is disconnected</li>
  * </ul>
  * <p>
  * The methods here are for informational purpose only and do not allow modification of the MQTT packets exchanged
@@ -42,7 +42,7 @@ public interface ClientLifecycleEventListener {
      * the client sends an MQTT CONNECT packet to the server.
      * <p>
      * This method is executed after the ConnectInboundPacketModifier and the information represented in the
-     * input can already modified by a extension.
+     * input can already modified by an extension.
      *
      * @param connectionStartInput The {@link ConnectionStartInput} containing information about the MQTT CONNECT
      *                             packet, the client and the connection.
@@ -64,10 +64,10 @@ public interface ClientLifecycleEventListener {
      * <p>
      * To implement custom logic for specific disconnect cases the following methods can be overridden:
      * <ul>
-     *    <li>{@link ClientLifecycleEventListener#onAuthenticationFailedDisconnect(AuthenticationFailedInput)}</li>
-     *    <li>{@link ClientLifecycleEventListener#onClientInitiatedDisconnect(ClientInitiatedDisconnectInput)}</li>
-     *    <li>{@link ClientLifecycleEventListener#onConnectionLost(ConnectionLostInput)}</li>
-     *    <li>{@link ClientLifecycleEventListener#onServerInitiatedDisconnect(ServerInitiatedDisconnectInput)}</li>
+     * <li>{@link ClientLifecycleEventListener#onAuthenticationFailedDisconnect(AuthenticationFailedInput)}</li>
+     * <li>{@link ClientLifecycleEventListener#onClientInitiatedDisconnect(ClientInitiatedDisconnectInput)}</li>
+     * <li>{@link ClientLifecycleEventListener#onConnectionLost(ConnectionLostInput)}</li>
+     * <li>{@link ClientLifecycleEventListener#onServerInitiatedDisconnect(ServerInitiatedDisconnectInput)}</li>
      * </ul>
      * <p>
      * If all the above methods are implemented, onDisconnect will never be called.

@@ -104,5 +104,4 @@ public enum SubackReasonCode {
      * @since 4.0.0
      */
     WILDCARD_SUBSCRIPTION_NOT_SUPPORTED
-
 }

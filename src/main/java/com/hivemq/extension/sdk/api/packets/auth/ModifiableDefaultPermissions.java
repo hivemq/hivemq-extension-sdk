@@ -42,16 +42,15 @@ public interface ModifiableDefaultPermissions {
      * @return An immutable {@link List} with all default permissions for this client.
      * @since 4.0.0
      */
-    @NotNull
     @Immutable
-    List<TopicPermission> asList();
+    @NotNull List<@NotNull TopicPermission> asList();
 
     /**
      * Adds a {@link TopicPermission} to the default permissions for this client.
      *
      * @param permission The {@link TopicPermission} to add.
-     * @throws DoNotImplementException If {@link TopicPermission} is implemented by the extension and not created by {@link
-     *                                 Builders#topicPermission()}.
+     * @throws DoNotImplementException If {@link TopicPermission} is implemented by the extension and not created by
+     *                                 {@link Builders#topicPermission()}.
      * @since 4.0.0
      */
     void add(@NotNull TopicPermission permission);
@@ -61,8 +60,8 @@ public interface ModifiableDefaultPermissions {
      *
      * @param permissions A {@link Collection} of {@link TopicPermission}s to add.
      * @throws NullPointerException    If permissions is null.
-     * @throws DoNotImplementException If {@link TopicPermission} is implemented by the extension and not created by {@link
-     *                                 Builders#topicPermission()}.
+     * @throws DoNotImplementException If {@link TopicPermission} is implemented by the extension and not created by
+     *                                 {@link Builders#topicPermission()}.
      * @since 4.0.0
      */
     void addAll(@NotNull Collection<? extends TopicPermission> permissions);
@@ -71,8 +70,8 @@ public interface ModifiableDefaultPermissions {
      * Removes a specific {@link TopicPermission} from the default permission for this client.
      *
      * @param permission The {@link TopicPermission} to remove.
-     * @throws DoNotImplementException If {@link TopicPermission} is implemented by the extension and not created by {@link
-     *                                 Builders#topicPermission()}.
+     * @throws DoNotImplementException If {@link TopicPermission} is implemented by the extension and not created by
+     *                                 {@link Builders#topicPermission()}.
      * @since 4.0.0
      */
     void remove(@NotNull TopicPermission permission);
@@ -91,8 +90,7 @@ public interface ModifiableDefaultPermissions {
      * @return The current {@link DefaultAuthorizationBehaviour}.
      * @since 4.0.0
      */
-    @NotNull
-    DefaultAuthorizationBehaviour getDefaultBehaviour();
+    @NotNull DefaultAuthorizationBehaviour getDefaultBehaviour();
 
     /**
      * Overrides the default behaviour that is used when none of the default permissions matches

@@ -34,8 +34,7 @@ public interface ServerInformation {
      * @return The version string of the HiveMQ instance.
      * @since 4.0.0
      */
-    @NotNull
-    String getVersion();
+    @NotNull String getVersion();
 
     /**
      * The location of the 'home' folder where HiveMQ is installed.
@@ -43,8 +42,7 @@ public interface ServerInformation {
      * @return The home folder of HiveMQ.
      * @since 4.0.0
      */
-    @NotNull
-    File getHomeFolder();
+    @NotNull File getHomeFolder();
 
     /**
      * The location of the 'data' folder containing the data for the HiveMQ instance.
@@ -52,8 +50,7 @@ public interface ServerInformation {
      * @return The data folder of HiveMQ.
      * @since 4.0.0
      */
-    @NotNull
-    File getDataFolder();
+    @NotNull File getDataFolder();
 
     /**
      * The location of the 'log' folder containing everything related to logs.
@@ -61,8 +58,7 @@ public interface ServerInformation {
      * @return The log folder of HiveMQ.
      * @since 4.0.0
      */
-    @NotNull
-    File getLogFolder();
+    @NotNull File getLogFolder();
 
     /**
      * The location of the 'extensions' folder that contains all extension.
@@ -70,7 +66,5 @@ public interface ServerInformation {
      * @return The extension folder of HiveMQ.
      * @since 4.0.0
      */
-    @NotNull
-    File getExtensionsFolder();
-
+    @NotNull File getExtensionsFolder();
 }

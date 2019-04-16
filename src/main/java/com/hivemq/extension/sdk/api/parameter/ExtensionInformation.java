@@ -24,7 +24,7 @@ import java.io.File;
 import java.util.Optional;
 
 /**
- * Detailed information about a extension.
+ * Detailed information about an extension.
  *
  * @author Christoph Schäbel
  * @since 4.0.0
@@ -34,38 +34,32 @@ import java.util.Optional;
 public interface ExtensionInformation {
 
     /**
-     * @return The unique ID of a extension.
+     * @return The unique ID of an extension.
      * @since 4.0.0
      */
-    @NotNull
-    String getId();
+    @NotNull String getId();
 
     /**
-     * @return The version of a extension.
+     * @return The version of an extension.
      * @since 4.0.0
      */
-    @NotNull
-    String getVersion();
+    @NotNull String getVersion();
 
     /**
-     * @return The human readable name of a extension.
+     * @return The human readable name of an extension.
      * @since 4.0.0
      */
-    @NotNull
-    String getName();
+    @NotNull String getName();
 
     /**
-     * @return The author of a extension, if the extension provides information about the author.
+     * @return The author of an extension, if the extension provides information about the author.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getAuthor();
+    @NotNull Optional<String> getAuthor();
 
     /**
      * @return The extensions installation folder.
      * @since 4.0.0
      */
-    @NotNull
-    File getExtensionHomeFolder();
-
+    @NotNull File getExtensionHomeFolder();
 }

@@ -16,14 +16,14 @@
 
 package com.hivemq.extension.sdk.api.services.builder;
 
-import com.hivemq.extension.sdk.api.packets.general.Qos;
-import com.hivemq.extension.sdk.api.services.exception.DoNotImplementException;
-import com.hivemq.extension.sdk.api.services.publish.Publish;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
+import com.hivemq.extension.sdk.api.packets.general.Qos;
 import com.hivemq.extension.sdk.api.packets.publish.PayloadFormatIndicator;
 import com.hivemq.extension.sdk.api.packets.publish.PublishPacket;
+import com.hivemq.extension.sdk.api.services.exception.DoNotImplementException;
+import com.hivemq.extension.sdk.api.services.publish.Publish;
 
 import java.nio.ByteBuffer;
 
@@ -49,8 +49,7 @@ public interface PublishBuilder {
      * @throws DoNotImplementException If the {@link PublishPacket} is implemented by the extension.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder fromPublish(@NotNull PublishPacket publishPacket);
+    @NotNull PublishBuilder fromPublish(@NotNull PublishPacket publishPacket);
 
     /**
      * Create a {@link Publish} from the values of a another {@link Publish}.
@@ -61,8 +60,7 @@ public interface PublishBuilder {
      * @throws DoNotImplementException If the {@link Publish} is implemented by the extension.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder fromPublish(@NotNull Publish publish);
+    @NotNull PublishBuilder fromPublish(@NotNull Publish publish);
 
     /**
      * Sets the quality of service.
@@ -76,8 +74,7 @@ public interface PublishBuilder {
      *                                  2.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder qos(@NotNull Qos qos);
+    @NotNull PublishBuilder qos(@NotNull Qos qos);
 
     /**
      * Sets the retain flag.
@@ -89,8 +86,7 @@ public interface PublishBuilder {
      * @throws IllegalArgumentException If retain is <b>true</b>, but retained messages are disabled by HiveMQ.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder retain(boolean retain);
+    @NotNull PublishBuilder retain(boolean retain);
 
     /**
      * Sets the topic.
@@ -104,8 +100,7 @@ public interface PublishBuilder {
      * @throws IllegalArgumentException If the topic is invalid for publish messages (i.e containing wildcards}.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder topic(@NotNull String topic);
+    @NotNull PublishBuilder topic(@NotNull String topic);
 
     /**
      * Sets the payload format indicator.
@@ -116,15 +111,15 @@ public interface PublishBuilder {
      * @return The {@link PublishBuilder}.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder payloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
+    @NotNull PublishBuilder payloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
 
     /**
      * Sets the message expiry interval in seconds.
      * <p>
      * DEFAULT: <code>no expiry</code>.
      * <p>
-     * The default can be changed by configuring {@code <message-expiry>} in the {@code <mqtt>} config in the config.xml.
+     * The default can be changed by configuring {@code <message-expiry>} in the {@code <mqtt>} config in the
+     * config.xml.
      *
      * @param messageExpiryInterval The message expiry interval to set.
      * @return The {@link PublishBuilder}.
@@ -132,8 +127,7 @@ public interface PublishBuilder {
      *                                  maximum by HiveMQ. Default is no expiry.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder messageExpiryInterval(long messageExpiryInterval);
+    @NotNull PublishBuilder messageExpiryInterval(long messageExpiryInterval);
 
     /**
      * Sets the response topic.
@@ -146,8 +140,7 @@ public interface PublishBuilder {
      * @throws IllegalArgumentException If the response topic exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder responseTopic(@Nullable String responseTopic);
+    @NotNull PublishBuilder responseTopic(@Nullable String responseTopic);
 
     /**
      * Sets the correlation data.
@@ -158,8 +151,7 @@ public interface PublishBuilder {
      * @return The {@link PublishBuilder}.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder correlationData(@Nullable ByteBuffer correlationData);
+    @NotNull PublishBuilder correlationData(@Nullable ByteBuffer correlationData);
 
     /**
      * Sets the content type.
@@ -172,8 +164,7 @@ public interface PublishBuilder {
      * @throws IllegalArgumentException If the content type exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder contentType(@Nullable String contentType);
+    @NotNull PublishBuilder contentType(@Nullable String contentType);
 
     /**
      * Sets the payload.
@@ -185,8 +176,7 @@ public interface PublishBuilder {
      * @throws NullPointerException If the payload is null.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder payload(@NotNull ByteBuffer payload);
+    @NotNull PublishBuilder payload(@NotNull ByteBuffer payload);
 
     /**
      * Adds a user property.
@@ -201,8 +191,7 @@ public interface PublishBuilder {
      * @throws IllegalArgumentException If the key or value exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
-    @NotNull
-    PublishBuilder userProperty(@NotNull String key, @NotNull String value);
+    @NotNull PublishBuilder userProperty(@NotNull String key, @NotNull String value);
 
     /**
      * Builds the {@link Publish} with the provided values or default values.
@@ -211,6 +200,5 @@ public interface PublishBuilder {
      * @throws NullPointerException If the topic or the payload is null.
      * @since 4.0.0
      */
-    @NotNull
-    Publish build();
+    @NotNull Publish build();
 }

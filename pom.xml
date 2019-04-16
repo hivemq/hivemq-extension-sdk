@@ -6,7 +6,7 @@
 
     <groupId>com.hivemq</groupId>
     <artifactId>hivemq-extension-sdk</artifactId>
-    <version>4.0.0</version>
+    <version>4.1.0</version>
 
     <name>HiveMQ Extension SDK</name>
     <description>SDK for the development of HiveMQ extensions</description>

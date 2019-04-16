@@ -16,10 +16,10 @@
 
 package com.hivemq.extension.sdk.api.services.cluster.parameter;
 
-import com.hivemq.extension.sdk.api.services.cluster.ClusterDiscoveryCallback;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.services.cluster.ClusterDiscoveryCallback;
 
 /**
  * Input for the methods of a {@link ClusterDiscoveryCallback
@@ -39,8 +39,7 @@ public interface ClusterDiscoveryInput {
      * @return The address of the HiveMQ instance.
      * @since 4.0.0
      */
-    @NotNull
-    ClusterNodeAddress getOwnAddress();
+    @NotNull ClusterNodeAddress getOwnAddress();
 
     /**
      * Provides the cluster id of the HiveMQ instance the extension is executed on. This id is unique for all HiveMQ
@@ -49,8 +48,7 @@ public interface ClusterDiscoveryInput {
      * @return The cluster id of the HiveMQ instance.
      * @since 4.0.0
      */
-    @NotNull
-    String getOwnClusterId();
+    @NotNull String getOwnClusterId();
 
     /**
      * Provides the current reload interval for updating the addresses of all HiveMQ cluster nodes.

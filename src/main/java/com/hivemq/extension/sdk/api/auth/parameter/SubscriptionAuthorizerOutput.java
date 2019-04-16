@@ -187,5 +187,4 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
      * @since 4.0.0
      */
     void nextExtensionOrDefault();
-
 }

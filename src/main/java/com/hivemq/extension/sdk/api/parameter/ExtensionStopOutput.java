@@ -20,7 +20,7 @@ package com.hivemq.extension.sdk.api.parameter;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 
 /**
- * Output object when a extension is stopped.
+ * Output object when an extension is stopped.
  *
  * @author Christoph Schäbel
  * @since 4.0.0

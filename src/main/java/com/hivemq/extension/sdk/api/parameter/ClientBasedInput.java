@@ -16,10 +16,10 @@
 
 package com.hivemq.extension.sdk.api.parameter;
 
-import com.hivemq.extension.sdk.api.client.parameter.ClientInformation;
-import com.hivemq.extension.sdk.api.client.parameter.ConnectionInformation;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.client.parameter.ClientInformation;
+import com.hivemq.extension.sdk.api.client.parameter.ConnectionInformation;
 
 /**
  * Provides information about the client and the connection of the client.
@@ -34,14 +34,11 @@ public interface ClientBasedInput {
      * @return The {@link ConnectionInformation} of client.
      * @since 4.0.0
      */
-    @NotNull
-    ConnectionInformation getConnectionInformation();
+    @NotNull ConnectionInformation getConnectionInformation();
 
     /**
      * @return The {@link ClientInformation} of the client.
      * @since 4.0.0
      */
-    @NotNull
-    ClientInformation getClientInformation();
-
+    @NotNull ClientInformation getClientInformation();
 }

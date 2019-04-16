@@ -66,7 +66,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
      */
     @Deprecated
     @Override
-    default @NotNull List<Runnable> shutdownNow() {
+    default @NotNull List<@NotNull Runnable> shutdownNow() {
         throw new UnsupportedOperationException("ManagedExtensionExecutorService must not be shut down manually");
     }
 
@@ -75,36 +75,32 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
      * @see ScheduledExecutorService#submit(Runnable)
      * @since 4.0.0
      */
-    @NotNull
     @Override
-    CompletableFuture<?> submit(@NotNull Runnable task);
+    @NotNull CompletableFuture<?> submit(@NotNull Runnable task);
 
     /**
      * @return A {@link CompletableFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#submit(Callable)
      * @since 4.0.0
      */
-    @NotNull
     @Override
-    <T> CompletableFuture<T> submit(@NotNull Callable<T> task);
+    <T> @NotNull CompletableFuture<T> submit(@NotNull Callable<T> task);
 
     /**
      * @return A {@link CompletableFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#submit(Runnable, Object)
      * @since 4.0.0
      */
-    @NotNull
     @Override
-    <T> CompletableFuture<T> submit(@NotNull Runnable task, @NotNull T result);
+    <T> @NotNull CompletableFuture<T> submit(@NotNull Runnable task, @NotNull T result);
 
     /**
      * @return A {@link CompletableScheduledFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#schedule(Runnable, long, TimeUnit)
      * @since 4.0.0
      */
-    @NotNull
     @Override
-    CompletableScheduledFuture<?> schedule(
+    @NotNull CompletableScheduledFuture<?> schedule(
             @NotNull Runnable command, long delay, @NotNull TimeUnit unit);
 
     /**
@@ -112,18 +108,16 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
      * @see ScheduledExecutorService#schedule(Callable, long, TimeUnit)
      * @since 4.0.0
      */
-    @NotNull
     @Override
-    <V> CompletableScheduledFuture<V> schedule(@NotNull Callable<V> callable, long delay, @NotNull TimeUnit unit);
+    <V> @NotNull CompletableScheduledFuture<V> schedule(@NotNull Callable<V> callable, long delay, @NotNull TimeUnit unit);
 
     /**
      * @return A {@link CompletableScheduledFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#scheduleAtFixedRate(Runnable, long, long, TimeUnit)
      * @since 4.0.0
      */
-    @NotNull
     @Override
-    CompletableScheduledFuture<?> scheduleAtFixedRate(
+    @NotNull CompletableScheduledFuture<?> scheduleAtFixedRate(
             @NotNull Runnable command, long initialDelay, long period, @NotNull TimeUnit unit);
 
     /**
@@ -131,8 +125,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
      * @see ScheduledExecutorService#scheduleWithFixedDelay(Runnable, long, long, TimeUnit)
      * @since 4.0.0
      */
-    @NotNull
     @Override
-    CompletableScheduledFuture<?> scheduleWithFixedDelay(
+    @NotNull CompletableScheduledFuture<?> scheduleWithFixedDelay(
             @NotNull Runnable command, long initialDelay, long delay, @NotNull TimeUnit unit);
 }

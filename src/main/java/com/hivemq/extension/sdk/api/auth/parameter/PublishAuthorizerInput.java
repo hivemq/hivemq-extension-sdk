@@ -41,7 +41,5 @@ public interface PublishAuthorizerInput extends ClientBasedInput {
      * @since 4.0.0
      */
     @Immutable
-    @NotNull
-    PublishPacket getPublishPacket();
-
+    @NotNull PublishPacket getPublishPacket();
 }

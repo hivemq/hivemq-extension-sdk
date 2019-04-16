@@ -17,6 +17,9 @@
 package com.hivemq.extension.sdk.api.services;
 
 import com.codahale.metrics.MetricRegistry;
+import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.annotations.Nullable;
+import com.hivemq.extension.sdk.api.events.EventRegistry;
 import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListenerProvider;
 import com.hivemq.extension.sdk.api.services.auth.SecurityRegistry;
 import com.hivemq.extension.sdk.api.services.auth.provider.AuthenticatorProvider;
@@ -28,30 +31,26 @@ import com.hivemq.extension.sdk.api.services.publish.PublishService;
 import com.hivemq.extension.sdk.api.services.publish.RetainedMessageStore;
 import com.hivemq.extension.sdk.api.services.session.ClientService;
 import com.hivemq.extension.sdk.api.services.subscription.SubscriptionStore;
-import com.hivemq.extension.sdk.api.annotations.NotNull;
-import com.hivemq.extension.sdk.api.annotations.Nullable;
-import com.hivemq.extension.sdk.api.events.EventRegistry;
 
 import java.util.Map;
 
 /**
  * Services provide a convenient way for extensions to interact with the HiveMQ core.
- *
+ * <p>
  * The following services are available:
  *
  * <ul>
- *     <li>{@link InitializerRegistry}</li>
- *     <li>{@link SecurityRegistry}</li>
- *     <li>{@link ManagedExtensionExecutorService}</li>
- *     <li>{@link SubscriptionStore}</li>
- *     <li>{@link PublishService}</li>
- *     <li>{@link ClusterService}</li>
- *     <li>{@link RetainedMessageStore}</li>
- *     <li>{@link MetricRegistry}</li>
- *     <li>{@link EventRegistry}</li>
- *     <li>{@link ClientService}</li>
+ * <li>{@link InitializerRegistry}</li>
+ * <li>{@link SecurityRegistry}</li>
+ * <li>{@link ManagedExtensionExecutorService}</li>
+ * <li>{@link SubscriptionStore}</li>
+ * <li>{@link PublishService}</li>
+ * <li>{@link ClusterService}</li>
+ * <li>{@link RetainedMessageStore}</li>
+ * <li>{@link MetricRegistry}</li>
+ * <li>{@link EventRegistry}</li>
+ * <li>{@link ClientService}</li>
  * </ul>
- *
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
@@ -62,15 +61,13 @@ public class Services {
             " does not have a HiveMQ extension classloader as its context classloader.";
 
     //this map is filled by HiveMQ with implementations for all services
-    @Nullable
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    private static Map<String, Object> services;
+    private static @Nullable Map<String, @NotNull Object> services;
 
     /**
      * @return A service to set a {@link ClientInitializer}
      */
-    @NotNull
-    public static InitializerRegistry initializerRegistry() {
+    public static @NotNull InitializerRegistry initializerRegistry() {
         return getClassObject(InitializerRegistry.class);
     }
 
@@ -78,77 +75,67 @@ public class Services {
      * @return A service to register {@link AuthenticatorProvider}
      * and {@link AuthorizerProvider}
      */
-    @NotNull
-    public static SecurityRegistry securityRegistry() {
+    public static @NotNull SecurityRegistry securityRegistry() {
         return getClassObject(SecurityRegistry.class);
     }
 
     /**
      * @return A service to execute tasks in a HiveMQ managed thread pool.
      */
-    @NotNull
-    public static ManagedExtensionExecutorService extensionExecutorService() {
+    public static @NotNull ManagedExtensionExecutorService extensionExecutorService() {
         return getClassObject(ManagedExtensionExecutorService.class);
     }
 
     /**
      * @return A service to add, get and remove subscriptions.
      */
-    @NotNull
-    public static SubscriptionStore subscriptionStore() {
+    public static @NotNull SubscriptionStore subscriptionStore() {
         return getClassObject(SubscriptionStore.class);
     }
 
     /**
      * @return A service to publish messages to topics and clients.
      */
-    @NotNull
-    public static PublishService publishService() {
+    public static @NotNull PublishService publishService() {
         return getClassObject(PublishService.class);
     }
 
     /**
      * @return A service to create a custom cluster discovery.
      */
-    @NotNull
-    public static ClusterService clusterService() {
+    public static @NotNull ClusterService clusterService() {
         return getClassObject(ClusterService.class);
     }
 
     /**
      * @return A service to add, get and remove retained messages.
      */
-    @NotNull
-    public static RetainedMessageStore retainedMessageStore() {
+    public static @NotNull RetainedMessageStore retainedMessageStore() {
         return getClassObject(RetainedMessageStore.class);
     }
 
     /**
      * @return A service to get HiveMQ metrics.
      */
-    @NotNull
-    public static MetricRegistry metricRegistry() {
+    public static @NotNull MetricRegistry metricRegistry() {
         return getClassObject(MetricRegistry.class);
     }
 
     /**
      * @return A service to register a {@link ClientLifecycleEventListenerProvider}.
      */
-    @NotNull
-    public static EventRegistry eventRegistry() {
+    public static @NotNull EventRegistry eventRegistry() {
         return getClassObject(EventRegistry.class);
     }
 
     /**
      * @return A service to get client session information, disconnect clients and remove sessions.
      */
-    @NotNull
-    public static ClientService clientService() {
+    public static @NotNull ClientService clientService() {
         return getClassObject(ClientService.class);
     }
 
-    @NotNull
-    private static <T> T getClassObject(@NotNull final Class<T> clazz) {
+    private static <T> @NotNull T getClassObject(@NotNull final Class<T> clazz) {
 
         if (services == null) {
             throw new RuntimeException(String.format(NO_ACCESS_MESSAGE, Thread.currentThread().getName()));
@@ -164,5 +151,4 @@ public class Services {
         }
         throw new RuntimeException(String.format(NO_ACCESS_MESSAGE, Thread.currentThread().getName()));
     }
-
 }

@@ -38,11 +38,12 @@ public interface TopicPermissionBuilder {
      * @return The {@link TopicPermissionBuilder}.
      * @throws NullPointerException     If the topic filter is null.
      * @throws IllegalArgumentException If the topic filter is an empty string.
-     * @throws IllegalArgumentException If the topic filter is not a valid topic filter.
+     * @throws IllegalArgumentException If the topic filter contains invalid UTF-8 characters.
+     * @throws IllegalArgumentException If the topic filter is longer than the configured maximum. Default
+     *                                  maximum length is 65535.
      * @since 4.0.0
      */
-    @NotNull
-    TopicPermissionBuilder topicFilter(@NotNull String topicFilter);
+    @NotNull TopicPermissionBuilder topicFilter(@NotNull String topicFilter);
 
     /**
      * Set a type for this {@link TopicPermission}.
@@ -54,8 +55,7 @@ public interface TopicPermissionBuilder {
      * @throws NullPointerException If the type is null.
      * @since 4.0.0
      */
-    @NotNull
-    TopicPermissionBuilder type(@NotNull TopicPermission.PermissionType type);
+    @NotNull TopicPermissionBuilder type(@NotNull TopicPermission.PermissionType type);
 
     /**
      * Set a QoS for this {@link TopicPermission}.
@@ -67,8 +67,7 @@ public interface TopicPermissionBuilder {
      * @throws NullPointerException If the qos is null.
      * @since 4.0.0
      */
-    @NotNull
-    TopicPermissionBuilder qos(@NotNull TopicPermission.Qos qos);
+    @NotNull TopicPermissionBuilder qos(@NotNull TopicPermission.Qos qos);
 
     /**
      * Set an Activity for this {@link TopicPermission}.
@@ -80,8 +79,7 @@ public interface TopicPermissionBuilder {
      * @throws NullPointerException If the activity is null.
      * @since 4.0.0
      */
-    @NotNull
-    TopicPermissionBuilder activity(@NotNull TopicPermission.MqttActivity activity);
+    @NotNull TopicPermissionBuilder activity(@NotNull TopicPermission.MqttActivity activity);
 
     /**
      * Set a Retain for this {@link TopicPermission}.
@@ -95,8 +93,7 @@ public interface TopicPermissionBuilder {
      * @throws NullPointerException If the retain is null.
      * @since 4.0.0
      */
-    @NotNull
-    TopicPermissionBuilder retain(@NotNull TopicPermission.Retain retain);
+    @NotNull TopicPermissionBuilder retain(@NotNull TopicPermission.Retain retain);
 
     /**
      * Set a SharedSubscription for this {@link TopicPermission}.
@@ -111,8 +108,7 @@ public interface TopicPermissionBuilder {
      * @throws NullPointerException If the sharedSubscription is null.
      * @since 4.0.0
      */
-    @NotNull
-    TopicPermissionBuilder sharedSubscription(@NotNull TopicPermission.SharedSubscription sharedSubscription);
+    @NotNull TopicPermissionBuilder sharedSubscription(@NotNull TopicPermission.SharedSubscription sharedSubscription);
 
     /**
      * Set a shared group for this {@link TopicPermission}.
@@ -127,21 +123,21 @@ public interface TopicPermissionBuilder {
      * <p>
      * Limitations for shared group:
      * <ul>
-     *     <li>Must not be an empty string</li>
-     *     <li>Must not contain a slash '/'</li>
-     *     <li>Must not contain the wildcard '+'</li>
-     *     <li>Must not contain the wildcard '#' if string length is &gt; 1</li>
-     *     <li>Must not contain an invalid UTF-8 character</li>
+     * <li>Must not be an empty string</li>
+     * <li>Must not contain a slash '/'</li>
+     * <li>Must not contain the wildcard '+'</li>
+     * <li>Must not contain the wildcard '#' if string length is &gt; 1</li>
+     * <li>Must not contain an invalid UTF-8 character</li>
      * </ul>
      *
      * @param sharedGroup The shared group that can be used, or <code>#</code> to allow any value.
      * @return The {@link TopicPermissionBuilder}.
      * @throws NullPointerException     If the sharedGroup is null.
      * @throws IllegalArgumentException If an invalid shared group name is passed.
+     * @throws IllegalArgumentException If the shared group contains invalid UTF-8 characters.
      * @since 4.0.0
      */
-    @NotNull
-    TopicPermissionBuilder sharedGroup(@NotNull String sharedGroup);
+    @NotNull TopicPermissionBuilder sharedGroup(@NotNull String sharedGroup);
 
     /**
      * Builds the {@link TopicPermission} with the provided values or default values.
@@ -150,7 +146,5 @@ public interface TopicPermissionBuilder {
      * @throws NullPointerException If the topic is null.
      * @since 4.0.0
      */
-    @NotNull
-    TopicPermission build();
-
+    @NotNull TopicPermission build();
 }

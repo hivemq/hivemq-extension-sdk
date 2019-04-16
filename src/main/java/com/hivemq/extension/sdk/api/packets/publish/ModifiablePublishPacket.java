@@ -18,6 +18,7 @@ package com.hivemq.extension.sdk.api.packets.publish;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.annotations.Nullable;
 import com.hivemq.extension.sdk.api.packets.general.ModifiableUserProperties;
 import com.hivemq.extension.sdk.api.packets.general.Qos;
 import com.hivemq.extension.sdk.api.packets.general.UserProperties;
@@ -58,8 +59,10 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * Sets the topic.
      *
      * @param topic The new topic for the publish.
-     * @throws NullPointerException     If topic is null.
-     * @throws IllegalArgumentException If topic is an empty string or an invalid UTF-8 string.
+     * @throws NullPointerException     If the topic is null.
+     * @throws IllegalArgumentException If the topic is an empty string.
+     * @throws IllegalArgumentException If the topic is invalid for publish messages.
+     * @throws IllegalArgumentException If the topic length exceeds the configured length for topics. Default is 65535.
      * @since 4.0.0
      */
     void setTopic(@NotNull String topic);
@@ -68,10 +71,9 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * Sets the payload format indicator.
      *
      * @param payloadFormatIndicator The new payload format indicator for the publish.
-     * @throws NullPointerException If payload format indicator is null.
      * @since 4.0.0
      */
-    void setPayloadFormatIndicator(@NotNull PayloadFormatIndicator payloadFormatIndicator);
+    void setPayloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
 
     /**
      * Sets the message expiry interval.
@@ -87,28 +89,29 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * Sets the response topic.
      *
      * @param responseTopic The new response topic for the publish.
-     * @throws NullPointerException If response topic is null.
+     * @throws IllegalArgumentException If the response topic is not a valid UTF-8 string.
+     * @throws IllegalArgumentException If the response topic exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
-    void setResponseTopic(@NotNull String responseTopic);
+    void setResponseTopic(@Nullable String responseTopic);
 
     /**
      * Sets the correlation data.
      *
      * @param correlationData The new correlation data for the publish.
-     * @throws NullPointerException If correlation data is null.
      * @since 4.0.0
      */
-    void setCorrelationData(@NotNull ByteBuffer correlationData);
+    void setCorrelationData(@Nullable ByteBuffer correlationData);
 
     /**
      * Sets the content type.
      *
      * @param contentType The new content type for the publish.
-     * @throws NullPointerException If content type is null.
+     * @throws IllegalArgumentException If the content type is not a valid UTF-8 string.
+     * @throws IllegalArgumentException If the content type exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
-    void setContentType(@NotNull String contentType);
+    void setContentType(@Nullable String contentType);
 
     /**
      * Sets the payload.
@@ -125,7 +128,5 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * @return Modifiable user properties.
      * @since 4.0.0
      */
-    @NotNull
-    ModifiableUserProperties getUserProperties();
-
+    @NotNull ModifiableUserProperties getUserProperties();
 }

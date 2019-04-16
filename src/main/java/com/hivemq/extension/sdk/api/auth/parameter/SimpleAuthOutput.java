@@ -16,6 +16,8 @@
 
 package com.hivemq.extension.sdk.api.auth.parameter;
 
+import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.async.Async;
 import com.hivemq.extension.sdk.api.async.AsyncOutput;
 import com.hivemq.extension.sdk.api.async.TimeoutFallback;
@@ -24,8 +26,6 @@ import com.hivemq.extension.sdk.api.auth.SimpleAuthenticator;
 import com.hivemq.extension.sdk.api.packets.auth.ModifiableDefaultPermissions;
 import com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode;
 import com.hivemq.extension.sdk.api.packets.general.ModifiableUserProperties;
-import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
-import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 import java.time.Duration;
 
@@ -34,9 +34,9 @@ import java.time.Duration;
  * <p>
  * It can be used to
  * <ul>
- *   <li>Authenticate the client successfully OR fail authentication OR delegate the decision to the next extension</li>
- *   <li>Alter the user properties sent to the client as part of the CONNACK packet</li>
- *   <li>Alter the default topic permissions which apply only if the client is authenticated successfully</li>
+ * <li>Authenticate the client successfully OR fail authentication OR delegate the decision to the next extension</li>
+ * <li>Alter the user properties sent to the client as part of the CONNACK packet</li>
+ * <li>Alter the default topic permissions which apply only if the client is authenticated successfully</li>
  * </ul>
  * <p>
  * Only one of the methods {@link #authenticateSuccessfully()}, {@link #failAuthentication()}, {@link
@@ -77,9 +77,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
-    @NotNull
-    Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
-                                  @NotNull ConnackReasonCode reasonCode, @NotNull String reasonString);
+    @NotNull Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
+                                           @NotNull ConnackReasonCode reasonCode, @NotNull String reasonString);
 
     /**
      * If the timeout is expired before {@link Async#resume()} is called then the outcome is
@@ -95,9 +94,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
-    @NotNull
-    Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
-                                  @NotNull ConnackReasonCode reasonCode);
+    @NotNull Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
+                                           @NotNull ConnackReasonCode reasonCode);
 
     /**
      * If the timeout is expired before {@link Async#resume()} is called then the outcome is
@@ -113,9 +111,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
-    @NotNull
-    Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
-                                  @NotNull String reasonString);
+    @NotNull Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
+                                           @NotNull String reasonString);
 
     /**
      * Fails the authentication for the client.
@@ -180,8 +177,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @return The {@link ModifiableUserProperties} object.
      * @since 4.0.0
      */
-    @NotNull
-    ModifiableUserProperties getOutboundUserProperties();
+    @NotNull ModifiableUserProperties getOutboundUserProperties();
 
     /**
      * The default permissions for the client. Default permissions are automatically applied by HiveMQ for every
@@ -190,7 +186,5 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @return The {@link ModifiableDefaultPermissions} object for the client.
      * @since 4.0.0
      */
-    @NotNull
-    ModifiableDefaultPermissions getDefaultPermissions();
-
+    @NotNull ModifiableDefaultPermissions getDefaultPermissions();
 }

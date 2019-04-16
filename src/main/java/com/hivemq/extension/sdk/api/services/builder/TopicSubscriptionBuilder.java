@@ -16,12 +16,12 @@
 
 package com.hivemq.extension.sdk.api.services.builder;
 
-import com.hivemq.extension.sdk.api.packets.general.Qos;
-import com.hivemq.extension.sdk.api.services.subscription.TopicSubscription;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.packets.general.Qos;
 import com.hivemq.extension.sdk.api.packets.subscribe.Subscription;
 import com.hivemq.extension.sdk.api.services.exception.DoNotImplementException;
+import com.hivemq.extension.sdk.api.services.subscription.TopicSubscription;
 
 /**
  * This builder must be used to create a {@link TopicSubscription}.
@@ -46,8 +46,7 @@ public interface TopicSubscriptionBuilder {
      * @throws DoNotImplementException If the {@link Subscription} is implemented by the extension.
      * @since 4.0.0
      */
-    @NotNull
-    TopicSubscriptionBuilder fromSubscription(@NotNull Subscription subscription);
+    @NotNull TopicSubscriptionBuilder fromSubscription(@NotNull Subscription subscription);
 
     /**
      * Sets the topic filter.
@@ -58,7 +57,7 @@ public interface TopicSubscriptionBuilder {
      * @return The {@link TopicSubscriptionBuilder}.
      * @throws NullPointerException     If the topic filter is null.
      * @throws IllegalArgumentException If the topic filter is empty.
-     * @throws IllegalArgumentException If the topic filter is a valid UTF-8 string.
+     * @throws IllegalArgumentException If the topic filter contains invalid UTF-8 characters.
      * @throws IllegalArgumentException If the topic filter is longer than the configured maximum. Default
      *                                  maximum length is 65535.
      * @throws IllegalArgumentException If the topic filter contains a wildcard and wildcards are disabled by HiveMQ.
@@ -67,8 +66,7 @@ public interface TopicSubscriptionBuilder {
      *                                  disabled by HiveMQ. Default is enabled.
      * @since 4.0.0
      */
-    @NotNull
-    TopicSubscriptionBuilder topicFilter(@NotNull String topicFilter);
+    @NotNull TopicSubscriptionBuilder topicFilter(@NotNull String topicFilter);
 
     /**
      * Sets the quality of service level.
@@ -80,8 +78,7 @@ public interface TopicSubscriptionBuilder {
      * @throws NullPointerException If qos is null.
      * @since 4.0.0
      */
-    @NotNull
-    TopicSubscriptionBuilder qos(@NotNull Qos qos);
+    @NotNull TopicSubscriptionBuilder qos(@NotNull Qos qos);
 
     /**
      * Sets the retain as published flag.
@@ -92,8 +89,7 @@ public interface TopicSubscriptionBuilder {
      * @return The {@link TopicSubscriptionBuilder}.
      * @since 4.0.0
      */
-    @NotNull
-    TopicSubscriptionBuilder retainAsPublished(boolean retainAsPublished);
+    @NotNull TopicSubscriptionBuilder retainAsPublished(boolean retainAsPublished);
 
     /**
      * Sets the no local flag. Do not set the no local flag to <b>true</b> if the {@link TopicSubscription} is a
@@ -105,8 +101,7 @@ public interface TopicSubscriptionBuilder {
      * @return The {@link TopicSubscriptionBuilder}.
      * @since 4.0.0
      */
-    @NotNull
-    TopicSubscriptionBuilder noLocal(boolean noLocal);
+    @NotNull TopicSubscriptionBuilder noLocal(boolean noLocal);
 
     /**
      * Sets the subscription identifier.
@@ -120,8 +115,7 @@ public interface TopicSubscriptionBuilder {
      * @throws IllegalArgumentException If the subscription identifier are disabled by HiveMQ. Default is enabled.
      * @since 4.0.0
      */
-    @NotNull
-    TopicSubscriptionBuilder subscriptionIdentifier(int subscriptionIdentifier);
+    @NotNull TopicSubscriptionBuilder subscriptionIdentifier(int subscriptionIdentifier);
 
     /**
      * Builds the {@link TopicSubscription} with the provided values or default values.
@@ -131,7 +125,5 @@ public interface TopicSubscriptionBuilder {
      * @throws IllegalArgumentException If the noLocal flag is set for a shared subscription.
      * @since 4.0.0
      */
-    @NotNull
-    TopicSubscription build();
-
+    @NotNull TopicSubscription build();
 }

@@ -16,8 +16,8 @@
 
 package com.hivemq.extension.sdk.api.events.client.parameters;
 
-import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
 
 /**
  * Input object for the method {@link ClientLifecycleEventListener#onAuthenticationFailedDisconnect(AuthenticationFailedInput)}.

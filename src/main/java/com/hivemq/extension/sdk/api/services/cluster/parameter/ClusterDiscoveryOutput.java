@@ -16,9 +16,9 @@
 
 package com.hivemq.extension.sdk.api.services.cluster.parameter;
 
-import com.hivemq.extension.sdk.api.services.cluster.ClusterDiscoveryCallback;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.services.cluster.ClusterDiscoveryCallback;
 
 import java.util.List;
 
@@ -52,5 +52,4 @@ public interface ClusterDiscoveryOutput {
      * @since 4.0.0
      */
     void setReloadInterval(int reloadInterval);
-
 }

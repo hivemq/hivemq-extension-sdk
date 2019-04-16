@@ -23,7 +23,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 import java.util.Map;
 
 /**
- * Input object when a extension is stopped.
+ * Input object when an extension is stopped.
  *
  * @author Christoph Schäbel
  * @author Georg Held
@@ -37,8 +37,7 @@ public interface ExtensionStopInput {
      * @return A {@link ExtensionInformation} containing detailed information about this extension.
      * @since 4.0.0
      */
-    @NotNull
-    ExtensionInformation getExtensionInformation();
+    @NotNull ExtensionInformation getExtensionInformation();
 
     /**
      * @return A {@link Map} of all currently enabled extensions. <br/>
@@ -46,7 +45,5 @@ public interface ExtensionStopInput {
      * The value is a {@link ExtensionInformation} containing detailed information about each extension.
      * @since 4.0.0
      */
-    @NotNull
-    Map<String, ExtensionInformation> getEnabledExtensions();
-
+    @NotNull Map<String, @NotNull ExtensionInformation> getEnabledExtensions();
 }

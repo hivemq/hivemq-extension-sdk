@@ -17,10 +17,10 @@
 package com.hivemq.extension.sdk.api.client.parameter;
 
 
-import com.hivemq.extension.sdk.api.services.exception.LimitExceededException;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.ThreadSafe;
+import com.hivemq.extension.sdk.api.services.exception.LimitExceededException;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * Through this service a extension can manage client connection attributes with the same lifetime as the connection.
+ * Through this service an extension can manage client connection attributes with the same lifetime as the connection.
  * <p>
  * The ConnectionAttributeStore is a key-value store for storing arbitrary data as additional information
  * within the MQTT client connection. All data is stored in-memory and the maximum amount of a single key-value
@@ -37,7 +37,8 @@ import java.util.Optional;
  * A Connection Attribute is arbitrary binary data. For convenience purposes methods like {@link #putAsString(String,
  * String)}
  * are available in case String representations should be stored. If complex objects are desired to be stored in
- * the ConnectionAttributeStore, manual serialization and deserialization must be implemented by the extension developer.
+ * the ConnectionAttributeStore, manual serialization and deserialization must be implemented by the extension
+ * developer.
  * <p>
  * The ConnectionAttributeStore is useful for storing temporary data or data that needs to be cleaned up automatically
  * after
@@ -96,8 +97,7 @@ public interface ConnectionAttributeStore {
      * @return An {@link Optional} containing the value of the connection attribute if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<ByteBuffer> get(@NotNull String key);
+    @NotNull Optional<ByteBuffer> get(@NotNull String key);
 
     /**
      * Retrieves the value of the connection attribute with the given key for the connected client as UTF-8 string.
@@ -106,8 +106,7 @@ public interface ConnectionAttributeStore {
      * @return An {@link Optional} containing the value of the connection attribute as a string if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getAsString(@NotNull String key);
+    @NotNull Optional<String> getAsString(@NotNull String key);
 
     /**
      * Retrieves the value of the connection attribute with the given key for the connected client as string with the
@@ -119,8 +118,7 @@ public interface ConnectionAttributeStore {
      * if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getAsString(@NotNull String key, @NotNull Charset charset);
+    @NotNull Optional<String> getAsString(@NotNull String key, @NotNull Charset charset);
 
     /**
      * Retrieves all connection attributes for the connected client.
@@ -128,8 +126,7 @@ public interface ConnectionAttributeStore {
      * @return An {@link Optional} containing all connection attributes as a map of key and value pairs if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<Map<String, ByteBuffer>> getAll();
+    @NotNull Optional<Map<String, ByteBuffer>> getAll();
 
     /**
      * Removes the connection attribute with the given key for the connected client.
@@ -138,8 +135,7 @@ public interface ConnectionAttributeStore {
      * @return An {@link Optional} containing the value of the removed connection attribute if it was present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<ByteBuffer> remove(@NotNull String key);
+    @NotNull Optional<ByteBuffer> remove(@NotNull String key);
 
     /**
      * Clears all connection attributes for the connected client.
@@ -147,5 +143,4 @@ public interface ConnectionAttributeStore {
      * @since 4.0.0
      */
     void clear();
-
 }

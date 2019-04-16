@@ -172,6 +172,5 @@ public enum DisconnectedReasonCode {
     /**
      * @since 4.0.0
      */
-    BANNED,
-
+    BANNED
 }

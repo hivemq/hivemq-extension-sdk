@@ -76,8 +76,7 @@ public enum RetainHandling {
      * Retain Handling.
      * @since 4.0.0
      */
-    @Nullable
-    public static RetainHandling fromCode(final int code) {
+    public static @Nullable RetainHandling fromCode(final int code) {
         final RetainHandling[] values = values();
         if (code < 0 || code >= values.length) {
             return null;

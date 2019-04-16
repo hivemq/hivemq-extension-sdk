@@ -16,12 +16,12 @@
 
 package com.hivemq.extension.sdk.api.services.subscription;
 
-import com.hivemq.extension.sdk.api.services.exception.InvalidTopicException;
-import com.hivemq.extension.sdk.api.services.exception.NoSuchClientIdException;
-import com.hivemq.extension.sdk.api.services.exception.RateLimitExceededException;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.services.exception.DoNotImplementException;
+import com.hivemq.extension.sdk.api.services.exception.InvalidTopicException;
+import com.hivemq.extension.sdk.api.services.exception.NoSuchClientIdException;
+import com.hivemq.extension.sdk.api.services.exception.RateLimitExceededException;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -49,13 +49,12 @@ public interface SubscriptionStore {
      *
      * @param clientID     The client for which the new subscription should be added.
      * @param subscription The subscription to which the client should be subscribed.
-     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscription was added by all cluster nodes.
+     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscription was added
      * @throws NullPointerException     If clientID or subscription is null.
      * @throws IllegalArgumentException If clientID is empty.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Void> addSubscription(@NotNull String clientID, @NotNull TopicSubscription subscription);
+    @NotNull CompletableFuture<Void> addSubscription(@NotNull String clientID, @NotNull TopicSubscription subscription);
 
     /**
      * This method adds multiple subscriptions for a certain client.
@@ -70,14 +69,12 @@ public interface SubscriptionStore {
      *
      * @param clientID      The client for which the new subscriptions should be added.
      * @param subscriptions The subscriptions to which the client should be subscribed.
-     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscriptions were added by all
-     * Cluster Nodes.
+     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscriptions were added.
      * @throws NullPointerException     If clientID, subscriptions or one of the subscription in the set is null.
      * @throws IllegalArgumentException If clientID or subscriptions is empty.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Void> addSubscriptions(@NotNull String clientID, @NotNull Set<TopicSubscription> subscriptions);
+    @NotNull CompletableFuture<Void> addSubscriptions(@NotNull String clientID, @NotNull Set<TopicSubscription> subscriptions);
 
     /**
      * This method removes a subscription for a certain client and a certain topic.
@@ -91,14 +88,12 @@ public interface SubscriptionStore {
      *
      * @param clientID    The client for which the subscription should be removed.
      * @param topicFilter The topic from which the client should get unsubscribed.
-     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscription was removed by all
-     * cluster nodes.
+     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscription was removed.
      * @throws NullPointerException     If clientID or topicFilter is null.
      * @throws IllegalArgumentException If clientID is empty.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Void> removeSubscription(@NotNull String clientID, @NotNull String topicFilter);
+    @NotNull CompletableFuture<Void> removeSubscription(@NotNull String clientID, @NotNull String topicFilter);
 
     /**
      * This method removes multiple subscriptions for a certain client.
@@ -113,14 +108,12 @@ public interface SubscriptionStore {
      *
      * @param clientID     The client for which the subscriptions should be removed.
      * @param topicFilters The topics from which the client should get unsubscribed.
-     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscriptions were removed by all
-     * Cluster Nodes.
+     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscriptions were removed.
      * @throws NullPointerException     If clientID, topics or one of the topics in the set is null.
      * @throws IllegalArgumentException If clientID or topics is empty.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Void> removeSubscriptions(@NotNull String clientID, @NotNull Set<String> topicFilters);
+    @NotNull CompletableFuture<Void> removeSubscriptions(@NotNull String clientID, @NotNull Set<String> topicFilters);
 
     /**
      * Returns all subscriptions a client is subscribed to.
@@ -137,8 +130,7 @@ public interface SubscriptionStore {
      * @throws IllegalArgumentException If clientID is empty.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Set<TopicSubscription>> getSubscriptions(@NotNull String clientID);
+    @NotNull CompletableFuture<Set<TopicSubscription>> getSubscriptions(@NotNull String clientID);
 
 }
  

@@ -16,11 +16,11 @@
 
 package com.hivemq.extension.sdk.api.services.builder;
 
-import com.hivemq.extension.sdk.api.packets.connect.WillPublishPacket;
-import com.hivemq.extension.sdk.api.packets.general.Qos;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
+import com.hivemq.extension.sdk.api.packets.connect.WillPublishPacket;
+import com.hivemq.extension.sdk.api.packets.general.Qos;
 import com.hivemq.extension.sdk.api.packets.publish.PayloadFormatIndicator;
 import com.hivemq.extension.sdk.api.packets.publish.PublishPacket;
 import com.hivemq.extension.sdk.api.services.exception.DoNotImplementException;
@@ -51,8 +51,7 @@ public interface WillPublishBuilder {
      * @throws DoNotImplementException If the {@link PublishPacket} is implemented by the extension.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder fromPublish(@NotNull PublishPacket publishPacket);
+    @NotNull WillPublishBuilder fromPublish(@NotNull PublishPacket publishPacket);
 
     /**
      * Create a {@link WillPublishPacket} from the values of a {@link Publish}.
@@ -63,8 +62,7 @@ public interface WillPublishBuilder {
      * @throws DoNotImplementException If the {@link Publish} is implemented by the extension.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder fromPublish(@NotNull Publish publish);
+    @NotNull WillPublishBuilder fromPublish(@NotNull Publish publish);
 
     /**
      * Create a {@link WillPublishPacket} from the values of another {@link WillPublishPacket}.
@@ -75,8 +73,7 @@ public interface WillPublishBuilder {
      * @throws DoNotImplementException If the {@link WillPublishPacket} is implemented by the extension.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder fromWillPublish(@NotNull WillPublishPacket willPublishPacket);
+    @NotNull WillPublishBuilder fromWillPublish(@NotNull WillPublishPacket willPublishPacket);
 
     /**
      * Sets the quality of service level.
@@ -90,8 +87,7 @@ public interface WillPublishBuilder {
      *                                  2.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder qos(@NotNull Qos qos);
+    @NotNull WillPublishBuilder qos(@NotNull Qos qos);
 
     /**
      * Sets the retain flag.
@@ -103,8 +99,7 @@ public interface WillPublishBuilder {
      * @throws IllegalArgumentException If retain is <b>true</b>, but retained messages are disabled by HiveMQ.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder retain(boolean retain);
+    @NotNull WillPublishBuilder retain(boolean retain);
 
     /**
      * Sets the topic.
@@ -119,8 +114,7 @@ public interface WillPublishBuilder {
      * @throws IllegalArgumentException If the topic length exceeds the configured length for topics. Default is 65535.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder topic(@NotNull String topic);
+    @NotNull WillPublishBuilder topic(@NotNull String topic);
 
     /**
      * Sets the payload format indicator.
@@ -131,15 +125,15 @@ public interface WillPublishBuilder {
      * @return The {@link WillPublishBuilder}.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder payloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
+    @NotNull WillPublishBuilder payloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
 
     /**
      * Sets the message expiry interval in seconds.
      * <p>
      * DEFAULT: <code>no expiry</code>.
      * <p>
-     * The default can be changed by configuring {@code <message-expiry>} in the {@code <mqtt>} config in the config.xml.
+     * The default can be changed by configuring {@code <message-expiry>} in the {@code <mqtt>} config in the
+     * config.xml.
      *
      * @param messageExpiryInterval The message expiry interval to set.
      * @return The {@link WillPublishBuilder}.
@@ -147,8 +141,7 @@ public interface WillPublishBuilder {
      *                                  maximum by HiveMQ. Default is no expiry.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder messageExpiryInterval(long messageExpiryInterval);
+    @NotNull WillPublishBuilder messageExpiryInterval(long messageExpiryInterval);
 
     /**
      * Sets the response topic.
@@ -161,8 +154,7 @@ public interface WillPublishBuilder {
      * @throws IllegalArgumentException If the response topic exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder responseTopic(@Nullable String responseTopic);
+    @NotNull WillPublishBuilder responseTopic(@Nullable String responseTopic);
 
     /**
      * Sets the correlation data.
@@ -173,8 +165,7 @@ public interface WillPublishBuilder {
      * @return The {@link WillPublishBuilder}.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder correlationData(@Nullable ByteBuffer correlationData);
+    @NotNull WillPublishBuilder correlationData(@Nullable ByteBuffer correlationData);
 
     /**
      * Sets the content type.
@@ -187,8 +178,7 @@ public interface WillPublishBuilder {
      * @throws IllegalArgumentException If the content type exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder contentType(@Nullable String contentType);
+    @NotNull WillPublishBuilder contentType(@Nullable String contentType);
 
     /**
      * Sets the payload.
@@ -200,8 +190,7 @@ public interface WillPublishBuilder {
      * @throws NullPointerException If the payload is null.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder payload(@NotNull ByteBuffer payload);
+    @NotNull WillPublishBuilder payload(@NotNull ByteBuffer payload);
 
     /**
      * Adds a user property.
@@ -216,8 +205,7 @@ public interface WillPublishBuilder {
      * @throws IllegalArgumentException If the key or value exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder userProperty(@NotNull String key, @NotNull String value);
+    @NotNull WillPublishBuilder userProperty(@NotNull String key, @NotNull String value);
 
     /**
      * Sets the will delay.
@@ -229,8 +217,7 @@ public interface WillPublishBuilder {
      * @throws IllegalArgumentException If the will delay is less than zero.
      * @since 4.0.0
      */
-    @NotNull
-    WillPublishBuilder willDelay(long willDelay);
+    @NotNull WillPublishBuilder willDelay(long willDelay);
 
     /**
      * Builds the {@link WillPublishPacket} with the provided values or default values.
@@ -240,5 +227,4 @@ public interface WillPublishBuilder {
      * @since 4.0.0
      */
     @NotNull WillPublishPacket build();
-
 }

@@ -40,7 +40,5 @@ public interface PublishInboundInput extends ClientBasedInput {
      * @since 4.0.0
      */
     @Immutable
-    @NotNull
-    PublishPacket getPublishPacket();
-
+    @NotNull PublishPacket getPublishPacket();
 }

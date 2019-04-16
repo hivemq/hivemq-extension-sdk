@@ -16,11 +16,11 @@
 
 package com.hivemq.extension.sdk.api.services.auth.provider;
 
-import com.hivemq.extension.sdk.api.auth.parameter.AuthenticatorProviderInput;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
 import com.hivemq.extension.sdk.api.auth.Authenticator;
 import com.hivemq.extension.sdk.api.auth.SimpleAuthenticator;
+import com.hivemq.extension.sdk.api.auth.parameter.AuthenticatorProviderInput;
 
 /**
  * The authenticator provider allows to implement custom logic for the authentication of connecting MQTT clients.
@@ -46,7 +46,5 @@ public interface AuthenticatorProvider {
      * {@link Authenticator} interface is an error.
      * @since 4.0.0
      */
-    @Nullable
-    Authenticator getAuthenticator(@NotNull final AuthenticatorProviderInput authenticatorProviderInput);
-
+    @Nullable Authenticator getAuthenticator(@NotNull AuthenticatorProviderInput authenticatorProviderInput);
 }

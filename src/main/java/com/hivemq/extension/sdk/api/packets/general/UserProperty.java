@@ -33,13 +33,11 @@ public interface UserProperty {
      * @return The name of the user property.
      * @since 4.0.0
      */
-    @NotNull
-    String getName();
+    @NotNull String getName();
 
     /**
      * @return The value of the user property.
      * @since 4.0.0
      */
-    @NotNull
-    String getValue();
+    @NotNull String getValue();
 }

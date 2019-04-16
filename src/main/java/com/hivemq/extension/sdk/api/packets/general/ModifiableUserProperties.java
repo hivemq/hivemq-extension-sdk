@@ -18,6 +18,7 @@ package com.hivemq.extension.sdk.api.packets.general;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.services.exception.DoNotImplementException;
 
 import java.util.List;
 
@@ -35,7 +36,11 @@ public interface ModifiableUserProperties extends UserProperties {
      * Add a new {@link UserProperty}.
      *
      * @param userProperty The user property to add.
-     * @throws NullPointerException If userProperty is null.
+     * @throws NullPointerException     If userProperty is null.
+     * @throws NullPointerException     If the user property's name or value is null.
+     * @throws IllegalArgumentException If the user property's name or value is not a valid UTF-8 string.
+     * @throws IllegalArgumentException If the user property's name or value exceeds the UTF-8 string length limit.
+     * @throws DoNotImplementException  If the {@link UserProperty} is implemented by the extension.
      * @since 4.0.0
      */
     void addUserProperty(@NotNull UserProperty userProperty);
@@ -45,7 +50,9 @@ public interface ModifiableUserProperties extends UserProperties {
      *
      * @param name  The name of the user property to add.
      * @param value The name of the user property to add.
-     * @throws NullPointerException If any parameter is null.
+     * @throws NullPointerException     If the name or value is null.
+     * @throws IllegalArgumentException If the name or value is not a valid UTF-8 string.
+     * @throws IllegalArgumentException If the name or value exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
     void addUserProperty(@NotNull String name, @NotNull String value);
@@ -55,7 +62,9 @@ public interface ModifiableUserProperties extends UserProperties {
      *
      * @param name  The name of the user property to remove.
      * @param value The value of the user property to remove.
-     * @throws NullPointerException If any parameter is null.
+     * @throws NullPointerException     If the name or value is null.
+     * @throws IllegalArgumentException If the name or value is not a valid UTF-8 string.
+     * @throws IllegalArgumentException If the name or value exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
     void removeUserProperty(@NotNull String name, @NotNull String value);
@@ -65,11 +74,12 @@ public interface ModifiableUserProperties extends UserProperties {
      *
      * @param name The name of the user properties to remove.
      * @return A list of the removed user properties.
-     * @throws NullPointerException If name is null.
+     * @throws NullPointerException     If the name is null.
+     * @throws IllegalArgumentException If the name is not a valid UTF-8 string.
+     * @throws IllegalArgumentException If the name exceeds the UTF-8 string length limit.
      * @since 4.0.0
      */
-    @NotNull
-    List<UserProperty> removeName(@NotNull String name);
+    @NotNull List<@NotNull UserProperty> removeName(@NotNull String name);
 
     /**
      * Removes all user properties.
@@ -77,5 +87,4 @@ public interface ModifiableUserProperties extends UserProperties {
      * @since 4.0.0
      */
     void clear();
-
 }

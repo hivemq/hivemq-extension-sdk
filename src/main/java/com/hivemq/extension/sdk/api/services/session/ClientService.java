@@ -16,16 +16,16 @@
 
 package com.hivemq.extension.sdk.api.services.session;
 
-import com.hivemq.extension.sdk.api.services.exception.NoSuchClientIdException;
-import com.hivemq.extension.sdk.api.services.exception.RateLimitExceededException;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.services.exception.NoSuchClientIdException;
+import com.hivemq.extension.sdk.api.services.exception.RateLimitExceededException;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * Through this client service a extension can query details about connected or disconnected clients (with a persistent
+ * Through this client service an extension can query details about connected or disconnected clients (with a persistent
  * session) from the HiveMQ core.
  *
  * @author Lukas Brandl
@@ -37,8 +37,7 @@ import java.util.concurrent.CompletableFuture;
 public interface ClientService {
 
     /**
-     * Check if a client with a given identifier is currently connected to this HiveMQ broker instance or any other
-     * instance in the cluster.
+     * Check if a client with a given identifier is currently connected
      * <p>
      * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
      * exceeded.
@@ -48,13 +47,10 @@ public interface ClientService {
      * <b>false</b> otherwise.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Boolean> isClientConnected(@NotNull String clientId);
+    @NotNull CompletableFuture<Boolean> isClientConnected(@NotNull String clientId);
 
     /**
      * Returns additional client information about a given client with a given client identifier.
-     * <p>
-     * This method will also get client information from other cluster nodes if needed.
      * <p>
      * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
      * exceeded.
@@ -63,8 +59,7 @@ public interface ClientService {
      * @return A {@link CompletableFuture} which contains the {@link SessionInformation} for the client, if the session exist.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Optional<SessionInformation>> getSession(@NotNull String clientId);
+    @NotNull CompletableFuture<Optional<SessionInformation>> getSession(@NotNull String clientId);
 
     /**
      * Forcefully disconnect a client with the specified clientId.
@@ -80,8 +75,7 @@ public interface ClientService {
      * disconnected and <b>false</b> if no client with that id was found.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Boolean> disconnectClient(@NotNull String clientId);
+    @NotNull CompletableFuture<Boolean> disconnectClient(@NotNull String clientId);
 
     /**
      * Forcefully disconnect a client with the specified clientId.
@@ -99,8 +93,7 @@ public interface ClientService {
      * disconnected and false if no client with that id was found.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Boolean> disconnectClient(@NotNull String clientId, boolean preventWillMessage);
+    @NotNull CompletableFuture<Boolean> disconnectClient(@NotNull String clientId, boolean preventWillMessage);
 
     /**
      * Invalidates the client session for a client with the given client identifier. If the client is currently
@@ -117,7 +110,5 @@ public interface ClientService {
      * actively disconnected by the broker otherwise <b>false</b>.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Boolean> invalidateSession(@NotNull String clientId);
-
+    @NotNull CompletableFuture<Boolean> invalidateSession(@NotNull String clientId);
 }

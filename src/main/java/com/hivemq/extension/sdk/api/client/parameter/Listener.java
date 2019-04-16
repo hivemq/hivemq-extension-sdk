@@ -42,8 +42,7 @@ public interface Listener {
      * @return The bind address of the listener.
      * @since 4.0.0
      */
-    @NotNull
-    String getBindAddress();
+    @NotNull String getBindAddress();
 
     /**
      * The type of the listener the client uses for the connection to HiveMQ.
@@ -51,7 +50,5 @@ public interface Listener {
      * @return The type of the listener.
      * @since 4.0.0
      */
-    @NotNull
-    ListenerType getListenerType();
-
+    @NotNull ListenerType getListenerType();
 }

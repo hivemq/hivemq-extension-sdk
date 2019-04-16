@@ -53,5 +53,4 @@ public interface TlsInformation {
      * @since 4.0.0
      */
     @NotNull String getProtocol();
-
 }

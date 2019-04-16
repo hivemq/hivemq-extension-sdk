@@ -61,9 +61,8 @@ public interface ClientContext {
      * @return List of Interceptors for this client.
      * @since 4.0.0
      */
-    @NotNull
     @Immutable
-    List<Interceptor> getAllInterceptors();
+    @NotNull List<@NotNull Interceptor> getAllInterceptors();
 
     /**
      * Returns all {@link PublishInboundInterceptor} which are registered for this client by this extension.
@@ -71,9 +70,8 @@ public interface ClientContext {
      * @return List of PublishInboundInterceptors for this client.
      * @since 4.0.0
      */
-    @NotNull
     @Immutable
-    List<PublishInboundInterceptor> getPublishInboundInterceptors();
+    @NotNull List<@NotNull PublishInboundInterceptor> getPublishInboundInterceptors();
 
     /**
      * The default permissions for this client. Default permissions are automatically applied by HiveMQ for every
@@ -82,6 +80,5 @@ public interface ClientContext {
      * @return The {@link ModifiableDefaultPermissions}.
      * @since 4.0.0
      */
-    @NotNull
-    ModifiableDefaultPermissions getDefaultPermissions();
+    @NotNull ModifiableDefaultPermissions getDefaultPermissions();
 }

@@ -36,8 +36,7 @@ public interface TopicPermission {
      * @return The topic filter for this permission.
      * @since 4.0.0
      */
-    @NotNull
-    String getTopicFilter();
+    @NotNull String getTopicFilter();
 
     /**
      * If the PUBLISH/Subscription matches all criteria defined in the topic permission, the permission type decides if
@@ -46,8 +45,7 @@ public interface TopicPermission {
      * @return The {@link PermissionType} for this permission.
      * @since 4.0.0
      */
-    @NotNull
-    PermissionType getType();
+    @NotNull PermissionType getType();
 
     /**
      * The quality of service (Qos) levels are used to define for which QoS levels the topic permission is applied.
@@ -55,8 +53,7 @@ public interface TopicPermission {
      * @return The {@link Qos} for this permission.
      * @since 4.0.0
      */
-    @NotNull
-    Qos getQos();
+    @NotNull Qos getQos();
 
     /**
      * The activity is used to define for which type of the action (PUBLISH/Subscription) the topic permission is
@@ -65,8 +62,7 @@ public interface TopicPermission {
      * @return The {@link MqttActivity} for this permission.
      * @since 4.0.0
      */
-    @NotNull
-    MqttActivity getActivity();
+    @NotNull MqttActivity getActivity();
 
     /**
      * Retain is used to check for what type of PUBLISH message (normal/retained message) the topic permission is
@@ -75,8 +71,7 @@ public interface TopicPermission {
      * @return The {@link Retain} for this permission. Only used for PUBLISH.
      * @since 4.0.0
      */
-    @NotNull
-    Retain getPublishRetain();
+    @NotNull Retain getPublishRetain();
 
     /**
      * The shared subscription is used to check for what type of Subscription (normal/shared subscription) the topic
@@ -85,8 +80,7 @@ public interface TopicPermission {
      * @return The {@link SharedSubscription} for this permission. Only used for Subscription.
      * @since 4.0.0
      */
-    @NotNull
-    SharedSubscription getSharedSubscription();
+    @NotNull SharedSubscription getSharedSubscription();
 
     /**
      * The shared group is used to check for what shared group the topic permission is applied.
@@ -94,8 +88,7 @@ public interface TopicPermission {
      * @return The shared group that this permission matches. Only used for shared subscriptions.
      * @since 4.0.0
      */
-    @NotNull
-    String getSharedGroup();
+    @NotNull String getSharedGroup();
 
     /**
      * Represents if the PUBLISH/Subscription that matches the topic permission is allowed or denied.
@@ -244,5 +237,4 @@ public interface TopicPermission {
          */
         ALL
     }
-
 }

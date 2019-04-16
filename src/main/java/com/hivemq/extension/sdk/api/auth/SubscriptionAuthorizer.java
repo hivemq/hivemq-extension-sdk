@@ -16,9 +16,9 @@
 
 package com.hivemq.extension.sdk.api.auth;
 
+import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.auth.parameter.SubscriptionAuthorizerInput;
 import com.hivemq.extension.sdk.api.auth.parameter.SubscriptionAuthorizerOutput;
-import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
  * Interface for the subscription authorization.
@@ -39,7 +39,8 @@ public interface SubscriptionAuthorizer extends Authorizer {
      * Called for each Subscription (Topic) in a SUBSCRIBE packet, that the {@link SubscriptionAuthorizer} is delegated
      * to authorize.
      * <p>
-     * When the extension is enabled after HiveMQ is already running, this method will also be called for future SUBSCRIBEs
+     * When the extension is enabled after HiveMQ is already running, this method will also be called for future
+     * SUBSCRIBEs
      * of clients that are already connected.
      *
      * @param subscriptionAuthorizerInput  The {@link SubscriptionAuthorizerInput}.

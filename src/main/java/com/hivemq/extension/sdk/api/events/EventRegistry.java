@@ -16,10 +16,10 @@
 
 package com.hivemq.extension.sdk.api.events;
 
-import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
-import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListenerProvider;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
+import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListenerProvider;
 
 /**
  * Registry that allows the registration of different Event Listeners. Event Listeners are used to be informed about
@@ -39,5 +39,4 @@ public interface EventRegistry {
      * @since 4.0.0
      */
     void setClientLifecycleEventListener(@NotNull ClientLifecycleEventListenerProvider clientLifecycleEventListenerProvider);
-
 }

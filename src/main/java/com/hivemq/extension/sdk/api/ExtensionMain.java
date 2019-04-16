@@ -30,7 +30,7 @@ import com.hivemq.extension.sdk.api.parameter.ExtensionStopOutput;
  * The main starting point for each HiveMQ extension.
  * <p>
  * Each extension must implement at least this interface.
- * The implementation of this interface is used by HiveMQ to load and enable/disable a extension.
+ * The implementation of this interface is used by HiveMQ to load and enable/disable an extension.
  *
  * @author Christoph Schäbel
  * @author Georg Held
@@ -39,7 +39,7 @@ import com.hivemq.extension.sdk.api.parameter.ExtensionStopOutput;
 public interface ExtensionMain {
 
     /**
-     * This method is called by HiveMQ if a extension is enabled.<br/>
+     * This method is called by HiveMQ if an extension is enabled.<br/>
      * It can be used to setup the extension and register client interceptors and callbacks with HiveMQ.
      * <p>
      * If this method returns HiveMQ assumes that this extension is finished starting up.
@@ -60,7 +60,7 @@ public interface ExtensionMain {
     void extensionStart(@NotNull ExtensionStartInput extensionStartInput, @NotNull ExtensionStartOutput extensionStartOutput);
 
     /**
-     * This method is called by HiveMQ if a extension is disabled.
+     * This method is called by HiveMQ if an extension is disabled.
      * It can be used to shut down the extension.<br/>
      * {@link Interceptor}s, {@link Authorizer} and {@link Authenticator} from this extension are automatically
      * de-registered by HiveMQ and do not need to be de-registered manually.
@@ -78,5 +78,4 @@ public interface ExtensionMain {
      * @since 4.0.0
      */
     void extensionStop(@NotNull ExtensionStopInput extensionStopInput, @NotNull ExtensionStopOutput extensionStopOutput);
-
 }

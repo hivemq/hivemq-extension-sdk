@@ -16,10 +16,10 @@
 
 package com.hivemq.extension.sdk.api.interceptor.publish;
 
-import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishInboundInput;
-import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishInboundOutput;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.interceptor.Interceptor;
+import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishInboundInput;
+import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishInboundOutput;
 
 /**
  * Interface for the publish inbound interception.
@@ -41,7 +41,8 @@ public interface PublishInboundInterceptor extends Interceptor {
      * When a {@link PublishInboundInterceptor} is set through any extension,
      * this method gets called for every inbound PUBLISH packet from any MQTT client.
      * <p>
-     * When the extension is enabled after HiveMQ is already running, this method will also be called for future PUBLISHes
+     * When the extension is enabled after HiveMQ is already running, this method will also be called for future
+     * PUBLISHes
      * of clients that are already connected.
      *
      * @param publishInboundInput  The {@link PublishInboundInput} parameter.

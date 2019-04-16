@@ -16,20 +16,20 @@
 
 package com.hivemq.extension.sdk.api.services.auth;
 
-import com.hivemq.extension.sdk.api.auth.SubscriptionAuthorizer;
-import com.hivemq.extension.sdk.api.services.auth.provider.AuthorizerProvider;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.auth.PublishAuthorizer;
+import com.hivemq.extension.sdk.api.auth.SubscriptionAuthorizer;
 import com.hivemq.extension.sdk.api.services.Services;
 import com.hivemq.extension.sdk.api.services.auth.provider.AuthenticatorProvider;
+import com.hivemq.extension.sdk.api.services.auth.provider.AuthorizerProvider;
 
 /**
  * The SecurityRegistry allows extensions to define the authentication and authorization of MQTT clients.
  * <p>
  * It can be accessed by {@link Services#securityRegistry()}.
  * <p>
- * A extension can only set one {@link AuthenticatorProvider} and one {@link AuthorizerProvider}.
+ * An extension can only set one {@link AuthenticatorProvider} and one {@link AuthorizerProvider}.
  * <p>
  * That means for authorizing PUBLISH and SUBSCRIBE packets the {@link AuthorizerProvider} must implement {@link
  * PublishAuthorizer} and {@link SubscriptionAuthorizer}.

@@ -45,5 +45,4 @@ public interface InitializerRegistry {
      * @since 4.0.0
      */
     void setClientInitializer(@NotNull ClientInitializer initializer);
-
 }

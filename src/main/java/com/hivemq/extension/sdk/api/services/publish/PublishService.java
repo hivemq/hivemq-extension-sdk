@@ -46,8 +46,7 @@ public interface PublishService {
      * @throws NullPointerException If the given publish is <code>null</code>.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Void> publish(@NotNull Publish publish);
+    @NotNull CompletableFuture<Void> publish(@NotNull Publish publish);
 
 
     /**
@@ -73,6 +72,5 @@ public interface PublishService {
      * @throws IllegalArgumentException If the given client id is empty.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<PublishToClientResult> publishToClient(@NotNull Publish publish, @NotNull String clientId);
+    @NotNull CompletableFuture<PublishToClientResult> publishToClient(@NotNull Publish publish, @NotNull String clientId);
 }

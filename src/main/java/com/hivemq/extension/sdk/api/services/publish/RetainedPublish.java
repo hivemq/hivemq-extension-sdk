@@ -17,6 +17,7 @@
 package com.hivemq.extension.sdk.api.services.publish;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.services.builder.Builders;
 import com.hivemq.extension.sdk.api.services.builder.RetainedPublishBuilder;
 
@@ -29,7 +30,7 @@ public interface RetainedPublish extends Publish {
     /**
      * @return A new {@link RetainedPublishBuilder} to create a retained publish.
      */
-    static RetainedPublishBuilder builder() {
+    static @NotNull RetainedPublishBuilder builder() {
         return Builders.retainedPublish();
     }
 
@@ -37,5 +38,4 @@ public interface RetainedPublish extends Publish {
     default boolean getRetain() {
         return true;
     }
-
 }

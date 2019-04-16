@@ -23,7 +23,6 @@ import com.hivemq.extension.sdk.api.packets.general.DisconnectedReasonCode;
 import com.hivemq.extension.sdk.api.packets.general.UserProperties;
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
-
 import java.util.Optional;
 
 /**

@@ -39,6 +39,5 @@ public interface AuthenticatorProviderInput extends ClientBasedInput {
      * @return The {@link ServerInformation} of the input.
      * @since 4.0.0
      */
-    @NotNull
-    ServerInformation getServerInformation();
+    @NotNull ServerInformation getServerInformation();
 }

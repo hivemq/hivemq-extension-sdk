@@ -21,7 +21,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
  * This exception is used to signal that a given interface,
- * annotated with {@link DoNotImplement} was falsely implemented by a extension.
+ * annotated with {@link DoNotImplement} was falsely implemented by an extension.
  *
  * @author Florian Limpöck
  * @since 4.0.0
@@ -63,8 +63,7 @@ public class DoNotImplementException extends RuntimeException {
     }
 
     @Override
-    @NotNull
-    public synchronized Throwable fillInStackTrace() {
+    public synchronized @NotNull Throwable fillInStackTrace() {
         if (fillInStacktrace) {
             return super.fillInStackTrace();
         }
@@ -77,8 +76,7 @@ public class DoNotImplementException extends RuntimeException {
      * @return The name of the implemented class.
      * @since 4.0.0
      */
-    @NotNull
-    public String getImplementedClass() {
+    public @NotNull String getImplementedClass() {
         return implementedClass;
     }
 }

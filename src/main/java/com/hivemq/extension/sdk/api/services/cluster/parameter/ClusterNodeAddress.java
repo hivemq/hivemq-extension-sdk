@@ -55,8 +55,7 @@ public class ClusterNodeAddress {
      * @return The host name.
      * @since 4.0.0
      */
-    @NotNull
-    public String getHost() {
+    public @NotNull String getHost() {
         return host;
     }
 
@@ -93,8 +92,7 @@ public class ClusterNodeAddress {
     }
 
     @Override
-    @NotNull
-    public String toString() {
+    public @NotNull String toString() {
         return host + ":" + port;
     }
 }

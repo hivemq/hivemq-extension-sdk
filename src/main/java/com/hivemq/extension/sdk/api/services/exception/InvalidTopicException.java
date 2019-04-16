@@ -63,8 +63,7 @@ public class InvalidTopicException extends Exception {
     }
 
     @Override
-    @NotNull
-    public synchronized Throwable fillInStackTrace() {
+    public synchronized @NotNull Throwable fillInStackTrace() {
         if (fillInStacktrace) {
             return super.fillInStackTrace();
         }
@@ -77,8 +76,7 @@ public class InvalidTopicException extends Exception {
      * @return The invalid topic filter.
      * @since 4.0.0
      */
-    @NotNull
-    public String getTopicFilter() {
+    public @NotNull String getTopicFilter() {
         return topicFilter;
     }
 }

@@ -51,5 +51,4 @@ public enum ListenerType {
      * @since 4.0.0
      */
     TLS_WEBSOCKET_LISTENER
-
 }

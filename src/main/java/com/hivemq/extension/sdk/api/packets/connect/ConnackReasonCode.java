@@ -175,5 +175,4 @@ public enum ConnackReasonCode {
      * @since 4.0.0
      */
     CONNECTION_RATE_EXCEEDED
-
 }

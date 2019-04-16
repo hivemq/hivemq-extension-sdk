@@ -16,11 +16,11 @@
 
 package com.hivemq.extension.sdk.api.auth.parameter;
 
-import com.hivemq.extension.sdk.api.auth.SubscriptionAuthorizer;
-import com.hivemq.extension.sdk.api.packets.general.UserProperties;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.auth.SubscriptionAuthorizer;
+import com.hivemq.extension.sdk.api.packets.general.UserProperties;
 import com.hivemq.extension.sdk.api.packets.subscribe.Subscription;
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
@@ -45,8 +45,7 @@ public interface SubscriptionAuthorizerInput extends ClientBasedInput {
      * @return The {@link UserProperties} of the SUBSCRIBE packet.
      * @since 4.0.0
      */
-    @NotNull
-    UserProperties getUserProperties();
+    @NotNull UserProperties getUserProperties();
 
     /**
      * If this property is present, it contains the subscription identifier for the SUBSCRIBE packet.
@@ -56,8 +55,7 @@ public interface SubscriptionAuthorizerInput extends ClientBasedInput {
      * @return An {@link Optional} containing the subscription identifier of the SUBSCRIBE packet if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<Integer> getSubscriptionIdentifier();
+    @NotNull Optional<Integer> getSubscriptionIdentifier();
 
     /**
      * Get the unmodifiable subscription that has to be authorized.
@@ -66,6 +64,5 @@ public interface SubscriptionAuthorizerInput extends ClientBasedInput {
      * @since 4.0.0
      */
     @Immutable
-    @NotNull
-    Subscription getSubscription();
+    @NotNull Subscription getSubscription();
 }

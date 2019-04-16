@@ -42,8 +42,7 @@ public interface AsyncOutput<T> {
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
-    @NotNull
-    Async<T> async(@NotNull Duration timeout, @NotNull TimeoutFallback fallback);
+    @NotNull Async<T> async(@NotNull Duration timeout, @NotNull TimeoutFallback fallback);
 
     /**
      * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled as failed.
@@ -54,6 +53,5 @@ public interface AsyncOutput<T> {
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
-    @NotNull
-    Async<T> async(@NotNull Duration timeout);
+    @NotNull Async<T> async(@NotNull Duration timeout);
 }

@@ -38,8 +38,7 @@ public interface ConnectionInformation {
      * @return The {@link MqttVersion} of the client. V_3_1, V_3_1_1 or V_5.
      * @since 4.0.0
      */
-    @NotNull
-    MqttVersion getMqttVersion();
+    @NotNull MqttVersion getMqttVersion();
 
     /**
      * The client's IP address.
@@ -47,8 +46,7 @@ public interface ConnectionInformation {
      * @return An {@link Optional} of the {@link InetAddress} of the client.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<InetAddress> getInetAddress();
+    @NotNull Optional<InetAddress> getInetAddress();
 
     /**
      * The listener of HiveMQ the client is connected to.
@@ -56,8 +54,7 @@ public interface ConnectionInformation {
      * @return An {@link Optional} of the {@link Listener} of the client.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<Listener> getListener();
+    @NotNull Optional<Listener> getListener();
 
     /**
      * The proxy protocol information for this connection. Only available if the proxy protocol is enabled.
@@ -65,8 +62,7 @@ public interface ConnectionInformation {
      * @return An {@link Optional} of the {@link ProxyInformation} of the client.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<ProxyInformation> getProxyInformation();
+    @NotNull Optional<ProxyInformation> getProxyInformation();
 
     /**
      * A store where client specific information can be stored for the duration of the connection.
@@ -74,8 +70,7 @@ public interface ConnectionInformation {
      * @return The {@link ConnectionAttributeStore} of the client.
      * @since 4.0.0
      */
-    @NotNull
-    ConnectionAttributeStore getConnectionAttributeStore();
+    @NotNull ConnectionAttributeStore getConnectionAttributeStore();
 
     /**
      * Information about TLS, should the client be connected to HiveMQ via an TLS listener.
@@ -83,7 +78,5 @@ public interface ConnectionInformation {
      * @return An {@link Optional} of the {@link TlsInformation} of the client.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<TlsInformation> getTlsInformation();
-
+    @NotNull Optional<TlsInformation> getTlsInformation();
 }

@@ -29,8 +29,8 @@ import com.hivemq.extension.sdk.api.packets.general.Qos;
  * @author Christoph Schäbel
  * @since 4.0.0
  */
-@DoNotImplement
 @Immutable
+@DoNotImplement
 public interface Subscription {
 
     /**
@@ -88,5 +88,4 @@ public interface Subscription {
      * @since 4.0.0
      */
     boolean getNoLocal();
-
 }

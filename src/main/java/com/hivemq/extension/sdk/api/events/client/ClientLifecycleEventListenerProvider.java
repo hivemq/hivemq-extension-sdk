@@ -16,9 +16,9 @@
 
 package com.hivemq.extension.sdk.api.events.client;
 
-import com.hivemq.extension.sdk.api.events.client.parameters.ClientLifecycleEventListenerProviderInput;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
+import com.hivemq.extension.sdk.api.events.client.parameters.ClientLifecycleEventListenerProviderInput;
 
 /**
  * The {@link ClientLifecycleEventListenerProvider} allows to provide an listener that listens to MQTT client based
@@ -42,7 +42,5 @@ public interface ClientLifecycleEventListenerProvider {
      * has the same effect as if this provider would had not been set for the connecting client.
      * @since 4.0.0
      */
-    @Nullable
-    ClientLifecycleEventListener getClientLifecycleEventListener(@NotNull final ClientLifecycleEventListenerProviderInput clientLifecycleEventListenerProviderInput);
-
+    @Nullable ClientLifecycleEventListener getClientLifecycleEventListener(@NotNull final ClientLifecycleEventListenerProviderInput clientLifecycleEventListenerProviderInput);
 }

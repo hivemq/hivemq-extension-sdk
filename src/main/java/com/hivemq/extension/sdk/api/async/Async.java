@@ -42,8 +42,7 @@ public interface Async<T> {
      * @return The original output object.
      * @since 4.0.0
      */
-    @NotNull
-    T getOutput();
+    @NotNull T getOutput();
 
     /**
      * Return the current status of the async option.
@@ -51,8 +50,7 @@ public interface Async<T> {
      * @return The runtime status of the async option.
      * @since 4.0.0
      */
-    @NotNull
-    Status getStatus();
+    @NotNull Status getStatus();
 
     /**
      * Information about the runtime status of an async option.

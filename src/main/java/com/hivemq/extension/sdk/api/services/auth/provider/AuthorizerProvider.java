@@ -16,12 +16,12 @@
 
 package com.hivemq.extension.sdk.api.services.auth.provider;
 
-import com.hivemq.extension.sdk.api.auth.PublishAuthorizer;
-import com.hivemq.extension.sdk.api.auth.SubscriptionAuthorizer;
-import com.hivemq.extension.sdk.api.auth.parameter.AuthorizerProviderInput;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
 import com.hivemq.extension.sdk.api.auth.Authorizer;
+import com.hivemq.extension.sdk.api.auth.PublishAuthorizer;
+import com.hivemq.extension.sdk.api.auth.SubscriptionAuthorizer;
+import com.hivemq.extension.sdk.api.auth.parameter.AuthorizerProviderInput;
 
 /**
  * The authorizer provider allows to implement custom logic for the authorization for specific actions (i.e
@@ -49,6 +49,5 @@ public interface AuthorizerProvider {
      * {@link Authorizer} interface is an error.
      * @since 4.0.0
      */
-    @Nullable
-    Authorizer getAuthorizer(final @NotNull AuthorizerProviderInput authorizerProviderInput);
+    @Nullable Authorizer getAuthorizer(@NotNull AuthorizerProviderInput authorizerProviderInput);
 }

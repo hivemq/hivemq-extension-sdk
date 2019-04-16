@@ -48,8 +48,7 @@ public interface ProxyInformation {
      * @return The original source address of the MQTT client.
      * @since 4.0.0
      */
-    @NotNull
-    InetAddress getSourceAddress();
+    @NotNull InetAddress getSourceAddress();
 
     /**
      * @return The port of the load balancer that is used to proxy the client connection.
@@ -61,8 +60,7 @@ public interface ProxyInformation {
      * @return The address of the load balancer that is used to proxy the client connection.
      * @since 4.0.0
      */
-    @NotNull
-    InetAddress getProxyAddress();
+    @NotNull InetAddress getProxyAddress();
 
     /**
      * If the PROXY protocol implementation of the load balancer supports TLVs and proxies
@@ -71,8 +69,7 @@ public interface ProxyInformation {
      * @return An {@link Optional} that contains the original TLS version if supported by the load balancer.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getTlsVersion();
+    @NotNull Optional<String> getTlsVersion();
 
     /**
      * If the PROXY protocol implementation of the load balancer supports TLVs and proxies
@@ -83,8 +80,7 @@ public interface ProxyInformation {
      * @return An {@link Optional} that contains the Common Name of the X509 client certificate.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getSslCertificateCN();
+    @NotNull Optional<String> getSslCertificateCN();
 
     /**
      * HiveMQ supports arbitrary TLVs, even TLVs that aren't specified by the PROXY protocol. This map
@@ -95,6 +91,5 @@ public interface ProxyInformation {
      * @return A {@link Map} with raw TLVs.
      * @since 4.0.0
      */
-    @NotNull
-    Map<Byte, ByteBuffer> getRawTLVs();
+    @NotNull Map<Byte, ByteBuffer> getRawTLVs();
 }

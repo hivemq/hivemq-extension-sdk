@@ -16,9 +16,9 @@
 
 package com.hivemq.extension.sdk.api.services.cluster;
 
+import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.services.cluster.parameter.ClusterDiscoveryInput;
 import com.hivemq.extension.sdk.api.services.cluster.parameter.ClusterDiscoveryOutput;
-import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
  * This callback is meant to regularly discover the addresses of all available HiveMQ cluster nodes.

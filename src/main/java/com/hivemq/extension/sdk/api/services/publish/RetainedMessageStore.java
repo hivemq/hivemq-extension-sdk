@@ -17,10 +17,10 @@
 package com.hivemq.extension.sdk.api.services.publish;
 
 
-import com.hivemq.extension.sdk.api.services.exception.RateLimitExceededException;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.services.exception.DoNotImplementException;
+import com.hivemq.extension.sdk.api.services.exception.RateLimitExceededException;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -45,8 +45,7 @@ public interface RetainedMessageStore {
      * @return A {@link CompletableFuture} which contains the retained message for the specific topic or <code>null</code>.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Optional<RetainedPublish>> getRetainedMessage(@NotNull String topic);
+    @NotNull CompletableFuture<Optional<RetainedPublish>> getRetainedMessage(@NotNull String topic);
 
     /**
      * Removes the retained message for the given topic.
@@ -59,8 +58,7 @@ public interface RetainedMessageStore {
      * @return A {@link CompletableFuture} which returns after removal.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Void> remove(@NotNull String topic);
+    @NotNull CompletableFuture<Void> remove(@NotNull String topic);
 
     /**
      * Removes all retained messages from the message store.
@@ -71,8 +69,7 @@ public interface RetainedMessageStore {
      * @return A {@link CompletableFuture} which returns after removal.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Void> clear();
+    @NotNull CompletableFuture<Void> clear();
 
     /**
      * This method adds or replaces a retained message.
@@ -87,7 +84,5 @@ public interface RetainedMessageStore {
      * @return A {@link CompletableFuture} which returns after adding or replacing the retained publish.
      * @since 4.0.0
      */
-    @NotNull
-    CompletableFuture<Void> addOrReplace(@NotNull RetainedPublish retainedPublish);
-
+    @NotNull CompletableFuture<Void> addOrReplace(@NotNull RetainedPublish retainedPublish);
 }

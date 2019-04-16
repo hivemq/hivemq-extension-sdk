@@ -17,6 +17,7 @@
 package com.hivemq.extension.sdk.api.packets.connect;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.packets.publish.PublishPacket;
 import com.hivemq.extension.sdk.api.services.builder.Builders;
 import com.hivemq.extension.sdk.api.services.builder.WillPublishBuilder;
@@ -36,7 +37,7 @@ public interface WillPublishPacket extends PublishPacket {
      * @return A new {@link WillPublishBuilder} to create a Will Publish.
      * @since 4.0.0
      */
-    static WillPublishBuilder builder() {
+    static @NotNull WillPublishBuilder builder() {
         return Builders.willPublish();
     }
 

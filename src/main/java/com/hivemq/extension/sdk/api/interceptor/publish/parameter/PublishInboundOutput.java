@@ -16,14 +16,14 @@
 
 package com.hivemq.extension.sdk.api.interceptor.publish.parameter;
 
-import com.hivemq.extension.sdk.api.interceptor.publish.PublishInboundInterceptor;
-import com.hivemq.extension.sdk.api.packets.publish.AckReasonCode;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
 import com.hivemq.extension.sdk.api.async.Async;
 import com.hivemq.extension.sdk.api.async.AsyncOutput;
 import com.hivemq.extension.sdk.api.async.TimeoutFallback;
+import com.hivemq.extension.sdk.api.interceptor.publish.PublishInboundInterceptor;
+import com.hivemq.extension.sdk.api.packets.publish.AckReasonCode;
 import com.hivemq.extension.sdk.api.packets.publish.ModifiablePublishPacket;
 
 import java.time.Duration;
@@ -55,8 +55,7 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      * @return A modifiable publish packet.
      * @since 4.0.0
      */
-    @NotNull
-    ModifiablePublishPacket getPublishPacket();
+    @NotNull ModifiablePublishPacket getPublishPacket();
 
     /**
      * Prevent the onward delivery of the PUBLISH packet with reason code
@@ -103,9 +102,8 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
-    @NotNull
-    Async<PublishInboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
-                                      @NotNull AckReasonCode reasonCode, @Nullable String reasonString);
+    @NotNull Async<PublishInboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
+                                               @NotNull AckReasonCode reasonCode, @Nullable String reasonString);
 
     /**
      * If the timeout is expired before {@link Async#resume()} is called then the outcome is
@@ -121,9 +119,6 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
-    @NotNull
-    Async<PublishInboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
-                                      @NotNull AckReasonCode reasonCode);
-
-
+    @NotNull Async<PublishInboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
+                                               @NotNull AckReasonCode reasonCode);
 }

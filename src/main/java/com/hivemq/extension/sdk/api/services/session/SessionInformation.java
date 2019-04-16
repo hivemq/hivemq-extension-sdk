@@ -32,8 +32,7 @@ public interface SessionInformation {
      * @return The clients unique identifier.
      * @since 4.0.0
      */
-    @NotNull
-    String getClientIdentifier();
+    @NotNull String getClientIdentifier();
 
     /**
      * The session expiry interval, when the session information of the client will be deleted after the client

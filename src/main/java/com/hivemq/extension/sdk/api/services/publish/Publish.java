@@ -16,13 +16,13 @@
 
 package com.hivemq.extension.sdk.api.services.publish;
 
-import com.hivemq.extension.sdk.api.packets.general.Qos;
-import com.hivemq.extension.sdk.api.packets.general.UserProperties;
-import com.hivemq.extension.sdk.api.services.builder.Builders;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.packets.general.Qos;
+import com.hivemq.extension.sdk.api.packets.general.UserProperties;
 import com.hivemq.extension.sdk.api.packets.publish.PayloadFormatIndicator;
+import com.hivemq.extension.sdk.api.services.builder.Builders;
 import com.hivemq.extension.sdk.api.services.builder.PublishBuilder;
 
 import java.nio.ByteBuffer;
@@ -53,8 +53,7 @@ public interface Publish {
      * @return The qos.
      * @since 4.0.0
      */
-    @NotNull
-    Qos getQos();
+    @NotNull Qos getQos();
 
     /**
      * If <b>true</b> this message is a retained message, for <b>false</b> this is just a normal publish.
@@ -70,8 +69,7 @@ public interface Publish {
      * @return The topic.
      * @since 4.0.0
      */
-    @NotNull
-    String getTopic();
+    @NotNull String getTopic();
 
     /**
      * If this property is present, this is the payload format indicator.
@@ -79,8 +77,7 @@ public interface Publish {
      * @return An {@link Optional} that contains the payload format indicator if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<PayloadFormatIndicator> getPayloadFormatIndicator();
+    @NotNull Optional<PayloadFormatIndicator> getPayloadFormatIndicator();
 
     /**
      * If this property is present, this is the message expiry interval.
@@ -88,8 +85,7 @@ public interface Publish {
      * @return An {@link Optional} that contains the message expiry interval if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<Long> getMessageExpiryInterval();
+    @NotNull Optional<Long> getMessageExpiryInterval();
 
     /**
      * If this property is present, this is the response topic.
@@ -97,8 +93,7 @@ public interface Publish {
      * @return An {@link Optional} that contains the response topic if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getResponseTopic();
+    @NotNull Optional<String> getResponseTopic();
 
     /**
      * If this property is present, this is the correlation data.
@@ -106,9 +101,7 @@ public interface Publish {
      * @return An {@link Optional} that contains the correlation data if present.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull
-    Optional<ByteBuffer> getCorrelationData();
+    @NotNull Optional<@Immutable ByteBuffer> getCorrelationData();
 
     /**
      * If this property is present, this is the content type.
@@ -116,8 +109,7 @@ public interface Publish {
      * @return An {@link Optional} that contains the content type if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getContentType();
+    @NotNull Optional<String> getContentType();
 
     /**
      * If this property is present, this is the payload.
@@ -125,9 +117,7 @@ public interface Publish {
      * @return An {@link Optional} that contains the payload if present.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull
-    Optional<ByteBuffer> getPayload();
+    @NotNull Optional<@Immutable ByteBuffer> getPayload();
 
     /**
      * The {@link UserProperties} of the PUBLISH.
@@ -136,6 +126,5 @@ public interface Publish {
      * @since 4.0.0
      */
     @Immutable
-    @NotNull
-    UserProperties getUserProperties();
+    @NotNull UserProperties getUserProperties();
 }
