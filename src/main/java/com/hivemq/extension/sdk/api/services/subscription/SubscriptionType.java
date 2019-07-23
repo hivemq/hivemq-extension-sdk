@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 dc-square GmbH
+ * Copyright 2019 dc-square GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,34 @@
  * limitations under the License.
  */
 
-package com.hivemq.extension.sdk.api.annotations;
-
-import java.lang.annotation.*;
-
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.CLASS;
+package com.hivemq.extension.sdk.api.services.subscription;
 
 /**
- * An annotation which is used for indicating that a class is thread safe.
+ * Enum to filter the subscriptions by type.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.2.0
  */
-@Documented
-@Retention(CLASS)
-@Target({TYPE, METHOD})
-public @interface ThreadSafe {
-    String value() default "";
+public enum SubscriptionType {
+
+    /**
+     * Include individual and shared subscriptions.
+     *
+     * @since 4.2.0
+     */
+    ALL,
+
+    /**
+     * Only include individual subscriptions.
+     *
+     * @since 4.2.0
+     */
+    INDIVIDUAL,
+
+    /**
+     * Only include shared subscriptions.
+     *
+     * @since 4.2.0
+     */
+    SHARED
 }

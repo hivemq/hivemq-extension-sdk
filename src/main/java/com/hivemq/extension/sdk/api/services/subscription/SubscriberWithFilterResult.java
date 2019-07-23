@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 dc-square GmbH
+ * Copyright 2019 dc-square GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,20 @@
  * limitations under the License.
  */
 
-package com.hivemq.extension.sdk.api.annotations;
+package com.hivemq.extension.sdk.api.services.subscription;
 
-import java.lang.annotation.*;
-
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.CLASS;
+import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
- * An annotation which is used for indicating that a class is thread safe.
- *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.2.0
  */
-@Documented
-@Retention(CLASS)
-@Target({TYPE, METHOD})
-public @interface ThreadSafe {
-    String value() default "";
+public interface SubscriberWithFilterResult {
+
+    /**
+     * @return The subscribers MQTT client identifier.
+     * @since 4.2.0
+     */
+    @NotNull
+    String getClientId();
 }

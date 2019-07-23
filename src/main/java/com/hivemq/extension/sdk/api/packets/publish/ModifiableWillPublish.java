@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 dc-square GmbH
+ * Copyright 2019 dc-square GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-package com.hivemq.extension.sdk.api.annotations;
+package com.hivemq.extension.sdk.api.packets.publish;
 
-import java.lang.annotation.*;
-
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.CLASS;
+import com.hivemq.extension.sdk.api.packets.connect.WillPublishPacket;
 
 /**
- * An annotation which is used for indicating that a class is thread safe.
- *
- * @author Christoph Schäbel
- * @since 4.0.0
+ * @author Lukas Brandl
  */
-@Documented
-@Retention(CLASS)
-@Target({TYPE, METHOD})
-public @interface ThreadSafe {
-    String value() default "";
+public interface ModifiableWillPublish extends WillPublishPacket, ModifiablePublishPacket {
+
+    /**
+     * Sets the will delay.
+     *
+     * @param willDelay The new will delay for the will publish in seconds.
+     * @throws IllegalArgumentException If the delay is less than zero or more than '4294967295'.
+     * @since 4.2.0
+     */
+    void setWillDelay(long willDelay);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 dc-square GmbH
+ * Copyright 2019 dc-square GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.hivemq.extension.sdk.api.annotations;
-
-import java.lang.annotation.*;
-
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.CLASS;
+package com.hivemq.extension.sdk.api.services.admin;
 
 /**
- * An annotation which is used for indicating that a class is thread safe.
- *
- * @author Christoph Schäbel
- * @since 4.0.0
+ * @author Lukas Brandl
+ * @since 4.2.0
  */
-@Documented
-@Retention(CLASS)
-@Target({TYPE, METHOD})
-public @interface ThreadSafe {
-    String value() default "";
+public enum LifecycleStage {
+
+    /**
+     * HiveMQ is currently in the startup process. Listeners and clustering may not be available yet.
+     *
+     * @since 4.2.0
+     */
+    STARTING,
+
+    /**
+     * The HiveMQ startup process is complete. In this stage clients can connect to HiveMQ and the HiveMQ instance has
+     * joined the cluster if there is a cluster.
+     *
+     * @since 4.2.0
+     */
+    STARTED_SUCCESSFULLY
 }
