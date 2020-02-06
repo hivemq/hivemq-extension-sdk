@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 dc-square GmbH
+ * Copyright 2019 dc-square GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,27 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.hivemq.extension.sdk.api.packets.general;
 
 /**
- * MQTT 5 disconnect and connack reason codes are listed here.
+ * MQTT 5 CONNACK and DISCONNECT reason codes are listed here.
  *
  * @author Florian Limpöck
  * @since 4.0.0
  */
 public enum DisconnectedReasonCode {
 
-    //DISCONNECT reason codes
+    /* **************************
+     *  CONNACK and DISCONNECT  *
+     ************************** */
 
-    /**
-     * @since 4.0.0
-     */
-    NORMAL_DISCONNECTION,
-    /**
-     * @since 4.0.0
-     */
-    DISCONNECT_WITH_WILL_MESSAGE,
     /**
      * @since 4.0.0
      */
@@ -61,27 +54,7 @@ public enum DisconnectedReasonCode {
     /**
      * @since 4.0.0
      */
-    SERVER_SHUTTING_DOWN,
-    /**
-     * @since 4.0.0
-     */
     BAD_AUTHENTICATION_METHOD,
-    /**
-     * @since 4.0.0
-     */
-    KEEP_ALIVE_TIMEOUT,
-    /**
-     * @since 4.0.0
-     */
-    SESSION_TAKEN_OVER,
-    /**
-     * @since 4.0.0
-     */
-    CLIENT_IDENTIFIER_NOT_VALID,
-    /**
-     * @since 4.0.0
-     */
-    TOPIC_FILTER_INVALID,
     /**
      * @since 4.0.0
      */
@@ -89,27 +62,11 @@ public enum DisconnectedReasonCode {
     /**
      * @since 4.0.0
      */
-    RECEIVE_MAXIMUM_EXCEEDED,
-    /**
-     * @since 4.0.0
-     */
-    TOPIC_ALIAS_INVALID,
-    /**
-     * @since 4.0.0
-     */
     PACKET_TOO_LARGE,
     /**
      * @since 4.0.0
      */
-    MESSAGE_RATE_TOO_HIGH,
-    /**
-     * @since 4.0.0
-     */
     QUOTA_EXCEEDED,
-    /**
-     * @since 4.0.0
-     */
-    ADMINISTRATIVE_ACTION,
     /**
      * @since 4.0.0
      */
@@ -133,34 +90,26 @@ public enum DisconnectedReasonCode {
     /**
      * @since 4.0.0
      */
-    SHARED_SUBSCRIPTION_NOT_SUPPORTED,
-    /**
-     * @since 4.0.0
-     */
     CONNECTION_RATE_EXCEEDED,
-    /**
-     * @since 4.0.0
-     */
-    MAXIMUM_CONNECT_TIME,
-    /**
-     * @since 4.0.0
-     */
-    SUBSCRIPTION_IDENTIFIERS_NOT_SUPPORTED,
-    /**
-     * @since 4.0.0
-     */
-    WILDCARD_SUBSCRIPTION_NOT_SUPPORTED,
 
+    /* ***********
+     *  CONNACK  *
+     *********** */
 
-    //Remaining CONNACK reason codes
     /**
      * @since 4.0.0
+     * @deprecated since 4.3.0, because SUCCESS is never a reason code for a disconnect.
      */
+    @Deprecated
     SUCCESS,
     /**
      * @since 4.0.0
      */
     UNSUPPORTED_PROTOCOL_VERSION,
+    /**
+     * @since 4.0.0
+     */
+    CLIENT_IDENTIFIER_NOT_VALID,
     /**
      * @since 4.0.0
      */
@@ -172,5 +121,67 @@ public enum DisconnectedReasonCode {
     /**
      * @since 4.0.0
      */
-    BANNED
+    BANNED,
+
+    /* **************
+     *  DISCONNECT  *
+     ************** */
+
+    /**
+     * @since 4.0.0
+     */
+    NORMAL_DISCONNECTION,
+    /**
+     * @since 4.0.0
+     */
+    DISCONNECT_WITH_WILL_MESSAGE,
+    /**
+     * @since 4.0.0
+     */
+    SERVER_SHUTTING_DOWN,
+    /**
+     * @since 4.0.0
+     */
+    KEEP_ALIVE_TIMEOUT,
+    /**
+     * @since 4.0.0
+     */
+    SESSION_TAKEN_OVER,
+    /**
+     * @since 4.0.0
+     */
+    TOPIC_FILTER_INVALID,
+    /**
+     * @since 4.0.0
+     */
+    RECEIVE_MAXIMUM_EXCEEDED,
+    /**
+     * @since 4.0.0
+     */
+    TOPIC_ALIAS_INVALID,
+    /**
+     * @since 4.0.0
+     */
+    MESSAGE_RATE_TOO_HIGH,
+    /**
+     * @since 4.0.0
+     */
+    ADMINISTRATIVE_ACTION,
+    /**
+     * @since 4.0.0
+     */
+    SHARED_SUBSCRIPTION_NOT_SUPPORTED,
+    /**
+     * @since 4.0.0
+     */
+    MAXIMUM_CONNECT_TIME,
+    /**
+     * @since 4.0.0
+     */
+    SUBSCRIPTION_IDENTIFIERS_NOT_SUPPORTED,
+    /**
+     * @since 4.0.0
+     */
+    WILDCARD_SUBSCRIPTION_NOT_SUPPORTED
+
 }
