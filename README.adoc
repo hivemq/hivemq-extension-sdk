@@ -59,4 +59,4 @@ If you want to contribute to HiveMQ Extension SDK, see the link:CONTRIBUTING.md[
 
 = License
 
-HiveMQ Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`. A copy of the license can be found link:LICENSE.txt[here].
+HiveMQ Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`. A copy of the license can be found link:LICENSE[here].
