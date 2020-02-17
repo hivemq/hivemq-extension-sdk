@@ -39,6 +39,5 @@ public interface UnsubackOutboundOutput extends SimpleAsyncOutput<UnsubackOutbou
      *
      * @return A modifiable UNSUBACK packet.
      */
-    @NotNull
-    ModifiableUnsubackPacket getUnsubackPacket();
+    @NotNull ModifiableUnsubackPacket getUnsubackPacket();
 }

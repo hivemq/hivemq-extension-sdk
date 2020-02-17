@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.pingresp;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -37,8 +38,8 @@ public interface PingRespOutboundInterceptor extends Interceptor {
      * When a {@link PingRespOutboundInterceptor} is set through any extension, this method gets called for every
      * outbound PINGRESP packet from any MQTT client.
      * <p/>
-     * The execution of interceptor delays the handling of the PINGRESP.
-     * Therefore the client may disconnect if the execution of the interceptor takes to long.
+     * The execution of interceptor delays the handling of the PINGRESP. Therefore the client may disconnect if the
+     * execution of the interceptor takes to long.
      *
      * @param pingRespOutboundInput  The {@link PingRespOutboundInput} parameter.
      * @param pingRespOutboundOutput The {@link PingRespOutboundOutput} parameter.

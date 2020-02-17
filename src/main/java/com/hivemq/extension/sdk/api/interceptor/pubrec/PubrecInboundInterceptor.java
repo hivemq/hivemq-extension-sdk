@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.pubrec;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -33,8 +34,8 @@ import java.time.Duration;
  * thread-safe.
  * <p>
  * When the method {@link #onInboundPubrec(PubrecInboundInput, PubrecInboundOutput)} throws an exception or a call to
- * {@link PubrecInboundOutput#async(Duration)} times out with {@link TimeoutFallback#FAILURE}, HiveMQ will ignore
- * this interceptor and will:
+ * {@link PubrecInboundOutput#async(Duration)} times out with {@link TimeoutFallback#FAILURE}, HiveMQ will ignore this
+ * interceptor and will:
  * <ol>
  *    <li>Log the exception</li>
  *    <li>Revert the changes to the {@link ModifiablePubrecPacket} made by the interceptor</li>
@@ -54,6 +55,5 @@ public interface PubrecInboundInterceptor extends Interceptor {
      * @param pubrecInboundOutput The {@link PubrecInboundOutput} parameter.
      */
     void onInboundPubrec(
-            @NotNull PubrecInboundInput pubrecInboundInput,
-            @NotNull PubrecInboundOutput pubrecInboundOutput);
+            @NotNull PubrecInboundInput pubrecInboundInput, @NotNull PubrecInboundOutput pubrecInboundOutput);
 }

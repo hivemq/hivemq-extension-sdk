@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.auth;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -22,11 +23,10 @@ import com.hivemq.extension.sdk.api.auth.parameter.SubscriptionAuthorizerOutput;
 /**
  * Interface for the subscription authorization.
  * <p>
- * An Authorizer is always called by the same Thread
- * for all messages from the same client.
+ * An Authorizer is always called by the same Thread for all messages from the same client.
  * <p>
- * If the same instance is shared between multiple clients
- * it can be called in different Threads and must therefore be thread-safe.
+ * If the same instance is shared between multiple clients it can be called in different Threads and must therefore be
+ * thread-safe.
  * <p>
  *
  * @author Christoph Schäbel
@@ -42,5 +42,7 @@ public interface SubscriptionAuthorizer extends Authorizer {
      * @param subscriptionAuthorizerOutput The {@link SubscriptionAuthorizerOutput}.
      * @since 4.0.0
      */
-    void authorizeSubscribe(@NotNull SubscriptionAuthorizerInput subscriptionAuthorizerInput, @NotNull SubscriptionAuthorizerOutput subscriptionAuthorizerOutput);
+    void authorizeSubscribe(
+            @NotNull SubscriptionAuthorizerInput subscriptionAuthorizerInput,
+            @NotNull SubscriptionAuthorizerOutput subscriptionAuthorizerOutput);
 }

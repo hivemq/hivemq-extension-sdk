@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.auth.parameter;
 
-
-import com.hivemq.extension.sdk.api.packets.auth.ModifiableDefaultPermissions;
-import com.hivemq.extension.sdk.api.packets.publish.AckReasonCode;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.async.AsyncOutput;
 import com.hivemq.extension.sdk.api.auth.PublishAuthorizer;
+import com.hivemq.extension.sdk.api.packets.auth.ModifiableDefaultPermissions;
 import com.hivemq.extension.sdk.api.packets.disconnect.DisconnectReasonCode;
+import com.hivemq.extension.sdk.api.packets.publish.AckReasonCode;
 
 /**
- * This is the output parameter of any {@link PublishAuthorizer}
- * providing methods to define the outcome of the PUBLISH authorization.
+ * This is the output parameter of any {@link PublishAuthorizer} providing methods to define the outcome of the PUBLISH
+ * authorization.
  * <p>
  * It can be used to:
  * <ul>
@@ -59,14 +59,14 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
     void authorizeSuccessfully();
 
     /**
-     * Fails the authorization of the PUBLISH.
-     * The outcome depends on the MQTT version specified by the publishing client.
+     * Fails the authorization of the PUBLISH. The outcome depends on the MQTT version specified by the publishing
+     * client.
      * <p>
      * For an MQTT 3 client the connection is closed.
+     * <p>
      * For an MQTT 5 client the PUBLISH is completed (if qos &gt; 0) with a PUBACK/PUBREC containing the reason code
-     * NOT_AUTHORIZED.
-     * After that the client receives a DISCONNECT packet with reason code NOT_AUTHORIZED, then the connection is
-     * closed.
+     * NOT_AUTHORIZED. After that the client receives a DISCONNECT packet with reason code NOT_AUTHORIZED, then the
+     * connection is closed.
      * <p>
      * This is a final decision, other extensions or default permissions are ignored.
      *
@@ -77,14 +77,14 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
     void failAuthorization();
 
     /**
-     * Fails the authorization of the PUBLISH.
-     * The outcome depends on the MQTT version specified by the publishing client.
+     * Fails the authorization of the PUBLISH. The outcome depends on the MQTT version specified by the publishing
+     * client.
      * <p>
      * For an MQTT 3 client the connection is closed.
-     * For an MQTT 5 client the PUBLISH is completed (if qos &gt; 0) with a PUBACK/PUBREC containing the reason code given
-     * with <code>reasonCode</code>.
-     * After that the client receives a DISCONNECT packet with reason code NOT_AUTHORIZED, then the connection is
-     * closed.
+     * <p>
+     * For an MQTT 5 client the PUBLISH is completed (if qos &gt; 0) with a PUBACK/PUBREC containing the reason code
+     * given with <code>reasonCode</code>. After that the client receives a DISCONNECT packet with reason code
+     * NOT_AUTHORIZED, then the connection is closed.
      * <p>
      * This is a final decision, other extensions or default permissions are ignored.
      *
@@ -97,14 +97,14 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
     void failAuthorization(@NotNull AckReasonCode reasonCode);
 
     /**
-     * Fails the authorization of the PUBLISH.
-     * The outcome depends on the MQTT version specified by the publishing client.
+     * Fails the authorization of the PUBLISH. The outcome depends on the MQTT version specified by the publishing
+     * client.
      * <p>
      * For an MQTT 3 client the connection is closed.
+     * <p>
      * For an MQTT 5 client the PUBLISH is completed (if qos &gt; 0) with a PUBACK/PUBREC containing the reason code and
-     * reason string given with <code>reasonCode</code> and <code>reasonString</code> respectively.
-     * After that the client receives a DISCONNECT packet with reason code NOT_AUTHORIZED, then the connection is
-     * closed.
+     * reason string given with <code>reasonCode</code> and <code>reasonString</code> respectively. After that the
+     * client receives a DISCONNECT packet with reason code NOT_AUTHORIZED, then the connection is closed.
      * <p>
      * This is a final decision, other extensions or default permissions are ignored.
      *
@@ -118,10 +118,11 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
     void failAuthorization(@NotNull AckReasonCode reasonCode, @NotNull String reasonString);
 
     /**
-     * Disconnects the client that sent the PUBLISH.
-     * The outcome depends on the MQTT version specified by the publishing client.
+     * Disconnects the client that sent the PUBLISH. The outcome depends on the MQTT version specified by the publishing
+     * client.
      * <p>
      * For an MQTT 3 client the connection is closed.
+     * <p>
      * An MQTT 5 client receives a DISCONNECT packet with reason code NOT_AUTHORIZED, then the connection is closed.
      * <p>
      * This is a final decision, other extensions or default permissions are ignored.
@@ -133,10 +134,11 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
     void disconnectClient();
 
     /**
-     * Disconnects the client that sent the PUBLISH.
-     * The outcome depends on the MQTT version specified by the publishing client.
+     * Disconnects the client that sent the PUBLISH. The outcome depends on the MQTT version specified by the publishing
+     * client.
      * <p>
      * For an MQTT 3 client the connection is closed.
+     * <p>
      * An MQTT 5 client receives a DISCONNECT packet with the reason code given with <code>reasonCode</code>, then the
      * connection is closed.
      * <p>
@@ -150,10 +152,11 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
     void disconnectClient(@NotNull DisconnectReasonCode reasonCode);
 
     /**
-     * Disconnects the client that sent the PUBLISH.
-     * The outcome depends on the MQTT version specified by the publishing client.
+     * Disconnects the client that sent the PUBLISH. The outcome depends on the MQTT version specified by the publishing
+     * client.
      * <p>
      * For an MQTT 3 client the connection is closed.
+     * <p>
      * An MQTT 5 client receives a DISCONNECT with the reason code and reason string given with
      * <code>reasonCode</code> and <code>reasonString</code> respectively, then the connection is closed.
      * <p>
@@ -178,5 +181,4 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
      * @since 4.0.0
      */
     void nextExtensionOrDefault();
-
 }

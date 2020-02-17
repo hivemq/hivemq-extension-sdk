@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.publish;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -39,8 +40,8 @@ import java.util.Optional;
 public interface PublishPacket {
 
     /**
-     * If <b>false</b> this is the first occasion the message is sent to the receiver.
-     * If <b>true</b> the message has already been sent once to the receiver.
+     * If <b>false</b> this is the first occasion the message is sent to the receiver. If <b>true</b> the message has
+     * already been sent once to the receiver.
      *
      * @return The duplicate delivery flag.
      * @since 4.0.0
@@ -127,8 +128,7 @@ public interface PublishPacket {
      * @return The subscription identifiers.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull List<@NotNull Integer> getSubscriptionIdentifiers();
+    @Immutable @NotNull List<@NotNull Integer> getSubscriptionIdentifiers();
 
     /**
      * If this property is present, this is the content type.
@@ -156,6 +156,5 @@ public interface PublishPacket {
      * @return The user properties.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull UserProperties getUserProperties();
+    @Immutable @NotNull UserProperties getUserProperties();
 }

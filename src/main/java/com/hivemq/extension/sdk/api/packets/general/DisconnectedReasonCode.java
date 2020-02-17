@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.general;
 
 /**
@@ -100,8 +101,7 @@ public enum DisconnectedReasonCode {
      * @since 4.0.0
      * @deprecated since 4.3.0, because SUCCESS is never a reason code for a disconnect.
      */
-    @Deprecated
-    SUCCESS,
+    @Deprecated SUCCESS,
     /**
      * @since 4.0.0
      */
@@ -183,5 +183,4 @@ public enum DisconnectedReasonCode {
      * @since 4.0.0
      */
     WILDCARD_SUBSCRIPTION_NOT_SUPPORTED
-
 }

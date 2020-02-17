@@ -24,8 +24,8 @@ import com.hivemq.extension.sdk.api.packets.publish.PublishPacket;
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
 /**
- * This is the input parameter of any {@link PublishOutboundInterceptor}
- * providing PUBLISH, connection and client based information.
+ * This is the input parameter of any {@link PublishOutboundInterceptor} providing PUBLISH, connection and client based
+ * information.
  *
  * @author Lukas Brandl
  * @since 4.2.0
@@ -39,6 +39,5 @@ public interface PublishOutboundInput extends ClientBasedInput {
      * @return An unmodifiable {@link PublishPacket}.
      * @since 4.2.0
      */
-    @Immutable
-    @NotNull PublishPacket getPublishPacket();
+    @Immutable @NotNull PublishPacket getPublishPacket();
 }

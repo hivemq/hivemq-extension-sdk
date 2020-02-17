@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.async;
 
 /**
@@ -26,7 +27,8 @@ public enum TimeoutFallback {
 
     /**
      * SUCCESS usually means that HiveMQ either sees the outcome as successful or asks the next extension, that also
-     * implemented the specific service. <br>
+     * implemented the specific service.
+     * <p>
      * The actual behaviour is defined in the specific implementation.
      *
      * @since 4.0.0
@@ -34,7 +36,8 @@ public enum TimeoutFallback {
     SUCCESS,
 
     /**
-     * FAILURE usually means that HiveMQ aborts any further action. <br>
+     * FAILURE usually means that HiveMQ aborts any further action.
+     * <p>
      * The actual behaviour is defined in the specific implementation.
      *
      * @since 4.0.0

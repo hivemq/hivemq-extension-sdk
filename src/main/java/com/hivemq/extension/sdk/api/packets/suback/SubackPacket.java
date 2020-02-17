@@ -49,8 +49,7 @@ public interface SubackPacket {
      *
      * @return The reason codes for the subscriptions.
      */
-    @Immutable
-    @NotNull List<@NotNull SubackReasonCode> getReasonCodes();
+    @Immutable @NotNull List<@NotNull SubackReasonCode> getReasonCodes();
 
     /**
      * The reason string of the SUBACK packet.
@@ -70,6 +69,5 @@ public interface SubackPacket {
      *
      * @return The user properties.
      */
-    @Immutable
-    @NotNull UserProperties getUserProperties();
+    @Immutable @NotNull UserProperties getUserProperties();
 }

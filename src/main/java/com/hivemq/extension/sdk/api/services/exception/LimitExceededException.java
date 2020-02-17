@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.exception;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -24,6 +25,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * @since 4.0.0
  */
 public class LimitExceededException extends RuntimeException {
+
     public LimitExceededException(final @NotNull String message) {
         super(message);
     }

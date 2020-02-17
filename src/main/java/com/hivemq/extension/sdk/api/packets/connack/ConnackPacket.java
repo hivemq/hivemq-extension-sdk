@@ -43,8 +43,7 @@ public interface ConnackPacket {
      * @return An {@link Optional} that contains the session expiry interval.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<Long> getSessionExpiryInterval();
+    @NotNull Optional<Long> getSessionExpiryInterval();
 
     /**
      * An interval in seconds in which the client has to send any MQTT control packet, so that HiveMQ doesn't end the
@@ -55,12 +54,10 @@ public interface ConnackPacket {
      * @return An {@link Optional} that contains the server keep alive.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<Integer> getServerKeepAlive();
+    @NotNull Optional<Integer> getServerKeepAlive();
 
     /**
-     * The limit of QoS 1 and QoS 2 {@link Publish}es that the server is willing
-     * to process concurrently.
+     * The limit of QoS 1 and QoS 2 {@link Publish}es that the server is willing to process concurrently.
      * <p>
      * For an MQTT 3 client this MQTT 5 property will always be 65,535.
      *
@@ -98,8 +95,7 @@ public interface ConnackPacket {
      * @return An {@link Optional} that contains the QoS maximum.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<Qos> getMaximumQoS();
+    @NotNull Optional<Qos> getMaximumQoS();
 
     /**
      * The user properties from the CONNACK packet.
@@ -109,8 +105,7 @@ public interface ConnackPacket {
      * @return The user properties.
      * @since 4.2.0
      */
-    @NotNull
-    UserProperties getUserProperties();
+    @NotNull UserProperties getUserProperties();
 
     /**
      * The reason code from the CONNACK packet.
@@ -120,8 +115,7 @@ public interface ConnackPacket {
      * @see ConnackReasonCode How reason codes are translated from MQTT 5 to MQTT 3.
      * @since 4.2.0
      */
-    @NotNull
-    ConnackReasonCode getReasonCode();
+    @NotNull ConnackReasonCode getReasonCode();
 
     /**
      * The session present flag from the CONNACK packet.
@@ -151,8 +145,7 @@ public interface ConnackPacket {
      * @return An {@link Optional} that contains the assigned client identifier if present.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<String> getAssignedClientIdentifier();
+    @NotNull Optional<String> getAssignedClientIdentifier();
 
     /**
      * The reason string of the CONNACK packet.
@@ -162,8 +155,7 @@ public interface ConnackPacket {
      * @return An {@link Optional} containing the connack reason string if present.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<String> getReasonString();
+    @NotNull Optional<String> getReasonString();
 
     /**
      * The wildcard subscription available flag from the CONNACK packet.
@@ -203,8 +195,7 @@ public interface ConnackPacket {
      * @return An {@link Optional} containing the response information if present.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<String> getResponseInformation();
+    @NotNull Optional<String> getResponseInformation();
 
     /**
      * The server reference of the CONNACK packet.
@@ -214,8 +205,7 @@ public interface ConnackPacket {
      * @return An {@link Optional} containing the server reference if present.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<String> getServerReference();
+    @NotNull Optional<String> getServerReference();
 
     /**
      * If this property is present, the string contains the authentication method that should be used for the extended
@@ -226,19 +216,16 @@ public interface ConnackPacket {
      * @return An {@link Optional} that contains the authentication method if present.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<String> getAuthenticationMethod();
+    @NotNull Optional<String> getAuthenticationMethod();
 
     /**
-     * If this property is present, the {@link ByteBuffer} contains the data used for the extended authentication.
-     * The contents of this data are defined by the authentication method.
+     * If this property is present, the {@link ByteBuffer} contains the data used for the extended authentication. The
+     * contents of this data are defined by the authentication method.
      * <p>
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the authentication data if present.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<ByteBuffer> getAuthenticationData();
-
+    @NotNull Optional<ByteBuffer> getAuthenticationData();
 }

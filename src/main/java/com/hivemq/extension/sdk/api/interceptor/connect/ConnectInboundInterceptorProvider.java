@@ -21,8 +21,8 @@ import com.hivemq.extension.sdk.api.annotations.Nullable;
 import com.hivemq.extension.sdk.api.interceptor.connect.parameter.ConnectInboundProviderInput;
 
 /**
- * The interceptor provider allows to implement custom logic to modify incoming CONNECT messages.
- * For each incoming CONNECT message a {@link ConnectInboundInterceptor} can be provided that contains the modification logic.
+ * The interceptor provider allows to implement custom logic to modify incoming CONNECT messages. For each incoming
+ * CONNECT message a {@link ConnectInboundInterceptor} can be provided that contains the modification logic.
  *
  * @author Lukas Brandl
  * @since 4.2.0
@@ -32,12 +32,13 @@ public interface ConnectInboundInterceptorProvider {
     /**
      * This method is called for each incoming CONNECT message by HiveMQ.
      * <p>
-     * Either the same {@link ConnectInboundInterceptor} (stateless or must be thread-safe)<br/>
-     * or a new one (stateful, must not be thread-safe) can be supplied on each call.
+     * Either the same {@link ConnectInboundInterceptor} (stateless or must be thread-safe) or a new one (stateful, must
+     * not be thread-safe) can be supplied on each call.
      * <p>
      * <code>null</code> can be returned if a CONNECT message should not be intercepted.
      *
-     * @return An implementation of the {@link ConnectInboundInterceptor} or null if the CONNECT should not be intercepted.
+     * @return An implementation of the {@link ConnectInboundInterceptor} or null if the CONNECT should not be
+     *         intercepted.
      * @since 4.2.0
      */
     @Nullable ConnectInboundInterceptor getConnectInboundInterceptor(@NotNull ConnectInboundProviderInput input);

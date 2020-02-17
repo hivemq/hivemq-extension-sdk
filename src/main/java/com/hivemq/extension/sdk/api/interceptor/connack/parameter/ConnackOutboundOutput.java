@@ -44,8 +44,7 @@ public interface ConnackOutboundOutput extends AsyncOutput<ConnackOutboundOutput
      * @return A modifiable CONNACK packet.
      * @since 4.2.0
      */
-    @NotNull
-    ModifiableConnackPacket getConnackPacket();
+    @NotNull ModifiableConnackPacket getConnackPacket();
 
     /**
      * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or

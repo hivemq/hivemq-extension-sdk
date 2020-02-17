@@ -41,9 +41,7 @@ public interface SubscribePacket {
      * @return The list of {@link Subscription}s.
      * @since 4.2.0
      */
-    @NotNull
-    @Immutable
-    List<Subscription> getSubscriptions();
+    @NotNull @Immutable List<Subscription> getSubscriptions();
 
     /**
      * The user properties from the SUBSCRIBE packet.
@@ -53,9 +51,7 @@ public interface SubscribePacket {
      * @return The {@link UserProperties} of the SUBSCRIBE packet.
      * @since 4.2.0
      */
-    @NotNull
-    @Immutable
-    UserProperties getUserProperties();
+    @NotNull @Immutable UserProperties getUserProperties();
 
     /**
      * If this property is present, it contains the subscription identifier for the SUBSCRIBE packet.
@@ -65,8 +61,7 @@ public interface SubscribePacket {
      * @return An {@link Optional} containing the subscription identifier of the SUBSCRIBE packet if present.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<Integer> getSubscriptionIdentifier();
+    @NotNull Optional<Integer> getSubscriptionIdentifier();
 
     /**
      * The packet identifier of the SUBSCRIBE packet.
@@ -75,5 +70,4 @@ public interface SubscribePacket {
      * @since 4.2.0
      */
     int getPacketId();
-
 }

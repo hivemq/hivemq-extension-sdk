@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.auth;
 
 import com.hivemq.extension.sdk.api.annotations.Immutable;
@@ -41,8 +42,7 @@ public interface ModifiableDefaultPermissions {
      * @return An immutable {@link List} with all default permissions for this client.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull List<@NotNull TopicPermission> asList();
+    @Immutable @NotNull List<@NotNull TopicPermission> asList();
 
     /**
      * Adds a {@link TopicPermission} to the default permissions for this client.
@@ -83,8 +83,8 @@ public interface ModifiableDefaultPermissions {
     void clear();
 
     /**
-     * The default behaviour that is used when none of the default permissions matches
-     * a PUBLISH topic or a topic filter from a Subscription.
+     * The default behaviour that is used when none of the default permissions matches a PUBLISH topic or a topic filter
+     * from a Subscription.
      *
      * @return The current {@link DefaultAuthorizationBehaviour}.
      * @since 4.0.0
@@ -92,11 +92,11 @@ public interface ModifiableDefaultPermissions {
     @NotNull DefaultAuthorizationBehaviour getDefaultBehaviour();
 
     /**
-     * Overrides the default behaviour that is used when none of the default permissions matches
-     * a PUBLISH topic or a topic filter from a Subscription.
+     * Overrides the default behaviour that is used when none of the default permissions matches a PUBLISH topic or a
+     * topic filter from a Subscription.
      * <p>
-     * Defaults to {@link DefaultAuthorizationBehaviour#ALLOW} if no permissions are added,
-     * defaults to {@link DefaultAuthorizationBehaviour#DENY} if permissions are added.
+     * Defaults to {@link DefaultAuthorizationBehaviour#ALLOW} if no permissions are added, defaults to {@link
+     * DefaultAuthorizationBehaviour#DENY} if permissions are added.
      * <p>
      * If the value is overridden with this method, the value does not change automatically on {@link
      * #add(TopicPermission)} or {@link #addAll(Collection)}.

@@ -45,8 +45,7 @@ public interface ModifiableSubscribePacket {
      * @return An {@link Optional} containing the subscription identifier of the SUBSCRIBE packet if present.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<Integer> getSubscriptionIdentifier();
+    @NotNull Optional<Integer> getSubscriptionIdentifier();
 
     /**
      * Get the modifiable {@link UserProperties} of the SUBSCRIBE packet.
@@ -54,21 +53,18 @@ public interface ModifiableSubscribePacket {
      * @return Modifiable user properties.
      * @since 4.2.0
      */
-    @NotNull
-    ModifiableUserProperties getUserProperties();
+    @NotNull ModifiableUserProperties getUserProperties();
 
     /**
      * Get the modifiable subscriptions of the SUBSCRIBE packet.
      * <p>
-     * The list itself is immutable, so you cannot add or remove subscriptions from the SUBSCRIBE.
-     * To do this please use the {@link SubscriptionStore}.
+     * The list itself is immutable, so you cannot add or remove subscriptions from the SUBSCRIBE. To do this please use
+     * the {@link SubscriptionStore}.
      *
      * @return An unmodifiable list of all {@link ModifiableSubscription}s of the SUBSCRIBE.
      * @since 4.2.0
      */
-    @NotNull
-    @Immutable
-    List<ModifiableSubscription> getSubscriptions();
+    @NotNull @Immutable List<ModifiableSubscription> getSubscriptions();
 
     /**
      * The packet identifier of the SUBSCRIBE packet.

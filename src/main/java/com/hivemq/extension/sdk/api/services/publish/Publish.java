@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.publish;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -124,6 +125,5 @@ public interface Publish {
      * @return The user properties.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull UserProperties getUserProperties();
+    @Immutable @NotNull UserProperties getUserProperties();
 }

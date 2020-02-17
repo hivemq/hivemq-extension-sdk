@@ -40,6 +40,5 @@ public interface SimpleAuthInput extends ClientBasedInput {
      * @return The {@link ConnectPacket} sent by the client.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull ConnectPacket getConnectPacket();
+    @Immutable @NotNull ConnectPacket getConnectPacket();
 }

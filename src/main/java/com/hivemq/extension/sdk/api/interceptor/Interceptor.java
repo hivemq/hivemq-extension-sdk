@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -20,13 +21,10 @@ import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 /**
  * Marker interface for Interceptors.
  * <p>
- * Do not implement this interface directly.
- * Instead implement the interfaces which extend from this interface.
+ * Do not implement this interface directly. Instead implement the interfaces which extend from this interface.
  *
  * @author Christoph Schäbel
  * @since 4.0.0
  */
 @DoNotImplement
-public interface Interceptor {
-
-}
+public interface Interceptor {}

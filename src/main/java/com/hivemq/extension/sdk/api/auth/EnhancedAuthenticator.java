@@ -67,8 +67,7 @@ public interface EnhancedAuthenticator {
      * @param enhancedAuthOutput       The {@link EnhancedAuthOutput}.
      */
     void onConnect(
-            @NotNull EnhancedAuthConnectInput enhancedAuthConnectInput,
-            @NotNull EnhancedAuthOutput enhancedAuthOutput);
+            @NotNull EnhancedAuthConnectInput enhancedAuthConnectInput, @NotNull EnhancedAuthOutput enhancedAuthOutput);
 
     /**
      * This method is called when the MQTT client (that has to be authenticated) sent an AUTH packet with reason code
@@ -78,8 +77,7 @@ public interface EnhancedAuthenticator {
      * @param enhancedAuthOutput The {@link EnhancedAuthOutput}.
      */
     default void onReAuth(
-            final @NotNull EnhancedAuthInput enhancedAuthInput,
-            final @NotNull EnhancedAuthOutput enhancedAuthOutput) {
+            final @NotNull EnhancedAuthInput enhancedAuthInput, final @NotNull EnhancedAuthOutput enhancedAuthOutput) {
 
         onAuth(enhancedAuthInput, enhancedAuthOutput);
     }

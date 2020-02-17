@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.events;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -37,5 +38,6 @@ public interface EventRegistry {
      * @throws NullPointerException When ClientLifecycleEventListenerProvider is <code>null</code>.
      * @since 4.0.0
      */
-    void setClientLifecycleEventListener(@NotNull ClientLifecycleEventListenerProvider clientLifecycleEventListenerProvider);
+    void setClientLifecycleEventListener(
+            @NotNull ClientLifecycleEventListenerProvider clientLifecycleEventListenerProvider);
 }

@@ -47,8 +47,7 @@ public interface UnsubscribePacket {
      *
      * @return The list of topics to be unsubscribed from.
      */
-    @Immutable
-    @NotNull List<@NotNull String> getTopicFilters();
+    @Immutable @NotNull List<@NotNull String> getTopicFilters();
 
     /**
      * The user properties from the UNSUBSCRIBE packet.
@@ -58,7 +57,5 @@ public interface UnsubscribePacket {
      *
      * @return The {@link UserProperties} of the UNSUBSCRIBE packet.
      */
-    @Immutable
-    @NotNull UserProperties getUserProperties();
-
+    @Immutable @NotNull UserProperties getUserProperties();
 }

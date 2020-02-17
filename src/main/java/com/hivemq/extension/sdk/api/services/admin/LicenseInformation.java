@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.admin;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -27,6 +28,5 @@ public interface LicenseInformation {
      * @return An enum that represents the edition for which HiveMQ is licensed.
      * @since 4.2.0
      */
-    @NotNull
-    LicenseEdition getEdition();
+    @NotNull LicenseEdition getEdition();
 }

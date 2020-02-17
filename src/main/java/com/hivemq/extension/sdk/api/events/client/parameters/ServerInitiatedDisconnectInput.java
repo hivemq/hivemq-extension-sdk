@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.events.client.parameters;
 
 import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
@@ -23,6 +24,4 @@ import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
  * @author Christoph Schäbel
  * @since 4.0.0
  */
-public interface ServerInitiatedDisconnectInput extends DisconnectEventInput {
-
-}
+public interface ServerInitiatedDisconnectInput extends DisconnectEventInput {}

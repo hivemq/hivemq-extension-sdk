@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.auth.provider;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -21,27 +22,25 @@ import com.hivemq.extension.sdk.api.auth.EnhancedAuthenticator;
 import com.hivemq.extension.sdk.api.auth.parameter.AuthenticatorProviderInput;
 
 /**
- * The authenticator provider allows to implement custom logic for the authentication of connecting MQTT clients.
- * For each client an {@link EnhancedAuthenticator} can be provided that contains the authentication logic.
+ * The authenticator provider allows to implement custom logic for the authentication of connecting MQTT clients. For
+ * each client an {@link EnhancedAuthenticator} can be provided that contains the authentication logic.
  *
  * @author Florian Limpöck
-*/
+ */
 @FunctionalInterface
 public interface EnhancedAuthenticatorProvider {
 
     /**
      * This method is called for each client by HiveMQ.
      * <p>
-     * Either the same {@link EnhancedAuthenticator} (stateless or must be thread-safe)<br/>
-     * or a new one (stateful, must not be thread-safe) can be supplied on each call.
+     * Either the same {@link EnhancedAuthenticator} (stateless or must be thread-safe)<br/> or a new one (stateful,
+     * must not be thread-safe) can be supplied on each call.
      * <p>
      * <code>null</code> can be returned if no authentication for the client is necessary.
      *
-     * @return An implementation of {@link EnhancedAuthenticator}.
-     * {@code null} is ignored and has the same effect as if this provider would had not been set
-     * for the connecting client.
-     *
-    */
-    @Nullable EnhancedAuthenticator getEnhancedAuthenticator(@NotNull AuthenticatorProviderInput authenticatorProviderInput);
-
+     * @return An implementation of {@link EnhancedAuthenticator}. {@code null} is ignored and has the same effect as if
+     *         this provider would had not been set for the connecting client.
+     */
+    @Nullable EnhancedAuthenticator getEnhancedAuthenticator(
+            @NotNull AuthenticatorProviderInput authenticatorProviderInput);
 }

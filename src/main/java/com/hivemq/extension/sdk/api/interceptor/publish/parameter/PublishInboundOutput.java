@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.publish.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -28,8 +29,8 @@ import com.hivemq.extension.sdk.api.packets.publish.ModifiablePublishPacket;
 import java.time.Duration;
 
 /**
- * This is the output parameter of any {@link PublishInboundInterceptor}
- * providing methods to define the outcome of PUBLISH interception.
+ * This is the output parameter of any {@link PublishInboundInterceptor} providing methods to define the outcome of
+ * PUBLISH interception.
  * <p>
  * It can be used to
  * <ul>
@@ -57,8 +58,8 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
     @NotNull ModifiablePublishPacket getPublishPacket();
 
     /**
-     * Prevent the onward delivery of the PUBLISH packet with reason code
-     * {@link AckReasonCode#SUCCESS} for the PUBACK/PUBREC.
+     * Prevent the onward delivery of the PUBLISH packet with reason code {@link AckReasonCode#SUCCESS} for the
+     * PUBACK/PUBREC.
      *
      * @throws UnsupportedOperationException When preventPublishDelivery is called more than once.
      * @since 4.0.0
@@ -76,8 +77,8 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
     void preventPublishDelivery(final @NotNull AckReasonCode reasonCode);
 
     /**
-     * Prevent the onward delivery of the PUBLISH packet with <code>reasonCode</code> and <code>reasonString</code>
-     * set as reason code and reason string in the PUBACK/PUBREC respectively.
+     * Prevent the onward delivery of the PUBLISH packet with <code>reasonCode</code> and <code>reasonString</code> set
+     * as reason code and reason string in the PUBACK/PUBREC respectively.
      *
      * @param reasonCode   The reason code to sent in PUBACK/PUBREC.
      * @param reasonString The reason string to sent in PUBACK/PUBREC.
@@ -87,37 +88,44 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
     void preventPublishDelivery(final @NotNull AckReasonCode reasonCode, final @Nullable String reasonString);
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is
-     * handled either as failed or successful, depending on the specified fallback.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
+     * successful, depending on the specified fallback.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
      * @param timeout         Timeout that HiveMQ waits for the result of the async operation.
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        If the fallback is SUCCESS then the publish will be delivered.
+     *                        <p>
      *                        If the fallback is FAILURE then the publish will be dropped.
      * @param reasonCode      The reason code sent in PUBACK/PUBREC when timeout occurs.
      * @param reasonString    The reason string sent in PUBACK/PUBREC when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
-    @NotNull Async<PublishInboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
-                                               @NotNull AckReasonCode reasonCode, @Nullable String reasonString);
+    @NotNull Async<PublishInboundOutput> async(
+            @NotNull Duration timeout,
+            @NotNull TimeoutFallback timeoutFallback,
+            @NotNull AckReasonCode reasonCode,
+            @Nullable String reasonString);
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is
-     * handled either as failed or successful, depending on the specified fallback.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
+     * successful, depending on the specified fallback.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
      * @param timeout         Timeout that HiveMQ waits for the result of the async operation.
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        If the fallback is SUCCESS then the publish will be delivered.
+     *                        <p>
      *                        If the fallback is FAILURE then the publish will be dropped.
      * @param reasonCode      The reason code sent in PUBACK/PUBREC when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
-    @NotNull Async<PublishInboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback,
-                                               @NotNull AckReasonCode reasonCode);
+    @NotNull Async<PublishInboundOutput> async(
+            @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @NotNull AckReasonCode reasonCode);
 }

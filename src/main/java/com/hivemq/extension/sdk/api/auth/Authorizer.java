@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.auth;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.services.auth.provider.AuthorizerProvider;
 
 /**
- * Marker interface for the {@link AuthorizerProvider}. <br>
+ * Marker interface for the {@link AuthorizerProvider}.
+ * <p>
  * Do not implement this interface directly, but rather use one of the sub-interfaces.
  *
  * @author Christoph Schäbel
  * @since 4.0.0
  */
 @DoNotImplement
-public interface Authorizer {
-
-}
+public interface Authorizer {}

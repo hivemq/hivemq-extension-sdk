@@ -37,12 +37,14 @@ import com.hivemq.extension.sdk.api.interceptor.subscribe.parameter.SubscribeInb
 public interface SubscribeInboundInterceptor extends Interceptor {
 
     /**
-     * When a {@link SubscribeInboundInterceptor} is set through any extension,
-     * this method gets called for every inbound SUBSCRIBE packet from any MQTT client.
+     * When a {@link SubscribeInboundInterceptor} is set through any extension, this method gets called for every
+     * inbound SUBSCRIBE packet from any MQTT client.
      *
      * @param subscribeInboundInput  The {@link SubscribeInboundInput} parameter.
      * @param subscribeInboundOutput The {@link SubscribeInboundOutput} parameter.
      * @since 4.2.0
      */
-    void onInboundSubscribe(@NotNull SubscribeInboundInput subscribeInboundInput, @NotNull SubscribeInboundOutput subscribeInboundOutput);
+    void onInboundSubscribe(
+            @NotNull SubscribeInboundInput subscribeInboundInput,
+            @NotNull SubscribeInboundOutput subscribeInboundOutput);
 }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.intializer;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -35,8 +36,8 @@ public interface InitializerRegistry {
      * When the extension stops, its context will be removed from every client.
      * <p>
      * The {@link ClientInitializer} and its {@link ClientInitializer#initialize(InitializerInput, ClientContext)}
-     * method must be implemented by the extension developer.
-     * If there is already an initializer present, it will be overwritten.
+     * method must be implemented by the extension developer. If there is already an initializer present, it will be
+     * overwritten.
      *
      * @param initializer The initializer to set.
      * @throws NullPointerException If the initializer is null.

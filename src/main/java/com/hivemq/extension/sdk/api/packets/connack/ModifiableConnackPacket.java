@@ -67,8 +67,7 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      * @since 4.2.0
      */
     @Override
-    @NotNull
-    ModifiableUserProperties getUserProperties();
+    @NotNull ModifiableUserProperties getUserProperties();
 
     /**
      * Set the response information.
@@ -94,5 +93,4 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      * @since 4.2.0
      */
     void setServerReference(@Nullable String serverReference);
-
 }

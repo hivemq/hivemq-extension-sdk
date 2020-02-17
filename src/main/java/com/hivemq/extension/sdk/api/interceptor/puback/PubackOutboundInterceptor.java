@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.puback;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -32,9 +33,9 @@ import java.time.Duration;
  * If the same instance is shared between multiple clients it can be called in different Threads and must therefore be
  * thread-safe.
  * <p>
- * When the method {@link #onOutboundPuback(PubackOutboundInput, PubackOutboundOutput)} throws an exception or a call
- * to {@link PubackOutboundOutput#async(Duration)} times out with {@link TimeoutFallback#FAILURE}, HiveMQ will ignore
- * this interceptor and will:
+ * When the method {@link #onOutboundPuback(PubackOutboundInput, PubackOutboundOutput)} throws an exception or a call to
+ * {@link PubackOutboundOutput#async(Duration)} times out with {@link TimeoutFallback#FAILURE}, HiveMQ will ignore this
+ * interceptor and will:
  * <ol>
  *    <li>Log the exception</li>
  *    <li>Revert the changes to the {@link ModifiablePubackPacket} made by the interceptor</li>
@@ -54,6 +55,5 @@ public interface PubackOutboundInterceptor extends Interceptor {
      * @param pubackOutboundOutput The {@link PubackOutboundOutput} parameter.
      */
     void onOutboundPuback(
-            @NotNull PubackOutboundInput pubackOutboundInput,
-            @NotNull PubackOutboundOutput pubackOutboundOutput);
+            @NotNull PubackOutboundInput pubackOutboundInput, @NotNull PubackOutboundOutput pubackOutboundOutput);
 }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.session;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -134,8 +135,10 @@ public interface ClientService {
      *         client.
      */
     @NotNull CompletableFuture<Boolean> disconnectClient(
-            @NotNull String clientId, boolean preventWillMessage,
-            @Nullable DisconnectReasonCode reasonCode, @Nullable String reasonString);
+            @NotNull String clientId,
+            boolean preventWillMessage,
+            @Nullable DisconnectReasonCode reasonCode,
+            @Nullable String reasonString);
 
     /**
      * Invalidates the client session for a client with the given client identifier. If the client is currently

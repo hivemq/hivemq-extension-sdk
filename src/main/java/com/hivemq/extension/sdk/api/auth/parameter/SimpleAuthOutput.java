@@ -136,8 +136,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
     /**
      * The outcome of the authentication is determined by an authenticator of the next extension (with lower priority).
      * <p>
-     * If no extension with an authenticator is left the default behaviour is used.
-     * The default behaviour is the same as {@link #failAuthentication()}.
+     * If no extension with an authenticator is left the default behaviour is used. The default behaviour is the same as
+     * {@link #failAuthentication()}.
      *
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
@@ -177,7 +177,9 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * {@inheritDoc}
      *
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        SUCCESS has the same effect as {@link #nextExtensionOrDefault()}.
+     *                        <p>
      *                        FAILURE has the same effect as {@link #failAuthentication(ConnackReasonCode, String)} with
      *                        reason code {@link ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason string
      *                        <code>Authentication failed, authenticator timed out</code>.
@@ -187,14 +189,16 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
     @NotNull Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback);
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is
-     * handled either as failed or successful, depending on the specified fallback.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
+     * successful, depending on the specified fallback.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
      * @param timeout         Timeout that HiveMQ waits for the result of the async operation.
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        SUCCESS has the same effect as {@link #nextExtensionOrDefault()}.
+     *                        <p>
      *                        FAILURE has the same effect as {@link #failAuthentication(ConnackReasonCode, String)} with
      *                        the specified reason code and reason string <code>Authentication failed, authenticator
      *                        timed out</code>.
@@ -203,42 +207,42 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @since 4.0.0
      */
     @NotNull Async<SimpleAuthOutput> async(
-            @NotNull Duration timeout,
-            @NotNull TimeoutFallback timeoutFallback,
-            @NotNull ConnackReasonCode reasonCode);
+            @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @NotNull ConnackReasonCode reasonCode);
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is
-     * handled either as failed or successful, depending on the specified fallback.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
+     * successful, depending on the specified fallback.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
      * @param timeout         Timeout that HiveMQ waits for the result of the async operation.
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        SUCCESS has the same effect as {@link #nextExtensionOrDefault()}.
-     *                        FAILURE has the same effect as {@link #failAuthentication(ConnackReasonCode, String)}
-     *                        with reason code {@link ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and the specified
+     *                        <p>
+     *                        FAILURE has the same effect as {@link #failAuthentication(ConnackReasonCode, String)} with
+     *                        reason code {@link ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and the specified
      *                        reason string.
      * @param reasonString    The reason string sent in CONNACK when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0
      */
     @NotNull Async<SimpleAuthOutput> async(
-            @NotNull Duration timeout,
-            @NotNull TimeoutFallback timeoutFallback,
-            @Nullable String reasonString);
+            @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @Nullable String reasonString);
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is
-     * handled either as failed or successful, depending on the specified fallback.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
+     * successful, depending on the specified fallback.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
      * @param timeout         Timeout that HiveMQ waits for the result of the async operation.
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        SUCCESS has the same effect as {@link #nextExtensionOrDefault()}.
-     *                        FAILURE has the same effect as {@link #failAuthentication(ConnackReasonCode, String)}
-     *                        with the specified reason code and reason string.
+     *                        <p>
+     *                        FAILURE has the same effect as {@link #failAuthentication(ConnackReasonCode, String)} with
+     *                        the specified reason code and reason string.
      * @param reasonCode      The reason code sent in CONNACK when timeout occurs.
      * @param reasonString    The reason string sent in CONNACK when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.

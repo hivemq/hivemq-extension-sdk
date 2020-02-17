@@ -36,12 +36,13 @@ import com.hivemq.extension.sdk.api.interceptor.connect.parameter.ConnectInbound
 public interface ConnectInboundInterceptor extends Interceptor {
 
     /**
-     * When a {@link ConnectInboundInterceptor} is set through any extension,
-     * this method gets called for every inbound CONNECT packet from any MQTT client.
+     * When a {@link ConnectInboundInterceptor} is set through any extension, this method gets called for every inbound
+     * CONNECT packet from any MQTT client.
      *
      * @param connectInboundInput  The {@link ConnectInboundInput} parameter.
      * @param connectInboundOutput The {@link ConnectInboundOutput} parameter.
      * @since 4.2.0
      */
-    void onConnect(@NotNull ConnectInboundInput connectInboundInput, @NotNull ConnectInboundOutput connectInboundOutput);
+    void onConnect(
+            @NotNull ConnectInboundInput connectInboundInput, @NotNull ConnectInboundOutput connectInboundOutput);
 }

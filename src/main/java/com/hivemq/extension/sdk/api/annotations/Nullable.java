@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.annotations;
 
 import java.lang.annotation.*;
 
 /**
- * An annotation which is used for indicating that something can be <code>null</code>.<br>
+ * An annotation which is used for indicating that something can be <code>null</code>.
+ * <p>
  * This is very useful for static code analysis to prevent bugs.
  *
  * @author Dominik Obermaier
@@ -26,7 +28,10 @@ import java.lang.annotation.*;
  */
 @Documented
 @Retention(RetentionPolicy.CLASS)
-@Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
+@Target({
+        ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE
+})
 public @interface Nullable {
+
     String value() default "";
 }

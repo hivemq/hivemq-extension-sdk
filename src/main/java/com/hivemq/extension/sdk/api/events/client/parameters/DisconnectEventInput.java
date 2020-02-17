@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.events.client.parameters;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -25,8 +26,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 import java.util.Optional;
 
 /**
- * Input object for {@link ClientLifecycleEventListener} methods for disconnect
- * events.
+ * Input object for {@link ClientLifecycleEventListener} methods for disconnect events.
  *
  * @author Christoph Schäbel
  * @since 4.0.0
@@ -38,20 +38,17 @@ public interface DisconnectEventInput extends ClientBasedInput {
      * @return An {@link Optional} containing the disconnected reason code if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<DisconnectedReasonCode> getReasonCode();
+    @NotNull Optional<DisconnectedReasonCode> getReasonCode();
 
     /**
      * @return An {@link Optional} containing the disconnect reason string if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<String> getReasonString();
+    @NotNull Optional<String> getReasonString();
 
     /**
      * @return An {@link Optional} containing the disconnect user properties if present.
      * @since 4.0.0
      */
-    @NotNull
-    Optional<UserProperties> getUserProperties();
+    @NotNull Optional<UserProperties> getUserProperties();
 }

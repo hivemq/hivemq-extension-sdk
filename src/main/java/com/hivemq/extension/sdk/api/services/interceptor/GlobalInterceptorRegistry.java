@@ -32,26 +32,28 @@ public interface GlobalInterceptorRegistry {
     /**
      * The provider is called once for each incoming CONNECT message.
      * <p>
-     * The {@link ConnectInboundInterceptorProvider} must be implemented by the extension developer.
-     * It will return an {@link ConnectInboundInterceptor} that can be used to modify incoming CONNECT messages.
-     * If there is already a provider present, it will be overwritten.
+     * The {@link ConnectInboundInterceptorProvider} must be implemented by the extension developer. It will return an
+     * {@link ConnectInboundInterceptor} that can be used to modify incoming CONNECT messages. If there is already a
+     * provider present, it will be overwritten.
      *
      * @param connectInboundInterceptorProvider The provider to be registered.
      * @throws NullPointerException If the interceptor is null.
      * @since 4.2.0
      */
-    void setConnectInboundInterceptorProvider(@NotNull ConnectInboundInterceptorProvider connectInboundInterceptorProvider);
+    void setConnectInboundInterceptorProvider(
+            @NotNull ConnectInboundInterceptorProvider connectInboundInterceptorProvider);
 
     /**
      * The provider is called once for each outbound CONNACK message.
      * <p>
-     * The {@link ConnackOutboundInterceptorProvider} must be implemented by the extension developer.
-     * It will return an {@link ConnackOutboundInterceptor} that can be used to modify outbound CONNACK messages.
-     * If there is already a provider present, it will be overwritten.
+     * The {@link ConnackOutboundInterceptorProvider} must be implemented by the extension developer. It will return an
+     * {@link ConnackOutboundInterceptor} that can be used to modify outbound CONNACK messages. If there is already a
+     * provider present, it will be overwritten.
      *
      * @param connackOutboundInterceptorProvider The provider to be registered.
      * @throws NullPointerException If the interceptor is null.
      * @since 4.2.0
      */
-    void setConnackOutboundInterceptorProvider(@NotNull ConnackOutboundInterceptorProvider connackOutboundInterceptorProvider);
+    void setConnackOutboundInterceptorProvider(
+            @NotNull ConnackOutboundInterceptorProvider connackOutboundInterceptorProvider);
 }

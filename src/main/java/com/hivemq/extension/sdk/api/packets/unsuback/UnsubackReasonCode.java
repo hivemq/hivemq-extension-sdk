@@ -28,7 +28,6 @@ public enum UnsubackReasonCode {
      * The subscription is deleted.
      * <p>
      * This is a success code.
-     *
      */
     SUCCESS,
 
@@ -36,7 +35,6 @@ public enum UnsubackReasonCode {
      * No matching Topic Filter is being used by the Client.
      * <p>
      * This is a success code.
-     *
      */
     NO_SUBSCRIPTIONS_EXISTED,
 
@@ -45,7 +43,6 @@ public enum UnsubackReasonCode {
      * Reason Codes apply.
      * <p>
      * This is an unsuccessful code.
-     *
      */
     UNSPECIFIED_ERROR,
 
@@ -53,7 +50,6 @@ public enum UnsubackReasonCode {
      * The UNSUBSCRIBE is valid but the Server does not accept it.
      * <p>
      * This is an unsuccessful code.
-     *
      */
     IMPLEMENTATION_SPECIFIC_ERROR,
 
@@ -61,7 +57,6 @@ public enum UnsubackReasonCode {
      * The Client is not authorized to unsubscribe.
      * <p>
      * This is an unsuccessful code.
-     *
      */
     NOT_AUTHORIZED,
 
@@ -69,7 +64,6 @@ public enum UnsubackReasonCode {
      * The Topic Filter is correctly formed but is not allowed for this Client.
      * <p>
      * This is an unsuccessful code.
-     *
      */
     TOPIC_FILTER_INVALID,
 
@@ -77,7 +71,6 @@ public enum UnsubackReasonCode {
      * The specified Packet Identifier is already in use.
      * <p>
      * This is an unsuccessful code.
-     *
      */
     PACKET_IDENTIFIER_IN_USE
 }

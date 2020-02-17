@@ -21,9 +21,8 @@ import com.hivemq.extension.sdk.api.annotations.Nullable;
 import com.hivemq.extension.sdk.api.interceptor.connack.parameter.ConnackOutboundProviderInput;
 
 /**
- * The interceptor provider allows to implement custom logic to modify outbound CONNACK messages.
- * For each outbound CONNACK message an {@link ConnackOutboundInterceptor} can be provided that contains the
- * modification logic.
+ * The interceptor provider allows to implement custom logic to modify outbound CONNACK messages. For each outbound
+ * CONNACK message an {@link ConnackOutboundInterceptor} can be provided that contains the modification logic.
  *
  * @author Florian Limpöck
  * @since 4.2.0
@@ -34,13 +33,15 @@ public interface ConnackOutboundInterceptorProvider {
     /**
      * This method is called for each outbound CONNACK message by HiveMQ.
      * <p>
-     * Either the same {@link ConnackOutboundInterceptor} (stateless or must be thread-safe)<br/>
-     * or a new one (stateful, must not be thread-safe) can be supplied on each call.
+     * Either the same {@link ConnackOutboundInterceptor} (stateless or must be thread-safe) or a new one (stateful,
+     * must not be thread-safe) can be supplied on each call.
      * <p>
      * <code>null</code> can be returned if a CONNACK message should not be intercepted.
      *
-     * @return An implementation of the {@link ConnackOutboundInterceptor} or null if the CONNECT should not be intercepted.
+     * @return An implementation of the {@link ConnackOutboundInterceptor} or null if the CONNECT should not be
+     *         intercepted.
      * @since 4.2.0
      */
-    @Nullable ConnackOutboundInterceptor getConnackOutboundInterceptor(@NotNull ConnackOutboundProviderInput connackOutboundProviderInput);
+    @Nullable ConnackOutboundInterceptor getConnackOutboundInterceptor(
+            @NotNull ConnackOutboundProviderInput connackOutboundProviderInput);
 }

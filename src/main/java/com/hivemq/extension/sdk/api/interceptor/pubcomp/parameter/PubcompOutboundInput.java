@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.pubcomp.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -23,8 +24,8 @@ import com.hivemq.extension.sdk.api.packets.pubcomp.PubcompPacket;
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
 /**
- * This is the input parameter for any {@link PubcompOutboundInterceptor}
- * providing PUBCOMP, connection and client based information.
+ * This is the input parameter for any {@link PubcompOutboundInterceptor} providing PUBCOMP, connection and client based
+ * information.
  *
  * @author Yannick Weber
  */

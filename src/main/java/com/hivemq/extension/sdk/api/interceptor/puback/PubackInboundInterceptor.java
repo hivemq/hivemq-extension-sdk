@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.puback;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -54,6 +55,5 @@ public interface PubackInboundInterceptor extends Interceptor {
      * @param pubackInboundOutput The {@link PubackInboundOutput} parameter.
      */
     void onInboundPuback(
-            @NotNull PubackInboundInput pubackInboundInput,
-            @NotNull PubackInboundOutput pubackInboundOutput);
+            @NotNull PubackInboundInput pubackInboundInput, @NotNull PubackInboundOutput pubackInboundOutput);
 }

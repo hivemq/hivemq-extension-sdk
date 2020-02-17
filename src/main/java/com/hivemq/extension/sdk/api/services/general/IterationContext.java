@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package com.hivemq.extension.sdk.api.services.general;
 
 /**
@@ -32,5 +31,4 @@ public interface IterationContext {
      * @since 4.2.0
      */
     void abortIteration();
-
 }

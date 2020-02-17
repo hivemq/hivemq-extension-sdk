@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.cluster.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -22,8 +23,8 @@ import com.hivemq.extension.sdk.api.services.cluster.ClusterDiscoveryCallback;
 import java.util.List;
 
 /**
- * Output for the methods of a {@link ClusterDiscoveryCallback
- * ClusterDiscoveryCallback} that provide the current addresses of all HiveMQ cluster nodes.
+ * Output for the methods of a {@link ClusterDiscoveryCallback ClusterDiscoveryCallback} that provide the current
+ * addresses of all HiveMQ cluster nodes.
  *
  * @author Christoph Schäbel
  * @author Silvio Giebl

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services;
 
 import com.codahale.metrics.MetricRegistry;
@@ -86,8 +87,7 @@ public class Services {
     }
 
     /**
-     * @return A service to register {@link AuthenticatorProvider}
-     * and {@link AuthorizerProvider}.
+     * @return A service to register {@link AuthenticatorProvider} and {@link AuthorizerProvider}.
      * @since 4.0.0
      */
     public static @NotNull SecurityRegistry securityRegistry() {

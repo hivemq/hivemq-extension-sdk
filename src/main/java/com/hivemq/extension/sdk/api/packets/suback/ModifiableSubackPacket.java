@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.suback;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -27,8 +28,8 @@ import java.util.List;
 /**
  * A {@link SubackPacket} that can be modified before it is sent to the client.
  * <p>
- * For MQTT 3 clients you should only modify the reason codes, as the other properties exists only since MQTT 5 and
- * will therefore not be send to an MQTT 3 client.
+ * For MQTT 3 clients you should only modify the reason codes, as the other properties exists only since MQTT 5 and will
+ * therefore not be send to an MQTT 3 client.
  *
  * @author Robin Atherton
  */
@@ -46,16 +47,16 @@ public interface ModifiableSubackPacket extends SubackPacket {
      * @throws IllegalArgumentException If the amount of reason codes passed differs from that contained in the packet
      *                                  being manipulated.
      * @throws IllegalStateException    If switching from successful reason code to unsuccessful reason code or vice
-     *                                  versa. Check out {@link SubackReasonCode} to see what reason code counts
-     *                                  as a success or unsuccessful code.
+     *                                  versa. Check out {@link SubackReasonCode} to see what reason code counts as a
+     *                                  success or unsuccessful code.
      */
     void setReasonCodes(@NotNull List<@NotNull SubackReasonCode> reasonCodes);
 
     /**
      * Sets the reason string of the SUBACK packet.
      * <p>
-     * This setting is only respected for MQTT 5 clients and ignored for MQTT
-     * 3.x clients when the SUBACK is sent to the client (as MQTT 3.x clients don't know this property).
+     * This setting is only respected for MQTT 5 clients and ignored for MQTT 3.x clients when the SUBACK is sent to the
+     * client (as MQTT 3.x clients don't know this property).
      *
      * @param reasonString The reason string or <code>null</code> to remove the reason string.
      * @throws IllegalArgumentException If the reason string is not a valid UTF-8 string.
@@ -66,8 +67,8 @@ public interface ModifiableSubackPacket extends SubackPacket {
     /**
      * The modifiable {@link UserProperties} of the SUBACK packet.
      * <p>
-     * This setting is only respected for MQTT 5 clients and ignored for MQTT 3.x clients
-     * when the SUBACK is sent to the client (as MQTT 3.x clients don't know this property).
+     * This setting is only respected for MQTT 5 clients and ignored for MQTT 3.x clients when the SUBACK is sent to the
+     * client (as MQTT 3.x clients don't know this property).
      *
      * @return Modifiable user properties.
      */

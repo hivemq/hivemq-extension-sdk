@@ -19,6 +19,7 @@ package com.hivemq.extension.sdk.api.packets.publish;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
 import com.hivemq.extension.sdk.api.client.parameter.ClientInformation;
+import com.hivemq.extension.sdk.api.interceptor.connect.ConnectInboundInterceptor;
 import com.hivemq.extension.sdk.api.interceptor.connect.parameter.ConnectInboundInput;
 import com.hivemq.extension.sdk.api.packets.connect.ConnectPacket;
 import com.hivemq.extension.sdk.api.packets.connect.WillPublishPacket;
@@ -26,7 +27,6 @@ import com.hivemq.extension.sdk.api.packets.general.ModifiableUserProperties;
 import com.hivemq.extension.sdk.api.packets.general.UserProperties;
 import com.hivemq.extension.sdk.api.services.builder.Builders;
 import com.hivemq.extension.sdk.api.services.builder.WillPublishBuilder;
-import com.hivemq.extension.sdk.api.interceptor.connect.ConnectInboundInterceptor;
 
 import java.nio.ByteBuffer;
 import java.util.Optional;
@@ -43,8 +43,8 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * Set the client ID.
      * <p>
      * In case the client ID is changed, future interceptors may be called by a different thread for the same client.
-     * Extensions need to ensure thread-safety for shared objects in this case.
-     * Interceptors are still called in the same order for the client.
+     * Extensions need to ensure thread-safety for shared objects in this case. Interceptors are still called in the
+     * same order for the client.
      * <p>
      * The client ID provided by the {@link ClientInformation} in the {@link ConnectInboundInput} is not updated until
      * all {@link ConnectInboundInterceptor} for this CONNECT are finished.
@@ -60,8 +60,8 @@ public interface ModifiableConnectPacket extends ConnectPacket {
     /**
      * Set the clean start flag.
      * <p>
-     * For an MQTT 3 client clean start has the same value as clean session by default.
-     * However this MQTT 5 property can be used in the same way as for MQTT 5 client via this method.
+     * For an MQTT 3 client clean start has the same value as clean session by default. However this MQTT 5 property can
+     * be used in the same way as for MQTT 5 client via this method.
      *
      * @param cleanStart The new clean start flag of the CONNECT.
      * @since 4.2.0
@@ -71,8 +71,8 @@ public interface ModifiableConnectPacket extends ConnectPacket {
     /**
      * Set the will publish.
      * <p>
-     * Use {@link Builders#willPublish()} to get the {@link WillPublishBuilder} to create a will publish.
-     * To remove a will publish set this to null.
+     * Use {@link Builders#willPublish()} to get the {@link WillPublishBuilder} to create a will publish. To remove a
+     * will publish set this to null.
      * <p>
      * To modify the existing {@link WillPublishPacket} use {@link #getModifiableWillPublish()}.
      *
@@ -84,8 +84,8 @@ public interface ModifiableConnectPacket extends ConnectPacket {
     /**
      * Set the expiry interval.
      * <p>
-     * For an MQTT 3 client the expiry will be 0 by default if clean session is false.
-     * This method may be used to set a custom session expiry for MQTT 3 clients.
+     * For an MQTT 3 client the expiry will be 0 by default if clean session is false. This method may be used to set a
+     * custom session expiry for MQTT 3 clients.
      *
      * @param expiryInterval The new expiry interval for the CONNECT.
      * @throws IllegalArgumentException If the expiry interval is more than the configured maximum.
@@ -122,8 +122,8 @@ public interface ModifiableConnectPacket extends ConnectPacket {
     void setMaximumPacketSize(int maximumPacketSize);
 
     /**
-     * Set the topic alias maximum.
-     * This setting is only respected for MQTT 5 clients. For MQTT 3.x clients this setting is ignored.
+     * Set the topic alias maximum. This setting is only respected for MQTT 5 clients. For MQTT 3.x clients this setting
+     * is ignored.
      *
      * @param topicAliasMaximum The new topic alias maximum for the CONNECT.
      * @throws IllegalArgumentException If the topic alias maximum is more than '65535'.
@@ -132,8 +132,8 @@ public interface ModifiableConnectPacket extends ConnectPacket {
     void setTopicAliasMaximum(int topicAliasMaximum);
 
     /**
-     * Set the request response information.
-     * This setting is only respected for MQTT 5 clients. For MQTT 3.x clients this setting is ignored.
+     * Set the request response information. This setting is only respected for MQTT 5 clients. For MQTT 3.x clients
+     * this setting is ignored.
      *
      * @param requestResponseInformation The new request response information flag for the CONNECT.
      * @since 4.2.0
@@ -141,8 +141,8 @@ public interface ModifiableConnectPacket extends ConnectPacket {
     void setRequestResponseInformation(boolean requestResponseInformation);
 
     /**
-     * Set the request problem information.
-     * This setting is only respected for MQTT 5 clients. For MQTT 3.x clients this setting is ignored.
+     * Set the request problem information. This setting is only respected for MQTT 5 clients. For MQTT 3.x clients this
+     * setting is ignored.
      *
      * @param requestProblemInformation The new request problem information flag for the CONNECT.
      * @since 4.2.0
@@ -189,8 +189,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * @since 4.2.0
      */
     @Override
-    @NotNull
-    ModifiableUserProperties getUserProperties();
+    @NotNull ModifiableUserProperties getUserProperties();
 
     /**
      * Get a modifiable instance of the {@link WillPublishPacket}.
@@ -198,6 +197,5 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * @return Modifiable will publish.
      * @since 4.2.0
      */
-    @NotNull
-    Optional<ModifiableWillPublish> getModifiableWillPublish();
+    @NotNull Optional<ModifiableWillPublish> getModifiableWillPublish();
 }

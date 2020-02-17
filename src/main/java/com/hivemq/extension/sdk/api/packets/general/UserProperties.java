@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.general;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -44,15 +45,13 @@ public interface UserProperties {
      * @return The values user property with the specified name.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull List<@NotNull String> getAllForName(@NotNull String name);
+    @Immutable @NotNull List<@NotNull String> getAllForName(@NotNull String name);
 
     /**
      * @return A list of all {@link UserProperty}s.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull List<@NotNull UserProperty> asList();
+    @Immutable @NotNull List<@NotNull UserProperty> asList();
 
     /**
      * @return <code>true</code> if no user properties are present, else <code>false</code>.

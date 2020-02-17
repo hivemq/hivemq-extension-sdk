@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.auth.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -26,8 +27,8 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 import java.util.Optional;
 
 /**
- * This is the input parameter of any {@link SubscriptionAuthorizer}
- * providing unmodifiable information about the {@link Subscription} and {@link ClientBasedInput}.
+ * This is the input parameter of any {@link SubscriptionAuthorizer} providing unmodifiable information about the {@link
+ * Subscription} and {@link ClientBasedInput}.
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
@@ -62,6 +63,5 @@ public interface SubscriptionAuthorizerInput extends ClientBasedInput {
      * @return The {@link Subscription} for this authorization call.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull Subscription getSubscription();
+    @Immutable @NotNull Subscription getSubscription();
 }

@@ -37,6 +37,5 @@ public interface DisconnectOutboundInput extends ClientBasedInput {
      *
      * @return An unmodifiable {@link DisconnectPacket}.
      */
-    @Immutable
-    @NotNull DisconnectPacket getDisconnectPacket();
+    @Immutable @NotNull DisconnectPacket getDisconnectPacket();
 }

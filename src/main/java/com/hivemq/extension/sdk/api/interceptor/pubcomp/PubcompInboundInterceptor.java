@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.pubcomp;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -32,9 +33,9 @@ import java.time.Duration;
  * If the same instance is shared between multiple clients it can be called in different Threads and must therefore be
  * thread-safe.
  * <p>
- * When the method {@link #onInboundPubcomp(PubcompInboundInput, PubcompInboundOutput)} throws an exception or a call
- * to {@link PubcompInboundOutput#async(Duration)} times out with {@link TimeoutFallback#FAILURE}, HiveMQ will ignore
- * this interceptor and will:
+ * When the method {@link #onInboundPubcomp(PubcompInboundInput, PubcompInboundOutput)} throws an exception or a call to
+ * {@link PubcompInboundOutput#async(Duration)} times out with {@link TimeoutFallback#FAILURE}, HiveMQ will ignore this
+ * interceptor and will:
  * <ol>
  *    <li>Log the exception</li>
  *    <li>Revert the changes to the {@link ModifiablePubcompPacket} made by the interceptor</li>
@@ -54,6 +55,5 @@ public interface PubcompInboundInterceptor extends Interceptor {
      * @param pubcompInboundOutput The {@link PubcompInboundOutput} parameter.
      */
     void onInboundPubcomp(
-            @NotNull PubcompInboundInput pubcompInboundInput,
-            @NotNull PubcompInboundOutput pubcompInboundOutput);
+            @NotNull PubcompInboundInput pubcompInboundInput, @NotNull PubcompInboundOutput pubcompInboundOutput);
 }

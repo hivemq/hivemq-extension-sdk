@@ -132,7 +132,5 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      */
     void setSubscriptionIdentifiers(@NotNull List<@NotNull Integer> subscriptionIdentifiers);
 
-    @NotNull
-    ModifiableUserProperties getUserProperties();
-
+    @NotNull ModifiableUserProperties getUserProperties();
 }

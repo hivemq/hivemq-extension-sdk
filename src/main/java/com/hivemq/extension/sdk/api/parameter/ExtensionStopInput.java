@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -48,9 +49,8 @@ public interface ExtensionStopInput {
     @NotNull ServerInformation getServerInformation();
 
     /**
-     * @return A {@link Map} of all currently enabled extensions. <br/>
-     * The key is the ID of the extension. <br/>
-     * The value is a {@link ExtensionInformation} containing detailed information about each extension.
+     * @return A {@link Map} of all currently enabled extensions. <br/> The key is the ID of the extension. <br/> The
+     *         value is a {@link ExtensionInformation} containing detailed information about each extension.
      * @since 4.0.0
      */
     @NotNull Map<String, @NotNull ExtensionInformation> getEnabledExtensions();

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.subscribe;
 
 import com.hivemq.extension.sdk.api.annotations.Nullable;
@@ -72,7 +73,7 @@ public enum RetainHandling {
      *
      * @param code The byte code.
      * @return The Retain Handling belonging to the byte code or <code>null</code> if the byte code is not a valid
-     * Retain Handling.
+     *         Retain Handling.
      * @since 4.0.0
      */
     public static @Nullable RetainHandling fromCode(final int code) {

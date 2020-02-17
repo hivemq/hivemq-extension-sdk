@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.disconnect;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;

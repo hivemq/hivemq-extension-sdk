@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.auth.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -21,8 +22,8 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 import com.hivemq.extension.sdk.api.services.auth.provider.AuthorizerProvider;
 
 /**
- * This is the input parameter of any {@link AuthorizerProvider}
- * providing {@link ServerInformation} and {@link ClientBasedInput}.
+ * This is the input parameter of any {@link AuthorizerProvider} providing {@link ServerInformation} and {@link
+ * ClientBasedInput}.
  *
  * @author Florian Limpöck
  * @since 4.0.0
