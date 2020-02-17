@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.events.client.parameters;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -37,7 +38,5 @@ public interface ConnectionStartInput extends ClientBasedInput {
      * @return The {@link ConnectPacket} of the input.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull
-    ConnectPacket getConnectPacket();
+    @Immutable @NotNull ConnectPacket getConnectPacket();
 }

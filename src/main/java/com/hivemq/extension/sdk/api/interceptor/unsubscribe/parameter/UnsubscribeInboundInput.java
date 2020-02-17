@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.unsubscribe.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -36,6 +37,5 @@ public interface UnsubscribeInboundInput extends ClientBasedInput {
      *
      * @return An unmodifiable {@link UnsubscribePacket}.
      */
-    @Immutable
-    @NotNull UnsubscribePacket getUnsubscribePacket();
+    @Immutable @NotNull UnsubscribePacket getUnsubscribePacket();
 }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -25,8 +26,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * A shared thread pool executor which is a {@link ScheduledExecutorService}.
- * It is recommended to use this instead of creating your own thread(-pool) in your extension.
+ * A shared thread pool executor which is a {@link ScheduledExecutorService}. It is recommended to use this instead of
+ * creating your own thread(-pool) in your extension.
  * <p>
  * Use this class for all concurrent code.
  *
@@ -108,7 +109,8 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
      * @since 4.0.0
      */
     @Override
-    <V> @NotNull CompletableScheduledFuture<V> schedule(@NotNull Callable<V> callable, long delay, @NotNull TimeUnit unit);
+    <V> @NotNull CompletableScheduledFuture<V> schedule(
+            @NotNull Callable<V> callable, long delay, @NotNull TimeUnit unit);
 
     /**
      * @return A {@link CompletableScheduledFuture} representing pending completion of the task.

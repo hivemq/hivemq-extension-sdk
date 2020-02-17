@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.auth;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -41,5 +42,7 @@ public interface PublishAuthorizer extends Authorizer {
      * @param publishAuthorizerOutput The {@link PublishAuthorizerOutput}.
      * @since 4.0.0
      */
-    void authorizePublish(@NotNull PublishAuthorizerInput publishAuthorizerInput, @NotNull PublishAuthorizerOutput publishAuthorizerOutput);
+    void authorizePublish(
+            @NotNull PublishAuthorizerInput publishAuthorizerInput,
+            @NotNull PublishAuthorizerOutput publishAuthorizerOutput);
 }

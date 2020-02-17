@@ -248,8 +248,8 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
     /**
      * The outcome of the authentication is determined by an authenticator of the next extension (with lower priority).
      * <p>
-     * If no extension with an authenticator is left the default behaviour is used.
-     * The default behaviour is the same as {@link #failAuthentication()}.
+     * If no extension with an authenticator is left the default behaviour is used. The default behaviour is the same as
+     * {@link #failAuthentication()}.
      *
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
@@ -304,7 +304,9 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * {@inheritDoc}
      *
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        SUCCESS has the same effect as {@link #nextExtensionOrDefault()}.
+     *                        <p>
      *                        FAILURE has the same effect as {@link #failAuthentication(DisconnectedReasonCode, String)}
      *                        with reason code {@link DisconnectedReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason
      *                        string <code>Authentication failed, authenticator timed out</code> (or
@@ -314,14 +316,16 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
     @NotNull Async<EnhancedAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback);
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is
-     * handled either as failed or successful, depending on the specified fallback.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
+     * successful, depending on the specified fallback.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
      * @param timeout         Timeout that HiveMQ waits for the result of the async operation.
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        SUCCESS has the same effect as {@link #nextExtensionOrDefault()}.
+     *                        <p>
      *                        FAILURE has the same effect as {@link #failAuthentication(DisconnectedReasonCode, String)}
      *                        with the specified reason code and reason string <code>Authentication failed,
      *                        authenticator timed out</code> (or <code>Re-authentication failed, authenticator timed
@@ -339,14 +343,16 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
             @NotNull DisconnectedReasonCode reasonCode);
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is
-     * handled either as failed or successful, depending on the specified fallback.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
+     * successful, depending on the specified fallback.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
      * @param timeout         Timeout that HiveMQ waits for the result of the async operation.
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        SUCCESS has the same effect as {@link #nextExtensionOrDefault()}.
+     *                        <p>
      *                        FAILURE has the same effect as {@link #failAuthentication(DisconnectedReasonCode, String)}
      *                        with reason code {@link DisconnectedReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and the
      *                        specified reason string.
@@ -354,19 +360,19 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * @throws UnsupportedOperationException If async is called more than once.
      */
     @NotNull Async<EnhancedAuthOutput> async(
-            @NotNull Duration timeout,
-            @NotNull TimeoutFallback timeoutFallback,
-            @Nullable String reasonString);
+            @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @Nullable String reasonString);
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is
-     * handled either as failed or successful, depending on the specified fallback.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
+     * successful, depending on the specified fallback.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
      * @param timeout         Timeout that HiveMQ waits for the result of the async operation.
      * @param timeoutFallback Fallback behaviour if a timeout occurs.
+     *                        <p>
      *                        SUCCESS has the same effect as {@link #nextExtensionOrDefault()}.
+     *                        <p>
      *                        FAILURE has the same effect as {@link #failAuthentication(DisconnectedReasonCode, String)}
      *                        with the specified reason code and reason string.
      * @param reasonCode      The reason code sent in CONNACK or DISCONNECT when timeout occurs.

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.auth;
 
 import com.hivemq.extension.sdk.api.auth.Authorizer;
@@ -27,16 +28,16 @@ import com.hivemq.extension.sdk.api.auth.parameter.TopicPermission;
 public enum DefaultAuthorizationBehaviour {
 
     /**
-     * When DENY is set and none of the default permission matches to
-     * a PUBLISH topic or topic filter in a Subscription, then the client is not allowed to PUBLISH or SUBSCRIBE.
+     * When DENY is set and none of the default permission matches to a PUBLISH topic or topic filter in a Subscription,
+     * then the client is not allowed to PUBLISH or SUBSCRIBE.
      *
      * @since 4.0.0
      */
     DENY,
 
     /**
-     * When ALLOW is set and none of the default permission matches to
-     * a PUBLISH topic or topic filter in a Subscription, then the client is allowed to PUBLISH or SUBSCRIBE.
+     * When ALLOW is set and none of the default permission matches to a PUBLISH topic or topic filter in a
+     * Subscription, then the client is allowed to PUBLISH or SUBSCRIBE.
      *
      * @since 4.0.0
      */

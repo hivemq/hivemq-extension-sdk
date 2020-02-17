@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.cluster;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -22,8 +23,8 @@ import com.hivemq.extension.sdk.api.services.cluster.parameter.ClusterDiscoveryO
 /**
  * This callback is meant to regularly discover the addresses of all available HiveMQ cluster nodes.
  * <p>
- * Note: Extension discovery is only used by HiveMQ if {@code <discovery>} is set to {@code <extension>} in the
- * {@code <cluster>} section of the HiveMQ config file.
+ * Note: Extension discovery is only used by HiveMQ if {@code <discovery>} is set to {@code <extension>} in the {@code
+ * <cluster>} section of the HiveMQ config file.
  *
  * @author Christoph Schäbel
  * @author Silvio Giebl
@@ -32,8 +33,7 @@ import com.hivemq.extension.sdk.api.services.cluster.parameter.ClusterDiscoveryO
 public interface ClusterDiscoveryCallback {
 
     /**
-     * This method is called once by HiveMQ when this callback is added via
-     * {@link ClusterService#addDiscoveryCallback(ClusterDiscoveryCallback)}.
+     * This method is called once by HiveMQ when this callback is added via {@link ClusterService#addDiscoveryCallback(ClusterDiscoveryCallback)}.
      * <p>
      * It can be used to register this HiveMQ instance with some kind of central registry or to save it to a database or
      * file server for example.
@@ -43,8 +43,9 @@ public interface ClusterDiscoveryCallback {
      *                               addresses of all HiveMQ cluster nodes.
      * @since 4.0.0
      */
-    void init(@NotNull ClusterDiscoveryInput clusterDiscoveryInput,
-              @NotNull ClusterDiscoveryOutput clusterDiscoveryOutput);
+    void init(
+            @NotNull ClusterDiscoveryInput clusterDiscoveryInput,
+            @NotNull ClusterDiscoveryOutput clusterDiscoveryOutput);
 
     /**
      * This method is called regularly by HiveMQ to discover all current available cluster nodes.
@@ -57,8 +58,9 @@ public interface ClusterDiscoveryCallback {
      *                               addresses of all HiveMQ cluster nodes.
      * @since 4.0.0
      */
-    void reload(@NotNull ClusterDiscoveryInput clusterDiscoveryInput,
-                @NotNull ClusterDiscoveryOutput clusterDiscoveryOutput);
+    void reload(
+            @NotNull ClusterDiscoveryInput clusterDiscoveryInput,
+            @NotNull ClusterDiscoveryOutput clusterDiscoveryOutput);
 
     /**
      * This method is called once by HiveMQ in one of the following cases:

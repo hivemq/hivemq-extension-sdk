@@ -51,8 +51,7 @@ public interface UnsubackPacket {
      *
      * @return The reason codes for the unsubscribed topics.
      */
-    @Immutable
-    @NotNull List<@NotNull UnsubackReasonCode> getReasonCodes();
+    @Immutable @NotNull List<@NotNull UnsubackReasonCode> getReasonCodes();
 
     /**
      * The reason string of the UNSUBACK packet.
@@ -72,6 +71,5 @@ public interface UnsubackPacket {
      *
      * @return The {@link UserProperties} of the UNSUBACK packet.
      */
-    @Immutable
-    @NotNull UserProperties getUserProperties();
+    @Immutable @NotNull UserProperties getUserProperties();
 }

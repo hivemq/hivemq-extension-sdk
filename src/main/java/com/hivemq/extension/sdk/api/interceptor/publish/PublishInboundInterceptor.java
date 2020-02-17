@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.publish;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -37,12 +38,13 @@ import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishInbound
 public interface PublishInboundInterceptor extends Interceptor {
 
     /**
-     * When a {@link PublishInboundInterceptor} is set through any extension,
-     * this method gets called for every inbound PUBLISH packet from any MQTT client.
+     * When a {@link PublishInboundInterceptor} is set through any extension, this method gets called for every inbound
+     * PUBLISH packet from any MQTT client.
      *
      * @param publishInboundInput  The {@link PublishInboundInput} parameter.
      * @param publishInboundOutput The {@link PublishInboundOutput} parameter.
      * @since 4.0.0
      */
-    void onInboundPublish(@NotNull PublishInboundInput publishInboundInput, @NotNull PublishInboundOutput publishInboundOutput);
+    void onInboundPublish(
+            @NotNull PublishInboundInput publishInboundInput, @NotNull PublishInboundOutput publishInboundOutput);
 }

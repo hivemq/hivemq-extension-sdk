@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.exception;
 
 /**
@@ -21,5 +22,4 @@ package com.hivemq.extension.sdk.api.services.exception;
  * @author Lukas Brandl
  * @since 4.0.0
  */
-public class RateLimitExceededException extends RuntimeException {
-}
+public class RateLimitExceededException extends RuntimeException {}

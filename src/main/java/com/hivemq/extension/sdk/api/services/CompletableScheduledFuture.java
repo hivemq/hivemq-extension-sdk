@@ -13,18 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ScheduledFuture;
 
 /**
- *
  * Abstract class for combining of {@link ScheduledFuture<T>} and {@link CompletableFuture<T>}.
  *
  * @author Florian Limpöck
  * @since 4.0.0
  */
-public abstract class CompletableScheduledFuture<T> extends CompletableFuture<T> implements ScheduledFuture<T> {
-
-}
+public abstract class CompletableScheduledFuture<T> extends CompletableFuture<T> implements ScheduledFuture<T> {}

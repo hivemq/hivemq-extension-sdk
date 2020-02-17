@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.publish;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -35,8 +36,7 @@ import java.nio.ByteBuffer;
 public interface ModifiablePublishPacket extends PublishPacket {
 
     /**
-     * This does not change the QoS to the publisher.
-     * Only for onward delivery.
+     * This does not change the QoS to the publisher. Only for onward delivery.
      *
      * @param qos The QoS for the onward publish to subscribers.
      * @throws NullPointerException     If qos is null.

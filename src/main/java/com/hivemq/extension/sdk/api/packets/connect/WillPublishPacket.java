@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.connect;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -47,5 +48,4 @@ public interface WillPublishPacket extends PublishPacket {
      * @since 4.0.0
      */
     long getWillDelay();
-
 }

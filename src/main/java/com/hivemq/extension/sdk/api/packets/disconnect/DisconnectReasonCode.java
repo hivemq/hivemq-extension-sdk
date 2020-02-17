@@ -116,8 +116,7 @@ public enum DisconnectReasonCode {
      * @since 4.0.0
      * @deprecated Must not be used for disconnect packets.
      */
-    @Deprecated
-    CLIENT_IDENTIFIER_NOT_VALID,
+    @Deprecated CLIENT_IDENTIFIER_NOT_VALID,
     /**
      * Can only be used for the {@link ModifiableOutboundDisconnectPacket}.
      * <p>

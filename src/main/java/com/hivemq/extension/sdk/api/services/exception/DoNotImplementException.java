@@ -13,14 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.exception;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
- * This exception is used to signal that a given interface,
- * annotated with {@link DoNotImplement} was falsely implemented by an extension.
+ * This exception is used to signal that a given interface, annotated with {@link DoNotImplement} was falsely
+ * implemented by an extension.
  *
  * @author Florian Limpöck
  * @since 4.0.0
@@ -29,12 +30,14 @@ public class DoNotImplementException extends RuntimeException {
 
     /**
      * The name of the class that was implemented.
+     *
      * @since 4.0.0
      */
     private final @NotNull String implementedClass;
 
     /**
      * Flag that if <b>true</b> will also fill in the stack trace for the exception.
+     *
      * @since 4.0.0
      */
     private final boolean fillInStacktrace;

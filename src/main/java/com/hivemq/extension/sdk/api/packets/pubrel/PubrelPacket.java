@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.pubrel;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -64,8 +65,8 @@ public interface PubrelPacket {
     /**
      * The user properties from the PUBREL packet.
      * <p>
-     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a
-     * previous {@link PubrelInboundInterceptor} or {@link PubrelOutboundInterceptor}).
+     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous {@link
+     * PubrelInboundInterceptor} or {@link PubrelOutboundInterceptor}).
      *
      * @return The user properties.
      */

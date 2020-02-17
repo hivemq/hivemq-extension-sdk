@@ -28,8 +28,8 @@ import com.hivemq.extension.sdk.api.packets.subscribe.SubackReasonCode;
 import java.time.Duration;
 
 /**
- * This is the output parameter of any {@link SubscribeInboundInterceptor}
- * providing methods to define the outcome of SUBSCRIBE interception.
+ * This is the output parameter of any {@link SubscribeInboundInterceptor} providing methods to define the outcome of
+ * SUBSCRIBE interception.
  * <p>
  * It can be used to modify an inbound SUBSCRIBE packet.
  * <p>
@@ -46,12 +46,11 @@ public interface SubscribeInboundOutput extends AsyncOutput<SubscribeInboundOutp
      * @return A modifiable subscribe packet.
      * @since 4.2.0
      */
-    @NotNull
-    ModifiableSubscribePacket getSubscribePacket();
+    @NotNull ModifiableSubscribePacket getSubscribePacket();
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is
-     * handled either as failed or successful, depending on the specified fallback.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
+     * successful, depending on the specified fallback.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      * <p>
@@ -69,9 +68,9 @@ public interface SubscribeInboundOutput extends AsyncOutput<SubscribeInboundOutp
     @NotNull Async<SubscribeInboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback fallback);
 
     /**
-     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled as failed.
-     * This means that the outcome results in a Suback with {@link SubackReasonCode#UNSPECIFIED_ERROR} and the
-     * subscription will be prevented.
+     * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled as failed. This
+     * means that the outcome results in a Suback with {@link SubackReasonCode#UNSPECIFIED_ERROR} and the subscription
+     * will be prevented.
      * <p>
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
@@ -81,5 +80,4 @@ public interface SubscribeInboundOutput extends AsyncOutput<SubscribeInboundOutp
      */
     @Override
     @NotNull Async<SubscribeInboundOutput> async(@NotNull Duration timeout);
-
 }

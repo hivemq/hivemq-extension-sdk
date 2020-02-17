@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.builder;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -38,8 +39,8 @@ public interface TopicPermissionBuilder {
      * @throws NullPointerException     If the topic filter is null.
      * @throws IllegalArgumentException If the topic filter is an empty string.
      * @throws IllegalArgumentException If the topic filter contains invalid UTF-8 characters.
-     * @throws IllegalArgumentException If the topic filter is longer than the configured maximum. Default
-     *                                  maximum length is 65535.
+     * @throws IllegalArgumentException If the topic filter is longer than the configured maximum. Default maximum
+     *                                  length is 65535.
      * @since 4.0.0
      */
     @NotNull TopicPermissionBuilder topicFilter(@NotNull String topicFilter);
@@ -101,8 +102,7 @@ public interface TopicPermissionBuilder {
      * <p>
      * DEFAULT: <code>ALL</code>.
      *
-     * @param sharedSubscription The {@link TopicPermission.SharedSubscription} to
-     *                           use.
+     * @param sharedSubscription The {@link TopicPermission.SharedSubscription} to use.
      * @return The {@link TopicPermissionBuilder}.
      * @throws NullPointerException If the sharedSubscription is null.
      * @since 4.0.0
@@ -110,12 +110,11 @@ public interface TopicPermissionBuilder {
     @NotNull TopicPermissionBuilder sharedSubscription(@NotNull TopicPermission.SharedSubscription sharedSubscription);
 
     /**
-     * Set a shared group for this {@link TopicPermission}.
-     * The value can be either <code>#</code> which allows all shared group names, or a specific group name must be set.
+     * Set a shared group for this {@link TopicPermission}. The value can be either <code>#</code> which allows all
+     * shared group names, or a specific group name must be set.
      * <p>
-     * This value is only used for SUBSCRIBE actions. For PUBLISH actions this value is ignored.
-     * This value is only used when the Subscription's topic filter is a shared subscription. For regular subscriptions
-     * this value is ignored.
+     * This value is only used for SUBSCRIBE actions. For PUBLISH actions this value is ignored. This value is only used
+     * when the Subscription's topic filter is a shared subscription. For regular subscriptions this value is ignored.
      * <p>
      * DEFAULT: <code>#</code>.
      * <p>

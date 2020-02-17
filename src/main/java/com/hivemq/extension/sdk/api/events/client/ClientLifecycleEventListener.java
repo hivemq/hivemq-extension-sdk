@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.events.client;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -40,8 +41,8 @@ public interface ClientLifecycleEventListener {
      * This method is called by HiveMQ when an MQTT connection is started by the client. The MQTT connection starts when
      * the client sends an MQTT CONNECT packet to the server.
      * <p>
-     * This method is executed after the ConnectInboundPacketModifier and the information represented in the
-     * input can already modified by an extension.
+     * This method is executed after the ConnectInboundPacketModifier and the information represented in the input can
+     * already modified by an extension.
      *
      * @param connectionStartInput The {@link ConnectionStartInput} containing information about the MQTT CONNECT
      *                             packet, the client and the connection.
@@ -88,7 +89,7 @@ public interface ClientLifecycleEventListener {
      *                                  disconnect reason, the client and the connection.
      * @since 4.0.0
      */
-    default void onAuthenticationFailedDisconnect(@NotNull final AuthenticationFailedInput authenticationFailedInput) {
+    default void onAuthenticationFailedDisconnect(final @NotNull AuthenticationFailedInput authenticationFailedInput) {
         onDisconnect(authenticationFailedInput);
     }
 
@@ -104,7 +105,7 @@ public interface ClientLifecycleEventListener {
      *                            connection.
      * @since 4.0.0
      */
-    default void onConnectionLost(@NotNull final ConnectionLostInput connectionLostInput) {
+    default void onConnectionLost(final @NotNull ConnectionLostInput connectionLostInput) {
         onDisconnect(connectionLostInput);
     }
 
@@ -118,7 +119,8 @@ public interface ClientLifecycleEventListener {
      *                                       exact disconnect reason, the client and the connection.
      * @since 4.0.0
      */
-    default void onClientInitiatedDisconnect(@NotNull final ClientInitiatedDisconnectInput clientInitiatedDisconnectInput) {
+    default void onClientInitiatedDisconnect(
+            final @NotNull ClientInitiatedDisconnectInput clientInitiatedDisconnectInput) {
         onDisconnect(clientInitiatedDisconnectInput);
     }
 
@@ -133,8 +135,8 @@ public interface ClientLifecycleEventListener {
      *                                       exact disconnect reason, the client and the connection.
      * @since 4.0.0
      */
-    default void onServerInitiatedDisconnect(@NotNull final ServerInitiatedDisconnectInput serverInitiatedDisconnectInput) {
+    default void onServerInitiatedDisconnect(
+            final @NotNull ServerInitiatedDisconnectInput serverInitiatedDisconnectInput) {
         onDisconnect(serverInitiatedDisconnectInput);
     }
-
 }

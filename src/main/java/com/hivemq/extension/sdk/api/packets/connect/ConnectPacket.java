@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.connect;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.interceptor.connect.ConnectInboundInterceptor;
 import com.hivemq.extension.sdk.api.packets.general.MqttVersion;
 import com.hivemq.extension.sdk.api.packets.general.UserProperties;
 import com.hivemq.extension.sdk.api.services.publish.Publish;
-import com.hivemq.extension.sdk.api.interceptor.connect.ConnectInboundInterceptor;
 
 import java.nio.ByteBuffer;
 import java.util.Optional;
@@ -102,9 +103,7 @@ public interface ConnectPacket {
     int getKeepAlive();
 
     /**
-     * The limit of QoS 1 and QoS 2 {@link Publish}es that the client is willing
-     * to
-     * process concurrently.
+     * The limit of QoS 1 and QoS 2 {@link Publish}es that the client is willing to process concurrently.
      * <p>
      * For an MQTT 3 client this MQTT 5 property will always be 65,535.
      *
@@ -145,12 +144,11 @@ public interface ConnectPacket {
     boolean getRequestResponseInformation();
 
     /**
-     * This flag indicates if the server may sent Reason String or User Properties in the case of failures.
-     * If <b>true</b> server may sent these in any MQTT packet, for <b>false</b> they may only be sent in a PUBLISH,
+     * This flag indicates if the server may sent Reason String or User Properties in the case of failures. If
+     * <b>true</b> server may sent these in any MQTT packet, for <b>false</b> they may only be sent in a PUBLISH,
      * CONNACK, or DISCONNECT packet.
      * <p>
-     * For an MQTT 3 client this MQTT 5 property will always be false.
-     * This can be ignored for MQTT 3 clients.
+     * For an MQTT 3 client this MQTT 5 property will always be false. This can be ignored for MQTT 3 clients.
      *
      * @return The request problem information flag.
      * @since 4.0.0
@@ -169,8 +167,8 @@ public interface ConnectPacket {
     @NotNull Optional<String> getAuthenticationMethod();
 
     /**
-     * If this property is present, the {@link ByteBuffer} contains the data used for the extended authentication.
-     * The contents of this data are defined by the authentication method.
+     * If this property is present, the {@link ByteBuffer} contains the data used for the extended authentication. The
+     * contents of this data are defined by the authentication method.
      * <p>
      * For an MQTT 3 client this property can be set in the {@link ConnectInboundInterceptor}.
      *

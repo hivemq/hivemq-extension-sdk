@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hivemq.extension.sdk.api.client.parameter;
 
+package com.hivemq.extension.sdk.api.client.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -29,21 +29,18 @@ import java.util.Optional;
 /**
  * Through this service an extension can manage client connection attributes with the same lifetime as the connection.
  * <p>
- * The ConnectionAttributeStore is a key-value store for storing arbitrary data as additional information
- * within the MQTT client connection. All data is stored in-memory and the maximum amount of a single key-value
- * pair is 10 kilobytes.
+ * The ConnectionAttributeStore is a key-value store for storing arbitrary data as additional information within the
+ * MQTT client connection. All data is stored in-memory and the maximum amount of a single key-value pair is 10
+ * kilobytes.
  * <p>
  * A Connection Attribute is arbitrary binary data. For convenience purposes methods like {@link #putAsString(String,
- * String)}
- * are available in case String representations should be stored. If complex objects are desired to be stored in
- * the ConnectionAttributeStore, manual serialization and deserialization must be implemented by the extension
+ * String)} are available in case String representations should be stored. If complex objects are desired to be stored
+ * in the ConnectionAttributeStore, manual serialization and deserialization must be implemented by the extension
  * developer.
  * <p>
  * The ConnectionAttributeStore is useful for storing temporary data or data that needs to be cleaned up automatically
- * after
- * the MQTT client disconnected. This store is also useful for storing temporary information that needs to be shared
- * across
- * callbacks.
+ * after the MQTT client disconnected. This store is also useful for storing temporary information that needs to be
+ * shared across callbacks.
  * <p>
  * The ConnectionAttributeStore is thread safe.
  *
@@ -114,7 +111,7 @@ public interface ConnectionAttributeStore {
      * @param key     The key of the connection attribute.
      * @param charset The {@link Charset} of the value of the connection attribute.
      * @return An {@link Optional} containing the value of the connection attribute as a string with the given charset
-     * if present.
+     *         if present.
      * @since 4.0.0
      */
     @NotNull Optional<String> getAsString(@NotNull String key, @NotNull Charset charset);

@@ -28,6 +28,5 @@ public interface SubscriberWithFilterResult {
      * @return The subscribers MQTT client identifier.
      * @since 4.2.0
      */
-    @NotNull
-    String getClientId();
+    @NotNull String getClientId();
 }

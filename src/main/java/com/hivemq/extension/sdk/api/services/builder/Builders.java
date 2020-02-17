@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.builder;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -43,8 +44,9 @@ import java.util.function.Supplier;
  */
 public class Builders {
 
-    private static final String NO_ACCESS_MESSAGE = "Static class Builders cannot be called from a thread \"%s\" which" +
-            " does not have a HiveMQ extension classloader as its context classloader.";
+    private static final String NO_ACCESS_MESSAGE =
+            "Static class Builders cannot be called from a thread \"%s\" which" +
+                    " does not have a HiveMQ extension classloader as its context classloader.";
 
     //this map is filled by HiveMQ with implementations for all builders
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
@@ -89,7 +91,6 @@ public class Builders {
     public static @NotNull WillPublishBuilder willPublish() {
         return getClassSupplier(WillPublishBuilder.class).get();
     }
-
 
     private static <T> @NotNull Supplier<T> getClassSupplier(final @NotNull Class<T> clazz) {
 

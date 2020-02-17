@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package com.hivemq.extension.sdk.api.services.general;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;

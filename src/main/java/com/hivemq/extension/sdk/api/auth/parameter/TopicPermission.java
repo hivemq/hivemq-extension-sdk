@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.auth.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -20,6 +21,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
  * A topic permission represents an authorization action.
+ * <p>
  * The topic permission can be used to allow/deny a PUBLISH or Subscription, if it matches <b>all</b> criteria defined
  * in the topic permission.
  *

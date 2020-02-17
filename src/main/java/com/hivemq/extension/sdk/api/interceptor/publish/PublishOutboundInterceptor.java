@@ -18,7 +18,6 @@ package com.hivemq.extension.sdk.api.interceptor.publish;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.interceptor.Interceptor;
-import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishInboundOutput;
 import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishOutboundInput;
 import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishOutboundOutput;
 
@@ -38,12 +37,13 @@ import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishOutboun
 public interface PublishOutboundInterceptor extends Interceptor {
 
     /**
-     * When a {@link PublishOutboundInterceptor} is set through any extension,
-     * this method gets called for every outgoing PUBLISH packet from any MQTT client.
+     * When a {@link PublishOutboundInterceptor} is set through any extension, this method gets called for every
+     * outgoing PUBLISH packet from any MQTT client.
      *
      * @param publishOutboundInput  The {@link PublishOutboundInput} parameter.
      * @param publishOutboundOutput The {@link PublishOutboundOutput} parameter.
      * @since 4.2.0
      */
-    void onOutboundPublish(@NotNull PublishOutboundInput publishOutboundInput, @NotNull PublishOutboundOutput publishOutboundOutput);
+    void onOutboundPublish(
+            @NotNull PublishOutboundInput publishOutboundInput, @NotNull PublishOutboundOutput publishOutboundOutput);
 }

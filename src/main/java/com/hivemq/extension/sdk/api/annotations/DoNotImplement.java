@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.annotations;
 
 import java.lang.annotation.Documented;
@@ -23,7 +24,8 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.CLASS;
 
 /**
- * Documents that this interface must not be implemented by an extension.<br>
+ * Documents that this interface must not be implemented by an extension.
+ * <p>
  * Usually an implementation is provided by HiveMQ.
  *
  * @author Silvio Giebl
@@ -33,5 +35,4 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
 @Documented
 @Retention(CLASS)
 @Target({TYPE})
-public @interface DoNotImplement {
-}
+public @interface DoNotImplement {}

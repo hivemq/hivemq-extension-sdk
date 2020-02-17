@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.annotations;
 
 import java.lang.annotation.Documented;
@@ -31,5 +32,4 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
 @Documented
 @Retention(CLASS)
 @Target({TYPE})
-public @interface Experimental {
-}
+public @interface Experimental {}

@@ -22,8 +22,8 @@ import com.hivemq.extension.sdk.api.interceptor.connack.ConnackOutboundIntercept
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
 /**
- * This is the input parameter of any {@link ConnackOutboundInterceptorProvider}
- * providing {@link ServerInformation} and {@link ClientBasedInput}.
+ * This is the input parameter of any {@link ConnackOutboundInterceptorProvider} providing {@link ServerInformation} and
+ * {@link ClientBasedInput}.
  *
  * @author Lukas Brandl
  * @since 4.2.0

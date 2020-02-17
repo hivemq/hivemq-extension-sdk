@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.auth.provider;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -23,8 +24,7 @@ import com.hivemq.extension.sdk.api.auth.SubscriptionAuthorizer;
 import com.hivemq.extension.sdk.api.auth.parameter.AuthorizerProviderInput;
 
 /**
- * The authorizer provider allows to implement custom logic for the authorization for specific actions (i.e
- * subscribing,
+ * The authorizer provider allows to implement custom logic for the authorization for specific actions (i.e subscribing,
  * publishing etc.) of MQTT clients. For each client an {@link Authorizer} for the specific action can be provided that
  * contains the authorization logic.
  *
@@ -37,15 +37,15 @@ public interface AuthorizerProvider {
     /**
      * This method is called for each client by HiveMQ.
      * <p>
-     * Either the same {@link Authorizer} (stateless or must be thread-safe)<br/>
-     * or a new one (stateful, must not be thread-safe) can be supplied on each call.
+     * Either the same {@link Authorizer} (stateless or must be thread-safe)<br/> or a new one (stateful, must not be
+     * thread-safe) can be supplied on each call.
      * <p>
      * <code>null</code> can be returned if no authorization for the client is necessary.
      *
-     * @return Either an implementation of {@link SubscriptionAuthorizer} or an implementation
-     * of {@link PublishAuthorizer}. {@code null} is ignored and has the same effect as
-     * if this provider would had not been set for the connecting client. Returning any other implementation of the
-     * {@link Authorizer} interface is an error.
+     * @return Either an implementation of {@link SubscriptionAuthorizer} or an implementation of {@link
+     *         PublishAuthorizer}. {@code null} is ignored and has the same effect as if this provider would had not
+     *         been set for the connecting client. Returning any other implementation of the {@link Authorizer}
+     *         interface is an error.
      * @since 4.0.0
      */
     @Nullable Authorizer getAuthorizer(@NotNull AuthorizerProviderInput authorizerProviderInput);

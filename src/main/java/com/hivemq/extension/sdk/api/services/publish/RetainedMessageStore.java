@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hivemq.extension.sdk.api.services.publish;
 
+package com.hivemq.extension.sdk.api.services.publish;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -41,14 +41,15 @@ public interface RetainedMessageStore {
      * exceeded.
      *
      * @param topic The topic.
-     * @return A {@link CompletableFuture} which contains the retained message for the specific topic or <code>null</code>.
+     * @return A {@link CompletableFuture} which contains the retained message for the specific topic or
+     *         <code>null</code>.
      * @since 4.0.0
      */
     @NotNull CompletableFuture<Optional<RetainedPublish>> getRetainedMessage(@NotNull String topic);
 
     /**
-     * Removes the retained message for the given topic.
-     * If there isn't any retained message on the topic yet, nothing will happen.
+     * Removes the retained message for the given topic. If there isn't any retained message on the topic yet, nothing
+     * will happen.
      * <p>
      * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
      * exceeded.

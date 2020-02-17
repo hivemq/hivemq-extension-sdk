@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.interceptor.connect.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -23,8 +24,8 @@ import com.hivemq.extension.sdk.api.packets.connect.ConnectPacket;
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
 /**
- * This is the input parameter of any {@link ConnectInboundInterceptor}
- * providing CONNECT, connection and client based information.
+ * This is the input parameter of any {@link ConnectInboundInterceptor} providing CONNECT, connection and client based
+ * information.
  *
  * @author Lukas Brandl
  * @since 4.2.0
@@ -38,6 +39,5 @@ public interface ConnectInboundInput extends ClientBasedInput {
      * @return An unmodifiable {@link ConnectPacket}.
      * @since 4.2.0
      */
-    @Immutable
-    @NotNull ConnectPacket getConnectPacket();
+    @Immutable @NotNull ConnectPacket getConnectPacket();
 }

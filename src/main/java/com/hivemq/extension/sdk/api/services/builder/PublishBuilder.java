@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.builder;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -69,8 +70,7 @@ public interface PublishBuilder {
      * @param qos The {@link Qos} to set.
      * @return The {@link PublishBuilder}.
      * @throws NullPointerException     If the qos is null.
-     * @throws IllegalArgumentException If qos is higher than the maximum configured qos by HiveMQ. Default is QoS
-     *                                  2.
+     * @throws IllegalArgumentException If qos is higher than the maximum configured qos by HiveMQ. Default is QoS 2.
      * @since 4.0.0
      */
     @NotNull PublishBuilder qos(@NotNull Qos qos);

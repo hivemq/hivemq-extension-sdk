@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hivemq.extension.sdk.api;
 
+package com.hivemq.extension.sdk.api;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.auth.Authenticator;
@@ -28,8 +28,8 @@ import com.hivemq.extension.sdk.api.parameter.ExtensionStopOutput;
 /**
  * The main starting point for each HiveMQ extension.
  * <p>
- * Each extension must implement at least this interface.
- * The implementation of this interface is used by HiveMQ to load and enable/disable an extension.
+ * Each extension must implement at least this interface. The implementation of this interface is used by HiveMQ to load
+ * and enable/disable an extension.
  *
  * @author Christoph Schäbel
  * @author Georg Held
@@ -38,7 +38,8 @@ import com.hivemq.extension.sdk.api.parameter.ExtensionStopOutput;
 public interface ExtensionMain {
 
     /**
-     * This method is called by HiveMQ if an extension is enabled.<br/>
+     * This method is called by HiveMQ if an extension is enabled.
+     * <p>
      * It can be used to setup the extension and register client interceptors and callbacks with HiveMQ.
      * <p>
      * If this method returns HiveMQ assumes that this extension is finished starting up.
@@ -56,11 +57,14 @@ public interface ExtensionMain {
      * @param extensionStartOutput A {@link ExtensionStartOutput}.
      * @since 4.0.0
      */
-    void extensionStart(@NotNull ExtensionStartInput extensionStartInput, @NotNull ExtensionStartOutput extensionStartOutput);
+    void extensionStart(
+            @NotNull ExtensionStartInput extensionStartInput, @NotNull ExtensionStartOutput extensionStartOutput);
 
     /**
      * This method is called by HiveMQ if an extension is disabled.
-     * It can be used to shut down the extension.<br/>
+     * <p>
+     * It can be used to shut down the extension.
+     * <p>
      * {@link Interceptor}s, {@link Authorizer} and {@link Authenticator} from this extension are automatically
      * de-registered by HiveMQ and do not need to be de-registered manually.
      * <p>
@@ -76,5 +80,6 @@ public interface ExtensionMain {
      * @param extensionStopOutput A {@link ExtensionStartOutput}
      * @since 4.0.0
      */
-    void extensionStop(@NotNull ExtensionStopInput extensionStopInput, @NotNull ExtensionStopOutput extensionStopOutput);
+    void extensionStop(
+            @NotNull ExtensionStopInput extensionStopInput, @NotNull ExtensionStopOutput extensionStopOutput);
 }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.builder;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -57,8 +58,8 @@ public interface TopicSubscriptionBuilder {
      * @throws NullPointerException     If the topic filter is null.
      * @throws IllegalArgumentException If the topic filter is empty.
      * @throws IllegalArgumentException If the topic filter contains invalid UTF-8 characters.
-     * @throws IllegalArgumentException If the topic filter is longer than the configured maximum. Default
-     *                                  maximum length is 65535.
+     * @throws IllegalArgumentException If the topic filter is longer than the configured maximum. Default maximum
+     *                                  length is 65535.
      * @throws IllegalArgumentException If the topic filter contains a wildcard and wildcards are disabled by HiveMQ.
      *                                  Default is enabled.
      * @throws IllegalArgumentException If the topic filter is a shared subscription and shared subscriptions are
@@ -91,8 +92,8 @@ public interface TopicSubscriptionBuilder {
     @NotNull TopicSubscriptionBuilder retainAsPublished(boolean retainAsPublished);
 
     /**
-     * Sets the no local flag. Do not set the no local flag to <b>true</b> if the {@link TopicSubscription} is a
-     * shared subscription.
+     * Sets the no local flag. Do not set the no local flag to <b>true</b> if the {@link TopicSubscription} is a shared
+     * subscription.
      * <p>
      * DEFAULT: <code>false</code>.
      *

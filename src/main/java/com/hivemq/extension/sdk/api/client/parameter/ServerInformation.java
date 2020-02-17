@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.client.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -74,6 +75,5 @@ public interface ServerInformation {
      * @return A set which contains a {@link Listener} instance for each configured listener.
      * @since 4.2.0
      */
-    @NotNull
-    Set<Listener> getListener();
+    @NotNull Set<Listener> getListener();
 }

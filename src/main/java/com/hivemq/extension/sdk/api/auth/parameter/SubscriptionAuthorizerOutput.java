@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.auth.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -24,8 +25,8 @@ import com.hivemq.extension.sdk.api.packets.disconnect.DisconnectReasonCode;
 import com.hivemq.extension.sdk.api.packets.subscribe.SubackReasonCode;
 
 /**
- * This is the output parameter of any {@link SubscriptionAuthorizer}
- * providing methods to define the outcome of the subscription authorization.
+ * This is the output parameter of any {@link SubscriptionAuthorizer} providing methods to define the outcome of the
+ * subscription authorization.
  * <p>
  * It can be used to
  * <ul>
@@ -58,8 +59,8 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
     void authorizeSuccessfully();
 
     /**
-     * Fails the authorization of the subscription.
-     * The outcome depends on the MQTT version specified by the subscribing client.
+     * Fails the authorization of the subscription. The outcome depends on the MQTT version specified by the subscribing
+     * client.
      * <ul>
      * <li>For an MQTT 3.1 client the connection is closed.</li>
      * <li>For an MQTT 3.1.1 client the return code for the subscription in the SUBACK packet is <b>'Failure'</b>.</li>
@@ -75,8 +76,8 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
     void failAuthorization();
 
     /**
-     * Fails the authorization of the subscription.
-     * The outcome depends on the MQTT version specified by the subscribing client.
+     * Fails the authorization of the subscription. The outcome depends on the MQTT version specified by the subscribing
+     * client.
      * <ul>
      * <li>For an MQTT 3.1 client the connection is closed.</li>
      * <li>For an MQTT 3.1.1 client the return code for the subscription in the SUBACK packet is <b>'Failure'</b>.</li>
@@ -95,8 +96,8 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
     void failAuthorization(@NotNull SubackReasonCode reasonCode);
 
     /**
-     * Fails the authorization of the subscription.
-     * The outcome depends on the MQTT version specified by the subscribing client.
+     * Fails the authorization of the subscription. The outcome depends on the MQTT version specified by the subscribing
+     * client.
      * <ul>
      * <li>For an MQTT 3.1 client the connection is closed.</li>
      * <li>For an MQTT 3.1.1 client the return code for the subscription in the SUBACK packet is <b>'Failure'</b>.</li>
@@ -117,10 +118,11 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
     void failAuthorization(@NotNull SubackReasonCode reasonCode, @NotNull String reasonString);
 
     /**
-     * Disconnects the client that sent the subscription.
-     * The outcome depends on the MQTT version specified by the subscribing client.
+     * Disconnects the client that sent the subscription. The outcome depends on the MQTT version specified by the
+     * subscribing client.
      * <p>
      * For an MQTT 3 client the connection is closed.
+     * <p>
      * An MQTT 5 client receives a DISCONNECT packet with reason code NOT_AUTHORIZED, then the connection is closed.
      * <p>
      * All Subscriptions from the same SUBSCRIBE packet are ignored, independent of the outcome for the other
@@ -135,10 +137,11 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
     void disconnectClient();
 
     /**
-     * Disconnects the client that sent the subscription.
-     * The outcome depends on the MQTT version specified by the subscribing client.
+     * Disconnects the client that sent the subscription. The outcome depends on the MQTT version specified by the
+     * subscribing client.
      * <p>
      * For an MQTT 3 client the connection is closed.
+     * <p>
      * An MQTT 5 client receives a DISCONNECT packet with the reason code given with <code>reasonCode</code>, then the
      * connection is closed.
      * <p>
@@ -155,10 +158,11 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
     void disconnectClient(@NotNull DisconnectReasonCode reasonCode);
 
     /**
-     * Disconnects the client that sent the subscription.
-     * The outcome depends on the MQTT version specified by the subscribing client.
+     * Disconnects the client that sent the subscription. The outcome depends on the MQTT version specified by the
+     * subscribing client.
      * <p>
      * For an MQTT 3 client the connection is closed.
+     * <p>
      * An MQTT 5 client receives a DISCONNECT packet with the reason code and reason string given with
      * <code>reasonCode</code> and <code>reasonString</code> respectively, then the connection is closed.
      * <p>

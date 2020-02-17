@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.auth.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -23,8 +24,8 @@ import com.hivemq.extension.sdk.api.packets.publish.PublishPacket;
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
 /**
- * This is the input parameter of any {@link PublishAuthorizer}
- * providing an unmodifiable inbound {@link PublishPacket} and {@link ClientBasedInput}.
+ * This is the input parameter of any {@link PublishAuthorizer} providing an unmodifiable inbound {@link PublishPacket}
+ * and {@link ClientBasedInput}.
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
@@ -39,6 +40,5 @@ public interface PublishAuthorizerInput extends ClientBasedInput {
      * @return The {@link PublishPacket} for this authorization call.
      * @since 4.0.0
      */
-    @Immutable
-    @NotNull PublishPacket getPublishPacket();
+    @Immutable @NotNull PublishPacket getPublishPacket();
 }

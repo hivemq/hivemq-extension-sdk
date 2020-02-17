@@ -24,8 +24,8 @@ import com.hivemq.extension.sdk.api.packets.subscribe.SubscribePacket;
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
 /**
- * This is the input parameter of any {@link SubscribeInboundInterceptor}
- * providing SUBSCRIBE, connection and client based information.
+ * This is the input parameter of any {@link SubscribeInboundInterceptor} providing SUBSCRIBE, connection and client
+ * based information.
  *
  * @author Florian Limpöck
  * @since 4.2.0
@@ -39,7 +39,5 @@ public interface SubscribeInboundInput extends ClientBasedInput {
      * @return An unmodifiable {@link SubscribePacket}.
      * @since 4.2.0
      */
-    @NotNull
-    @Immutable
-    SubscribePacket getSubscribePacket();
+    @NotNull @Immutable SubscribePacket getSubscribePacket();
 }

@@ -23,8 +23,8 @@ import com.hivemq.extension.sdk.api.interceptor.connect.ConnectInboundIntercepto
 import com.hivemq.extension.sdk.api.packets.publish.ModifiableConnectPacket;
 
 /**
- * This is the output parameter of any {@link ConnectInboundInterceptor}
- * providing methods to define the outcome of a CONNECT interception.
+ * This is the output parameter of any {@link ConnectInboundInterceptor} providing methods to define the outcome of a
+ * CONNECT interception.
  * <p>
  * It can be used to
  * <ul>
@@ -44,5 +44,4 @@ public interface ConnectInboundOutput extends AsyncOutput<ConnectInboundOutput> 
      * @since 4.2.0
      */
     @NotNull ModifiableConnectPacket getConnectPacket();
-
 }

@@ -36,8 +36,7 @@ public interface SubscriptionsForClientResult {
      * @return The client identifier of this client.
      * @since 4.2.0
      */
-    @NotNull
-    String getClientId();
+    @NotNull String getClientId();
 
     /**
      * Get a {@link Set} of {@link TopicSubscription} containing all subscriptions including the subscription options
@@ -46,7 +45,5 @@ public interface SubscriptionsForClientResult {
      * @return A {@link Set} of all the subscriptions for this client.
      * @since 4.2.0
      */
-    @NotNull
-    Set<TopicSubscription> getSubscriptions();
-
+    @NotNull Set<TopicSubscription> getSubscriptions();
 }

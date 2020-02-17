@@ -25,6 +25,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * @since 4.2.0
  */
 public class IterationFailedException extends RuntimeException {
+
     public IterationFailedException(final @NotNull String message) {
         super(message);
     }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.client.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -24,9 +25,8 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * This class encapsulates all information that is forwarded by a load
- * balancer which uses the PROXY protocol. Except from the source connection
- * information and the load balancer information, most of the values are optional.
+ * This class encapsulates all information that is forwarded by a load balancer which uses the PROXY protocol. Except
+ * from the source connection information and the load balancer information, most of the values are optional.
  * <p>
  * HiveMQ supports arbitrary TLVs which can be retrieved as raw TLV values (see {@link #getRawTLVs()})
  *
@@ -62,8 +62,8 @@ public interface ProxyInformation {
     @NotNull InetAddress getProxyAddress();
 
     /**
-     * If the PROXY protocol implementation of the load balancer supports TLVs and proxies
-     * a SSL connection, this method returns the TLS version of the original SSL connection.
+     * If the PROXY protocol implementation of the load balancer supports TLVs and proxies a SSL connection, this method
+     * returns the TLS version of the original SSL connection.
      *
      * @return An {@link Optional} that contains the original TLS version if supported by the load balancer.
      * @since 4.0.0
@@ -71,10 +71,9 @@ public interface ProxyInformation {
     @NotNull Optional<String> getTlsVersion();
 
     /**
-     * If the PROXY protocol implementation of the load balancer supports TLVs and proxies
-     * a SSL connection with a X509 client certificate that is sent by the MQTT client,
-     * this method returns the forwarded common name of the X509 client certificate
-     * (if the client used one to authenticate the SSL connection).
+     * If the PROXY protocol implementation of the load balancer supports TLVs and proxies a SSL connection with a X509
+     * client certificate that is sent by the MQTT client, this method returns the forwarded common name of the X509
+     * client certificate (if the client used one to authenticate the SSL connection).
      *
      * @return An {@link Optional} that contains the Common Name of the X509 client certificate.
      * @since 4.0.0
@@ -82,8 +81,8 @@ public interface ProxyInformation {
     @NotNull Optional<String> getSslCertificateCN();
 
     /**
-     * HiveMQ supports arbitrary TLVs, even TLVs that aren't specified by the PROXY protocol. This map
-     * contains all the raw TLVs that are sent by the load balancer.
+     * HiveMQ supports arbitrary TLVs, even TLVs that aren't specified by the PROXY protocol. This map contains all the
+     * raw TLVs that are sent by the load balancer.
      * <p>
      * The key is the byte value of the TLV type and the value is the raw TLV as byte value.
      *

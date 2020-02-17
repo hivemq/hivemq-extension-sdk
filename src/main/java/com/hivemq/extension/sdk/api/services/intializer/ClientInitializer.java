@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.intializer;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -32,7 +33,8 @@ public interface ClientInitializer {
      * This method is called for every client when the client is connected and a session is either created or exists.
      * Also this method is called for every already connected client, when the extension starts.
      *
-     * @param initializerInput The {@link InitializerInput} containing information about, server, client and connection.
+     * @param initializerInput The {@link InitializerInput} containing information about, server, client and
+     *                         connection.
      * @param clientContext    The {@link ClientContext} to add/remove: {@link Interceptor}s or {@link
      *                         TopicPermission}s.
      * @since 4.0.0

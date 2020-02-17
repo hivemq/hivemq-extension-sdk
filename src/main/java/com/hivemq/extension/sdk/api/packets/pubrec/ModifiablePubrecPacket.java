@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.packets.pubrec;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -54,8 +55,8 @@ public interface ModifiablePubrecPacket extends PubrecPacket {
      * For an {@link PubrecOutboundInterceptor} this setting is only respected for MQTT 5 clients and ignored for MQTT
      * 3.x clients when the PUBREC is sent to the client (as MQTT 3.x clients don't know this property).
      * <p>
-     * For an {@link PubrecInboundInterceptor} this setting is respected for MQTT 5 and MQTT 3.x clients when the
-     * PUBREC is sent to HiveMQ, this allows to enrich MQTT 3.x PUBRECs with this MQTT 5 property.
+     * For an {@link PubrecInboundInterceptor} this setting is respected for MQTT 5 and MQTT 3.x clients when the PUBREC
+     * is sent to HiveMQ, this allows to enrich MQTT 3.x PUBRECs with this MQTT 5 property.
      *
      * @param reasonString The reason string to set.
      * @throws IllegalArgumentException If the reason string is not a valid UTF-8 string.
@@ -69,8 +70,8 @@ public interface ModifiablePubrecPacket extends PubrecPacket {
      * For an {@link PubrecOutboundInterceptor} this setting is only respected for MQTT 5 clients and ignored for MQTT
      * 3.x clients when the PUBREC is sent to the client (as MQTT 3.x clients don't know this property).
      * <p>
-     * For an {@link PubrecInboundInterceptor} this setting is respected for MQTT 5 and MQTT 3.x clients when the
-     * PUBREC is sent to HiveMQ, this allows to enrich MQTT 3.x PUBRECs with this MQTT 5 property.
+     * For an {@link PubrecInboundInterceptor} this setting is respected for MQTT 5 and MQTT 3.x clients when the PUBREC
+     * is sent to HiveMQ, this allows to enrich MQTT 3.x PUBRECs with this MQTT 5 property.
      *
      * @return Modifiable user properties.
      */

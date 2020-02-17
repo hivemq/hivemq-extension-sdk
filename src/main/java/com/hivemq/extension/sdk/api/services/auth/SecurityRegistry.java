@@ -32,9 +32,9 @@ import com.hivemq.extension.sdk.api.services.auth.provider.EnhancedAuthenticator
  * <p>
  * An extension can only set at most one {@link AuthenticatorProvider} OR one {@link EnhancedAuthenticatorProvider}.
  * <p>
- * An extension can also only set at most one {@link AuthorizerProvider}.
- * That means for authorizing PUBLISH and SUBSCRIBE packets the {@link AuthorizerProvider} must implement {@link
- * PublishAuthorizer} and {@link SubscriptionAuthorizer}.
+ * An extension can also only set at most one {@link AuthorizerProvider}. That means for authorizing PUBLISH and
+ * SUBSCRIBE packets the {@link AuthorizerProvider} must implement {@link PublishAuthorizer} and {@link
+ * SubscriptionAuthorizer}.
  * <p>
  * The providers are automatically removed at extension stop.
  *

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.admin;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -30,21 +31,17 @@ public interface AdminService {
      * @return Information about the HiveMQ instance the extension is running in.
      * @since 4.2.0
      */
-    @NotNull
-    ServerInformation getServerInformation();
+    @NotNull ServerInformation getServerInformation();
 
     /**
      * @return Information about the current stage of this HiveMQ instance.
      * @since 4.2.0
      */
-    @NotNull
-    LifecycleStage getCurrentStage();
+    @NotNull LifecycleStage getCurrentStage();
 
     /**
      * @return Information about the license that is used by HiveMQ.
      * @since 4.2.0
      */
-    @NotNull
-    LicenseInformation getLicenseInformation();
-
+    @NotNull LicenseInformation getLicenseInformation();
 }

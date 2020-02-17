@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.services.subscription;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -49,7 +50,8 @@ public interface SubscriptionStore {
      *
      * @param clientID     The client for which the new subscription should be added.
      * @param subscription The subscription to which the client should be subscribed.
-     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscription was added by all cluster nodes.
+     * @return A {@link CompletableFuture} object that will succeed, as soon as the subscription was added by all
+     *         cluster nodes.
      * @throws NullPointerException     If clientID or subscription is null.
      * @throws IllegalArgumentException If clientID is empty.
      * @since 4.0.0
@@ -70,12 +72,13 @@ public interface SubscriptionStore {
      * @param clientID      The client for which the new subscriptions should be added.
      * @param subscriptions The subscriptions to which the client should be subscribed.
      * @return A {@link CompletableFuture} object that will succeed, as soon as the subscriptions were added by all
-     * Cluster Nodes.
+     *         Cluster Nodes.
      * @throws NullPointerException     If clientID, subscriptions or one of the subscription in the set is null.
      * @throws IllegalArgumentException If clientID or subscriptions is empty.
      * @since 4.0.0
      */
-    @NotNull CompletableFuture<Void> addSubscriptions(@NotNull String clientID, @NotNull Set<TopicSubscription> subscriptions);
+    @NotNull CompletableFuture<Void> addSubscriptions(
+            @NotNull String clientID, @NotNull Set<TopicSubscription> subscriptions);
 
     /**
      * This method removes a subscription for a certain client and a certain topic.
@@ -90,7 +93,7 @@ public interface SubscriptionStore {
      * @param clientID    The client for which the subscription should be removed.
      * @param topicFilter The topic from which the client should get unsubscribed.
      * @return A {@link CompletableFuture} object that will succeed, as soon as the subscription was removed by all
-     * cluster nodes.
+     *         cluster nodes.
      * @throws NullPointerException     If clientID or topicFilter is null.
      * @throws IllegalArgumentException If clientID is empty.
      * @since 4.0.0
@@ -111,7 +114,7 @@ public interface SubscriptionStore {
      * @param clientID     The client for which the subscriptions should be removed.
      * @param topicFilters The topics from which the client should get unsubscribed.
      * @return A {@link CompletableFuture} object that will succeed, as soon as the subscriptions were removed by all
-     * Cluster Nodes.
+     *         Cluster Nodes.
      * @throws NullPointerException     If clientID, topics or one of the topics in the set is null.
      * @throws IllegalArgumentException If clientID or topics is empty.
      * @since 4.0.0
@@ -121,8 +124,7 @@ public interface SubscriptionStore {
     /**
      * Returns all subscriptions a client is subscribed to.
      * <p>
-     * The returned Set is read-only and must not be modified.
-     * If the client does not exist, an empty Set is returned.
+     * The returned Set is read-only and must not be modified. If the client does not exist, an empty Set is returned.
      * <p>
      * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
      * exceeded.
@@ -136,168 +138,171 @@ public interface SubscriptionStore {
     @NotNull CompletableFuture<Set<TopicSubscription>> getSubscriptions(@NotNull String clientID);
 
     /**
-     * Iterate over all subscribers that have a subscription that matches the passed topic.
-     * Includes subscribers with direct matches of the topic or a match via a wildcard topic.
+     * Iterate over all subscribers that have a subscription that matches the passed topic. Includes subscribers with
+     * direct matches of the topic or a match via a wildcard topic.
      * <p>
      * Example: For topic <code>example/topic</code> we would iterate over all clients with a subscription for
      * <code>example/topic</code> or <code>example/#</code> and other wildcard matches.
      * <p>
-     * This will iterate all subscribers including individual and shared subscriptions.
-     * To filter the result use the overloaded methods and pass a {@link SubscriptionType}.
+     * This will iterate all subscribers including individual and shared subscriptions. To filter the result use the
+     * overloaded methods and pass a {@link SubscriptionType}.
      * <p>
-     * The callback is executed in the {@link ManagedExtensionExecutorService} per default.
-     * Use the overloaded methods to pass a custom executor for the callback.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection (thread-safe), as the callback might be executed in another thread as the calling thread of
-     * this method.
+     * The callback is executed in the {@link ManagedExtensionExecutorService} per default. Use the overloaded methods
+     * to pass a custom executor for the callback. If you want to collect the results of each execution of the callback
+     * in a collection please make sure to use a concurrent collection (thread-safe), as the callback might be executed
+     * in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
-     * exceeded.
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded.
      *
      * @param topic    The topic to check for (no wildcards allowed). Same topic that is used in an MQTT PUBLISH
      *                 message.
      * @param callback An {@link IterationCallback} that is called for every returned result.
-     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found
-     * for the topic or the iteration is aborted manually with the {@link IterationContext}.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found for
+     *         the topic or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topic or callback are null.
      * @throws IllegalArgumentException If the passed topic is not a valid topic or contains wildcards.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(@NotNull String topic, @NotNull IterationCallback<SubscriberForTopicResult> callback);
+    @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(
+            @NotNull String topic, @NotNull IterationCallback<SubscriberForTopicResult> callback);
 
     /**
-     * Iterate over all subscribers that have a subscription that matches the passed topic.
-     * Includes subscribers with direct matches of the topic or a match via a wildcard topic.
+     * Iterate over all subscribers that have a subscription that matches the passed topic. Includes subscribers with
+     * direct matches of the topic or a match via a wildcard topic.
      * <p>
      * Example: For topic <code>example/topic</code> we would iterate over all clients with a subscription for
      * <code>example/topic</code> or <code>example/#</code> and other wildcard matches.
      * <p>
      * This method will iterate all subscribers according to the passed {@link SubscriptionType}.
      * <p>
-     * The callback is executed in the {@link ManagedExtensionExecutorService} per default.
-     * Use the overloaded methods to pass a custom executor for the callback.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection (thread-safe), as the callback might be executed in another thread as the calling thread of
-     * this method.
+     * The callback is executed in the {@link ManagedExtensionExecutorService} per default. Use the overloaded methods
+     * to pass a custom executor for the callback. If you want to collect the results of each execution of the callback
+     * in a collection please make sure to use a concurrent collection (thread-safe), as the callback might be executed
+     * in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
-     * exceeded.
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded.
      *
      * @param topic            The topic to check for (no wildcards allowed). Same topic that is used in an MQTT PUBLISH
      *                         message.
      * @param subscriptionType A {@link SubscriptionType} to filter only individual or shared subscriptions, or both.
      * @param callback         An {@link IterationCallback} that is called for every returned result.
-     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found
-     * for the topic or the iteration is aborted manually with the {@link IterationContext}.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found for
+     *         the topic or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topic, subscriptionType or callback are null.
      * @throws IllegalArgumentException If the passed topic is not a valid topic or contains wildcards.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(@NotNull String topic, @NotNull SubscriptionType subscriptionType, @NotNull IterationCallback<SubscriberForTopicResult> callback);
+    @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(
+            @NotNull String topic,
+            @NotNull SubscriptionType subscriptionType,
+            @NotNull IterationCallback<SubscriberForTopicResult> callback);
 
     /**
-     * Iterate over all subscribers that have a subscription that matches the passed topic.
-     * Includes subscribers with direct matches of the topic or a match via a wildcard topic.
+     * Iterate over all subscribers that have a subscription that matches the passed topic. Includes subscribers with
+     * direct matches of the topic or a match via a wildcard topic.
      * <p>
      * Example: For topic <code>example/topic</code> we would iterate over all clients with a subscription for
      * <code>example/topic</code> or <code>example/#</code> and other wildcard matches.
      * <p>
-     * This method will iterate all subscribers including individual and shared subscriptions.
-     * To filter the result use the overloaded methods and pass a {@link SubscriptionType}.
+     * This method will iterate all subscribers including individual and shared subscriptions. To filter the result use
+     * the overloaded methods and pass a {@link SubscriptionType}.
      * <p>
-     * The callback is executed in the passed {@link Executor}.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection (thread-safe), as the callback might be executed in another thread as the calling thread of
-     * this method.
+     * The callback is executed in the passed {@link Executor}. If you want to collect the results of each execution of
+     * the callback in a collection please make sure to use a concurrent collection (thread-safe), as the callback might
+     * be executed in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
-     * exceeded.
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded.
      *
      * @param topic            The topic to check for (no wildcards allowed). Same topic that is used in an MQTT PUBLISH
      *                         message.
      * @param callback         An {@link IterationCallback} that is called for every returned result.
      * @param callbackExecutor An {@link Executor} in which the callback for each iteration is executed.
-     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found
-     * for the topic or the iteration is aborted manually with the {@link IterationContext}.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found for
+     *         the topic or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topic, callback or callbackExecutor are null.
      * @throws IllegalArgumentException If the passed topic is not a valid topic or contains wildcards.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(@NotNull String topic, @NotNull IterationCallback<SubscriberForTopicResult> callback, @NotNull Executor callbackExecutor);
+    @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(
+            @NotNull String topic,
+            @NotNull IterationCallback<SubscriberForTopicResult> callback,
+            @NotNull Executor callbackExecutor);
 
     /**
-     * Iterate over all subscribers that have a subscription that matches the passed topic.
-     * Includes subscribers with direct matches of the topic or a match via a wildcard topic.
+     * Iterate over all subscribers that have a subscription that matches the passed topic. Includes subscribers with
+     * direct matches of the topic or a match via a wildcard topic.
      * <p>
      * Example: For topic <code>example/topic</code> we would iterate over all clients with a subscription for
      * <code>example/topic</code> or <code>example/#</code> and other wildcard matches.
      * <p>
      * This method will iterate all subscribers according to the passed {@link SubscriptionType}.
      * <p>
-     * The callback is executed in the passed {@link Executor}.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection (thread-safe), as the callback might be executed in another thread as the calling thread of
-     * this method.
+     * The callback is executed in the passed {@link Executor}. If you want to collect the results of each execution of
+     * the callback in a collection please make sure to use a concurrent collection (thread-safe), as the callback might
+     * be executed in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
-     * exceeded.
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded.
      *
      * @param topic            The topic to check for (no wildcards allowed). Same topic that is used in an MQTT PUBLISH
      *                         message.
      * @param subscriptionType A {@link SubscriptionType} to filter only individual or shared subscriptions, or both.
      * @param callback         An {@link IterationCallback} that is called for every returned result.
      * @param callbackExecutor An {@link Executor} in which the callback for each iteration is executed.
-     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found
-     * for the topic or the iteration is aborted manually with the {@link IterationContext}.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found for
+     *         the topic or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topic, subscriptionType, callback or callbackExecutor are null.
      * @throws IllegalArgumentException If the passed topic is not a valid topic or contains wildcards.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(@NotNull String topic, @NotNull SubscriptionType subscriptionType, @NotNull IterationCallback<SubscriberForTopicResult> callback, @NotNull Executor callbackExecutor);
+    @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(
+            @NotNull String topic,
+            @NotNull SubscriptionType subscriptionType,
+            @NotNull IterationCallback<SubscriberForTopicResult> callback,
+            @NotNull Executor callbackExecutor);
 
     /**
-     * Iterate over all subscribers that have a subscription that equals the passed topic filter.
-     * Only includes subscribers with direct matches of the topic.
+     * Iterate over all subscribers that have a subscription that equals the passed topic filter. Only includes
+     * subscribers with direct matches of the topic.
      * <p>
      * Example 1: For topic filter <code>example/topic</code> we would iterate over all clients with a subscription for
      * <code>example/topic</code>, but not for <code>example/#</code> or other wildcard matches.
@@ -306,43 +311,42 @@ public interface SubscriptionStore {
      * <code>example/#</code>, but not for <code>example/+</code> or other wildcard matches and also not for topic
      * filters like <code>example/topic</code>.
      * <p>
-     * This method will iterate all subscribers including individual and shared subscriptions.
-     * To filter the result use the overloaded methods and pass a {@link SubscriptionType}.
+     * This method will iterate all subscribers including individual and shared subscriptions. To filter the result use
+     * the overloaded methods and pass a {@link SubscriptionType}.
      * <p>
-     * The callback is executed in the {@link ManagedExtensionExecutorService} per default.
-     * Use the overloaded methods to pass a custom executor for the callback.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection (thread-safe), as the callback might be executed in another thread as the calling thread
-     * of this method.
+     * The callback is executed in the {@link ManagedExtensionExecutorService} per default. Use the overloaded methods
+     * to pass a custom executor for the callback. If you want to collect the results of each execution of the callback
+     * in a collection please make sure to use a concurrent collection (thread-safe), as the callback might be executed
+     * in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
-     * exceeded.
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded.
      *
      * @param topicFilter The topic filter to search for (wildcards allowed). Same topic that is used in an MQTT
      *                    SUBSCRIBE message. Wildcards in the topic filter are not expanded, only exact matches are
      *                    contained in the result.
      * @param callback    An {@link IterationCallback} that is called for every returned result.
-     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found
-     * for the topic filter or the iteration is aborted manually with the {@link IterationContext}.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found for
+     *         the topic filter or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topicFilter or callback are null.
      * @throws IllegalArgumentException If the passed topicFilter is not a valid topic.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(@NotNull String topicFilter, @NotNull IterationCallback<SubscriberWithFilterResult> callback);
+    @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(
+            @NotNull String topicFilter, @NotNull IterationCallback<SubscriberWithFilterResult> callback);
 
     /**
-     * Iterate over all subscribers that have a subscription that equals the passed topic filter.
-     * Only includes subscribers with direct matches of the topic.
+     * Iterate over all subscribers that have a subscription that equals the passed topic filter. Only includes
+     * subscribers with direct matches of the topic.
      * <p>
      * Example 1: For topic filter <code>example/topic</code> we would iterate over all clients with a subscription for
      * <code>example/topic</code>, but not for <code>example/#</code> or other wildcard matches.
@@ -353,41 +357,42 @@ public interface SubscriptionStore {
      * <p>
      * This method will iterate all subscribers according to the passed {@link SubscriptionType}.
      * <p>
-     * The callback is executed in the {@link ManagedExtensionExecutorService} per default.
-     * Use the overloaded methods to pass a custom executor for the callback.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection (thread-safe), as the callback might be executed in another thread as the calling thread
-     * of this method.
+     * The callback is executed in the {@link ManagedExtensionExecutorService} per default. Use the overloaded methods
+     * to pass a custom executor for the callback. If you want to collect the results of each execution of the callback
+     * in a collection please make sure to use a concurrent collection (thread-safe), as the callback might be executed
+     * in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
-     * exceeded.
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded.
      *
      * @param topicFilter      The topic filter to search for (wildcards allowed). Same topic that is used in an MQTT
      *                         SUBSCRIBE message. Wildcards in the topic filter are not expanded, only exact matches are
      *                         contained in the result.
      * @param callback         An {@link IterationCallback} that is called for every returned result.
      * @param subscriptionType A {@link SubscriptionType} to filter only individual or shared subscriptions, or both.
-     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found
-     * for the topic filter or the iteration is aborted manually with the {@link IterationContext}.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found for
+     *         the topic filter or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topicFilter, subscriptionType or callback are null.
      * @throws IllegalArgumentException If the passed topicFilter is not a valid topic.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(@NotNull String topicFilter, @NotNull SubscriptionType subscriptionType, @NotNull IterationCallback<SubscriberWithFilterResult> callback);
+    @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(
+            @NotNull String topicFilter,
+            @NotNull SubscriptionType subscriptionType,
+            @NotNull IterationCallback<SubscriberWithFilterResult> callback);
 
     /**
-     * Iterate over all subscribers that have a subscription that equals the passed topic filter.
-     * Only includes subscribers with direct matches of the topic.
+     * Iterate over all subscribers that have a subscription that equals the passed topic filter. Only includes
+     * subscribers with direct matches of the topic.
      * <p>
      * Example 1: For topic filter <code>example/topic</code> we would iterate over all clients with a subscription for
      * <code>example/topic</code>, but not for <code>example/#</code> or other wildcard matches.
@@ -396,42 +401,44 @@ public interface SubscriptionStore {
      * <code>example/#</code>, but not for <code>example/+</code> or other wildcard matches and also not for topic
      * filters like <code>example/topic</code>.
      * <p>
-     * This method will iterate all subscribers including individual and shared subscriptions.
-     * To filter the result use the overloaded methods and pass a {@link SubscriptionType}.
+     * This method will iterate all subscribers including individual and shared subscriptions. To filter the result use
+     * the overloaded methods and pass a {@link SubscriptionType}.
      * <p>
-     * The callback is executed in the passed {@link Executor}.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection, as the callback might be executed in another thread as the calling thread of this method.
+     * The callback is executed in the passed {@link Executor}. If you want to collect the results of each execution of
+     * the callback in a collection please make sure to use a concurrent collection, as the callback might be executed
+     * in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
-     * exceeded.
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded.
      *
      * @param topicFilter      The topic filter to search for (wildcards allowed). Same topic that is used in an MQTT
      *                         SUBSCRIBE message. Wildcards in the topic filter are not expanded, only exact matches are
      *                         contained in the result.
      * @param callback         An {@link IterationCallback} that is called for every returned result.
      * @param callbackExecutor An {@link Executor} in which the callback for each iteration is executed.
-     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found
-     * for the topic filter or the iteration is aborted manually with the {@link IterationContext}.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found for
+     *         the topic filter or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topicFilter, callback or callbackExecutor are null.
      * @throws IllegalArgumentException If the passed topicFilter is not a valid topic.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(@NotNull String topicFilter, @NotNull IterationCallback<SubscriberWithFilterResult> callback, @NotNull Executor callbackExecutor);
+    @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(
+            @NotNull String topicFilter,
+            @NotNull IterationCallback<SubscriberWithFilterResult> callback,
+            @NotNull Executor callbackExecutor);
 
     /**
-     * Iterate over all subscribers that have a subscription that equals the passed topic filter.
-     * Only includes subscribers with direct matches of the topic.
+     * Iterate over all subscribers that have a subscription that equals the passed topic filter. Only includes
+     * subscribers with direct matches of the topic.
      * <p>
      * Example 1: For topic filter <code>example/topic</code> we would iterate over all clients with a subscription for
      * <code>example/topic</code>, but not for <code>example/#</code> or other wildcard matches.
@@ -442,22 +449,21 @@ public interface SubscriptionStore {
      * <p>
      * This method will iterate all subscribers according to the passed {@link SubscriptionType}.
      * <p>
-     * The callback is executed in the passed {@link Executor}.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection, as the callback might be executed in another thread as the calling thread of this method.
+     * The callback is executed in the passed {@link Executor}. If you want to collect the results of each execution of
+     * the callback in a collection please make sure to use a concurrent collection, as the callback might be executed
+     * in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
-     * exceeded.
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded.
      *
      * @param topicFilter      The topic filter to search for (wildcards allowed). Same topic that is used in an MQTT
      *                         SUBSCRIBE message. Wildcards in the topic filter are not expanded, only exact matches are
@@ -465,87 +471,84 @@ public interface SubscriptionStore {
      * @param subscriptionType A {@link SubscriptionType} to filter only individual or shared subscriptions, or both.
      * @param callback         An {@link IterationCallback} that is called for every returned result.
      * @param callbackExecutor An {@link Executor} in which the callback for each iteration is executed.
-     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found
-     * for the topic filter or the iteration is aborted manually with the {@link IterationContext}.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found for
+     *         the topic filter or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topicFilter, subscriptionType, callback or callbackExecutor are
      *                                  null.
      * @throws IllegalArgumentException If the passed topicFilter is not a valid topic.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(@NotNull String topicFilter, @NotNull SubscriptionType subscriptionType, @NotNull IterationCallback<SubscriberWithFilterResult> callback, @NotNull Executor callbackExecutor);
+    @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(
+            @NotNull String topicFilter,
+            @NotNull SubscriptionType subscriptionType,
+            @NotNull IterationCallback<SubscriberWithFilterResult> callback,
+            @NotNull Executor callbackExecutor);
 
     /**
      * Iterate over all subscribers and their subscriptions.
      * <p>
-     * The callback is called once for each client.
-     * Passed to each execution of the callback are the client identifier and a set of all its subscriptions.
-     * Clients without subscriptions are not included.
+     * The callback is called once for each client. Passed to each execution of the callback are the client identifier
+     * and a set of all its subscriptions. Clients without subscriptions are not included.
      * <p>
-     * The callback is executed in the {@link ManagedExtensionExecutorService} per default.
-     * Use the overloaded methods to pass a custom executor for the callback.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection (thread-safe), as the callback might be executed in another thread as the calling thread
-     * of this method.
+     * The callback is executed in the {@link ManagedExtensionExecutorService} per default. Use the overloaded methods
+     * to pass a custom executor for the callback. If you want to collect the results of each execution of the callback
+     * in a collection please make sure to use a concurrent collection (thread-safe), as the callback might be executed
+     * in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
-     * exceeded.
-     * {@link CompletableFuture} fails with a {@link IterationFailedException} if the cluster topology changed
-     * during the iteration (e.g. a network-split, node leave or node join).
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a {@link
+     * IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node leave
+     * or node join).
      *
      * @param callback An {@link IterationCallback} that is called for every returned result.
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no subscriptions exist
-     * or the iteration is aborted manually with the {@link IterationContext}.
+     *         or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException If the passed callback is null.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscriptions(@NotNull IterationCallback<SubscriptionsForClientResult> callback);
+    @NotNull CompletableFuture<Void> iterateAllSubscriptions(
+            @NotNull IterationCallback<SubscriptionsForClientResult> callback);
 
     /**
      * Iterate over all subscribers and their subscriptions.
      * <p>
-     * The callback is called once for each client.
-     * Passed to each execution of the callback are the client identifier and a set of all its subscriptions.
-     * Clients without subscriptions are not included.
+     * The callback is called once for each client. Passed to each execution of the callback are the client identifier
+     * and a set of all its subscriptions. Clients without subscriptions are not included.
      * <p>
-     * The callback is executed in the passed {@link Executor}.
-     * If you want to collect the results of each execution of the callback in a collection please make sure to use a
-     * concurrent collection (thread-safe), as the callback might be executed in another thread as the calling thread
-     * of this method.
+     * The callback is executed in the passed {@link Executor}. If you want to collect the results of each execution of
+     * the callback in a collection please make sure to use a concurrent collection (thread-safe), as the callback might
+     * be executed in another thread as the calling thread of this method.
      * <p>
      * The results are not sorted in any way, no ordering of any kind is guaranteed.
      * <p>
-     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation.
-     * Do not call this method in short time intervals.
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
      * <p>
      * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
      * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
      * <p>
-     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all
-     * HiveMQ nodes in the cluster have at least version 4.2.0.
-     * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit
-     * was
-     * exceeded.
-     * {@link CompletableFuture} fails with a {@link IterationFailedException} if the cluster topology changed
-     * during the iteration (e.g. a network-split, node leave or node join).
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a {@link
+     * IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node leave
+     * or node join).
      *
      * @param callback         An {@link IterationCallback} that is called for every returned result.
      * @param callbackExecutor An {@link Executor} in which the callback for each iteration is executed.
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no subscriptions exist
-     * or the iteration is aborted manually with the {@link IterationContext}.
+     *         or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException If the passed callback or callbackExecutor are null.
      * @since 4.2.0
      */
-    @NotNull CompletableFuture<Void> iterateAllSubscriptions(@NotNull IterationCallback<SubscriptionsForClientResult> callback, @NotNull Executor callbackExecutor);
-
-
+    @NotNull CompletableFuture<Void> iterateAllSubscriptions(
+            @NotNull IterationCallback<SubscriptionsForClientResult> callback, @NotNull Executor callbackExecutor);
 }

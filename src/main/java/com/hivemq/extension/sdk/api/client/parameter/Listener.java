@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extension.sdk.api.client.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -55,6 +56,5 @@ public interface Listener {
      * @return The configured or default name of the listener.
      * @since 4.1.0
      */
-    @NotNull
-    String getName();
+    @NotNull String getName();
 }

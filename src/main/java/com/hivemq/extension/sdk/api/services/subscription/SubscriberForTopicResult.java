@@ -27,6 +27,5 @@ public interface SubscriberForTopicResult {
     /**
      * @return The subscribers MQTT client identifier.
      */
-    @NotNull
-    String getClientId();
+    @NotNull String getClientId();
 }

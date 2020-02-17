@@ -16,7 +16,6 @@
 
 package com.hivemq.extension.sdk.api.packets.subscribe;
 
-
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.packets.general.Qos;
@@ -37,8 +36,8 @@ public interface ModifiableSubscription extends Subscription {
      * @throws NullPointerException     If the topic filter is null.
      * @throws IllegalArgumentException If the topic filter is empty.
      * @throws IllegalArgumentException If the topic filter contains invalid UTF-8 characters.
-     * @throws IllegalArgumentException If the topic filter is longer than the configured maximum. Default
-     *                                  maximum length is 65535.
+     * @throws IllegalArgumentException If the topic filter is longer than the configured maximum. Default maximum
+     *                                  length is 65535.
      * @throws IllegalArgumentException If the topic filter contains a wildcard and wildcards are disabled by HiveMQ.
      *                                  Default is enabled.
      * @throws IllegalArgumentException If the topic filter is a shared subscription and shared subscriptions are
@@ -84,5 +83,4 @@ public interface ModifiableSubscription extends Subscription {
      * @since 4.2.0
      */
     void setNoLocal(boolean noLocal);
-
 }
