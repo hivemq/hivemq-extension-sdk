@@ -30,6 +30,7 @@ import com.hivemq.extension.sdk.api.interceptor.pingresp.parameter.PingRespOutbo
  * thread-safe.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @FunctionalInterface
 public interface PingRespOutboundInterceptor extends Interceptor {
@@ -43,6 +44,7 @@ public interface PingRespOutboundInterceptor extends Interceptor {
      *
      * @param pingRespOutboundInput  The {@link PingRespOutboundInput} parameter.
      * @param pingRespOutboundOutput The {@link PingRespOutboundOutput} parameter.
+     * @since 4.3.0
      */
     void onOutboundPingResp(
             @NotNull PingRespOutboundInput pingRespOutboundInput,

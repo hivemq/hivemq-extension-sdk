@@ -32,6 +32,7 @@ import java.util.Optional;
  * Contains all values of an MQTT 5 PUBREC, but will also used to represent MQTT 3 PUBREC packets.
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 @Immutable
 @DoNotImplement
@@ -41,6 +42,7 @@ public interface PubrecPacket {
      * The packet identifier of the PUBREC.
      *
      * @return The packet identifier.
+     * @since 4.3.0
      */
     int getPacketIdentifier();
 
@@ -50,6 +52,7 @@ public interface PubrecPacket {
      *
      * @return The pubrec reason code.
      * @see AckReasonCode How reason codes are translated from MQTT 5 to MQTT 3.
+     * @since 4.3.0
      */
     @NotNull AckReasonCode getReasonCode();
 
@@ -60,6 +63,7 @@ public interface PubrecPacket {
      * previous {@link PubrecInboundInterceptor} or {@link PubrecOutboundInterceptor}).
      *
      * @return An {@link Optional} containing the pubrec reason string if present.
+     * @since 4.3.0
      */
     @NotNull Optional<String> getReasonString();
 
@@ -70,6 +74,7 @@ public interface PubrecPacket {
      * PubrecInboundInterceptor} or {@link PubrecOutboundInterceptor}).
      *
      * @return The user properties.
+     * @since 4.3.0
      */
     @NotNull UserProperties getUserProperties();
 }

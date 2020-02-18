@@ -57,6 +57,7 @@ import com.hivemq.extension.sdk.api.auth.parameter.EnhancedAuthOutput;
  * @author Daniel Krüger
  * @author Florian Limpöck
  * @author Silvio Giebl
+ * @since 4.3.0
  */
 public interface EnhancedAuthenticator {
 
@@ -65,6 +66,7 @@ public interface EnhancedAuthenticator {
      *
      * @param enhancedAuthConnectInput The {@link EnhancedAuthConnectInput}.
      * @param enhancedAuthOutput       The {@link EnhancedAuthOutput}.
+     * @since 4.3.0
      */
     void onConnect(
             @NotNull EnhancedAuthConnectInput enhancedAuthConnectInput, @NotNull EnhancedAuthOutput enhancedAuthOutput);
@@ -75,6 +77,7 @@ public interface EnhancedAuthenticator {
      *
      * @param enhancedAuthInput  The {@link EnhancedAuthInput}.
      * @param enhancedAuthOutput The {@link EnhancedAuthOutput}.
+     * @since 4.3.0
      */
     default void onReAuth(
             final @NotNull EnhancedAuthInput enhancedAuthInput, final @NotNull EnhancedAuthOutput enhancedAuthOutput) {
@@ -87,6 +90,7 @@ public interface EnhancedAuthenticator {
      *
      * @param enhancedAuthInput  The {@link EnhancedAuthInput}.
      * @param enhancedAuthOutput The {@link EnhancedAuthOutput}.
+     * @since 4.3.0
      */
     void onAuth(@NotNull EnhancedAuthInput enhancedAuthInput, @NotNull EnhancedAuthOutput enhancedAuthOutput);
 }

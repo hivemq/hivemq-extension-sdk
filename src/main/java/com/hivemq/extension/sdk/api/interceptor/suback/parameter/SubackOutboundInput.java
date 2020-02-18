@@ -28,6 +28,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * information.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface SubackOutboundInput extends ClientBasedInput {
@@ -36,6 +37,7 @@ public interface SubackOutboundInput extends ClientBasedInput {
      * The unmodifiable SUBACK packet that was intercepted.
      *
      * @return An unmodifiable {@link SubackPacket}.
+     * @since 4.3.0
      */
     @Immutable @NotNull SubackPacket getSubackPacket();
 }

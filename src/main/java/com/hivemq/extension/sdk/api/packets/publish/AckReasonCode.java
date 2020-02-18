@@ -17,7 +17,7 @@
 package com.hivemq.extension.sdk.api.packets.publish;
 
 /**
- * MQTT 5 Reason codes for PUBACK, PUBREC, and PUBCOMP.
+ * MQTT 5 Reason codes for PUBACK and PUBREC.
  * <p>
  * MQTT 3 does not support reason codes for the above mentioned MQTT packets.
  *

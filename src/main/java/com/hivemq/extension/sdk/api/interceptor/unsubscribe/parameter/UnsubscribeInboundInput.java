@@ -28,6 +28,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * based information.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface UnsubscribeInboundInput extends ClientBasedInput {
@@ -36,6 +37,7 @@ public interface UnsubscribeInboundInput extends ClientBasedInput {
      * The unmodifiable UNSUBSCRIBE packet that was intercepted.
      *
      * @return An unmodifiable {@link UnsubscribePacket}.
+     * @since 4.3.0
      */
     @Immutable @NotNull UnsubscribePacket getUnsubscribePacket();
 }

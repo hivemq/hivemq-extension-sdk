@@ -28,6 +28,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * information.
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface PubrecOutboundInput extends ClientBasedInput {
@@ -36,6 +37,7 @@ public interface PubrecOutboundInput extends ClientBasedInput {
      * The unmodifiable PUBREC packet that was intercepted.
      *
      * @return An unmodifiable {@link PubrecPacket}.
+     * @since 4.3.0
      */
     @Immutable @NotNull PubrecPacket getPubrecPacket();
 }

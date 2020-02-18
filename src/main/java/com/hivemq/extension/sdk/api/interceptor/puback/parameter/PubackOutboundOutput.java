@@ -30,6 +30,7 @@ import java.time.Duration;
  * This is the output parameter of any {@link PubackOutboundInterceptor}.
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface PubackOutboundOutput extends SimpleAsyncOutput<PubackOutboundOutput> {
@@ -38,6 +39,7 @@ public interface PubackOutboundOutput extends SimpleAsyncOutput<PubackOutboundOu
      * Use this object to make any changes to the PUBACK message.
      *
      * @return An modifiable {@link PubackPacket}.
+     * @since 4.3.0
      */
     @NotNull ModifiablePubackPacket getPubackPacket();
 
@@ -50,6 +52,7 @@ public interface PubackOutboundOutput extends SimpleAsyncOutput<PubackOutboundOu
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @since 4.3.0
      */
     @Override
     @NotNull Async<PubackOutboundOutput> async(@NotNull Duration timeout);

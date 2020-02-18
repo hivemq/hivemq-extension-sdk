@@ -43,6 +43,7 @@ import java.time.Duration;
  * </ol>
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 @FunctionalInterface
 public interface PubackInboundInterceptor extends Interceptor {
@@ -50,9 +51,13 @@ public interface PubackInboundInterceptor extends Interceptor {
     /**
      * When a {@link PubackInboundInterceptor} is set through any extension, this method gets called for every inbound
      * PUBACK packet from any MQTT client.
+     * <p>
+     * When the extension is enabled after HiveMQ is already running, this method will also be called for future
+     * PUBACKs of clients that are already connected.
      *
      * @param pubackInboundInput  The {@link PubackInboundInput} parameter.
      * @param pubackInboundOutput The {@link PubackInboundOutput} parameter.
+     * @since 4.3.0
      */
     void onInboundPuback(
             @NotNull PubackInboundInput pubackInboundInput, @NotNull PubackInboundOutput pubackInboundOutput);

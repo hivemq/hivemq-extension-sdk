@@ -24,6 +24,7 @@ import com.hivemq.extension.sdk.api.interceptor.pingresp.PingRespOutboundInterce
  * This is the output parameter of any {@link PingRespOutboundInterceptor}.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface PingRespOutboundOutput extends SimpleAsyncOutput<PingRespOutboundOutput> {}

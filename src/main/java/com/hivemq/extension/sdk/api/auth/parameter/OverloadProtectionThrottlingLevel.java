@@ -27,15 +27,19 @@ public enum OverloadProtectionThrottlingLevel {
     /**
      * The amount of PUBLISH messages that each client can send is limited based on the resources of the HiveMQ
      * cluster.
+     *
+     * @since 4.2.0
      */
     DEFAULT,
 
     /**
-     * The amount of PUBLISH message that each client can send is NOT limited by the overload protection.
+     * The amount of PUBLISH messages that each client can send is NOT limited by the overload protection.
      * <p>
      * <b>ATTENTION:</b> Use this setting with extreme caution. Disabling the Overload Protection Mechanism potentially
-     * decreases the HiveMQ resiliency against client misbehaviour. Disabling the overload protection may lead to {@link
-     * OutOfMemoryError}.
+     * decreases the resiliency of HiveMQ against client misbehaviour. Disabling the overload protection may lead to
+     * {@link OutOfMemoryError}.
+     *
+     * @since 4.2.0
      */
     NONE
 }

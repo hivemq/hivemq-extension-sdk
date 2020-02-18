@@ -33,6 +33,7 @@ import com.hivemq.extension.sdk.api.interceptor.disconnect.parameter.DisconnectO
  * to client.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @FunctionalInterface
 public interface DisconnectOutboundInterceptor extends Interceptor {
@@ -40,9 +41,13 @@ public interface DisconnectOutboundInterceptor extends Interceptor {
     /**
      * When a {@link DisconnectOutboundInterceptor} is set through any extension, this method gets called for every
      * outbound DISCONNECT packet from any MQTT 5 client.
+     * <p>
+     * When the extension is enabled after HiveMQ is already running, this method will also be called for future
+     * DISCONNECT's of clients that are already connected.
      *
      * @param disconnectOutboundInput  The {@link DisconnectOutboundInput} parameter.
      * @param disconnectOutboundOutput The {@link DisconnectOutboundOutput} parameter.
+     * @since 4.3.0
      */
     void onOutboundDisconnect(
             @NotNull DisconnectOutboundInput disconnectOutboundInput,

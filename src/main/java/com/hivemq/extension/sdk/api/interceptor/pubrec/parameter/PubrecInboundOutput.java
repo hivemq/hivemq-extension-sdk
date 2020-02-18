@@ -29,6 +29,7 @@ import java.time.Duration;
  * This is the output parameter of any {@link PubrecInboundInterceptor}.
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface PubrecInboundOutput extends SimpleAsyncOutput<PubrecInboundOutput> {
@@ -37,6 +38,7 @@ public interface PubrecInboundOutput extends SimpleAsyncOutput<PubrecInboundOutp
      * Use this object to make any changes to the PUBREC message.
      *
      * @return A modifiable {@link ModifiablePubrecPacket}.
+     * @since 4.3.0
      */
     @NotNull ModifiablePubrecPacket getPubrecPacket();
 
@@ -49,6 +51,7 @@ public interface PubrecInboundOutput extends SimpleAsyncOutput<PubrecInboundOutp
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @since 4.3.0
      */
     @Override
     @NotNull Async<PubrecInboundOutput> async(@NotNull Duration timeout);

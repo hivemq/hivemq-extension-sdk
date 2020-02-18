@@ -27,6 +27,7 @@ import com.hivemq.extension.sdk.api.packets.general.UserProperties;
  *
  * @author Robin Atherton
  * @author Silvio Giebl
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface ModifiableInboundDisconnectPacket extends DisconnectPacket {
@@ -39,6 +40,7 @@ public interface ModifiableInboundDisconnectPacket extends DisconnectPacket {
      * @throws IllegalArgumentException If the disconnect reason code must not be used for inbound disconnect packets
      *                                  from a client to the server.
      * @see DisconnectReasonCode What reason codes exist for inbound disconnect packets from a client to the server.
+     * @since 4.3.0
      */
     void setReasonCode(@NotNull DisconnectReasonCode reasonCode);
 
@@ -50,6 +52,7 @@ public interface ModifiableInboundDisconnectPacket extends DisconnectPacket {
      * @param reasonString The reason string to set or <code>null</code> to remove the reason string.
      * @throws IllegalArgumentException If the reason string is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the reason string exceeds the UTF-8 string length limit.
+     * @since 4.3.0
      */
     void setReasonString(@Nullable String reasonString);
 
@@ -62,6 +65,7 @@ public interface ModifiableInboundDisconnectPacket extends DisconnectPacket {
      *                                  CONNECT packet was 0.
      * @throws IllegalArgumentException If the session expiry interval is less than 0.
      * @throws IllegalArgumentException If the session expiry interval is greater than the configured maximum.
+     * @since 4.3.0
      */
     void setSessionExpiryInterval(@Nullable Long sessionExpiryInterval);
 
@@ -69,6 +73,7 @@ public interface ModifiableInboundDisconnectPacket extends DisconnectPacket {
      * The modifiable {@link UserProperties} of the DISCONNECT packet.
      *
      * @return The modifiable user properties.
+     * @since 4.3.0
      */
     @Override
     @NotNull ModifiableUserProperties getUserProperties();

@@ -32,6 +32,7 @@ import java.util.Optional;
  * Contains all values of an MQTT 5 SUBACK, but will also be used to represent MQTT 3 SUBACK messages.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @Immutable
 @DoNotImplement
@@ -41,6 +42,7 @@ public interface SubackPacket {
      * The packet identifier of this SUBACK packet.
      *
      * @return The packet identifier.
+     * @since 4.3.0
      */
     int getPacketIdentifier();
 
@@ -48,6 +50,7 @@ public interface SubackPacket {
      * The reason codes for each subscription in the corresponding SUBSCRIBE message.
      *
      * @return The reason codes for the subscriptions.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull SubackReasonCode> getReasonCodes();
 
@@ -58,6 +61,7 @@ public interface SubackPacket {
      * previous {@link SubackOutboundInterceptor}).
      *
      * @return An {@link Optional} containing the suback reason string if present.
+     * @since 4.3.0
      */
     @NotNull Optional<String> getReasonString();
 
@@ -68,6 +72,7 @@ public interface SubackPacket {
      * SubackOutboundInterceptor}).
      *
      * @return The user properties.
+     * @since 4.3.0
      */
     @Immutable @NotNull UserProperties getUserProperties();
 }
