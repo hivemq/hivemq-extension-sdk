@@ -39,5 +39,5 @@ public interface ConnackOutboundInput extends ClientBasedInput {
      * @return An unmodifiable {@link ConnackPacket}.
      * @since 4.2.0
      */
-    @NotNull @Immutable ConnackPacket getConnackPacket();
+    @Immutable @NotNull ConnackPacket getConnackPacket();
 }

@@ -37,5 +37,5 @@ public interface UnsubackOutboundInput extends ClientBasedInput {
      *
      * @return An unmodifiable {@link UnsubackPacket}.
      */
-    @NotNull @Immutable UnsubackPacket getUnsubackPacket();
+    @Immutable @NotNull UnsubackPacket getUnsubackPacket();
 }

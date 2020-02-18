@@ -41,7 +41,7 @@ public interface SubscribePacket {
      * @return The list of {@link Subscription}s.
      * @since 4.2.0
      */
-    @NotNull @Immutable List<Subscription> getSubscriptions();
+    @Immutable @NotNull List<Subscription> getSubscriptions();
 
     /**
      * The user properties from the SUBSCRIBE packet.
@@ -51,7 +51,7 @@ public interface SubscribePacket {
      * @return The {@link UserProperties} of the SUBSCRIBE packet.
      * @since 4.2.0
      */
-    @NotNull @Immutable UserProperties getUserProperties();
+    @Immutable @NotNull UserProperties getUserProperties();
 
     /**
      * If this property is present, it contains the subscription identifier for the SUBSCRIBE packet.

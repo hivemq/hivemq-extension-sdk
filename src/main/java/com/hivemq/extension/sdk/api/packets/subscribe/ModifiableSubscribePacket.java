@@ -64,7 +64,7 @@ public interface ModifiableSubscribePacket {
      * @return An unmodifiable list of all {@link ModifiableSubscription}s of the SUBSCRIBE.
      * @since 4.2.0
      */
-    @NotNull @Immutable List<ModifiableSubscription> getSubscriptions();
+    @Immutable @NotNull List<ModifiableSubscription> getSubscriptions();
 
     /**
      * The packet identifier of the SUBSCRIBE packet.
