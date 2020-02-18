@@ -52,8 +52,8 @@ public interface PubrelInboundInterceptor extends Interceptor {
      * When a {@link PubrelInboundInterceptor} is set through any extension, this method gets called for every inbound
      * PUBREL packet from any MQTT client.
      * <p>
-     * When the extension is enabled after HiveMQ is already running, this method will also be called for future
-     * PUBRELs of clients that are already connected.
+     * When the extension is enabled after HiveMQ is already running, this method will also be called for future PUBRELs
+     * of clients that are already connected.
      *
      * @param pubrelInboundInput  The {@link PubrelInboundInput} parameter.
      * @param pubrelInboundOutput The {@link PubrelInboundOutput} parameter.
