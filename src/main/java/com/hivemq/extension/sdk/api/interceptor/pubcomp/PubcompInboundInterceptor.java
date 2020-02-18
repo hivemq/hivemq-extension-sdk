@@ -43,6 +43,7 @@ import java.time.Duration;
  * </ol>
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 @FunctionalInterface
 public interface PubcompInboundInterceptor extends Interceptor {
@@ -50,9 +51,13 @@ public interface PubcompInboundInterceptor extends Interceptor {
     /**
      * When a {@link PubcompInboundInterceptor} is set through any extension, this method gets called for every inbound
      * PUBCOMP packet from any MQTT client.
+     * <p>
+     * When the extension is enabled after HiveMQ is already running, this method will also be called for future
+     * PUBCOMPs of clients that are already connected.
      *
      * @param pubcompInboundInput  The {@link PubcompInboundInput} parameter.
      * @param pubcompInboundOutput The {@link PubcompInboundOutput} parameter.
+     * @since 4.3.0
      */
     void onInboundPubcomp(
             @NotNull PubcompInboundInput pubcompInboundInput, @NotNull PubcompInboundOutput pubcompInboundOutput);

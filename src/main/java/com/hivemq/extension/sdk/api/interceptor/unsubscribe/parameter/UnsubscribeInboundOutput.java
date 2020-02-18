@@ -32,6 +32,7 @@ import java.time.Duration;
  * It can be used to modify an inbound UNSUBSCRIBE packet.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface UnsubscribeInboundOutput extends AsyncOutput<UnsubscribeInboundOutput> {
@@ -40,6 +41,7 @@ public interface UnsubscribeInboundOutput extends AsyncOutput<UnsubscribeInbound
      * Use this Object to make any changes to the inbound UNSUBSCRIBE.
      *
      * @return A modifiable UNSUBSCRIBE packet.
+     * @since 4.3.0
      */
     @NotNull ModifiableUnsubscribePacket getUnsubscribePacket();
 
@@ -52,6 +54,7 @@ public interface UnsubscribeInboundOutput extends AsyncOutput<UnsubscribeInbound
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @since 4.3.0
      */
     @Override
     @NotNull Async<UnsubscribeInboundOutput> async(@NotNull Duration timeout);

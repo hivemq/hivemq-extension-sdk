@@ -29,6 +29,7 @@ import com.hivemq.extension.sdk.api.packets.general.UserProperties;
  * or to the server (for {@link PubrelInboundInterceptor}).
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface ModifiablePubrelPacket extends PubrelPacket {
@@ -47,6 +48,7 @@ public interface ModifiablePubrelPacket extends PubrelPacket {
      * @param reasonString The reason string to set.
      * @throws IllegalArgumentException If the reason string is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the reason string exceeds the UTF-8 string length limit.
+     * @since 4.3.0
      */
     void setReasonString(@Nullable String reasonString);
 
@@ -60,6 +62,7 @@ public interface ModifiablePubrelPacket extends PubrelPacket {
      * is sent to HiveMQ, this allows to enrich MQTT 3.x PUBRELs with this MQTT 5 property.
      *
      * @return Modifiable user properties.
+     * @since 4.3.0
      */
     @Override
     @NotNull ModifiableUserProperties getUserProperties();

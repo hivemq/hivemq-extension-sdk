@@ -24,12 +24,13 @@ import com.hivemq.extension.sdk.api.interceptor.unsubscribe.parameter.Unsubscrib
 /**
  * Interface for the inbound UNSUBSCRIBE interception.
  * <p>
- * Interceptors are always called by the same Thread for all messages from the same client.
+ * Interceptors are always called by the same Thread for all UNSUBSCRIBE messages from the same client.
  * <p>
  * If the same instance is shared between multiple clients it can be called in different Threads and must therefore be
  * thread-safe.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @FunctionalInterface
 public interface UnsubscribeInboundInterceptor extends Interceptor {
@@ -37,9 +38,13 @@ public interface UnsubscribeInboundInterceptor extends Interceptor {
     /**
      * When a {@link UnsubscribeInboundInterceptor} is set through any extension, this method gets called for every
      * inbound UNSUBSCRIBE packet from any client.
+     * <p>
+     * When the extension is enabled after HiveMQ is already running this method will also be called for future
+     * UNSUBSCRIBEs of clients that are already connected.
      *
      * @param unsubscribeInboundInput  The {@link UnsubscribeInboundInput} parameter.
      * @param unsubscribeInboundOutput The {@link UnsubscribeInboundOutput} parameter.
+     * @since 4.3.0
      */
     void onInboundUnsubscribe(
             @NotNull UnsubscribeInboundInput unsubscribeInboundInput,

@@ -30,6 +30,7 @@ import com.hivemq.extension.sdk.api.interceptor.suback.parameter.SubackOutboundO
  * thread-safe.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @FunctionalInterface
 public interface SubackOutboundInterceptor extends Interceptor {
@@ -37,9 +38,13 @@ public interface SubackOutboundInterceptor extends Interceptor {
     /**
      * When a {@link SubackOutboundInterceptor} is set through any extension, this method gets called for every outbound
      * SUBACK packet from any MQTT client.
+     * <p>
+     * When the extension is enabled after HiveMQ is already running this method will also be called for future SUBACK
+     * of clients that are already connected.
      *
      * @param subackOutboundInput  The {@link SubackOutboundInput} parameter.
      * @param subackOutboundOutput The {@link SubackOutboundOutput} parameter.
+     * @since 4.3.0
      */
     void onOutboundSuback(
             @NotNull SubackOutboundInput subackOutboundInput, @NotNull SubackOutboundOutput subackOutboundOutput);

@@ -24,6 +24,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * This is the input parameter of any {@link PingReqInboundInterceptor}.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface PingReqInboundInput extends ClientBasedInput {}

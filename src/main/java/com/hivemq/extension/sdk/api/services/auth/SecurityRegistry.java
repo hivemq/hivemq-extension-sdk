@@ -65,6 +65,7 @@ public interface SecurityRegistry {
      * A previously set {@link AuthenticatorProvider} or {@link EnhancedAuthenticatorProvider} is replaced.
      *
      * @param authenticatorProvider The {@link EnhancedAuthenticatorProvider} to set.
+     * @since 4.3.0
      */
     void setEnhancedAuthenticatorProvider(@NotNull EnhancedAuthenticatorProvider authenticatorProvider);
 

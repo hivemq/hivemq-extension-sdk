@@ -30,6 +30,7 @@ import java.time.Duration;
  * DISCONNECT interception. It can be used to modify an outbound DISCONNECT packet.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface DisconnectOutboundOutput extends SimpleAsyncOutput<DisconnectOutboundOutput> {
@@ -38,6 +39,7 @@ public interface DisconnectOutboundOutput extends SimpleAsyncOutput<DisconnectOu
      * Use this object to make any changes to the outbound DISCONNECT.
      *
      * @return A {@link ModifiableOutboundDisconnectPacket}.
+     * @since 4.3.0
      */
     @NotNull ModifiableOutboundDisconnectPacket getDisconnectPacket();
 
@@ -50,6 +52,7 @@ public interface DisconnectOutboundOutput extends SimpleAsyncOutput<DisconnectOu
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @since 4.3.0
      */
     @NotNull Async<DisconnectOutboundOutput> async(@NotNull Duration timeout);
 }

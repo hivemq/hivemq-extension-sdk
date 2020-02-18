@@ -25,6 +25,7 @@ import java.time.Duration;
  * Enables an output object to be processed in a non-blocking way.
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface SimpleAsyncOutput<T> {

@@ -66,6 +66,7 @@ import java.time.Duration;
  * @author Daniel Krüger
  * @author Florian Limpöck
  * @author Silvio Giebl
+ * @since 4.3.0
  */
 @DoNotImplement
 public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
@@ -83,6 +84,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                                       a authentication method in the CONNECT packet).
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
+     * @since 4.3.0
      */
     void continueAuthentication();
 
@@ -100,6 +102,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                                       a authentication method in the CONNECT packet).
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
+     * @since 4.3.0
      */
     void continueAuthentication(@NotNull ByteBuffer authenticationData);
 
@@ -117,6 +120,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                                       a authentication method in the CONNECT packet).
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
+     * @since 4.3.0
      */
     void continueAuthentication(@NotNull byte[] authenticationData);
 
@@ -133,6 +137,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
+     * @since 4.3.0
      */
     void authenticateSuccessfully();
 
@@ -150,6 +155,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * @param authenticationData The authentication data of the CONNACK or AUTH packet.
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
+     * @since 4.3.0
      */
     void authenticateSuccessfully(@NotNull ByteBuffer authenticationData);
 
@@ -167,6 +173,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * @param authenticationData The authentication data of the CONNACK or AUTH packet.
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
+     * @since 4.3.0
      */
     void authenticateSuccessfully(@NotNull byte[] authenticationData);
 
@@ -183,6 +190,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
+     * @since 4.3.0
      */
     void failAuthentication();
 
@@ -204,6 +212,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                                       during authentication.
      * @throws IllegalArgumentException      when {@link DisconnectedReasonCode} is set to a CONNACK only reason code
      *                                       during re-authentication.
+     * @since 4.3.0
      */
     void failAuthentication(@NotNull DisconnectedReasonCode reasonCode);
 
@@ -221,6 +230,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * @param reasonString The reason string of the CONNACK or DISCONNECT packet.
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
+     * @since 4.3.0
      */
     void failAuthentication(@Nullable String reasonString);
 
@@ -242,6 +252,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                                       during authentication.
      * @throws IllegalArgumentException      when {@link DisconnectedReasonCode} is set to a CONNACK only reason code
      *                                       during re-authentication.
+     * @since 4.3.0
      */
     void failAuthentication(@NotNull DisconnectedReasonCode reasonCode, @Nullable String reasonString);
 
@@ -253,6 +264,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication, continueAuthentication
      *                                       or nextExtensionOrDefault has already been called.
+     * @since 4.3.0
      */
     void nextExtensionOrDefault();
 
@@ -272,6 +284,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * to the client.
      *
      * @param timeout The timeout in seconds.
+     * @since 4.3.0
      */
     void setTimeout(int timeout);
 
@@ -280,6 +293,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * or DISCONNECT packet.
      *
      * @return The {@link ModifiableUserProperties} of the CONNACK, AUTH or DISCONNECT packet.
+     * @since 4.3.0
      */
     @NotNull ModifiableUserProperties getOutboundUserProperties();
 
@@ -290,6 +304,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * client.
      *
      * @return The {@link ModifiableDefaultPermissions} for the client.
+     * @since 4.3.0
      */
     @NotNull ModifiableDefaultPermissions getDefaultPermissions();
 
@@ -297,6 +312,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * Provides {@link ModifiableClientSettings} to configure client specific parameters and restrictions.
      *
      * @return The {@link ModifiableClientSettings} for the client.
+     * @since 4.3.0
      */
     @NotNull ModifiableClientSettings getClientSettings();
 
@@ -311,6 +327,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                        with reason code {@link DisconnectedReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason
      *                        string <code>Authentication failed, authenticator timed out</code> (or
      *                        <code>Re-authentication failed, authenticator timed out</code> during re-authentication).
+     * @since 4.3.0
      */
     @Override
     @NotNull Async<EnhancedAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback);
@@ -336,6 +353,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                                       during authentication.
      * @throws IllegalArgumentException      when {@link DisconnectedReasonCode} is set to a CONNACK only reason code
      *                                       during re-authentication.
+     * @since 4.3.0
      */
     @NotNull Async<EnhancedAuthOutput> async(
             @NotNull Duration timeout,
@@ -358,6 +376,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                        specified reason string.
      * @param reasonString    The reason string sent in CONNACK or DISCONNECT when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @since 4.3.0
      */
     @NotNull Async<EnhancedAuthOutput> async(
             @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @Nullable String reasonString);
@@ -382,6 +401,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                                       during authentication.
      * @throws IllegalArgumentException      when {@link DisconnectedReasonCode} is set to a CONNACK only reason code
      *                                       during re-authentication.
+     * @since 4.3.0
      */
     @NotNull Async<EnhancedAuthOutput> async(
             @NotNull Duration timeout,

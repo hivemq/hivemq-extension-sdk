@@ -22,10 +22,17 @@ package com.hivemq.extension.sdk.api.packets.pubcomp;
  * MQTT 3 does not support reason codes for the above mentioned MQTT packet.
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 public enum PubcompReasonCode {
 
+    /**
+     * @since 4.3.0
+     */
     SUCCESS,
 
+    /**
+     * @since 4.3.0
+     */
     PACKET_IDENTIFIER_NOT_FOUND
 }

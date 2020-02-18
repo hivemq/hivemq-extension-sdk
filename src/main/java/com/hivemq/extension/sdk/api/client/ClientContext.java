@@ -83,6 +83,7 @@ public interface ClientContext {
      *
      * @param pubackInboundInterceptor The implementation of an PubackInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPubackInboundInterceptor(@NotNull PubackInboundInterceptor pubackInboundInterceptor);
 
@@ -93,6 +94,7 @@ public interface ClientContext {
      *
      * @param pubackOutboundInterceptor The implementation of an PubackOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPubackOutboundInterceptor(@NotNull PubackOutboundInterceptor pubackOutboundInterceptor);
 
@@ -103,6 +105,7 @@ public interface ClientContext {
      *
      * @param pubrecInboundInterceptor The implementation of an PubrecInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPubrecInboundInterceptor(@NotNull PubrecInboundInterceptor pubrecInboundInterceptor);
 
@@ -113,6 +116,7 @@ public interface ClientContext {
      *
      * @param pubrecOutboundInterceptor The implementation of an PubrecOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPubrecOutboundInterceptor(@NotNull PubrecOutboundInterceptor pubrecOutboundInterceptor);
 
@@ -123,6 +127,7 @@ public interface ClientContext {
      *
      * @param pubrelInboundInterceptor The implementation of an PubrelInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPubrelInboundInterceptor(@NotNull PubrelInboundInterceptor pubrelInboundInterceptor);
 
@@ -133,6 +138,7 @@ public interface ClientContext {
      *
      * @param pubrelOutboundInterceptor The implementation of an PubrelOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPubrelOutboundInterceptor(@NotNull PubrelOutboundInterceptor pubrelOutboundInterceptor);
 
@@ -143,6 +149,7 @@ public interface ClientContext {
      *
      * @param pubcompInboundInterceptor The implementation of an PubcompInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPubcompInboundInterceptor(@NotNull PubcompInboundInterceptor pubcompInboundInterceptor);
 
@@ -153,6 +160,7 @@ public interface ClientContext {
      *
      * @param pubcompOutboundInterceptor The implementation of an PubcompOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPubcompOutboundInterceptor(@NotNull PubcompOutboundInterceptor pubcompOutboundInterceptor);
 
@@ -174,6 +182,7 @@ public interface ClientContext {
      *
      * @param subAckOutboundInterceptor The implementation of a SubackOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addSubackOutboundInterceptor(@NotNull SubackOutboundInterceptor subAckOutboundInterceptor);
 
@@ -184,6 +193,7 @@ public interface ClientContext {
      *
      * @param unsubscribeInboundInterceptor The implementation of an UnsubscribeInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addUnsubscribeInboundInterceptor(@NotNull UnsubscribeInboundInterceptor unsubscribeInboundInterceptor);
 
@@ -194,6 +204,7 @@ public interface ClientContext {
      *
      * @param unsubackOutboundInterceptor The implementation of an UnsubackOutboundInterceptors.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addUnsubackOutboundInterceptor(@NotNull UnsubackOutboundInterceptor unsubackOutboundInterceptor);
 
@@ -204,6 +215,7 @@ public interface ClientContext {
      *
      * @param disconnectInboundInterceptor The implementation of a DisconnectInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addDisconnectInboundInterceptor(@NotNull DisconnectInboundInterceptor disconnectInboundInterceptor);
 
@@ -214,6 +226,7 @@ public interface ClientContext {
      *
      * @param disconnectOutboundInterceptor The implementation of a DisconnectOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addDisconnectOutboundInterceptor(@NotNull DisconnectOutboundInterceptor disconnectOutboundInterceptor);
 
@@ -224,6 +237,7 @@ public interface ClientContext {
      *
      * @param pingReqInboundInterceptor The implementation of a PingReqInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPingReqInboundInterceptor(@NotNull PingReqInboundInterceptor pingReqInboundInterceptor);
 
@@ -234,6 +248,7 @@ public interface ClientContext {
      *
      * @param pingRespOutboundInterceptor The implementation of a PingRespOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void addPingRespOutboundInterceptor(@NotNull PingRespOutboundInterceptor pingRespOutboundInterceptor);
 
@@ -266,6 +281,7 @@ public interface ClientContext {
      *
      * @param pubackInboundInterceptor The implementation of an PubackInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePubackInboundInterceptor(@NotNull PubackInboundInterceptor pubackInboundInterceptor);
 
@@ -276,6 +292,7 @@ public interface ClientContext {
      *
      * @param pubackOutboundInterceptor The implementation of an PubackOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePubackOutboundInterceptor(@NotNull PubackOutboundInterceptor pubackOutboundInterceptor);
 
@@ -286,6 +303,7 @@ public interface ClientContext {
      *
      * @param pubrecInboundInterceptor The implementation of an PubrecInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePubrecInboundInterceptor(@NotNull PubrecInboundInterceptor pubrecInboundInterceptor);
 
@@ -296,6 +314,7 @@ public interface ClientContext {
      *
      * @param pubrecOutboundInterceptor The implementation of an PubrecOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePubrecOutboundInterceptor(@NotNull PubrecOutboundInterceptor pubrecOutboundInterceptor);
 
@@ -306,6 +325,7 @@ public interface ClientContext {
      *
      * @param pubrelInboundInterceptor The implementation of an PubrelInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePubrelInboundInterceptor(@NotNull PubrelInboundInterceptor pubrelInboundInterceptor);
 
@@ -316,6 +336,7 @@ public interface ClientContext {
      *
      * @param pubrelOutboundInterceptor The implementation of an PubrelOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePubrelOutboundInterceptor(@NotNull PubrelOutboundInterceptor pubrelOutboundInterceptor);
 
@@ -326,6 +347,7 @@ public interface ClientContext {
      *
      * @param pubcompInboundInterceptor The implementation of an PubcompInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePubcompInboundInterceptor(@NotNull PubcompInboundInterceptor pubcompInboundInterceptor);
 
@@ -336,6 +358,7 @@ public interface ClientContext {
      *
      * @param pubcompOutboundInterceptor The implementation of an PubcompOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePubcompOutboundInterceptor(@NotNull PubcompOutboundInterceptor pubcompOutboundInterceptor);
 
@@ -357,6 +380,7 @@ public interface ClientContext {
      *
      * @param subackOutboundInterceptor The implementation of a SubackOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removeSubackOutboundInterceptor(@NotNull SubackOutboundInterceptor subackOutboundInterceptor);
 
@@ -367,6 +391,7 @@ public interface ClientContext {
      *
      * @param unsubscribeInboundInterceptor The implementation of an UnsubscribeInboundInterceptor.
      * @throws NullPointerException If the interceptors is null.
+     * @since 4.3.0
      */
     void removeUnsubscribeInboundInterceptor(@NotNull UnsubscribeInboundInterceptor unsubscribeInboundInterceptor);
 
@@ -377,6 +402,7 @@ public interface ClientContext {
      *
      * @param unsubackOutboundInterceptor The implementation of an UnsubackOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removeUnsubackOutboundInterceptor(@NotNull UnsubackOutboundInterceptor unsubackOutboundInterceptor);
 
@@ -387,6 +413,7 @@ public interface ClientContext {
      *
      * @param disconnectInboundInterceptor The implementation of an DisconnectInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removeDisconnectInboundInterceptor(@NotNull DisconnectInboundInterceptor disconnectInboundInterceptor);
 
@@ -397,6 +424,7 @@ public interface ClientContext {
      *
      * @param disconnectOutboundInterceptor The implementation of an DisconnectOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removeDisconnectOutboundInterceptor(@NotNull DisconnectOutboundInterceptor disconnectOutboundInterceptor);
 
@@ -407,6 +435,7 @@ public interface ClientContext {
      *
      * @param pingReqInboundInterceptor The implementation of a PingReqInboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePingReqInboundInterceptor(@NotNull PingReqInboundInterceptor pingReqInboundInterceptor);
 
@@ -417,6 +446,7 @@ public interface ClientContext {
      *
      * @param pingRespOutboundInterceptor The implementation of a PingRespOutboundInterceptor.
      * @throws NullPointerException If the interceptor is null.
+     * @since 4.3.0
      */
     void removePingRespOutboundInterceptor(@NotNull PingRespOutboundInterceptor pingRespOutboundInterceptor);
 
@@ -448,6 +478,7 @@ public interface ClientContext {
      * Returns all {@link PubackInboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PubackInboundInterceptor} for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PubackInboundInterceptor> getPubackInboundInterceptors();
 
@@ -455,6 +486,7 @@ public interface ClientContext {
      * Returns all {@link PubackOutboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PubackOutboundInterceptor} for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PubackOutboundInterceptor> getPubackOutboundInterceptors();
 
@@ -462,6 +494,7 @@ public interface ClientContext {
      * Returns all {@link PubrecInboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PubrecInboundInterceptor} for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PubrecInboundInterceptor> getPubrecInboundInterceptors();
 
@@ -469,6 +502,7 @@ public interface ClientContext {
      * Returns all {@link PubrecOutboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PubrecOutboundInterceptor} for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PubrecOutboundInterceptor> getPubrecOutboundInterceptors();
 
@@ -476,6 +510,7 @@ public interface ClientContext {
      * Returns all {@link PubrelInboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PubrelInboundInterceptor} for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PubrelInboundInterceptor> getPubrelInboundInterceptors();
 
@@ -483,6 +518,7 @@ public interface ClientContext {
      * Returns all {@link PubrelOutboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PubrelOutboundInterceptor} for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PubrelOutboundInterceptor> getPubrelOutboundInterceptors();
 
@@ -490,6 +526,7 @@ public interface ClientContext {
      * Returns all {@link PubcompInboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PubcompInboundInterceptor} for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PubcompInboundInterceptor> getPubcompInboundInterceptors();
 
@@ -497,6 +534,7 @@ public interface ClientContext {
      * Returns all {@link PubcompOutboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PubcompOutboundInterceptor} for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PubcompOutboundInterceptor> getPubcompOutboundInterceptors();
 
@@ -512,6 +550,7 @@ public interface ClientContext {
      * Returns all {@link SubackOutboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of SubackOutboundInterceptor for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull SubackOutboundInterceptor> getSubackOutboundInterceptors();
 
@@ -519,6 +558,7 @@ public interface ClientContext {
      * Returns all {@link UnsubscribeInboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of UnsubscribeInboundInterceptors for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull UnsubscribeInboundInterceptor> getUnsubscribeInboundInterceptors();
 
@@ -526,6 +566,7 @@ public interface ClientContext {
      * Returns all {@link UnsubackOutboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of UnsubackOutboundInterceptors for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull UnsubackOutboundInterceptor> getUnsubackOutboundInterceptors();
 
@@ -533,6 +574,7 @@ public interface ClientContext {
      * Returns all {@link DisconnectInboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of DisconnectInboundInterceptors for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull DisconnectInboundInterceptor> getDisconnectInboundInterceptors();
 
@@ -540,6 +582,7 @@ public interface ClientContext {
      * Returns all {@link DisconnectOutboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of DisconnectOutboundInterceptors for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull DisconnectOutboundInterceptor> getDisconnectOutboundInterceptors();
 
@@ -547,6 +590,7 @@ public interface ClientContext {
      * Returns all {@link PingReqInboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PingReqInboundInterceptor}s for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PingReqInboundInterceptor> getPingReqInboundInterceptors();
 
@@ -554,6 +598,7 @@ public interface ClientContext {
      * Returns all {@link PingRespOutboundInterceptor} which are registered for this client by this extension.
      *
      * @return List of {@link PingRespOutboundInterceptor}s for this client.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull PingRespOutboundInterceptor> getPingRespOutboundInterceptors();
 

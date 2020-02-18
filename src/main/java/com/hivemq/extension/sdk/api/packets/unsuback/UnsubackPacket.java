@@ -32,6 +32,7 @@ import java.util.Optional;
  *
  * @author Robin Atherton
  * @author Silvio Giebl
+ * @since 4.3.0
  */
 @Immutable
 @DoNotImplement
@@ -41,15 +42,19 @@ public interface UnsubackPacket {
      * The packet identifier of the UNSUBACK packet.
      *
      * @return The packet identifier.
+     * @since 4.3.0
      */
     int getPacketIdentifier();
 
     /**
      * Represents the return codes for the QoS levels of the different Topics contained in the corresponding UNSUBSCRIBE
-     * message as well as potential failure codes. For an MQTT 3 client this {@link List} for the MQTT 5 property will
-     * always be empty (if not modified by a previous {@link UnsubackOutboundInterceptor}).
+     * message as well as potential failure codes.
+     * <p>
+     * For an MQTT 3 client this {@link List} for the MQTT 5 property will always be empty (if not modified by a
+     * previous {@link UnsubackOutboundInterceptor}).
      *
      * @return The reason codes for the unsubscribed topics.
+     * @since 4.3.0
      */
     @Immutable @NotNull List<@NotNull UnsubackReasonCode> getReasonCodes();
 
@@ -60,6 +65,7 @@ public interface UnsubackPacket {
      * previous {@link UnsubackOutboundInterceptor}).
      *
      * @return An {@link Optional} containing the unsuback reason string if present.
+     * @since 4.3.0
      */
     @NotNull Optional<String> getReasonString();
 
@@ -70,6 +76,7 @@ public interface UnsubackPacket {
      * UnsubackOutboundInterceptor}).
      *
      * @return The {@link UserProperties} of the UNSUBACK packet.
+     * @since 4.3.0
      */
     @Immutable @NotNull UserProperties getUserProperties();
 }

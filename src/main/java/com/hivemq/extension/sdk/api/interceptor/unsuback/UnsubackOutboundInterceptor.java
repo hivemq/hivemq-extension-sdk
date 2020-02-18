@@ -30,6 +30,7 @@ import com.hivemq.extension.sdk.api.interceptor.unsuback.parameter.UnsubackOutbo
  * thread-safe.
  *
  * @author Robin Atherton
+ * @since 4.3.0
  */
 @FunctionalInterface
 public interface UnsubackOutboundInterceptor extends Interceptor {
@@ -37,9 +38,13 @@ public interface UnsubackOutboundInterceptor extends Interceptor {
     /**
      * When an {@link UnsubackOutboundInterceptor} is set through any extension, this method gets called for every
      * outbound UNSUBACK packet from any MQTT client.
+     * <p>
+     * When the extension is enabled after HiveMQ is already running this method will also be called for future
+     * UNSUBACKs of clients that are already connected.
      *
      * @param unsubackOutboundInput  The {@link UnsubackOutboundInput} parameter.
      * @param unsubackOutboundOutput The {@link UnsubackOutboundOutput} parameter.
+     * @since 4.3.0
      */
     void onOutboundUnsuback(
             @NotNull UnsubackOutboundInput unsubackOutboundInput,

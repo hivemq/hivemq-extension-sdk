@@ -43,6 +43,7 @@ import java.time.Duration;
  * </ol>
  *
  * @author Yannick Weber
+ * @since 4.3.0
  */
 @FunctionalInterface
 public interface PubrecInboundInterceptor extends Interceptor {
@@ -50,9 +51,13 @@ public interface PubrecInboundInterceptor extends Interceptor {
     /**
      * When a {@link PubrecInboundInterceptor} is set through any extension, this method gets called for every inbound
      * PUBREC packet from any MQTT client.
+     * <p>
+     * When the extension is enabled after HiveMQ is already running, this method will also be called for future
+     * PUBRECs of clients that are already connected.
      *
      * @param pubrecInboundInput  The {@link PubrecInboundInput} parameter.
      * @param pubrecInboundOutput The {@link PubrecInboundOutput} parameter.
+     * @since 4.3.0
      */
     void onInboundPubrec(
             @NotNull PubrecInboundInput pubrecInboundInput, @NotNull PubrecInboundOutput pubrecInboundOutput);

@@ -99,6 +99,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @param reasonCode The reason code of the CONNACK packet.
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
+     * @since 4.3.0
      */
     void failAuthentication(@NotNull ConnackReasonCode reasonCode);
 
