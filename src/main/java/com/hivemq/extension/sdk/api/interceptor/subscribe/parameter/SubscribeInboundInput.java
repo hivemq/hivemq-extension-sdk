@@ -39,5 +39,5 @@ public interface SubscribeInboundInput extends ClientBasedInput {
      * @return An unmodifiable {@link SubscribePacket}.
      * @since 4.2.0
      */
-    @NotNull @Immutable SubscribePacket getSubscribePacket();
+    @Immutable @NotNull SubscribePacket getSubscribePacket();
 }
