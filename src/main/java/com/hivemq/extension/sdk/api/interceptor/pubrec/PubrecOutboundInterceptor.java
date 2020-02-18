@@ -52,8 +52,8 @@ public interface PubrecOutboundInterceptor extends Interceptor {
      * When a {@link PubrecOutboundInterceptor} is set through any extension, this method gets called for every outbound
      * PUBREC packet for any MQTT client.
      * <p>
-     * When the extension is enabled after HiveMQ is already running, this method will also be called for future
-     * PUBRECs for clients that are already connected.
+     * When the extension is enabled after HiveMQ is already running, this method will also be called for future PUBRECs
+     * for clients that are already connected.
      *
      * @param pubrecOutboundInput  The {@link PubrecOutboundInput} parameter.
      * @param pubrecOutboundOutput The {@link PubrecOutboundOutput} parameter.

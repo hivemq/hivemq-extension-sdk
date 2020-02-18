@@ -52,8 +52,8 @@ public interface PubackOutboundInterceptor extends Interceptor {
      * When a {@link PubackOutboundInterceptor} is set through any extension, this method gets called for every outgoing
      * PUBACK packet to any MQTT client.
      * <p>
-     * When the extension is enabled after HiveMQ is already running, this method will also be called for future
-     * PUBACKs for clients that are already connected.
+     * When the extension is enabled after HiveMQ is already running, this method will also be called for future PUBACKs
+     * for clients that are already connected.
      *
      * @param pubackOutboundInput  The {@link PubackOutboundInput} parameter.
      * @param pubackOutboundOutput The {@link PubackOutboundOutput} parameter.
