@@ -1,62 +1,67 @@
-:hivemq-github-link: https://github.com/hivemq
-:hivemq-link: http://www.hivemq.com
-:hivemq-extensions-docu-link: http://www.hivemq.com/docs/latest/extensions/
-:hivemq-extensions-directory: http://www.hivemq.com/extensions/
+:hivemq-github: https://github.com/hivemq
+:hivemq-website: http://www.hivemq.com
+:hivemq-community-forum: https://community.hivemq.com/
+:hivemq-extensions-docu: http://www.hivemq.com/docs/latest/extensions/
+:hivemq-marketplace: http://www.hivemq.com/extensions/
 
-== HiveMQ Extension SDK
+= HiveMQ Extension SDK
 
-The enterprise MQTT broker HiveMQ offers this free and open source Extension SDK. This allows everyone to extend HiveMQ and add custom functionality via extensions.
+The enterprise MQTT broker HiveMQ offers this free, open source extension SDK.
+The HiveMQ extension framework provides an open API that allows developers to create custom extensions that suit their specific infrastructures.
+Use our extension framework to extend HiveMQ with custom business logic or to integrate virtually any system into HiveMQ.
 
-With custom HiveMQ extensions, it's easy to add functionality like writing messages to databases, integrate with other service buses, collect statistics, add fine-grained security and virtually anything you else you can imagine.
+The HiveMQ extension framework can be used to add many different types of functionality:
 
-Extension development for HiveMQ is as easy as writing a Java main method once you grasp the core concepts.
+* Write messages to a database,
+* integrate other services,
+* collect statistics,
+* add fine-grained security,
+* and much more.
 
-=== Using the SDK
+Resources:
 
-An extensive HiveMQ extension documentation is available {hivemq-extensions-docu-link}[on the official HiveMQ website]. It covers the core concepts and shows how to set up your development environment.
+* Web Site: {hivemq-website}
+* Documentation: {hivemq-extensions-docu}
+* Community Forum: {hivemq-community-forum}
+* Contribution Guidelines: link:CONTRIBUTING.adoc[Contributing.adoc]
+* License: The source files in this repository are made available under the link:LICENSE[Apache License Version 2.0].
 
-You can also clone our example open source HiveMQ extension at {hivemq-github-link}[in our Github page].
+== Using the SDK
 
-
-=== Maven Repository
-
-The hivemq-extension-sdk is available in Maven central, so no special configuration is needed.
-
-
-=== Using the SDK
-
+The HiveMQ extension SDK is available in Maven central, so no special configuration is needed.
 To use the SDK, add the following dependency to your Maven project:
-
 
 [source,xml]
 ----
-    <dependency>
-        <groupId>com.hivemq</groupId>
-        <artifactId>hivemq-extension-sdk</artifactId>
-        <version>4.3.0</version>
-    </dependency>
-
-
+<dependency>
+    <groupId>com.hivemq</groupId>
+    <artifactId>hivemq-extension-sdk</artifactId>
+    <version>4.3.0</version>
+</dependency>
 ----
 
-=== Extension Development Documentation
+== Extension Development Documentation
 
-Please visit {hivemq-extensions-docu-link}[our website] for the documentation how to develop extensions.
+Extension development for HiveMQ is as easy as writing a Java main method once you grasp the core concepts.
 
-=== Example Extensions
+Please visit the extensive {hivemq-extensions-docu}[HiveMQ extension developer documentation].
+It covers the core concepts and shows how to set up your development environment.
 
-Many example extensions are available, most of them as open source. You can find an overview of officially supported extensions {hivemq-extensions-directory}[here]:
+== Example Extensions
 
-You can find many example extensions by browsing {hivemq-github-link}[here on Github].
+You can find many example extensions by browsing the {hivemq-github}[HiveMQ Github page].
 
-=== Need help ?
+Check out the {hivemq-marketplace}[HiveMQ Marketplace] for officially supported extensions.
+
+== Need help ?
 
 If you need help with custom HiveMQ extensions please contact support@hivemq.com.
 
-= Contributing
+== Contributing
 
-If you want to contribute to HiveMQ Extension SDK, see the link:CONTRIBUTING.md[contribution guidelines].
+If you want to contribute to the HiveMQ Extension SDK, see the link:CONTRIBUTING.md[contribution guidelines].
 
-= License
+== License
 
-HiveMQ Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`. A copy of the license can be found link:LICENSE[here].
+The HiveMQ Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`.
+A copy of the license can be found link:LICENSE[here].
