@@ -18,7 +18,7 @@ package com.hivemq.extension.sdk.api.services.general;
 
 /**
  * @author Christoph Schäbel
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface IterationContext {
 
@@ -28,7 +28,7 @@ public interface IterationContext {
      * No further callbacks will be executed and the result future will complete successfully as soon as the current
      * iteration callback returns.
      *
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void abortIteration();
 }

@@ -28,7 +28,7 @@ import com.hivemq.extension.sdk.api.packets.unsuback.ModifiableUnsubackPacket;
  * It can be used to modify an outbound UNSUBACK packet.
  *
  * @author Robin Atherton
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface UnsubackOutboundOutput extends SimpleAsyncOutput<UnsubackOutboundOutput> {
@@ -41,7 +41,7 @@ public interface UnsubackOutboundOutput extends SimpleAsyncOutput<UnsubackOutbou
      * UnsubackOutboundInput#getConnectionInformation()}.
      *
      * @return A modifiable UNSUBACK packet.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull ModifiableUnsubackPacket getUnsubackPacket();
 }

@@ -22,21 +22,21 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * This exception is used to signal that a given topic filter is invalid.
  *
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public class InvalidTopicException extends Exception {
 
     /**
      * The topic filter that caused the exception.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     private final @NotNull String topicFilter;
 
     /**
      * Flag that if <b>true</b> will also fill in the stack trace for the exception.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     private final boolean fillInStacktrace;
 
@@ -45,7 +45,7 @@ public class InvalidTopicException extends Exception {
      *
      * @param topicFilter      The invalid topic filter.
      * @param fillInStacktrace Whether the created exception should fill in a stacktrace.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public InvalidTopicException(final @NotNull String topicFilter, final boolean fillInStacktrace) {
         this.topicFilter = topicFilter;
@@ -56,7 +56,7 @@ public class InvalidTopicException extends Exception {
      * Creates a new InvalidTopicException that will not contain a stacktrace.
      *
      * @param topicFilter The invalid topic filter.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public InvalidTopicException(final @NotNull String topicFilter) {
         this(topicFilter, false);
@@ -74,7 +74,7 @@ public class InvalidTopicException extends Exception {
      * Returns the invalid topic filter.
      *
      * @return The invalid topic filter.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public @NotNull String getTopicFilter() {
         return topicFilter;

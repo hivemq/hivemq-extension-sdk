@@ -20,35 +20,35 @@ package com.hivemq.extension.sdk.api.client.parameter;
  * The type of a {@link Listener}.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum ListenerType {
 
     /**
      * A TCP Listener is used.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     TCP_LISTENER,
 
     /**
      * A TCP Listener with TLS is used.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     TLS_TCP_LISTENER,
 
     /**
      * A Websocket Listener is used.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     WEBSOCKET_LISTENER,
 
     /**
      * A Websocket Listener with TLS is used.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     TLS_WEBSOCKET_LISTENER
 }

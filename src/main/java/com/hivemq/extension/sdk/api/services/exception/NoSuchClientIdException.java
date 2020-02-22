@@ -22,21 +22,21 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * This exception is used to signal that a given MQTT ClientId is unknown to the broker in the given context.
  *
  * @author Georg Held
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public class NoSuchClientIdException extends Exception {
 
     /**
      * The client id that caused the exception.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     private final @NotNull String clientId;
 
     /**
      * Flag that if <b>true</b> will also fill in the stack trace for the exception.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     private final boolean fillInStacktrace;
 
@@ -45,7 +45,7 @@ public class NoSuchClientIdException extends Exception {
      *
      * @param clientId         The not available MQTT ClientId.
      * @param fillInStacktrace Whether the created exception should fill in a stacktrace
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public NoSuchClientIdException(final @NotNull String clientId, final boolean fillInStacktrace) {
         this.clientId = clientId;
@@ -56,7 +56,7 @@ public class NoSuchClientIdException extends Exception {
      * Creates a new NoSuchClientException that will not contain a stacktrace.
      *
      * @param clientId The not available MQTT ClientId.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public NoSuchClientIdException(final @NotNull String clientId) {
         this(clientId, false);
@@ -74,7 +74,7 @@ public class NoSuchClientIdException extends Exception {
      * Returns the unknown MQTT ClientId.
      *
      * @return The not available MQTT ClientId.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public @NotNull String getClientId() {
         return clientId;

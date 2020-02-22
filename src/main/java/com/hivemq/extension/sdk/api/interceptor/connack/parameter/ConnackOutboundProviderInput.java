@@ -26,7 +26,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * {@link ClientBasedInput}.
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface ConnackOutboundProviderInput extends ClientBasedInput {
 
@@ -34,7 +34,7 @@ public interface ConnackOutboundProviderInput extends ClientBasedInput {
      * Get information about the HiveMQ instance the extension is running in.
      *
      * @return The {@link ServerInformation} of the input.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ServerInformation getServerInformation();
 }

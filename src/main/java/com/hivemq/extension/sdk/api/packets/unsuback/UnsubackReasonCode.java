@@ -21,7 +21,7 @@ package com.hivemq.extension.sdk.api.packets.unsuback;
  * UNSUBSCRIBE request from a topic.
  *
  * @author Robin Atherton
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 public enum UnsubackReasonCode {
 
@@ -30,7 +30,7 @@ public enum UnsubackReasonCode {
      * <p>
      * This is a success code.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     SUCCESS,
 
@@ -39,7 +39,7 @@ public enum UnsubackReasonCode {
      * <p>
      * This is a success code.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     NO_SUBSCRIPTIONS_EXISTED,
 
@@ -49,7 +49,7 @@ public enum UnsubackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     UNSPECIFIED_ERROR,
 
@@ -58,7 +58,7 @@ public enum UnsubackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     IMPLEMENTATION_SPECIFIC_ERROR,
 
@@ -67,7 +67,7 @@ public enum UnsubackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     NOT_AUTHORIZED,
 
@@ -76,7 +76,7 @@ public enum UnsubackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     TOPIC_FILTER_INVALID,
 
@@ -85,7 +85,7 @@ public enum UnsubackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     PACKET_IDENTIFIER_IN_USE
 }

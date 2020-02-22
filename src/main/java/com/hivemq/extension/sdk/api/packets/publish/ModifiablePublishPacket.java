@@ -30,7 +30,7 @@ import java.nio.ByteBuffer;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ModifiablePublishPacket extends PublishPacket {
@@ -41,7 +41,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * @param qos The QoS for the onward publish to subscribers.
      * @throws NullPointerException     If qos is null.
      * @throws IllegalArgumentException If qos is greater than the configured maximum.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setQos(@NotNull Qos qos);
 
@@ -50,7 +50,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      *
      * @param retain The new retain flag for the publish.
      * @throws IllegalArgumentException If set to true and retained messages are disabled by HiveMQ.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setRetain(boolean retain);
 
@@ -62,7 +62,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * @throws IllegalArgumentException If the topic is an empty string.
      * @throws IllegalArgumentException If the topic is invalid for publish messages.
      * @throws IllegalArgumentException If the topic length exceeds the configured length for topics. Default is 65535.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setTopic(@NotNull String topic);
 
@@ -70,7 +70,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * Sets the payload format indicator.
      *
      * @param payloadFormatIndicator The new payload format indicator for the publish.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setPayloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
 
@@ -80,7 +80,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * @param messageExpiryInterval The new message expiry interval for the publish.
      * @throws IllegalArgumentException If the message expiry interval is less than zero or more than the configured
      *                                  maximum by HiveMQ.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setMessageExpiryInterval(long messageExpiryInterval);
 
@@ -90,7 +90,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * @param responseTopic The new response topic for the publish.
      * @throws IllegalArgumentException If the response topic is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the response topic exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setResponseTopic(@Nullable String responseTopic);
 
@@ -98,7 +98,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * Sets the correlation data.
      *
      * @param correlationData The new correlation data for the publish.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setCorrelationData(@Nullable ByteBuffer correlationData);
 
@@ -108,7 +108,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * @param contentType The new content type for the publish.
      * @throws IllegalArgumentException If the content type is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the content type exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setContentType(@Nullable String contentType);
 
@@ -117,7 +117,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      *
      * @param payload The new payload for the publish.
      * @throws NullPointerException If payload is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setPayload(@NotNull ByteBuffer payload);
 
@@ -125,7 +125,7 @@ public interface ModifiablePublishPacket extends PublishPacket {
      * Get the modifiable {@link UserProperties} of the PUBLISH packet.
      *
      * @return Modifiable user properties.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ModifiableUserProperties getUserProperties();
 }

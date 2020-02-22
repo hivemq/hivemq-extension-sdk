@@ -24,21 +24,21 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * implemented by an extension.
  *
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public class DoNotImplementException extends RuntimeException {
 
     /**
      * The name of the class that was implemented.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     private final @NotNull String implementedClass;
 
     /**
      * Flag that if <b>true</b> will also fill in the stack trace for the exception.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     private final boolean fillInStacktrace;
 
@@ -47,7 +47,7 @@ public class DoNotImplementException extends RuntimeException {
      *
      * @param implementedClass The name of the implemented class.
      * @param fillInStacktrace Whether the created exception should fill in a stacktrace.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public DoNotImplementException(final @NotNull String implementedClass, final boolean fillInStacktrace) {
         this.implementedClass = implementedClass;
@@ -58,7 +58,7 @@ public class DoNotImplementException extends RuntimeException {
      * Creates a new DoNotImplementException that will not contain a stacktrace.
      *
      * @param implementedClass The name of the implemented class.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public DoNotImplementException(final @NotNull String implementedClass) {
         this(implementedClass, false);
@@ -76,7 +76,7 @@ public class DoNotImplementException extends RuntimeException {
      * Returns the name of the implemented class.
      *
      * @return The name of the implemented class.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public @NotNull String getImplementedClass() {
         return implementedClass;

@@ -33,7 +33,7 @@ import java.time.Duration;
  * It can be used to Modify an outbound CONNACK packet.
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface ConnackOutboundOutput extends AsyncOutput<ConnackOutboundOutput> {
@@ -42,7 +42,7 @@ public interface ConnackOutboundOutput extends AsyncOutput<ConnackOutboundOutput
      * Use this object to make any changes to the CONNACK message.
      *
      * @return A modifiable CONNACK packet.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ModifiableConnackPacket getConnackPacket();
 
@@ -59,7 +59,7 @@ public interface ConnackOutboundOutput extends AsyncOutput<ConnackOutboundOutput
      * @param timeout  Timeout that HiveMQ waits for the result of the async operation.
      * @param fallback Fallback behaviour if a timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Override
     @NotNull Async<ConnackOutboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback fallback);
@@ -72,7 +72,7 @@ public interface ConnackOutboundOutput extends AsyncOutput<ConnackOutboundOutput
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Override
     @NotNull Async<ConnackOutboundOutput> async(@NotNull Duration timeout);

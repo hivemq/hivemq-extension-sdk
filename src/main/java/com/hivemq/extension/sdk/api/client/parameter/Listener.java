@@ -23,7 +23,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * Holds information about the listener a client uses for a connection to HiveMQ.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface Listener {
@@ -32,7 +32,7 @@ public interface Listener {
      * The port of HiveMQ the client is connected to.
      *
      * @return The port of the listener.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     int getPort();
 
@@ -40,7 +40,7 @@ public interface Listener {
      * The bind address of HiveMQ the client is connected to.
      *
      * @return The bind address of the listener.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getBindAddress();
 
@@ -48,13 +48,13 @@ public interface Listener {
      * The type of the listener the client uses for the connection to HiveMQ.
      *
      * @return The type of the listener.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ListenerType getListenerType();
 
     /**
      * @return The configured or default name of the listener.
-     * @since 4.1.0
+     * @since 4.1.0, CE 2020.1
      */
     @NotNull String getName();
 }

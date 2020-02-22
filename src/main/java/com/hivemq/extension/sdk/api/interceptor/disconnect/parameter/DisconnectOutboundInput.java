@@ -28,7 +28,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * based information.
  *
  * @author Robin Atherton
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface DisconnectOutboundInput extends ClientBasedInput {
@@ -37,7 +37,7 @@ public interface DisconnectOutboundInput extends ClientBasedInput {
      * The unmodifiable DISCONNECT packet that was intercepted.
      *
      * @return An unmodifiable {@link DisconnectPacket}.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Immutable @NotNull DisconnectPacket getDisconnectPacket();
 }

@@ -25,7 +25,7 @@ import com.hivemq.extension.sdk.api.interceptor.connack.parameter.ConnackOutboun
  * CONNACK message an {@link ConnackOutboundInterceptor} can be provided that contains the modification logic.
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @FunctionalInterface
 public interface ConnackOutboundInterceptorProvider {
@@ -40,7 +40,7 @@ public interface ConnackOutboundInterceptorProvider {
      *
      * @return An implementation of the {@link ConnackOutboundInterceptor} or null if the CONNECT should not be
      *         intercepted.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Nullable ConnackOutboundInterceptor getConnackOutboundInterceptor(
             @NotNull ConnackOutboundProviderInput connackOutboundProviderInput);

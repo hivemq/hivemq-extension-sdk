@@ -31,7 +31,7 @@ import java.util.Optional;
  * Contains all values of an MQTT 5 CONNACK, but will also used to represent MQTT 3 connack packets.
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface ConnackPacket {
 
@@ -41,7 +41,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the session expiry interval.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<Long> getSessionExpiryInterval();
 
@@ -52,7 +52,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the server keep alive.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<Integer> getServerKeepAlive();
 
@@ -62,7 +62,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this MQTT 5 property will always be 65,535.
      *
      * @return The receive maximum.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     int getReceiveMaximum();
 
@@ -73,7 +73,7 @@ public interface ConnackPacket {
      * <mqtt>} config in the config.xml Default: 268435460 bytes.
      *
      * @return The maximum packet size.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     int getMaximumPacketSize();
 
@@ -83,7 +83,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this MQTT 5 property will always be 0.
      *
      * @return The topic alias maximum.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     int getTopicAliasMaximum();
 
@@ -93,7 +93,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the QoS maximum.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<Qos> getMaximumQoS();
 
@@ -103,7 +103,7 @@ public interface ConnackPacket {
      * The properties will always be empty for an MQTT 3 client.
      *
      * @return The user properties.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull UserProperties getUserProperties();
 
@@ -113,7 +113,7 @@ public interface ConnackPacket {
      *
      * @return The connack reason code.
      * @see ConnackReasonCode How reason codes are translated from MQTT 5 to MQTT 3.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ConnackReasonCode getReasonCode();
 
@@ -121,7 +121,7 @@ public interface ConnackPacket {
      * The session present flag from the CONNACK packet.
      *
      * @return True if a session was already present for this client, else false.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     boolean getSessionPresent();
 
@@ -131,7 +131,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this MQTT 5 property is always true.
      *
      * @return True if retained messages are allowed by HiveMQ, else false.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     boolean getRetainAvailable();
 
@@ -143,7 +143,7 @@ public interface ConnackPacket {
      * For an MQTT 5 client this property is present when HiveMQ assigned the client identifier.
      *
      * @return An {@link Optional} that contains the assigned client identifier if present.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<String> getAssignedClientIdentifier();
 
@@ -153,7 +153,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} containing the connack reason string if present.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<String> getReasonString();
 
@@ -163,7 +163,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this MQTT 5 property is always true.
      *
      * @return True if wildcard subscriptions are allowed by HiveMQ, else false.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     boolean getWildCardSubscriptionAvailable();
 
@@ -173,7 +173,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this MQTT 5 property is always true.
      *
      * @return True if subscription identifiers are allowed by HiveMQ, else false.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     boolean getSubscriptionIdentifiersAvailable();
 
@@ -183,7 +183,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this MQTT 5 property is always true.
      *
      * @return True if shared subscriptions are allowed by HiveMQ, else false.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     boolean getSharedSubscriptionsAvailable();
 
@@ -193,7 +193,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} containing the response information if present.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<String> getResponseInformation();
 
@@ -203,7 +203,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} containing the server reference if present.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<String> getServerReference();
 
@@ -214,7 +214,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the authentication method if present.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<String> getAuthenticationMethod();
 
@@ -225,7 +225,7 @@ public interface ConnackPacket {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the authentication data if present.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<ByteBuffer> getAuthenticationData();
 }

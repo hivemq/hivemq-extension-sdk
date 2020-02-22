@@ -32,7 +32,7 @@ import com.hivemq.extension.sdk.api.services.subscription.TopicSubscription;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface TopicSubscriptionBuilder {
@@ -44,7 +44,7 @@ public interface TopicSubscriptionBuilder {
      * @return The {@link TopicSubscriptionBuilder}.
      * @throws NullPointerException    If the subscription is null.
      * @throws DoNotImplementException If the {@link Subscription} is implemented by the extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicSubscriptionBuilder fromSubscription(@NotNull Subscription subscription);
 
@@ -64,7 +64,7 @@ public interface TopicSubscriptionBuilder {
      *                                  Default is enabled.
      * @throws IllegalArgumentException If the topic filter is a shared subscription and shared subscriptions are
      *                                  disabled by HiveMQ. Default is enabled.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicSubscriptionBuilder topicFilter(@NotNull String topicFilter);
 
@@ -76,7 +76,7 @@ public interface TopicSubscriptionBuilder {
      * @param qos The {@link Qos} to set.
      * @return The {@link TopicSubscriptionBuilder}.
      * @throws NullPointerException If qos is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicSubscriptionBuilder qos(@NotNull Qos qos);
 
@@ -87,7 +87,7 @@ public interface TopicSubscriptionBuilder {
      *
      * @param retainAsPublished The retain as published flag to set.
      * @return The {@link TopicSubscriptionBuilder}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicSubscriptionBuilder retainAsPublished(boolean retainAsPublished);
 
@@ -99,7 +99,7 @@ public interface TopicSubscriptionBuilder {
      *
      * @param noLocal The no local flag to set.
      * @return The {@link TopicSubscriptionBuilder}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicSubscriptionBuilder noLocal(boolean noLocal);
 
@@ -113,7 +113,7 @@ public interface TopicSubscriptionBuilder {
      * @throws IllegalArgumentException If the subscription identifier is zero or greater than the protocol limit
      *                                  (268435455).
      * @throws IllegalArgumentException If the subscription identifier are disabled by HiveMQ. Default is enabled.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicSubscriptionBuilder subscriptionIdentifier(int subscriptionIdentifier);
 
@@ -123,7 +123,7 @@ public interface TopicSubscriptionBuilder {
      * @return A {@link TopicSubscription} with the set parameters.
      * @throws NullPointerException     If the topic filter is null.
      * @throws IllegalArgumentException If the noLocal flag is set for a shared subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicSubscription build();
 }

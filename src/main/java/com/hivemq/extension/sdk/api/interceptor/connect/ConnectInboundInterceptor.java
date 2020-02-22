@@ -30,7 +30,7 @@ import com.hivemq.extension.sdk.api.interceptor.connect.parameter.ConnectInbound
  * thread-safe.
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @FunctionalInterface
 public interface ConnectInboundInterceptor extends Interceptor {
@@ -41,7 +41,7 @@ public interface ConnectInboundInterceptor extends Interceptor {
      *
      * @param connectInboundInput  The {@link ConnectInboundInput} parameter.
      * @param connectInboundOutput The {@link ConnectInboundOutput} parameter.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void onConnect(
             @NotNull ConnectInboundInput connectInboundInput, @NotNull ConnectInboundOutput connectInboundOutput);

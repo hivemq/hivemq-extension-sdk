@@ -32,7 +32,7 @@ import java.util.List;
  * The default permissions can be different for each client.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public interface ModifiableDefaultPermissions {
 
@@ -40,7 +40,7 @@ public interface ModifiableDefaultPermissions {
      * All default permissions for this client.
      *
      * @return An immutable {@link List} with all default permissions for this client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull List<@NotNull TopicPermission> asList();
 
@@ -50,7 +50,7 @@ public interface ModifiableDefaultPermissions {
      * @param permission The {@link TopicPermission} to add.
      * @throws DoNotImplementException If {@link TopicPermission} is implemented by the extension and not created by
      *                                 {@link Builders#topicPermission()}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void add(@NotNull TopicPermission permission);
 
@@ -61,7 +61,7 @@ public interface ModifiableDefaultPermissions {
      * @throws NullPointerException    If permissions is null.
      * @throws DoNotImplementException If {@link TopicPermission} is implemented by the extension and not created by
      *                                 {@link Builders#topicPermission()}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void addAll(@NotNull Collection<? extends TopicPermission> permissions);
 
@@ -71,14 +71,14 @@ public interface ModifiableDefaultPermissions {
      * @param permission The {@link TopicPermission} to remove.
      * @throws DoNotImplementException If {@link TopicPermission} is implemented by the extension and not created by
      *                                 {@link Builders#topicPermission()}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void remove(@NotNull TopicPermission permission);
 
     /**
      * Removes all {@link TopicPermission} for this client.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void clear();
 
@@ -87,7 +87,7 @@ public interface ModifiableDefaultPermissions {
      * from a Subscription.
      *
      * @return The current {@link DefaultAuthorizationBehaviour}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull DefaultAuthorizationBehaviour getDefaultBehaviour();
 
@@ -102,7 +102,7 @@ public interface ModifiableDefaultPermissions {
      * #add(TopicPermission)} or {@link #addAll(Collection)}.
      *
      * @param defaultBehaviour The default behaviour to use.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setDefaultBehaviour(@NotNull DefaultAuthorizationBehaviour defaultBehaviour);
 }

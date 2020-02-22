@@ -30,7 +30,7 @@ import java.time.Duration;
  * before it is sent to the client.
  *
  * @author Robin Atherton
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  **/
 @DoNotImplement
 public interface SubackOutboundOutput extends SimpleAsyncOutput<SubackOutboundOutput> {
@@ -39,7 +39,7 @@ public interface SubackOutboundOutput extends SimpleAsyncOutput<SubackOutboundOu
      * Use this object to make any changes to the outbound SUBACK.
      *
      * @return A modifiable SUBACK packet.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull ModifiableSubackPacket getSubackPacket();
 
@@ -52,7 +52,7 @@ public interface SubackOutboundOutput extends SimpleAsyncOutput<SubackOutboundOu
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Override
     @NotNull Async<SubackOutboundOutput> async(@NotNull Duration timeout);

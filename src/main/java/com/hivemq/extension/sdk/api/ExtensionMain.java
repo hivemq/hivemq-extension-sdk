@@ -33,7 +33,7 @@ import com.hivemq.extension.sdk.api.parameter.ExtensionStopOutput;
  *
  * @author Christoph Schäbel
  * @author Georg Held
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public interface ExtensionMain {
 
@@ -55,7 +55,7 @@ public interface ExtensionMain {
      *
      * @param extensionStartInput  A {@link ExtensionStartInput}.
      * @param extensionStartOutput A {@link ExtensionStartOutput}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void extensionStart(
             @NotNull ExtensionStartInput extensionStartInput, @NotNull ExtensionStartOutput extensionStartOutput);
@@ -78,7 +78,7 @@ public interface ExtensionMain {
      *
      * @param extensionStopInput  A {@link ExtensionStartInput}
      * @param extensionStopOutput A {@link ExtensionStartOutput}
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void extensionStop(
             @NotNull ExtensionStopInput extensionStopInput, @NotNull ExtensionStopOutput extensionStopOutput);

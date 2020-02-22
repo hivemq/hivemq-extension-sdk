@@ -27,7 +27,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
  * Documents that this interface is experimental and might be subject to change in future HiveMQ versions.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @Documented
 @Retention(CLASS)

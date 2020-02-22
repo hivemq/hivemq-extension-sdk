@@ -20,7 +20,7 @@ package com.hivemq.extension.sdk.api.auth.parameter;
  * The enum is used to define how a client is affected be the overload protection.
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public enum OverloadProtectionThrottlingLevel {
 
@@ -28,7 +28,7 @@ public enum OverloadProtectionThrottlingLevel {
      * The amount of PUBLISH messages that each client can send is limited based on the resources of the HiveMQ
      * cluster.
      *
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     DEFAULT,
 
@@ -39,7 +39,7 @@ public enum OverloadProtectionThrottlingLevel {
      * decreases the resiliency of HiveMQ against client misbehaviour. Disabling the overload protection may lead to
      * {@link OutOfMemoryError}.
      *
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     NONE
 }

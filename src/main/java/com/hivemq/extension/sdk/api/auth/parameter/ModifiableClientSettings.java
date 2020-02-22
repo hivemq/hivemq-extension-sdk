@@ -24,7 +24,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * specific parameters and restrictions.
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface ModifiableClientSettings {
@@ -35,7 +35,7 @@ public interface ModifiableClientSettings {
      *
      * @param receiveMaximum To be used for this client.
      * @throws IllegalArgumentException If the value is less than 1 or more than 65535.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setClientReceiveMaximum(int receiveMaximum);
 
@@ -44,19 +44,19 @@ public interface ModifiableClientSettings {
      *
      * @param level used for handling the overload protection for this client.
      * @throws NullPointerException If the level is <code>null</code>.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setOverloadProtectionThrottlingLevel(@NotNull OverloadProtectionThrottlingLevel level);
 
     /**
      * @return The value that will be used as receive maximum for this client.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     int getClientReceiveMaximum();
 
     /**
      * @return The overload protection level that will be used for this client.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull OverloadProtectionThrottlingLevel getOverloadProtectionThrottlingLevel();
 }

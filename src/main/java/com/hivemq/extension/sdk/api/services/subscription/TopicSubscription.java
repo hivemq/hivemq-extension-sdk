@@ -33,13 +33,14 @@ import java.util.Optional;
  * <p>
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface TopicSubscription {
 
     /**
      * @return A new {@link TopicSubscriptionBuilder} to create a topic subscription.
+     * @since 4.0.0, CE 2019.1
      */
     static TopicSubscriptionBuilder builder() {
         return Builders.topicSubscription();
@@ -49,7 +50,7 @@ public interface TopicSubscription {
      * The topic filter of the subscription.
      *
      * @return The topic filter of the subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getTopicFilter();
 
@@ -57,7 +58,7 @@ public interface TopicSubscription {
      * The quality of service level of the subscription.
      *
      * @return The quality of service level of the subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Qos getQos();
 
@@ -68,7 +69,7 @@ public interface TopicSubscription {
      * If <b>true</b> the retain flag is preserved. If <b>false</b> it isn't.
      *
      * @return The retain as published flag of the subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getRetainAsPublished();
 
@@ -79,7 +80,7 @@ public interface TopicSubscription {
      * If <b>false</b> the client also receives it's own messages. If <b>true</b> it doesn't.
      *
      * @return The no local flag of the subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getNoLocal();
 
@@ -87,7 +88,7 @@ public interface TopicSubscription {
      * The current subscription identifier that is associated with the subscription.
      *
      * @return An {@link Optional} containing the subscription identifier if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<Integer> getSubscriptionIdentifier();
 }

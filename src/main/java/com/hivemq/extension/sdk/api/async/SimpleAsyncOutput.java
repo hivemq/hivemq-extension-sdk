@@ -25,7 +25,7 @@ import java.time.Duration;
  * Enables an output object to be processed in a non-blocking way.
  *
  * @author Yannick Weber
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface SimpleAsyncOutput<T> {
@@ -37,7 +37,7 @@ public interface SimpleAsyncOutput<T> {
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<T> async(@NotNull Duration timeout);
 }

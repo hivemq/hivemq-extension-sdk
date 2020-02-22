@@ -32,7 +32,7 @@ import java.util.Optional;
  *
  * @author Robin Atherton
  * @author Silvio Giebl
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @Immutable
 @DoNotImplement
@@ -42,7 +42,7 @@ public interface UnsubackPacket {
      * The packet identifier of the UNSUBACK packet.
      *
      * @return The packet identifier.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     int getPacketIdentifier();
 
@@ -54,7 +54,7 @@ public interface UnsubackPacket {
      * previous {@link UnsubackOutboundInterceptor}).
      *
      * @return The reason codes for the unsubscribed topics.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Immutable @NotNull List<@NotNull UnsubackReasonCode> getReasonCodes();
 
@@ -65,7 +65,7 @@ public interface UnsubackPacket {
      * previous {@link UnsubackOutboundInterceptor}).
      *
      * @return An {@link Optional} containing the unsuback reason string if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<String> getReasonString();
 
@@ -76,7 +76,7 @@ public interface UnsubackPacket {
      * UnsubackOutboundInterceptor}).
      *
      * @return The {@link UserProperties} of the UNSUBACK packet.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Immutable @NotNull UserProperties getUserProperties();
 }

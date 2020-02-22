@@ -27,7 +27,7 @@ import java.util.Optional;
  * The connection information contains specific data for the established connection of a client.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ConnectionInformation {
@@ -36,7 +36,7 @@ public interface ConnectionInformation {
      * The MQTT version of the client.
      *
      * @return The {@link MqttVersion} of the client. V_3_1, V_3_1_1 or V_5.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull MqttVersion getMqttVersion();
 
@@ -44,7 +44,7 @@ public interface ConnectionInformation {
      * The client's IP address.
      *
      * @return An {@link Optional} of the {@link InetAddress} of the client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<InetAddress> getInetAddress();
 
@@ -52,7 +52,7 @@ public interface ConnectionInformation {
      * The listener of HiveMQ the client is connected to.
      *
      * @return An {@link Optional} of the {@link Listener} of the client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<Listener> getListener();
 
@@ -60,7 +60,7 @@ public interface ConnectionInformation {
      * The proxy protocol information for this connection. Only available if the proxy protocol is enabled.
      *
      * @return An {@link Optional} of the {@link ProxyInformation} of the client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<ProxyInformation> getProxyInformation();
 
@@ -68,7 +68,7 @@ public interface ConnectionInformation {
      * A store where client specific information can be stored for the duration of the connection.
      *
      * @return The {@link ConnectionAttributeStore} of the client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ConnectionAttributeStore getConnectionAttributeStore();
 
@@ -76,7 +76,7 @@ public interface ConnectionInformation {
      * Information about TLS, should the client be connected to HiveMQ via an TLS listener.
      *
      * @return An {@link Optional} of the {@link TlsInformation} of the client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<TlsInformation> getTlsInformation();
 }

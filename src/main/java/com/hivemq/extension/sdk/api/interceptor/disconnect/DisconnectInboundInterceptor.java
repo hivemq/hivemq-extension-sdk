@@ -31,7 +31,7 @@ import com.hivemq.extension.sdk.api.interceptor.disconnect.parameter.DisconnectI
  * </p>
  *
  * @author Robin Atherton
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @FunctionalInterface
 public interface DisconnectInboundInterceptor extends Interceptor {
@@ -45,7 +45,7 @@ public interface DisconnectInboundInterceptor extends Interceptor {
      *
      * @param disconnectInboundInput  The {@link DisconnectInboundInput} parameter.
      * @param disconnectInboundOutput The {@link DisconnectInboundOutput} parameter.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void onInboundDisconnect(
             @NotNull DisconnectInboundInput disconnectInboundInput,

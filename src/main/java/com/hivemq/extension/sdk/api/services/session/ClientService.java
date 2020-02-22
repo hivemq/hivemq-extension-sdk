@@ -40,7 +40,7 @@ import java.util.concurrent.Executor;
  * @author Christoph Schäbel
  * @author Florian Limpöck
  * @author Robin Atherton
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ClientService {
@@ -55,7 +55,7 @@ public interface ClientService {
      * @param clientId The client identifier of the client.
      * @return A {@link CompletableFuture} which contains <b>true</b>, if a certain client is currently connected and
      *         <b>false</b> otherwise.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Boolean> isClientConnected(@NotNull String clientId);
 
@@ -70,7 +70,7 @@ public interface ClientService {
      * @param clientId The client identifier of the client.
      * @return A {@link CompletableFuture} which contains the {@link SessionInformation} for the client, if the session
      *         exist.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Optional<SessionInformation>> getSession(@NotNull String clientId);
 
@@ -86,7 +86,7 @@ public interface ClientService {
      * @param clientId The client identifier of the client to disconnect.
      * @return A {@link CompletableFuture} which contains a {@link Boolean} that is <b>true</b> when the client has been
      *         disconnected and <b>false</b> if no client with that id was found.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Boolean> disconnectClient(@NotNull String clientId);
 
@@ -107,7 +107,7 @@ public interface ClientService {
      *                           disconnected.
      * @return A {@link CompletableFuture} which contains a {@link Boolean} that is <b>true</b> when the client has been
      *         disconnected and <b>false</b> if no client with that id was found.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Boolean> disconnectClient(@NotNull String clientId, boolean preventWillMessage);
 
@@ -133,6 +133,7 @@ public interface ClientService {
      *                                  from the server to a client.
      * @see DisconnectReasonCode What reason codes exist for outbound disconnect packets from the server to a
      *         client.
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull CompletableFuture<Boolean> disconnectClient(
             @NotNull String clientId,
@@ -153,7 +154,7 @@ public interface ClientService {
      * @param clientId The client identifier of the client which session should be invalidated.
      * @return A {@link CompletableFuture} succeeding with a {@link Boolean} that is <b>true</b> when the client has
      *         been actively disconnected by the broker otherwise <b>false</b>.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Boolean> invalidateSession(@NotNull String clientId);
 
@@ -186,7 +187,7 @@ public interface ClientService {
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
      *         iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException If the passed callback or callbackExecutor are null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllClients(@NotNull IterationCallback<SessionInformation> callback);
 
@@ -219,9 +220,8 @@ public interface ClientService {
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
      *         iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException If the passed callback or callbackExecutor are null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllClients(
             @NotNull IterationCallback<SessionInformation> callback, @NotNull Executor callbackExecutor);
-
 }

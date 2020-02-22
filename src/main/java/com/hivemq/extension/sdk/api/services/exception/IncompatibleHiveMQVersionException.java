@@ -22,7 +22,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * This exception is used to signal that a cluster node has an incompatible HiveMQ version for a specific request.
  *
  * @author Florian Limpöck
- * @since 4.1.0
+ * @since 4.1.0, CE 2020.1
  */
 public class IncompatibleHiveMQVersionException extends Exception {
 

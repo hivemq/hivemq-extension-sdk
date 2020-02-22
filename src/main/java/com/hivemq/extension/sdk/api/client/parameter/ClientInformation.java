@@ -23,7 +23,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * The client information contains specific data for a client.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ClientInformation {
@@ -32,7 +32,7 @@ public interface ClientInformation {
      * The client id of the MQTT client.
      *
      * @return The client id of the MQTT client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getClientId();
 }

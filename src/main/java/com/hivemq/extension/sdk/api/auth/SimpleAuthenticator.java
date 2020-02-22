@@ -35,7 +35,7 @@ import com.hivemq.extension.sdk.api.auth.parameter.SimpleAuthOutput;
  * If no state is stored, the implementation has to be thread safe if it is shared by different clients.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @FunctionalInterface
 public interface SimpleAuthenticator extends Authenticator {
@@ -45,7 +45,7 @@ public interface SimpleAuthenticator extends Authenticator {
      *
      * @param simpleAuthInput  The {@link SimpleAuthInput}.
      * @param simpleAuthOutput The {@link SimpleAuthOutput}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void onConnect(@NotNull SimpleAuthInput simpleAuthInput, @NotNull SimpleAuthOutput simpleAuthOutput);
 }

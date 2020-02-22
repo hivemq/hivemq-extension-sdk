@@ -31,7 +31,7 @@ import java.util.Optional;
  * Contains all information from a CONNECT packet.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 @Immutable
@@ -41,7 +41,7 @@ public interface ConnectPacket {
      * The {@link MqttVersion} the clients wants to use for the connection.
      *
      * @return The MQTT version.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull MqttVersion getMqttVersion();
 
@@ -51,7 +51,7 @@ public interface ConnectPacket {
      * An MQTT 5 client may send an empty string.
      *
      * @return The client identifier.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getClientId();
 
@@ -66,7 +66,7 @@ public interface ConnectPacket {
      * </ul>
      *
      * @return The clean start flag.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getCleanStart();
 
@@ -74,7 +74,7 @@ public interface ConnectPacket {
      * Contains the {@link WillPublishPacket} if it was sent in the CONNECT packet.
      *
      * @return An {@link Optional} that contains the {@link WillPublishPacket} if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<WillPublishPacket> getWillPublish();
 
@@ -89,7 +89,7 @@ public interface ConnectPacket {
      * </ul>
      *
      * @return The session expiry interval.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     long getSessionExpiryInterval();
 
@@ -98,7 +98,7 @@ public interface ConnectPacket {
      * connection.
      *
      * @return The keep alive.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     int getKeepAlive();
 
@@ -108,7 +108,7 @@ public interface ConnectPacket {
      * For an MQTT 3 client this MQTT 5 property will always be 65,535.
      *
      * @return The receive maximum.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     int getReceiveMaximum();
 
@@ -118,7 +118,7 @@ public interface ConnectPacket {
      * For an MQTT 3 client this MQTT 5 property will always be 268435460 bytes (protocol limit for the packet size).
      *
      * @return The maximum packet size.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     long getMaximumPacketSize();
 
@@ -128,7 +128,7 @@ public interface ConnectPacket {
      * For an MQTT 3 client this MQTT 5 property will always be 0.
      *
      * @return The topic alias maximum.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     int getTopicAliasMaximum();
 
@@ -139,7 +139,7 @@ public interface ConnectPacket {
      * For an MQTT 3 client this MQTT 5 property will always be false.
      *
      * @return The request response information flag.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getRequestResponseInformation();
 
@@ -151,7 +151,7 @@ public interface ConnectPacket {
      * For an MQTT 3 client this MQTT 5 property will always be false. This can be ignored for MQTT 3 clients.
      *
      * @return The request problem information flag.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getRequestProblemInformation();
 
@@ -162,7 +162,7 @@ public interface ConnectPacket {
      * For an MQTT 3 client this property can be set in the {@link ConnectInboundInterceptor}.
      *
      * @return An {@link Optional} that contains the authentication method if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getAuthenticationMethod();
 
@@ -173,7 +173,7 @@ public interface ConnectPacket {
      * For an MQTT 3 client this property can be set in the {@link ConnectInboundInterceptor}.
      *
      * @return An {@link Optional} that contains the authentication data if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<ByteBuffer> getAuthenticationData();
 
@@ -183,7 +183,7 @@ public interface ConnectPacket {
      * For an MQTT 3 client this property can be set in the {@link ConnectInboundInterceptor}.
      *
      * @return The user properties.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull UserProperties getUserProperties();
 
@@ -191,7 +191,7 @@ public interface ConnectPacket {
      * If this property is present, this is the username for the client.
      *
      * @return An {@link Optional} that contains the username if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getUserName();
 
@@ -199,7 +199,7 @@ public interface ConnectPacket {
      * If this property is present, this is the password for the client.
      *
      * @return An {@link Optional} that contains the password if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<ByteBuffer> getPassword();
 }

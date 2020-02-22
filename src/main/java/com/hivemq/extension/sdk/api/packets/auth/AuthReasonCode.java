@@ -18,28 +18,28 @@ package com.hivemq.extension.sdk.api.packets.auth;
 
 /**
  * @author Florian Limpöck
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 public enum AuthReasonCode {
 
     /**
      * SUCCESS reason code is sent when client authentication completed successfully.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     SUCCESS,
 
     /**
      * CONTINUE_AUTHENTICATION reason code is sent when client authentication needs further authentication.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     CONTINUE_AUTHENTICATION,
 
     /**
      * REAUTHENTICATE reason code is sent when re-authentication is needed.
      *
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     REAUTHENTICATE
 }

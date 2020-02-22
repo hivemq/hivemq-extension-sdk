@@ -28,7 +28,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * information.
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface ConnectInboundInput extends ClientBasedInput {
@@ -37,7 +37,7 @@ public interface ConnectInboundInput extends ClientBasedInput {
      * The unmodifiable CONNECT packet that was intercepted.
      *
      * @return An unmodifiable {@link ConnectPacket}.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Immutable @NotNull ConnectPacket getConnectPacket();
 }

@@ -26,7 +26,7 @@ import com.hivemq.extension.sdk.api.packets.general.UserProperties;
  * A {@link ConnackPacket} that can be modified before it is sent to the client.
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface ModifiableConnackPacket extends ConnackPacket {
 
@@ -41,7 +41,7 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      *                               Check out {@link ConnackReasonCode} to see what reason code counts as a success or
      *                               unsuccessful code.
      * @see ConnackReasonCode How reason codes are translated from MQTT 5 to MQTT 3.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setReasonCode(@NotNull ConnackReasonCode reasonCode);
 
@@ -56,7 +56,7 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      * @throws IllegalStateException    If reason code is {@link ConnackReasonCode#SUCCESS}.
      * @throws IllegalArgumentException If the reason string is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the reason string exceeds the UTF-8 string length limit.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setReasonString(@Nullable String reasonString);
 
@@ -64,7 +64,7 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      * Get the modifiable {@link UserProperties} of the CONNACK packet.
      *
      * @return Modifiable user properties.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Override
     @NotNull ModifiableUserProperties getUserProperties();
@@ -78,7 +78,7 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      * @throws IllegalArgumentException If the response information is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the response information exceeds the UTF-8 string length limit.
      * @throws IllegalStateException    If the response information was not requested in the connect packet.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setResponseInformation(@Nullable String responseInformation);
 
@@ -90,7 +90,7 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      * @param serverReference The new server reference for the CONNACK.
      * @throws IllegalArgumentException If the server reference is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the server reference exceeds the UTF-8 string length limit.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setServerReference(@Nullable String serverReference);
 }

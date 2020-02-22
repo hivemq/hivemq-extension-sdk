@@ -33,7 +33,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ManagedExtensionExecutorService extends ScheduledExecutorService {
@@ -46,7 +46,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
      * Manual calls to this method from the extension system are not supported.
      *
      * @throws UnsupportedOperationException If it should be called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Deprecated
     @Override
@@ -62,7 +62,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
      * Manual calls to this method from the extension system are not supported.
      *
      * @throws UnsupportedOperationException If it should be called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Deprecated
     @Override
@@ -73,7 +73,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
     /**
      * @return A {@link CompletableFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#submit(Runnable)
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Override
     @NotNull CompletableFuture<?> submit(@NotNull Runnable task);
@@ -81,7 +81,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
     /**
      * @return A {@link CompletableFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#submit(Callable)
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Override
     <T> @NotNull CompletableFuture<T> submit(@NotNull Callable<T> task);
@@ -89,7 +89,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
     /**
      * @return A {@link CompletableFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#submit(Runnable, Object)
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Override
     <T> @NotNull CompletableFuture<T> submit(@NotNull Runnable task, @NotNull T result);
@@ -97,7 +97,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
     /**
      * @return A {@link CompletableScheduledFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#schedule(Runnable, long, TimeUnit)
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Override
     @NotNull CompletableScheduledFuture<?> schedule(
@@ -106,7 +106,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
     /**
      * @return A {@link CompletableScheduledFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#schedule(Callable, long, TimeUnit)
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Override
     <V> @NotNull CompletableScheduledFuture<V> schedule(
@@ -115,7 +115,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
     /**
      * @return A {@link CompletableScheduledFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#scheduleAtFixedRate(Runnable, long, long, TimeUnit)
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Override
     @NotNull CompletableScheduledFuture<?> scheduleAtFixedRate(
@@ -124,7 +124,7 @@ public interface ManagedExtensionExecutorService extends ScheduledExecutorServic
     /**
      * @return A {@link CompletableScheduledFuture} representing pending completion of the task.
      * @see ScheduledExecutorService#scheduleWithFixedDelay(Runnable, long, long, TimeUnit)
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Override
     @NotNull CompletableScheduledFuture<?> scheduleWithFixedDelay(

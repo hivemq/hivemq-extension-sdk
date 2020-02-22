@@ -43,7 +43,7 @@ import java.time.Duration;
  * </ol>
  *
  * @author Yannick Weber
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @FunctionalInterface
 public interface PubcompInboundInterceptor extends Interceptor {
@@ -57,7 +57,7 @@ public interface PubcompInboundInterceptor extends Interceptor {
      *
      * @param pubcompInboundInput  The {@link PubcompInboundInput} parameter.
      * @param pubcompInboundOutput The {@link PubcompInboundOutput} parameter.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void onInboundPubcomp(
             @NotNull PubcompInboundInput pubcompInboundInput, @NotNull PubcompInboundOutput pubcompInboundOutput);

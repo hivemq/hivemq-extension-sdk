@@ -28,7 +28,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * information.
  *
  * @author Yannick Weber
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface PubackInboundInput extends ClientBasedInput {
@@ -37,7 +37,7 @@ public interface PubackInboundInput extends ClientBasedInput {
      * The unmodifiable PUBACK packet that was intercepted.
      *
      * @return An unmodifiable {@link PubackPacket}.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Immutable @NotNull PubackPacket getPubackPacket();
 }

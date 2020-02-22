@@ -18,14 +18,14 @@ package com.hivemq.extension.sdk.api.services.admin;
 
 /**
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public enum LifecycleStage {
 
     /**
      * HiveMQ is currently in the startup process. Listeners and clustering may not be available yet.
      *
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     STARTING,
 
@@ -33,7 +33,7 @@ public enum LifecycleStage {
      * The HiveMQ startup process is complete. In this stage clients can connect to HiveMQ and the HiveMQ instance has
      * joined the cluster if there is a cluster.
      *
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     STARTED_SUCCESSFULLY
 }

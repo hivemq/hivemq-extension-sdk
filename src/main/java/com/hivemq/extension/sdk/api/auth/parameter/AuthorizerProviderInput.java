@@ -26,7 +26,7 @@ import com.hivemq.extension.sdk.api.services.auth.provider.AuthorizerProvider;
  * ClientBasedInput}.
  *
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public interface AuthorizerProviderInput extends ClientBasedInput {
 
@@ -34,7 +34,7 @@ public interface AuthorizerProviderInput extends ClientBasedInput {
      * Get information about the HiveMQ instance the extension is running in.
      *
      * @return The {@link ServerInformation} of the input.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ServerInformation getServerInformation();
 }

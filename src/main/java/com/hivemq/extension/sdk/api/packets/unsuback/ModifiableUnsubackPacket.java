@@ -32,7 +32,7 @@ import java.util.List;
  *
  * @author Robin Atherton
  * @author Silvio Giebl
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface ModifiableUnsubackPacket extends UnsubackPacket {
@@ -50,7 +50,7 @@ public interface ModifiableUnsubackPacket extends UnsubackPacket {
      * @throws IllegalStateException    If switching from successful reason code to unsuccessful reason code or vice
      *                                  versa. Check out {@link UnsubackReasonCode} to see what reason code counts as a
      *                                  success or unsuccessful code.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void setReasonCodes(@NotNull List<@NotNull UnsubackReasonCode> reasonCodes);
 
@@ -63,7 +63,7 @@ public interface ModifiableUnsubackPacket extends UnsubackPacket {
      * @param reasonString The reason to be set as a String.
      * @throws IllegalArgumentException If the reason string is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the reason string exceeds the UTF-8 string length limit.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void setReasonString(@Nullable String reasonString);
 
@@ -74,7 +74,7 @@ public interface ModifiableUnsubackPacket extends UnsubackPacket {
      * the client (as MQTT 3.x clients don't know this property).
      *
      * @return Modifiable user properties.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Override
     @NotNull ModifiableUserProperties getUserProperties();

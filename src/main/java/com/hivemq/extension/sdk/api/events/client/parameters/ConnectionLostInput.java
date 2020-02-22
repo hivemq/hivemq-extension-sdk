@@ -23,7 +23,7 @@ import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
  * Input object for the method {@link ClientLifecycleEventListener#onConnectionLost(ConnectionLostInput)}.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ConnectionLostInput extends DisconnectEventInput {}

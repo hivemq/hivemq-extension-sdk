@@ -28,7 +28,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
  * An annotation which is used for indicating that a class is thread safe.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @Documented
 @Retention(CLASS)

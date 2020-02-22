@@ -27,7 +27,7 @@ import java.util.List;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ModifiableUserProperties extends UserProperties {
@@ -41,7 +41,7 @@ public interface ModifiableUserProperties extends UserProperties {
      * @throws IllegalArgumentException If the user property's name or value is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the user property's name or value exceeds the UTF-8 string length limit.
      * @throws DoNotImplementException  If the {@link UserProperty} is implemented by the extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void addUserProperty(@NotNull UserProperty userProperty);
 
@@ -53,7 +53,7 @@ public interface ModifiableUserProperties extends UserProperties {
      * @throws NullPointerException     If the name or value is null.
      * @throws IllegalArgumentException If the name or value is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the name or value exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void addUserProperty(@NotNull String name, @NotNull String value);
 
@@ -65,7 +65,7 @@ public interface ModifiableUserProperties extends UserProperties {
      * @throws NullPointerException     If the name or value is null.
      * @throws IllegalArgumentException If the name or value is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the name or value exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void removeUserProperty(@NotNull String name, @NotNull String value);
 
@@ -77,14 +77,14 @@ public interface ModifiableUserProperties extends UserProperties {
      * @throws NullPointerException     If the name is null.
      * @throws IllegalArgumentException If the name is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the name exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull List<@NotNull UserProperty> removeName(@NotNull String name);
 
     /**
      * Removes all user properties.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void clear();
 }

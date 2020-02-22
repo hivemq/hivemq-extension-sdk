@@ -30,7 +30,7 @@ import java.time.Duration;
  * This is the output parameter of any {@link PubcompOutboundInterceptor}.
  *
  * @author Yannick Weber
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface PubcompOutboundOutput extends SimpleAsyncOutput<PubcompOutboundOutput> {
@@ -39,7 +39,7 @@ public interface PubcompOutboundOutput extends SimpleAsyncOutput<PubcompOutbound
      * Use this object to make any changes to the PUBCOMP message.
      *
      * @return An modifiable {@link PubcompPacket}
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull ModifiablePubcompPacket getPubcompPacket();
 
@@ -52,7 +52,7 @@ public interface PubcompOutboundOutput extends SimpleAsyncOutput<PubcompOutbound
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Override
     @NotNull Async<PubcompOutboundOutput> async(@NotNull Duration timeout);

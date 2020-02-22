@@ -44,7 +44,7 @@ import java.time.Duration;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> {
@@ -53,7 +53,7 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      * Use this object to make any changes to the inbound PUBLISH.
      *
      * @return A modifiable publish packet.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ModifiablePublishPacket getPublishPacket();
 
@@ -62,7 +62,7 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      * PUBACK/PUBREC.
      *
      * @throws UnsupportedOperationException When preventPublishDelivery is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void preventPublishDelivery();
 
@@ -72,7 +72,7 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      *
      * @param reasonCode The reason code to sent in PUBACK/PUBREC.
      * @throws UnsupportedOperationException When preventPublishDelivery is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void preventPublishDelivery(final @NotNull AckReasonCode reasonCode);
 
@@ -83,7 +83,7 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      * @param reasonCode   The reason code to sent in PUBACK/PUBREC.
      * @param reasonString The reason string to sent in PUBACK/PUBREC.
      * @throws UnsupportedOperationException When preventPublishDelivery is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void preventPublishDelivery(final @NotNull AckReasonCode reasonCode, final @Nullable String reasonString);
 
@@ -102,7 +102,7 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      * @param reasonCode      The reason code sent in PUBACK/PUBREC when timeout occurs.
      * @param reasonString    The reason string sent in PUBACK/PUBREC when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<PublishInboundOutput> async(
             @NotNull Duration timeout,
@@ -124,7 +124,7 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      *                        If the fallback is FAILURE then the publish will be dropped.
      * @param reasonCode      The reason code sent in PUBACK/PUBREC when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<PublishInboundOutput> async(
             @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @NotNull AckReasonCode reasonCode);

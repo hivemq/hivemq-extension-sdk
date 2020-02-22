@@ -28,7 +28,7 @@ import com.hivemq.extension.sdk.api.services.auth.provider.AuthenticatorProvider
  *
  * @author Georg Held
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface AuthenticatorProviderInput extends ClientBasedInput {
@@ -37,7 +37,7 @@ public interface AuthenticatorProviderInput extends ClientBasedInput {
      * Get information about the HiveMQ instance the extension is running in.
      *
      * @return The {@link ServerInformation} of the input.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ServerInformation getServerInformation();
 }

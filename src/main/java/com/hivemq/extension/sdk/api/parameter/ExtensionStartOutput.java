@@ -23,7 +23,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * Output object for the start of an extension.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ExtensionStartOutput {
@@ -34,7 +34,7 @@ public interface ExtensionStartOutput {
      * The extension will be automatically disabled by HiveMQ if this method is called.
      *
      * @param reason A human readable reason why the extension startup is canceled.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void preventExtensionStartup(@NotNull String reason);
 }

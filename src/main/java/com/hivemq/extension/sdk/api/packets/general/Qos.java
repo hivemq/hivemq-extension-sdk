@@ -22,32 +22,33 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * The quality of service level (QOS) of a PUBLISH or subscription.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum Qos {
+
     /**
      * At most once delivery. The message will be delivered once or never (best effort delivery).
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     AT_MOST_ONCE(0),
     /**
      * At least once delivery. The message will be delivered once or multiple times.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     AT_LEAST_ONCE(1),
     /**
      * At exactly once delivery. The message will be delivered once and only once.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     EXACTLY_ONCE(2);
 
     /**
      * Quality service level as integer representation.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     private final int qosNumber;
 
@@ -59,7 +60,7 @@ public enum Qos {
      * Get the quality service level as integer.
      *
      * @return The quality of service.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public int getQosNumber() {
         return qosNumber;
@@ -71,7 +72,7 @@ public enum Qos {
      * @param code the Qos level as integer code(0,1,2).
      * @return The Qos level.
      * @throws IllegalArgumentException when the parameter is an invalid quality of service level.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull
     public static Qos valueOf(final int code) {

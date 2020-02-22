@@ -40,7 +40,7 @@ import com.hivemq.extension.sdk.api.services.auth.provider.EnhancedAuthenticator
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface SecurityRegistry {
@@ -53,7 +53,7 @@ public interface SecurityRegistry {
      * A previously set {@link AuthenticatorProvider} or {@link EnhancedAuthenticatorProvider} is replaced.
      *
      * @param authenticatorProvider The {@link AuthenticatorProvider} to set.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setAuthenticatorProvider(@NotNull AuthenticatorProvider authenticatorProvider);
 
@@ -65,7 +65,7 @@ public interface SecurityRegistry {
      * A previously set {@link AuthenticatorProvider} or {@link EnhancedAuthenticatorProvider} is replaced.
      *
      * @param authenticatorProvider The {@link EnhancedAuthenticatorProvider} to set.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void setEnhancedAuthenticatorProvider(@NotNull EnhancedAuthenticatorProvider authenticatorProvider);
 
@@ -77,7 +77,7 @@ public interface SecurityRegistry {
      * A previously set {@link AuthorizerProvider} is replaced.
      *
      * @param authorizerProvider The {@link AuthorizerProvider} to set.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setAuthorizerProvider(@NotNull AuthorizerProvider authorizerProvider);
 }

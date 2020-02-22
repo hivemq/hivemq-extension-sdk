@@ -32,7 +32,7 @@ import java.util.Optional;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface SubscriptionAuthorizerInput extends ClientBasedInput {
@@ -43,7 +43,7 @@ public interface SubscriptionAuthorizerInput extends ClientBasedInput {
      * For an MQTT 3 client this MQTT 5 property will always contain an empty list as the user properties.
      *
      * @return The {@link UserProperties} of the SUBSCRIBE packet.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull UserProperties getUserProperties();
 
@@ -53,7 +53,7 @@ public interface SubscriptionAuthorizerInput extends ClientBasedInput {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} containing the subscription identifier of the SUBSCRIBE packet if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<Integer> getSubscriptionIdentifier();
 
@@ -61,7 +61,7 @@ public interface SubscriptionAuthorizerInput extends ClientBasedInput {
      * Get the unmodifiable subscription that has to be authorized.
      *
      * @return The {@link Subscription} for this authorization call.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull Subscription getSubscription();
 }

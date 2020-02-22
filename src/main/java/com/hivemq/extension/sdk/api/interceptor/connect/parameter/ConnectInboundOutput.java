@@ -32,7 +32,7 @@ import com.hivemq.extension.sdk.api.packets.publish.ModifiableConnectPacket;
  * </ul>
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface ConnectInboundOutput extends AsyncOutput<ConnectInboundOutput> {
@@ -41,7 +41,7 @@ public interface ConnectInboundOutput extends AsyncOutput<ConnectInboundOutput> 
      * Use this object to make any changes to the CONNECT message.
      *
      * @return A modifiable connect packet.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ModifiableConnectPacket getConnectPacket();
 }

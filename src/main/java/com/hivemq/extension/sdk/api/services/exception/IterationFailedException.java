@@ -22,7 +22,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * Unchecked Exception which is thrown when an iteration fails.
  *
  * @author Christoph Schäbel
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public class IterationFailedException extends RuntimeException {
 

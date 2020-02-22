@@ -25,7 +25,7 @@ import com.hivemq.extension.sdk.api.services.auth.provider.AuthenticatorProvider
  * Do not implement this interface directly, but rather use one of the sub-interfaces.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface Authenticator {}

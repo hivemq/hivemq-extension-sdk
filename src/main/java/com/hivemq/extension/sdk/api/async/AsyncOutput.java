@@ -25,7 +25,7 @@ import java.time.Duration;
  * Enables an output object to be processed in a non-blocking way.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface AsyncOutput<T> extends SimpleAsyncOutput<T> {
@@ -40,7 +40,7 @@ public interface AsyncOutput<T> extends SimpleAsyncOutput<T> {
      * @param fallback Fallback behaviour if a timeout occurs. The outcome of the output for the fallback {@link
      *                 TimeoutFallback#SUCCESS} or {@link TimeoutFallback#FAILURE} is specified in the implementation.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<T> async(@NotNull Duration timeout, @NotNull TimeoutFallback fallback);
 }

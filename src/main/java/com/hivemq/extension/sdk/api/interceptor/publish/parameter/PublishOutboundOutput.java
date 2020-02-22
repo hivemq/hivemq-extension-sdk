@@ -37,7 +37,7 @@ import java.time.Duration;
  * </ul>
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface PublishOutboundOutput extends AsyncOutput<PublishOutboundOutput> {
@@ -46,7 +46,7 @@ public interface PublishOutboundOutput extends AsyncOutput<PublishOutboundOutput
      * Use this object to make any changes to the outbound PUBLISH.
      *
      * @return A modifiable publish packet.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ModifiableOutboundPublish getPublishPacket();
 
@@ -54,7 +54,7 @@ public interface PublishOutboundOutput extends AsyncOutput<PublishOutboundOutput
      * Prevent the onward delivery of the PUBLISH packet.
      *
      * @throws UnsupportedOperationException When preventPublishDelivery is called more than once.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void preventPublishDelivery();
 
@@ -69,7 +69,7 @@ public interface PublishOutboundOutput extends AsyncOutput<PublishOutboundOutput
      *                        be delivered. If the fallback is FAILURE then the publish will be dropped.
      * @throws UnsupportedOperationException If async is called more than once.
      * @throws NullPointerException          If timeout or timeoutFallback is null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Async<PublishOutboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback);
 }

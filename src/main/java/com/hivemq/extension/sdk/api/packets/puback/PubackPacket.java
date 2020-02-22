@@ -32,7 +32,7 @@ import java.util.Optional;
  * Contains all values of an MQTT 5 PUBACK, but will also used to represent MQTT 3 PUBACK packets.
  *
  * @author Yannick Weber
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @Immutable
 @DoNotImplement
@@ -42,7 +42,7 @@ public interface PubackPacket {
      * The packet identifier of the PUBACK.
      *
      * @return The packet identifier.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     int getPacketIdentifier();
 
@@ -51,7 +51,7 @@ public interface PubackPacket {
      *
      * @return The PUBACK reason code.
      * @see AckReasonCode How reason codes are translated from MQTT 5 to MQTT 3.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull AckReasonCode getReasonCode();
 
@@ -62,7 +62,7 @@ public interface PubackPacket {
      * previous {@link PubackOutboundInterceptor} or {@link PubackInboundInterceptor}).
      *
      * @return An {@link Optional} containing the PUBACK reason string if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<String> getReasonString();
 
@@ -73,7 +73,7 @@ public interface PubackPacket {
      * PubackOutboundInterceptor} or {@link PubackInboundInterceptor}).
      *
      * @return The user properties.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull UserProperties getUserProperties();
 }

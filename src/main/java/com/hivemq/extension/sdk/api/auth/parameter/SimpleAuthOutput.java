@@ -56,7 +56,7 @@ import java.time.Duration;
  *
  * @author Christoph Schäbel
  * @author Silvio Giebl
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
@@ -70,7 +70,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      *
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void authenticateSuccessfully();
 
@@ -84,7 +84,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      *
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void failAuthentication();
 
@@ -99,7 +99,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @param reasonCode The reason code of the CONNACK packet.
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void failAuthentication(@NotNull ConnackReasonCode reasonCode);
 
@@ -114,7 +114,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @param reasonString Used as the reason string in the CONNACK packet.
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void failAuthentication(@Nullable String reasonString);
 
@@ -130,7 +130,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @throws IllegalArgumentException      If the reasonCode is SUCCESS.
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void failAuthentication(@NotNull ConnackReasonCode reasonCode, @Nullable String reasonString);
 
@@ -142,7 +142,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      *
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void nextExtensionOrDefault();
 
@@ -151,7 +151,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * packet.
      *
      * @return The {@link ModifiableUserProperties} of the CONNACK packet.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ModifiableUserProperties getOutboundUserProperties();
 
@@ -162,7 +162,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * client.
      *
      * @return The {@link ModifiableDefaultPermissions} for the client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ModifiableDefaultPermissions getDefaultPermissions();
 
@@ -170,7 +170,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * Provides {@link ModifiableClientSettings} to configure client specific parameters and restrictions.
      *
      * @return The {@link ModifiableClientSettings} for the client.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ModifiableClientSettings getClientSettings();
 
@@ -184,7 +184,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      *                        FAILURE has the same effect as {@link #failAuthentication(ConnackReasonCode, String)} with
      *                        reason code {@link ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason string
      *                        <code>Authentication failed, authenticator timed out</code>.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Override
     @NotNull Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback);
@@ -205,7 +205,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      *                        timed out</code>.
      * @param reasonCode      The reason code sent in CONNACK when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<SimpleAuthOutput> async(
             @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @NotNull ConnackReasonCode reasonCode);
@@ -226,7 +226,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      *                        reason string.
      * @param reasonString    The reason string sent in CONNACK when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<SimpleAuthOutput> async(
             @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @Nullable String reasonString);
@@ -247,7 +247,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @param reasonCode      The reason code sent in CONNACK when timeout occurs.
      * @param reasonString    The reason string sent in CONNACK when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<SimpleAuthOutput> async(
             @NotNull Duration timeout,

@@ -30,7 +30,7 @@ import java.util.Optional;
  * A copy of an {@link SubscribePacket} that can be modified for onward delivery.
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface ModifiableSubscribePacket {
@@ -43,7 +43,7 @@ public interface ModifiableSubscribePacket {
      * It is not possible to change the subscription identifier.
      *
      * @return An {@link Optional} containing the subscription identifier of the SUBSCRIBE packet if present.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<Integer> getSubscriptionIdentifier();
 
@@ -51,7 +51,7 @@ public interface ModifiableSubscribePacket {
      * Get the modifiable {@link UserProperties} of the SUBSCRIBE packet.
      *
      * @return Modifiable user properties.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ModifiableUserProperties getUserProperties();
 
@@ -62,7 +62,7 @@ public interface ModifiableSubscribePacket {
      * the {@link SubscriptionStore}.
      *
      * @return An unmodifiable list of all {@link ModifiableSubscription}s of the SUBSCRIBE.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Immutable @NotNull List<ModifiableSubscription> getSubscriptions();
 
@@ -72,7 +72,7 @@ public interface ModifiableSubscribePacket {
      * It is not possible to change the packet identifier.
      *
      * @return The packet identifier.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     int getPacketId();
 }

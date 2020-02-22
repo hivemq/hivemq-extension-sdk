@@ -30,7 +30,7 @@ import com.hivemq.extension.sdk.api.interceptor.unsubscribe.parameter.Unsubscrib
  * thread-safe.
  *
  * @author Robin Atherton
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @FunctionalInterface
 public interface UnsubscribeInboundInterceptor extends Interceptor {
@@ -44,7 +44,7 @@ public interface UnsubscribeInboundInterceptor extends Interceptor {
      *
      * @param unsubscribeInboundInput  The {@link UnsubscribeInboundInput} parameter.
      * @param unsubscribeInboundOutput The {@link UnsubscribeInboundOutput} parameter.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void onInboundUnsubscribe(
             @NotNull UnsubscribeInboundInput unsubscribeInboundInput,

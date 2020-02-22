@@ -23,14 +23,14 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * Information about the session of an MQTT client.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface SessionInformation {
 
     /**
      * @return The clients unique identifier.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getClientIdentifier();
 
@@ -39,13 +39,13 @@ public interface SessionInformation {
      * disconnected.
      *
      * @return The session expiry interval in seconds.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     long getSessionExpiryInterval();
 
     /**
      * @return <b>true</b> if the client is still connected, else <b>false</b>.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean isConnected();
 }

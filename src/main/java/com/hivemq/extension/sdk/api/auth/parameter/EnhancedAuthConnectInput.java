@@ -30,7 +30,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  *
  * @author Daniel Krüger
  * @author Florian Limpöck
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface EnhancedAuthConnectInput extends ClientBasedInput {
@@ -39,7 +39,7 @@ public interface EnhancedAuthConnectInput extends ClientBasedInput {
      * Provides the unmodifiable CONNECT packet sent by the MQTT client that has to be authenticated.
      *
      * @return The {@link ConnectPacket} sent by the client.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Immutable @NotNull ConnectPacket getConnectPacket();
 }

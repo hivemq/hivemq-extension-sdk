@@ -29,7 +29,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  *
  * @author Christoph Schäbel
  * @author Silvio Giebl
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ClusterService {
@@ -43,7 +43,7 @@ public interface ClusterService {
      * If the given callback is already added, the callback is not added once more.
      *
      * @param clusterDiscoveryCallback The callback to add to the cluster discovery callbacks.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void addDiscoveryCallback(@NotNull ClusterDiscoveryCallback clusterDiscoveryCallback);
 
@@ -56,7 +56,7 @@ public interface ClusterService {
      * If the given callback is not added or removed already, this method does not change anything.
      *
      * @param clusterDiscoveryCallback The callback to remove from the cluster discovery callbacks.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void removeDiscoveryCallback(@NotNull ClusterDiscoveryCallback clusterDiscoveryCallback);
 }

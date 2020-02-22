@@ -22,7 +22,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * Unchecked Exception which is thrown when a limit is exceeded by a passed parameter.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public class LimitExceededException extends RuntimeException {
 
