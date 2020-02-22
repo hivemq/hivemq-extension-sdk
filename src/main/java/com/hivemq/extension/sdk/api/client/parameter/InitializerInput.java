@@ -24,7 +24,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * This interface can be used to provide additional information in an initializer.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface InitializerInput extends ClientBasedInput {
@@ -33,7 +33,7 @@ public interface InitializerInput extends ClientBasedInput {
      * Get information about the HiveMQ instance the extension is running in.
      *
      * @return The {@link ServerInformation} of the initializer input.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ServerInformation getServerInformation();
 }

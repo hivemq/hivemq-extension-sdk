@@ -24,7 +24,7 @@ import com.hivemq.extension.sdk.api.interceptor.Interceptor;
 
 /**
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @FunctionalInterface
 public interface ClientInitializer {
@@ -37,7 +37,7 @@ public interface ClientInitializer {
      *                         connection.
      * @param clientContext    The {@link ClientContext} to add/remove: {@link Interceptor}s or {@link
      *                         TopicPermission}s.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void initialize(@NotNull InitializerInput initializerInput, @NotNull ClientContext clientContext);
 }

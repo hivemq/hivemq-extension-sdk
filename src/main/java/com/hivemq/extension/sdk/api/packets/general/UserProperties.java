@@ -28,7 +28,7 @@ import java.util.Optional;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface UserProperties {
@@ -36,26 +36,26 @@ public interface UserProperties {
     /**
      * @param name The name of the user property to get.
      * @return An {@link Optional} that contains the first user property with the specified name.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getFirst(@NotNull String name);
 
     /**
      * @param name The name of the user properties to get.
      * @return The values user property with the specified name.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull List<@NotNull String> getAllForName(@NotNull String name);
 
     /**
      * @return A list of all {@link UserProperty}s.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull List<@NotNull UserProperty> asList();
 
     /**
      * @return <code>true</code> if no user properties are present, else <code>false</code>.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean isEmpty();
 }

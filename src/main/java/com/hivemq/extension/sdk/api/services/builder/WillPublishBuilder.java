@@ -37,7 +37,7 @@ import java.nio.ByteBuffer;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface WillPublishBuilder {
@@ -49,7 +49,7 @@ public interface WillPublishBuilder {
      * @return The {@link WillPublishBuilder}.
      * @throws NullPointerException    If the publish packet is null.
      * @throws DoNotImplementException If the {@link PublishPacket} is implemented by the extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder fromPublish(@NotNull PublishPacket publishPacket);
 
@@ -60,7 +60,7 @@ public interface WillPublishBuilder {
      * @return The {@link WillPublishBuilder}.
      * @throws NullPointerException    If the publish is null.
      * @throws DoNotImplementException If the {@link Publish} is implemented by the extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder fromPublish(@NotNull Publish publish);
 
@@ -71,7 +71,7 @@ public interface WillPublishBuilder {
      * @return The {@link WillPublishBuilder}.
      * @throws NullPointerException    If the will publish packet is null.
      * @throws DoNotImplementException If the {@link WillPublishPacket} is implemented by the extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder fromWillPublish(@NotNull WillPublishPacket willPublishPacket);
 
@@ -84,7 +84,7 @@ public interface WillPublishBuilder {
      * @return The {@link WillPublishBuilder}.
      * @throws NullPointerException     If the qos is null.
      * @throws IllegalArgumentException If qos is higher than the maximum configured qos by HiveMQ. Default is QoS 2.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder qos(@NotNull Qos qos);
 
@@ -96,7 +96,7 @@ public interface WillPublishBuilder {
      * @param retain The retain flag to set.
      * @return The {@link WillPublishBuilder}.
      * @throws IllegalArgumentException If retain is <b>true</b>, but retained messages are disabled by HiveMQ.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder retain(boolean retain);
 
@@ -111,7 +111,7 @@ public interface WillPublishBuilder {
      * @throws IllegalArgumentException If the topic is an empty string.
      * @throws IllegalArgumentException If the topic is invalid for publish messages (i.e containing wildcards}.
      * @throws IllegalArgumentException If the topic length exceeds the configured length for topics. Default is 65535.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder topic(@NotNull String topic);
 
@@ -122,7 +122,7 @@ public interface WillPublishBuilder {
      *
      * @param payloadFormatIndicator The payload format indicator to set.
      * @return The {@link WillPublishBuilder}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder payloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
 
@@ -138,7 +138,7 @@ public interface WillPublishBuilder {
      * @return The {@link WillPublishBuilder}.
      * @throws IllegalArgumentException If the message expiry interval is less than zero or more than the configured
      *                                  maximum by HiveMQ. Default is no expiry.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder messageExpiryInterval(long messageExpiryInterval);
 
@@ -151,7 +151,7 @@ public interface WillPublishBuilder {
      * @return The {@link WillPublishBuilder}.
      * @throws IllegalArgumentException If the response topic is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the response topic exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder responseTopic(@Nullable String responseTopic);
 
@@ -162,7 +162,7 @@ public interface WillPublishBuilder {
      *
      * @param correlationData The correlation data to set.
      * @return The {@link WillPublishBuilder}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder correlationData(@Nullable ByteBuffer correlationData);
 
@@ -175,7 +175,7 @@ public interface WillPublishBuilder {
      * @return The {@link WillPublishBuilder}.
      * @throws IllegalArgumentException If the content type is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the content type exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder contentType(@Nullable String contentType);
 
@@ -187,7 +187,7 @@ public interface WillPublishBuilder {
      * @param payload The payload to set.
      * @return The {@link WillPublishBuilder}.
      * @throws NullPointerException If the payload is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder payload(@NotNull ByteBuffer payload);
 
@@ -202,7 +202,7 @@ public interface WillPublishBuilder {
      * @throws NullPointerException     If the key or the value is null.
      * @throws IllegalArgumentException If the key or value is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the key or value exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder userProperty(@NotNull String key, @NotNull String value);
 
@@ -214,7 +214,7 @@ public interface WillPublishBuilder {
      * @param willDelay The will dely to set.
      * @return The {@link WillPublishBuilder}.
      * @throws IllegalArgumentException If the will delay is less than zero.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder willDelay(long willDelay);
 
@@ -223,7 +223,7 @@ public interface WillPublishBuilder {
      *
      * @return A {@link WillPublishPacket} with the set parameters.
      * @throws NullPointerException If the topic or the payload is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishPacket build();
 }

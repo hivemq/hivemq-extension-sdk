@@ -26,7 +26,7 @@ import java.util.List;
  * A copy of an {@link UnsubscribePacket} that can be modified before it is processed by HiveMQ.
  *
  * @author Robin Atherton
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface ModifiableUnsubscribePacket extends UnsubscribePacket {
@@ -38,7 +38,7 @@ public interface ModifiableUnsubscribePacket extends UnsubscribePacket {
      * @throws NullPointerException     If the list of topics or one of its elements is <code>null</code>.
      * @throws IllegalArgumentException If the amount of topics passed differs from that contained in the packet being
      *                                  manipulated.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void setTopicFilters(@NotNull List<@NotNull String> topics);
 
@@ -49,7 +49,7 @@ public interface ModifiableUnsubscribePacket extends UnsubscribePacket {
      * allows to enrich MQTT 3.x UNSUBSCRIBEs with this MQTT 5 property.
      *
      * @return Modifiable user properties.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Override
     @NotNull ModifiableUserProperties getUserProperties();

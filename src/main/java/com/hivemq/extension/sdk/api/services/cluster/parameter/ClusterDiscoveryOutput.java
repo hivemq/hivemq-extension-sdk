@@ -28,7 +28,7 @@ import java.util.List;
  *
  * @author Christoph Schäbel
  * @author Silvio Giebl
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ClusterDiscoveryOutput {
@@ -38,7 +38,7 @@ public interface ClusterDiscoveryOutput {
      *
      * @param nodeAddresses The current addresses of all HiveMQ cluster nodes.
      * @throws NullPointerException If node addresses is null or one of the elements is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void provideCurrentNodes(@NotNull List<@NotNull ClusterNodeAddress> nodeAddresses);
 
@@ -49,7 +49,7 @@ public interface ClusterDiscoveryOutput {
      *
      * @param reloadInterval The reload interval in seconds.
      * @throws IllegalArgumentException If the reload interval is less than one.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setReloadInterval(int reloadInterval);
 }

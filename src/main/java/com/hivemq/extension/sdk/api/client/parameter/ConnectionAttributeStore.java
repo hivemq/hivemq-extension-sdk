@@ -46,7 +46,7 @@ import java.util.Optional;
  *
  * @author Silvio Giebl
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @ThreadSafe
 @DoNotImplement
@@ -59,7 +59,7 @@ public interface ConnectionAttributeStore {
      * @param value The value of the connection attribute.
      * @throws LimitExceededException A {@link LimitExceededException} is thrown when the size of the passed value
      *                                exceeds the maximum allowed size of 10 kilobytes for the value.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void put(@NotNull String key, @NotNull ByteBuffer value);
 
@@ -70,7 +70,7 @@ public interface ConnectionAttributeStore {
      * @param value The value of the connection attribute as a string.
      * @throws LimitExceededException A {@link LimitExceededException} is thrown when the size of the passed value
      *                                exceeds the maximum allowed size of 10 kilobytes for the value.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void putAsString(@NotNull String key, @NotNull String value);
 
@@ -82,7 +82,7 @@ public interface ConnectionAttributeStore {
      * @param charset The {@link Charset} of the given value.
      * @throws LimitExceededException A {@link LimitExceededException} is thrown when the size of the passed value
      *                                exceeds the maximum allowed size of 10 kilobytes for the value.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void putAsString(@NotNull String key, @NotNull String value, @NotNull Charset charset);
 
@@ -91,7 +91,7 @@ public interface ConnectionAttributeStore {
      *
      * @param key The key of the connection attribute.
      * @return An {@link Optional} containing the value of the connection attribute if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<ByteBuffer> get(@NotNull String key);
 
@@ -100,7 +100,7 @@ public interface ConnectionAttributeStore {
      *
      * @param key The key of the connection attribute.
      * @return An {@link Optional} containing the value of the connection attribute as a string if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getAsString(@NotNull String key);
 
@@ -112,7 +112,7 @@ public interface ConnectionAttributeStore {
      * @param charset The {@link Charset} of the value of the connection attribute.
      * @return An {@link Optional} containing the value of the connection attribute as a string with the given charset
      *         if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getAsString(@NotNull String key, @NotNull Charset charset);
 
@@ -120,7 +120,7 @@ public interface ConnectionAttributeStore {
      * Retrieves all connection attributes for the connected client.
      *
      * @return An {@link Optional} containing all connection attributes as a map of key and value pairs if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<Map<String, ByteBuffer>> getAll();
 
@@ -129,14 +129,14 @@ public interface ConnectionAttributeStore {
      *
      * @param key The key of the connection attribute.
      * @return An {@link Optional} containing the value of the removed connection attribute if it was present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<ByteBuffer> remove(@NotNull String key);
 
     /**
      * Clears all connection attributes for the connected client.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void clear();
 }

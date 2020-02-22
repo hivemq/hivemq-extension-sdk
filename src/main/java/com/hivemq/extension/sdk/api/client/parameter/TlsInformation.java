@@ -25,32 +25,32 @@ import java.security.cert.X509Certificate;
  * The TLS information contains specific data about the TLS connection, should the client use TLS.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface TlsInformation {
 
     /**
      * @return The certificate.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull X509Certificate getCertificate();
 
     /**
      * @return The certificate chain.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull X509Certificate[] getCertificateChain();
 
     /**
      * @return The cipher suite.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getCipherSuite();
 
     /**
      * @return The protocol.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getProtocol();
 }

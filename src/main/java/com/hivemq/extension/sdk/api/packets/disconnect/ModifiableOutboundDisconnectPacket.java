@@ -29,7 +29,7 @@ import com.hivemq.extension.sdk.api.packets.general.UserProperties;
  *
  * @author Robin Atherton
  * @author Silvio Giebl
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface ModifiableOutboundDisconnectPacket extends DisconnectPacket {
@@ -43,7 +43,7 @@ public interface ModifiableOutboundDisconnectPacket extends DisconnectPacket {
      *                                  from the server to a client.
      * @see DisconnectReasonCode What reason codes exist for outbound disconnect packets from the server to a
      *         client.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void setReasonCode(@NotNull DisconnectReasonCode reasonCode);
 
@@ -55,7 +55,7 @@ public interface ModifiableOutboundDisconnectPacket extends DisconnectPacket {
      * @param reasonString The reason string to set or <code>null</code> to remove the reason string.
      * @throws IllegalArgumentException If the reason string is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the reason string exceeds the UTF-8 string length limit.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void setReasonString(@Nullable String reasonString);
 
@@ -67,7 +67,7 @@ public interface ModifiableOutboundDisconnectPacket extends DisconnectPacket {
      * @param serverReference The server reference to set or <code>null</code> to remove the server reference.
      * @throws IllegalArgumentException If the server reference is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the server reference exceeds the UTF-8 string length limit.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void setServerReference(@Nullable String serverReference);
 
@@ -75,7 +75,7 @@ public interface ModifiableOutboundDisconnectPacket extends DisconnectPacket {
      * The modifiable {@link UserProperties} of the DISCONNECT packet.
      *
      * @return The modifiable user properties.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Override
     @NotNull ModifiableUserProperties getUserProperties();

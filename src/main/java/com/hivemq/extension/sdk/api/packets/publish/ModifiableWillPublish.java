@@ -20,6 +20,7 @@ import com.hivemq.extension.sdk.api.packets.connect.WillPublishPacket;
 
 /**
  * @author Lukas Brandl
+ * @since 4.2.0, CE 2020.1
  */
 public interface ModifiableWillPublish extends WillPublishPacket, ModifiablePublishPacket {
 
@@ -28,7 +29,7 @@ public interface ModifiableWillPublish extends WillPublishPacket, ModifiablePubl
      *
      * @param willDelay The new will delay for the will publish in seconds.
      * @throws IllegalArgumentException If the delay is less than zero or more than '4294967295'.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setWillDelay(long willDelay);
 }

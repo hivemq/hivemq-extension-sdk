@@ -29,7 +29,7 @@ import com.hivemq.extension.sdk.api.auth.parameter.AuthorizerProviderInput;
  * contains the authorization logic.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @FunctionalInterface
 public interface AuthorizerProvider {
@@ -46,7 +46,7 @@ public interface AuthorizerProvider {
      *         PublishAuthorizer}. {@code null} is ignored and has the same effect as if this provider would had not
      *         been set for the connecting client. Returning any other implementation of the {@link Authorizer}
      *         interface is an error.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Nullable Authorizer getAuthorizer(@NotNull AuthorizerProviderInput authorizerProviderInput);
 }

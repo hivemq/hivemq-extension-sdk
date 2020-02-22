@@ -28,7 +28,7 @@ import java.util.concurrent.CompletableFuture;
  *
  * @author Lukas Brandl
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface PublishService {
@@ -46,7 +46,7 @@ public interface PublishService {
      * @param publish Object with topic, QoS and message, which should be published to all subscribed clients.
      * @return A {@link CompletableFuture} which is complete when the PublishPacket has been processed by HiveMQ.
      * @throws NullPointerException If the given publish is <code>null</code>.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Void> publish(@NotNull Publish publish);
 
@@ -72,7 +72,7 @@ public interface PublishService {
      *         has matching subscriptions or {@link PublishToClientResult#NOT_SUBSCRIBED} if it doesn't.
      * @throws NullPointerException     If the given publish or client id is <code>null</code>.
      * @throws IllegalArgumentException If the given client id is empty.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<PublishToClientResult> publishToClient(
             @NotNull Publish publish, @NotNull String clientId);

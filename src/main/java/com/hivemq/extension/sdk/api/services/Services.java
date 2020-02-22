@@ -58,7 +58,7 @@ import java.util.Map;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public class Services {
 
@@ -72,7 +72,7 @@ public class Services {
 
     /**
      * @return A service to set a {@link ClientInitializer}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull InitializerRegistry initializerRegistry() {
         return getClassObject(InitializerRegistry.class);
@@ -80,7 +80,7 @@ public class Services {
 
     /**
      * @return A service to set a {@link GlobalInterceptorRegistry}.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     public static @NotNull GlobalInterceptorRegistry interceptorRegistry() {
         return getClassObject(GlobalInterceptorRegistry.class);
@@ -88,7 +88,7 @@ public class Services {
 
     /**
      * @return A service to register {@link AuthenticatorProvider} and {@link AuthorizerProvider}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull SecurityRegistry securityRegistry() {
         return getClassObject(SecurityRegistry.class);
@@ -96,7 +96,7 @@ public class Services {
 
     /**
      * @return A service to execute tasks in a HiveMQ managed thread pool.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull ManagedExtensionExecutorService extensionExecutorService() {
         return getClassObject(ManagedExtensionExecutorService.class);
@@ -104,7 +104,7 @@ public class Services {
 
     /**
      * @return A service to add, get and remove subscriptions.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull SubscriptionStore subscriptionStore() {
         return getClassObject(SubscriptionStore.class);
@@ -112,7 +112,7 @@ public class Services {
 
     /**
      * @return A service to publish messages to topics and clients.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull PublishService publishService() {
         return getClassObject(PublishService.class);
@@ -120,7 +120,7 @@ public class Services {
 
     /**
      * @return A service to create a custom cluster discovery.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull ClusterService clusterService() {
         return getClassObject(ClusterService.class);
@@ -128,7 +128,7 @@ public class Services {
 
     /**
      * @return A service to add, get and remove retained messages.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull RetainedMessageStore retainedMessageStore() {
         return getClassObject(RetainedMessageStore.class);
@@ -136,7 +136,7 @@ public class Services {
 
     /**
      * @return A service to get HiveMQ metrics.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull MetricRegistry metricRegistry() {
         return getClassObject(MetricRegistry.class);
@@ -144,7 +144,7 @@ public class Services {
 
     /**
      * @return A service to register a {@link ClientLifecycleEventListenerProvider}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull EventRegistry eventRegistry() {
         return getClassObject(EventRegistry.class);
@@ -152,7 +152,7 @@ public class Services {
 
     /**
      * @return A service to get client session information, disconnect clients and remove sessions.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull ClientService clientService() {
         return getClassObject(ClientService.class);
@@ -160,7 +160,7 @@ public class Services {
 
     /**
      * @return A service to get general information about the state of this HiveMQ instance.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     public static @NotNull AdminService adminService() {
         return getClassObject(AdminService.class);

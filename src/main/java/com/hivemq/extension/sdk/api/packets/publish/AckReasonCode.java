@@ -22,43 +22,44 @@ package com.hivemq.extension.sdk.api.packets.publish;
  * MQTT 3 does not support reason codes for the above mentioned MQTT packets.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum AckReasonCode {
+
     /**
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SUCCESS,
     /**
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     NO_MATCHING_SUBSCRIBERS,
     /**
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     UNSPECIFIED_ERROR,
     /**
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     IMPLEMENTATION_SPECIFIC_ERROR,
     /**
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     NOT_AUTHORIZED,
     /**
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     TOPIC_NAME_INVALID,
     /**
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     PACKET_IDENTIFIER_IN_USE,
     /**
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     QUOTA_EXCEEDED,
     /**
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     PAYLOAD_FORMAT_INVALID
 }

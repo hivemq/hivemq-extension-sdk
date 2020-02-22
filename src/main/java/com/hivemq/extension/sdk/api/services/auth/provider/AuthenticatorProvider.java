@@ -27,7 +27,7 @@ import com.hivemq.extension.sdk.api.auth.parameter.AuthenticatorProviderInput;
  * each client an {@link Authenticator} can be provided that contains the authentication logic.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @FunctionalInterface
 public interface AuthenticatorProvider {
@@ -43,7 +43,7 @@ public interface AuthenticatorProvider {
      * @return An implementation of {@link SimpleAuthenticator}. {@code null} is ignored and has the same effect as if
      *         this provider would had not been set for the connecting client. Returning any other implementation of the
      *         {@link Authenticator} interface is an error.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Nullable Authenticator getAuthenticator(@NotNull AuthenticatorProviderInput authenticatorProviderInput);
 }

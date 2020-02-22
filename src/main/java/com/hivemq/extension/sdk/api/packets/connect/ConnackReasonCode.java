@@ -39,15 +39,16 @@ package com.hivemq.extension.sdk.api.packets.connect;
  * </table>
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum ConnackReasonCode {
+
     /**
      * For an MQTT 3 client this will be translated to the return code ACCEPTED.
      * <p>
      * This is a success code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SUCCESS,
     /**
@@ -55,7 +56,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     UNSPECIFIED_ERROR,
     /**
@@ -63,7 +64,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     MALFORMED_PACKET,
     /**
@@ -71,7 +72,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     PROTOCOL_ERROR,
     /**
@@ -79,7 +80,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     IMPLEMENTATION_SPECIFIC_ERROR,
     /**
@@ -87,7 +88,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     UNSUPPORTED_PROTOCOL_VERSION,
     /**
@@ -95,7 +96,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     CLIENT_IDENTIFIER_NOT_VALID,
     /**
@@ -103,7 +104,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     BAD_USER_NAME_OR_PASSWORD,
     /**
@@ -111,7 +112,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     NOT_AUTHORIZED,
     /**
@@ -119,7 +120,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SERVER_UNAVAILABLE,
     /**
@@ -127,7 +128,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SERVER_BUSY,
     /**
@@ -135,7 +136,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     BANNED,
     /**
@@ -143,7 +144,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     BAD_AUTHENTICATION_METHOD,
     /**
@@ -151,7 +152,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     TOPIC_NAME_INVALID,
     /**
@@ -159,7 +160,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     PACKET_TOO_LARGE,
     /**
@@ -167,7 +168,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     QUOTA_EXCEEDED,
     /**
@@ -175,7 +176,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     PAYLOAD_FORMAT_INVALID,
     /**
@@ -183,7 +184,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     RETAIN_NOT_SUPPORTED,
     /**
@@ -191,7 +192,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     QOS_NOT_SUPPORTED,
     /**
@@ -199,7 +200,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     USE_ANOTHER_SERVER,
     /**
@@ -207,7 +208,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SERVER_MOVED,
     /**
@@ -215,7 +216,7 @@ public enum ConnackReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     CONNECTION_RATE_EXCEEDED
 }

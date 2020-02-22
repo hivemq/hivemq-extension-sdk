@@ -34,14 +34,14 @@ import java.util.Optional;
  * Contains all values of an MQTT 5 PUBLISH, but will also used to represent MQTT 3 publishes.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface Publish {
 
     /**
      * @return A new {@link PublishBuilder} to create a {@link Publish}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     static PublishBuilder builder() {
         return Builders.publish();
@@ -51,7 +51,7 @@ public interface Publish {
      * The quality of service level of the publish.
      *
      * @return The qos.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Qos getQos();
 
@@ -59,7 +59,7 @@ public interface Publish {
      * If <b>true</b> this message is a retained message, for <b>false</b> this is just a normal publish.
      *
      * @return The retain flag.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getRetain();
 
@@ -67,7 +67,7 @@ public interface Publish {
      * The topic filter the message is published to.
      *
      * @return The topic.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getTopic();
 
@@ -75,7 +75,7 @@ public interface Publish {
      * If this property is present, this is the payload format indicator.
      *
      * @return An {@link Optional} that contains the payload format indicator if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<PayloadFormatIndicator> getPayloadFormatIndicator();
 
@@ -83,7 +83,7 @@ public interface Publish {
      * If this property is present, this is the message expiry interval.
      *
      * @return An {@link Optional} that contains the message expiry interval if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<Long> getMessageExpiryInterval();
 
@@ -91,7 +91,7 @@ public interface Publish {
      * If this property is present, this is the response topic.
      *
      * @return An {@link Optional} that contains the response topic if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getResponseTopic();
 
@@ -99,7 +99,7 @@ public interface Publish {
      * If this property is present, this is the correlation data.
      *
      * @return An {@link Optional} that contains the correlation data if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<@Immutable ByteBuffer> getCorrelationData();
 
@@ -107,7 +107,7 @@ public interface Publish {
      * If this property is present, this is the content type.
      *
      * @return An {@link Optional} that contains the content type if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getContentType();
 
@@ -115,7 +115,7 @@ public interface Publish {
      * If this property is present, this is the payload.
      *
      * @return An {@link Optional} that contains the payload if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<@Immutable ByteBuffer> getPayload();
 
@@ -123,7 +123,7 @@ public interface Publish {
      * The {@link UserProperties} of the PUBLISH.
      *
      * @return The user properties.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull UserProperties getUserProperties();
 }

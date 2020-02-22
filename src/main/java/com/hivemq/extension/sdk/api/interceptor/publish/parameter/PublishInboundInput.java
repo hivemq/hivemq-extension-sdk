@@ -28,7 +28,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * information.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface PublishInboundInput extends ClientBasedInput {
@@ -37,7 +37,7 @@ public interface PublishInboundInput extends ClientBasedInput {
      * The unmodifiable PUBLISH packet that was intercepted.
      *
      * @return An unmodifiable {@link PublishPacket}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull PublishPacket getPublishPacket();
 }

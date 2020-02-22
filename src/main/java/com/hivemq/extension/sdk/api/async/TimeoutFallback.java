@@ -21,7 +21,7 @@ package com.hivemq.extension.sdk.api.async;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum TimeoutFallback {
 
@@ -31,7 +31,7 @@ public enum TimeoutFallback {
      * <p>
      * The actual behaviour is defined in the specific implementation.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SUCCESS,
 
@@ -40,7 +40,7 @@ public enum TimeoutFallback {
      * <p>
      * The actual behaviour is defined in the specific implementation.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     FAILURE
 }

@@ -30,7 +30,7 @@ import java.util.List;
  * Contains all values of an MQTT 5 UNSUBSCRIBE, but will also be used to represent an MQTT 3 UNSUBSCRIBE.
  *
  * @author Robin Atherton
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @Immutable
 @DoNotImplement
@@ -40,7 +40,7 @@ public interface UnsubscribePacket {
      * The packet identifier of the UNSUBSCRIBE packet.
      *
      * @return The packet identifier.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     int getPacketIdentifier();
 
@@ -48,7 +48,7 @@ public interface UnsubscribePacket {
      * Gets the list of topics to be unsubscribed from.
      *
      * @return The list of topics to be unsubscribed from.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Immutable @NotNull List<@NotNull String> getTopicFilters();
 
@@ -59,7 +59,7 @@ public interface UnsubscribePacket {
      * UnsubscribeInboundInterceptor}).
      *
      * @return The {@link UserProperties} of the UNSUBSCRIBE packet.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Immutable @NotNull UserProperties getUserProperties();
 }

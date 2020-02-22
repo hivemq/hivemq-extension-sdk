@@ -30,7 +30,7 @@ import com.hivemq.extension.sdk.api.auth.parameter.SubscriptionAuthorizerOutput;
  * <p>
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public interface SubscriptionAuthorizer extends Authorizer {
 
@@ -43,7 +43,7 @@ public interface SubscriptionAuthorizer extends Authorizer {
      *
      * @param subscriptionAuthorizerInput  The {@link SubscriptionAuthorizerInput}.
      * @param subscriptionAuthorizerOutput The {@link SubscriptionAuthorizerOutput}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void authorizeSubscribe(
             @NotNull SubscriptionAuthorizerInput subscriptionAuthorizerInput,

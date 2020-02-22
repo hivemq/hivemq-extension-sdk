@@ -24,7 +24,7 @@ import com.hivemq.extension.sdk.api.packets.general.Qos;
  * A copy of a {@link Subscription} that can be modified for onward delivery.
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface ModifiableSubscription extends Subscription {
@@ -44,7 +44,7 @@ public interface ModifiableSubscription extends Subscription {
      *                                  disabled by HiveMQ. Default is enabled.
      * @throws IllegalArgumentException If the topic filter is a shared subscription and the no local flag is set to
      *                                  true.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setTopicFilter(@NotNull String topicFilter);
 
@@ -54,7 +54,7 @@ public interface ModifiableSubscription extends Subscription {
      * @param qos The {@link Qos} to set.
      * @throws NullPointerException     If qos is null.
      * @throws IllegalArgumentException If qos is greater than the configured maximum.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setQos(@NotNull Qos qos);
 
@@ -63,7 +63,7 @@ public interface ModifiableSubscription extends Subscription {
      *
      * @param retainHandling The {@link RetainHandling} to set.
      * @throws NullPointerException If the retain handling is null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setRetainHandling(@NotNull RetainHandling retainHandling);
 
@@ -71,7 +71,7 @@ public interface ModifiableSubscription extends Subscription {
      * Set the retain as published flag of the subscription.
      *
      * @param retainAsPublished The retain as published flag to set.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setRetainAsPublished(boolean retainAsPublished);
 
@@ -80,7 +80,7 @@ public interface ModifiableSubscription extends Subscription {
      *
      * @param noLocal The no local flag to set.
      * @throws IllegalArgumentException If true and the subscription is a shared subscription.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setNoLocal(boolean noLocal);
 }

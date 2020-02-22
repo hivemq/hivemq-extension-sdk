@@ -23,25 +23,25 @@ import com.hivemq.extension.sdk.api.client.parameter.ServerInformation;
  * This service provides general information about the state of this HiveMQ instance.
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface AdminService {
 
     /**
      * @return Information about the HiveMQ instance the extension is running in.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ServerInformation getServerInformation();
 
     /**
      * @return Information about the current stage of this HiveMQ instance.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull LifecycleStage getCurrentStage();
 
     /**
      * @return Information about the license that is used by HiveMQ.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull LicenseInformation getLicenseInformation();
 }

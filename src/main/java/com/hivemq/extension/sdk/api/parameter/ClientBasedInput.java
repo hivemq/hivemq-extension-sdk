@@ -25,20 +25,20 @@ import com.hivemq.extension.sdk.api.client.parameter.ConnectionInformation;
  * Provides information about the client and the connection of the client.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ClientBasedInput {
 
     /**
      * @return The {@link ConnectionInformation} of client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ConnectionInformation getConnectionInformation();
 
     /**
      * @return The {@link ClientInformation} of the client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ClientInformation getClientInformation();
 }

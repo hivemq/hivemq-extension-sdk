@@ -30,7 +30,7 @@ import com.hivemq.extension.sdk.api.auth.parameter.PublishAuthorizerOutput;
  * <p>
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public interface PublishAuthorizer extends Authorizer {
 
@@ -43,7 +43,7 @@ public interface PublishAuthorizer extends Authorizer {
      *
      * @param publishAuthorizerInput  The {@link PublishAuthorizerInput}.
      * @param publishAuthorizerOutput The {@link PublishAuthorizerOutput}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void authorizePublish(
             @NotNull PublishAuthorizerInput publishAuthorizerInput,

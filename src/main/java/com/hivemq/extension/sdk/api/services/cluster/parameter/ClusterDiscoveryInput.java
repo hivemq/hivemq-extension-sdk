@@ -26,7 +26,7 @@ import com.hivemq.extension.sdk.api.services.cluster.ClusterDiscoveryCallback;
  *
  * @author Christoph Schäbel
  * @author Silvio Giebl
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @Immutable
 @DoNotImplement
@@ -36,7 +36,7 @@ public interface ClusterDiscoveryInput {
      * Provides the address of the HiveMQ instance the extension is executed on.
      *
      * @return The address of the HiveMQ instance.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ClusterNodeAddress getOwnAddress();
 
@@ -45,7 +45,7 @@ public interface ClusterDiscoveryInput {
      * instances in the same cluster.
      *
      * @return The cluster id of the HiveMQ instance.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getOwnClusterId();
 
@@ -53,7 +53,7 @@ public interface ClusterDiscoveryInput {
      * Provides the current reload interval for updating the addresses of all HiveMQ cluster nodes.
      *
      * @return The current reload interval in seconds.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     int getReloadInterval();
 }

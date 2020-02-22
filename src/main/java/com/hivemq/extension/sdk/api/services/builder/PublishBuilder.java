@@ -35,7 +35,7 @@ import java.nio.ByteBuffer;
  * Every Publish built by this builder is fully validated against HiveMQ configuration.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface PublishBuilder {
@@ -47,7 +47,7 @@ public interface PublishBuilder {
      * @return The {@link PublishBuilder}.
      * @throws NullPointerException    If the publish packet is null.
      * @throws DoNotImplementException If the {@link PublishPacket} is implemented by the extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder fromPublish(@NotNull PublishPacket publishPacket);
 
@@ -58,7 +58,7 @@ public interface PublishBuilder {
      * @return The {@link PublishBuilder}.
      * @throws NullPointerException    If the publish is null.
      * @throws DoNotImplementException If the {@link Publish} is implemented by the extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder fromPublish(@NotNull Publish publish);
 
@@ -71,7 +71,7 @@ public interface PublishBuilder {
      * @return The {@link PublishBuilder}.
      * @throws NullPointerException     If the qos is null.
      * @throws IllegalArgumentException If qos is higher than the maximum configured qos by HiveMQ. Default is QoS 2.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder qos(@NotNull Qos qos);
 
@@ -83,7 +83,7 @@ public interface PublishBuilder {
      * @param retain The retain flag to set.
      * @return The {@link PublishBuilder}.
      * @throws IllegalArgumentException If retain is <b>true</b>, but retained messages are disabled by HiveMQ.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder retain(boolean retain);
 
@@ -97,7 +97,7 @@ public interface PublishBuilder {
      * @throws NullPointerException     If the topic is null.
      * @throws IllegalArgumentException If the topic is an empty string.
      * @throws IllegalArgumentException If the topic is invalid for publish messages (i.e containing wildcards}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder topic(@NotNull String topic);
 
@@ -108,7 +108,7 @@ public interface PublishBuilder {
      *
      * @param payloadFormatIndicator The payload format indicator to set.
      * @return The {@link PublishBuilder}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder payloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
 
@@ -124,7 +124,7 @@ public interface PublishBuilder {
      * @return The {@link PublishBuilder}.
      * @throws IllegalArgumentException If the message expiry interval is less than zero or more than the configured
      *                                  maximum by HiveMQ. Default is no expiry.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder messageExpiryInterval(long messageExpiryInterval);
 
@@ -137,7 +137,7 @@ public interface PublishBuilder {
      * @return The {@link PublishBuilder}.
      * @throws IllegalArgumentException If the response topic is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the response topic exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder responseTopic(@Nullable String responseTopic);
 
@@ -148,7 +148,7 @@ public interface PublishBuilder {
      *
      * @param correlationData The correlation data to set.
      * @return The {@link PublishBuilder}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder correlationData(@Nullable ByteBuffer correlationData);
 
@@ -161,7 +161,7 @@ public interface PublishBuilder {
      * @return The {@link PublishBuilder}.
      * @throws IllegalArgumentException If the content type is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the content type exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder contentType(@Nullable String contentType);
 
@@ -173,7 +173,7 @@ public interface PublishBuilder {
      * @param payload The payload to set.
      * @return The {@link PublishBuilder}.
      * @throws NullPointerException If the payload is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder payload(@NotNull ByteBuffer payload);
 
@@ -188,7 +188,7 @@ public interface PublishBuilder {
      * @throws NullPointerException     If the key or the value is null.
      * @throws IllegalArgumentException If the key or value is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the key or value exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PublishBuilder userProperty(@NotNull String key, @NotNull String value);
 
@@ -197,7 +197,7 @@ public interface PublishBuilder {
      *
      * @return A {@link Publish} with the set parameters.
      * @throws NullPointerException If the topic or the payload is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Publish build();
 }

@@ -32,7 +32,7 @@ import java.util.concurrent.Executor;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface SubscriptionStore {
@@ -54,7 +54,7 @@ public interface SubscriptionStore {
      *         cluster nodes.
      * @throws NullPointerException     If clientID or subscription is null.
      * @throws IllegalArgumentException If clientID is empty.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Void> addSubscription(@NotNull String clientID, @NotNull TopicSubscription subscription);
 
@@ -75,7 +75,7 @@ public interface SubscriptionStore {
      *         Cluster Nodes.
      * @throws NullPointerException     If clientID, subscriptions or one of the subscription in the set is null.
      * @throws IllegalArgumentException If clientID or subscriptions is empty.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Void> addSubscriptions(
             @NotNull String clientID, @NotNull Set<TopicSubscription> subscriptions);
@@ -96,7 +96,7 @@ public interface SubscriptionStore {
      *         cluster nodes.
      * @throws NullPointerException     If clientID or topicFilter is null.
      * @throws IllegalArgumentException If clientID is empty.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Void> removeSubscription(@NotNull String clientID, @NotNull String topicFilter);
 
@@ -117,7 +117,7 @@ public interface SubscriptionStore {
      *         Cluster Nodes.
      * @throws NullPointerException     If clientID, topics or one of the topics in the set is null.
      * @throws IllegalArgumentException If clientID or topics is empty.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Void> removeSubscriptions(@NotNull String clientID, @NotNull Set<String> topicFilters);
 
@@ -133,7 +133,7 @@ public interface SubscriptionStore {
      * @return A {@link CompletableFuture} which contains all subscriptions the client subscribed to.
      * @throws NullPointerException     If clientID is null.
      * @throws IllegalArgumentException If clientID is empty.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Set<TopicSubscription>> getSubscriptions(@NotNull String clientID);
 
@@ -171,7 +171,7 @@ public interface SubscriptionStore {
      *         the topic or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topic or callback are null.
      * @throws IllegalArgumentException If the passed topic is not a valid topic or contains wildcards.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(
             @NotNull String topic, @NotNull IterationCallback<SubscriberForTopicResult> callback);
@@ -210,7 +210,7 @@ public interface SubscriptionStore {
      *         the topic or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topic, subscriptionType or callback are null.
      * @throws IllegalArgumentException If the passed topic is not a valid topic or contains wildcards.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(
             @NotNull String topic,
@@ -251,7 +251,7 @@ public interface SubscriptionStore {
      *         the topic or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topic, callback or callbackExecutor are null.
      * @throws IllegalArgumentException If the passed topic is not a valid topic or contains wildcards.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(
             @NotNull String topic,
@@ -292,7 +292,7 @@ public interface SubscriptionStore {
      *         the topic or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topic, subscriptionType, callback or callbackExecutor are null.
      * @throws IllegalArgumentException If the passed topic is not a valid topic or contains wildcards.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscribersForTopic(
             @NotNull String topic,
@@ -339,7 +339,7 @@ public interface SubscriptionStore {
      *         the topic filter or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topicFilter or callback are null.
      * @throws IllegalArgumentException If the passed topicFilter is not a valid topic.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(
             @NotNull String topicFilter, @NotNull IterationCallback<SubscriberWithFilterResult> callback);
@@ -383,7 +383,7 @@ public interface SubscriptionStore {
      *         the topic filter or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topicFilter, subscriptionType or callback are null.
      * @throws IllegalArgumentException If the passed topicFilter is not a valid topic.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(
             @NotNull String topicFilter,
@@ -429,7 +429,7 @@ public interface SubscriptionStore {
      *         the topic filter or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException     If the passed topicFilter, callback or callbackExecutor are null.
      * @throws IllegalArgumentException If the passed topicFilter is not a valid topic.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(
             @NotNull String topicFilter,
@@ -476,7 +476,7 @@ public interface SubscriptionStore {
      * @throws NullPointerException     If the passed topicFilter, subscriptionType, callback or callbackExecutor are
      *                                  null.
      * @throws IllegalArgumentException If the passed topicFilter is not a valid topic.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscribersWithTopicFilter(
             @NotNull String topicFilter,
@@ -513,7 +513,7 @@ public interface SubscriptionStore {
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no subscriptions exist
      *         or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException If the passed callback is null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscriptions(
             @NotNull IterationCallback<SubscriptionsForClientResult> callback);
@@ -547,7 +547,7 @@ public interface SubscriptionStore {
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no subscriptions exist
      *         or the iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException If the passed callback or callbackExecutor are null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllSubscriptions(
             @NotNull IterationCallback<SubscriptionsForClientResult> callback, @NotNull Executor callbackExecutor);

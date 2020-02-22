@@ -22,35 +22,35 @@ import com.hivemq.extension.sdk.api.annotations.Nullable;
  * The retain handling of a subscription.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum RetainHandling {
 
     /**
      * Send every retained message for any subscription.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SEND(0),
 
     /**
      * Send every retained message for new subscriptions only.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SEND_IF_NEW_SUBSCRIPTION(1),
 
     /**
      * Never send a retained message for the subscription.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     DO_NOT_SEND(2);
 
     /**
      * Retain handling as integer representation.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     final int code;
 
@@ -62,7 +62,7 @@ public enum RetainHandling {
      * Get the retain handling as integer.
      *
      * @return The retain handling.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public int getCode() {
         return code;
@@ -74,7 +74,7 @@ public enum RetainHandling {
      * @param code The byte code.
      * @return The Retain Handling belonging to the byte code or <code>null</code> if the byte code is not a valid
      *         Retain Handling.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @Nullable RetainHandling fromCode(final int code) {
         final RetainHandling[] values = values();

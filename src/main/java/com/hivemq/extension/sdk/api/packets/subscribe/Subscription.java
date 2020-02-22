@@ -27,7 +27,7 @@ import com.hivemq.extension.sdk.api.packets.general.Qos;
  * Contains all values of an MQTT 5 SUBSCRIBE, but will also used to represent MQTT 3 subscribes.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @Immutable
 @DoNotImplement
@@ -37,7 +37,7 @@ public interface Subscription {
      * The topic filter the client wants to subscribe to.
      *
      * @return The topic filter of the subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getTopicFilter();
 
@@ -45,7 +45,7 @@ public interface Subscription {
      * The quality of service level of the subscription.
      *
      * @return The quality of service level of the subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Qos getQos();
 
@@ -59,7 +59,7 @@ public interface Subscription {
      * For an MQTT 3 subscription this MQTT 5 property will always be {@link RetainHandling#SEND}.
      *
      * @return The retain handling of the subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainHandling getRetainHandling();
 
@@ -72,7 +72,7 @@ public interface Subscription {
      * For an MQTT 3 subscription this MQTT 5 property will always be <b>false</b>.
      *
      * @return The retain as published flag of the subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getRetainAsPublished();
 
@@ -85,7 +85,7 @@ public interface Subscription {
      * For an MQTT 3 subscription this MQTT 5 property will always be <b>false</b>.
      *
      * @return The no local flag of the subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getNoLocal();
 }

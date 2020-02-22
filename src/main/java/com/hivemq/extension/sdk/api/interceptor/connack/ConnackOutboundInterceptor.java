@@ -37,7 +37,7 @@ import java.time.Duration;
  * will be closed by the broker without another packet being sent to the client.
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @FunctionalInterface
 public interface ConnackOutboundInterceptor extends Interceptor {
@@ -48,7 +48,7 @@ public interface ConnackOutboundInterceptor extends Interceptor {
      *
      * @param connackOutboundInput  The {@link ConnackOutboundInput} parameter.
      * @param connackOutboundOutput The {@link ConnackOutboundOutput} parameter.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void onOutboundConnack(
             @NotNull ConnackOutboundInput connackOutboundInput, @NotNull ConnackOutboundOutput connackOutboundOutput);

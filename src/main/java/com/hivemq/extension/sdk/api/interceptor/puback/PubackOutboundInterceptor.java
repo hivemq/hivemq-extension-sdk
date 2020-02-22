@@ -43,7 +43,7 @@ import java.time.Duration;
  * </ol>
  *
  * @author Yannick Weber
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @FunctionalInterface
 public interface PubackOutboundInterceptor extends Interceptor {
@@ -57,7 +57,7 @@ public interface PubackOutboundInterceptor extends Interceptor {
      *
      * @param pubackOutboundInput  The {@link PubackOutboundInput} parameter.
      * @param pubackOutboundOutput The {@link PubackOutboundOutput} parameter.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void onOutboundPuback(
             @NotNull PubackOutboundInput pubackOutboundInput, @NotNull PubackOutboundOutput pubackOutboundOutput);

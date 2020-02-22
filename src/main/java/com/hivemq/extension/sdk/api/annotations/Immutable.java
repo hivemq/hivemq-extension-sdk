@@ -29,7 +29,7 @@ import static java.lang.annotation.RetentionPolicy.SOURCE;
  * Convenient method to document the intended immutability of a class.
  *
  * @author Dominik Obermaier
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @Documented
 @Retention(SOURCE)

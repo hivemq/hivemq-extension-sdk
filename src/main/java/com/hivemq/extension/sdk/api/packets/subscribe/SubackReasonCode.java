@@ -28,26 +28,26 @@ package com.hivemq.extension.sdk.api.packets.subscribe;
  * </ul>
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum SubackReasonCode {
 
     /**
      * This is a success code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     GRANTED_QOS_0,
     /**
      * This is a success code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     GRANTED_QOS_1,
     /**
      * This is a success code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     GRANTED_QOS_2,
     /**
@@ -55,7 +55,7 @@ public enum SubackReasonCode {
      * <p>
      * For an MQTT 3 SUBACK this translates to the return code FAILURE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     UNSPECIFIED_ERROR,
     /**
@@ -63,7 +63,7 @@ public enum SubackReasonCode {
      * <p>
      * For an MQTT 3 SUBACK this translates to the return code FAILURE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     IMPLEMENTATION_SPECIFIC_ERROR,
     /**
@@ -71,7 +71,7 @@ public enum SubackReasonCode {
      * <p>
      * For an MQTT 3 SUBACK this translates to the return code FAILURE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     NOT_AUTHORIZED,
     /**
@@ -79,7 +79,7 @@ public enum SubackReasonCode {
      * <p>
      * For an MQTT 3 SUBACK this translates to the return code FAILURE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     TOPIC_FILTER_INVALID,
     /**
@@ -87,7 +87,7 @@ public enum SubackReasonCode {
      * <p>
      * For an MQTT 3 SUBACK this translates to the return code FAILURE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     PACKET_IDENTIFIER_IN_USE,
     /**
@@ -95,7 +95,7 @@ public enum SubackReasonCode {
      * <p>
      * For an MQTT 3 SUBACK this translates to the return code FAILURE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     QUOTA_EXCEEDED,
     /**
@@ -103,7 +103,7 @@ public enum SubackReasonCode {
      * <p>
      * For an MQTT 3 SUBACK this translates to the return code FAILURE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SHARED_SUBSCRIPTION_NOT_SUPPORTED,
     /**
@@ -111,7 +111,7 @@ public enum SubackReasonCode {
      * <p>
      * For an MQTT 3 SUBACK this translates to the return code FAILURE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SUBSCRIPTION_IDENTIFIERS_NOT_SUPPORTED,
     /**
@@ -119,7 +119,7 @@ public enum SubackReasonCode {
      * <p>
      * For an MQTT 3 SUBACK this translates to the return code FAILURE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     WILDCARD_SUBSCRIPTION_NOT_SUPPORTED
 }

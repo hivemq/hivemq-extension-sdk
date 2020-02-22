@@ -20,13 +20,13 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface LicenseInformation {
 
     /**
      * @return An enum that represents the edition for which HiveMQ is licensed.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull LicenseEdition getEdition();
 }

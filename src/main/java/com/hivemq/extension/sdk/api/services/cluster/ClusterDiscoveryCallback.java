@@ -28,7 +28,7 @@ import com.hivemq.extension.sdk.api.services.cluster.parameter.ClusterDiscoveryO
  *
  * @author Christoph Schäbel
  * @author Silvio Giebl
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public interface ClusterDiscoveryCallback {
 
@@ -41,7 +41,7 @@ public interface ClusterDiscoveryCallback {
      * @param clusterDiscoveryInput  The object providing input information for cluster discovery.
      * @param clusterDiscoveryOutput The object for providing output information for cluster discovery, e.g. the
      *                               addresses of all HiveMQ cluster nodes.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void init(
             @NotNull ClusterDiscoveryInput clusterDiscoveryInput,
@@ -56,7 +56,7 @@ public interface ClusterDiscoveryCallback {
      * @param clusterDiscoveryInput  The object providing input information for cluster discovery.
      * @param clusterDiscoveryOutput The object for providing output information for cluster discovery, e.g. the
      *                               addresses of all HiveMQ cluster nodes.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void reload(
             @NotNull ClusterDiscoveryInput clusterDiscoveryInput,
@@ -73,7 +73,7 @@ public interface ClusterDiscoveryCallback {
      * It can be used to unregister this HiveMQ instance from a central registry.
      *
      * @param clusterDiscoveryInput The object providing input information for cluster discovery.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void destroy(@NotNull ClusterDiscoveryInput clusterDiscoveryInput);
 }

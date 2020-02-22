@@ -25,7 +25,7 @@ import com.hivemq.extension.sdk.api.interceptor.connect.ConnectInboundIntercepto
 /**
  * @author Lukas Brandl
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface GlobalInterceptorRegistry {
 
@@ -38,7 +38,7 @@ public interface GlobalInterceptorRegistry {
      *
      * @param connectInboundInterceptorProvider The provider to be registered.
      * @throws NullPointerException If the interceptor is null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setConnectInboundInterceptorProvider(
             @NotNull ConnectInboundInterceptorProvider connectInboundInterceptorProvider);
@@ -52,7 +52,7 @@ public interface GlobalInterceptorRegistry {
      *
      * @param connackOutboundInterceptorProvider The provider to be registered.
      * @throws NullPointerException If the interceptor is null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setConnackOutboundInterceptorProvider(
             @NotNull ConnackOutboundInterceptorProvider connackOutboundInterceptorProvider);

@@ -35,7 +35,7 @@ import java.util.Optional;
  * A modifiable version of the {@link ConnectPacket}.
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface ModifiableConnectPacket extends ConnectPacket {
 
@@ -53,7 +53,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * @throws IllegalArgumentException If the client ID is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the client ID exceeds the maximum client ID length.
      * @throws IllegalArgumentException If the client ID is empty.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setClientId(@NotNull String clientId);
 
@@ -64,7 +64,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * be used in the same way as for MQTT 5 client via this method.
      *
      * @param cleanStart The new clean start flag of the CONNECT.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setCleanStart(boolean cleanStart);
 
@@ -77,7 +77,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * To modify the existing {@link WillPublishPacket} use {@link #getModifiableWillPublish()}.
      *
      * @param willPublish The new will publish for the CONNECT.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setWillPublish(@Nullable WillPublishPacket willPublish);
 
@@ -89,7 +89,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      *
      * @param expiryInterval The new expiry interval for the CONNECT.
      * @throws IllegalArgumentException If the expiry interval is more than the configured maximum.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setSessionExpiryInterval(long expiryInterval);
 
@@ -98,7 +98,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      *
      * @param keepAlive The new keep alive for the CONNECT.
      * @throws IllegalArgumentException If the keep alive is more than the configured maximum.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setKeepAlive(int keepAlive);
 
@@ -107,7 +107,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      *
      * @param receiveMaximum The new receive maximum for the CONNECT.
      * @throws IllegalArgumentException If the receive maximum is less than one or more than '65535'.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setReceiveMaximum(int receiveMaximum);
 
@@ -117,7 +117,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * @param maximumPacketSize The new maximum packet size for the CONNECT.
      * @throws IllegalArgumentException If the maximum packet size is less than one or more than the configured
      *                                  maximum.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setMaximumPacketSize(int maximumPacketSize);
 
@@ -127,7 +127,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      *
      * @param topicAliasMaximum The new topic alias maximum for the CONNECT.
      * @throws IllegalArgumentException If the topic alias maximum is more than '65535'.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setTopicAliasMaximum(int topicAliasMaximum);
 
@@ -136,7 +136,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * this setting is ignored.
      *
      * @param requestResponseInformation The new request response information flag for the CONNECT.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setRequestResponseInformation(boolean requestResponseInformation);
 
@@ -145,7 +145,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * setting is ignored.
      *
      * @param requestProblemInformation The new request problem information flag for the CONNECT.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setRequestProblemInformation(boolean requestProblemInformation);
 
@@ -154,7 +154,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      *
      * @param authenticationMethod The new authentication method of the CONNECT.
      * @throws IllegalArgumentException If the authentication method is not a valid UTF-8 string.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setAuthenticationMethod(@Nullable String authenticationMethod);
 
@@ -162,7 +162,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * Set the authentication data.
      *
      * @param authenticationData The new authentication data of the CONNECT.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setAuthenticationData(@Nullable ByteBuffer authenticationData);
 
@@ -170,7 +170,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * Set the username.
      *
      * @param userName The new username for the CONNECT.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setUserName(@Nullable String userName);
 
@@ -178,7 +178,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * Set the password.
      *
      * @param password The new password for the CONNECT.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setPassword(@Nullable ByteBuffer password);
 
@@ -186,7 +186,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * Get the modifiable {@link UserProperties} of the CONNECT packet.
      *
      * @return Modifiable user properties.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Override
     @NotNull ModifiableUserProperties getUserProperties();
@@ -195,7 +195,7 @@ public interface ModifiableConnectPacket extends ConnectPacket {
      * Get a modifiable instance of the {@link WillPublishPacket}.
      *
      * @return Modifiable will publish.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<ModifiableWillPublish> getModifiableWillPublish();
 }

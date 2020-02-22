@@ -25,7 +25,7 @@ import com.hivemq.extension.sdk.api.interceptor.connect.parameter.ConnectInbound
  * CONNECT message a {@link ConnectInboundInterceptor} can be provided that contains the modification logic.
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface ConnectInboundInterceptorProvider {
 
@@ -39,7 +39,7 @@ public interface ConnectInboundInterceptorProvider {
      *
      * @return An implementation of the {@link ConnectInboundInterceptor} or null if the CONNECT should not be
      *         intercepted.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Nullable ConnectInboundInterceptor getConnectInboundInterceptor(@NotNull ConnectInboundProviderInput input);
 }

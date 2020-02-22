@@ -31,7 +31,7 @@ import java.util.Optional;
  * Contains all values of an MQTT 5 PUBREL, but will also used to represent MQTT 3 PUBREL packets.
  *
  * @author Yannick Weber
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @Immutable
 @DoNotImplement
@@ -41,7 +41,7 @@ public interface PubrelPacket {
      * The packet identifier of the PUBREL.
      *
      * @return The packet identifier.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     int getPacketIdentifier();
 
@@ -51,7 +51,7 @@ public interface PubrelPacket {
      *
      * @return The pubrel reason code.
      * @see PubrelReasonCode How reason codes are translated from MQTT 5 to MQTT 3.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull PubrelReasonCode getReasonCode();
 
@@ -62,7 +62,7 @@ public interface PubrelPacket {
      * previous {@link PubrelInboundInterceptor} or {@link PubrelOutboundInterceptor}).
      *
      * @return An {@link Optional} containing the pubrel reason string if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<String> getReasonString();
 
@@ -73,7 +73,7 @@ public interface PubrelPacket {
      * PubrelInboundInterceptor} or {@link PubrelOutboundInterceptor}).
      *
      * @return The user properties.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull UserProperties getUserProperties();
 }

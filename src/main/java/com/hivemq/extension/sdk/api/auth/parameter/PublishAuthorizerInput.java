@@ -29,7 +29,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface PublishAuthorizerInput extends ClientBasedInput {
@@ -38,7 +38,7 @@ public interface PublishAuthorizerInput extends ClientBasedInput {
      * Get the unmodifiable publish packet that has to be authorized.
      *
      * @return The {@link PublishPacket} for this authorization call.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull PublishPacket getPublishPacket();
 }

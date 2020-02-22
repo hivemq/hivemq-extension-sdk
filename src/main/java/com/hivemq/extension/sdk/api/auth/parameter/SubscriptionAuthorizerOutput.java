@@ -42,7 +42,7 @@ import com.hivemq.extension.sdk.api.packets.subscribe.SubackReasonCode;
  * Subsequent calls will fail with an {@link UnsupportedOperationException}.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAuthorizerOutput> {
@@ -54,7 +54,7 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void authorizeSuccessfully();
 
@@ -71,7 +71,7 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void failAuthorization();
 
@@ -91,7 +91,7 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
      * @throws IllegalArgumentException      If the passed {@link SubackReasonCode} is not an error code.
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void failAuthorization(@NotNull SubackReasonCode reasonCode);
 
@@ -113,7 +113,7 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
      * @throws IllegalArgumentException      If the passed {@link SubackReasonCode} is not an error code.
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void failAuthorization(@NotNull SubackReasonCode reasonCode, @NotNull String reasonString);
 
@@ -132,7 +132,7 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void disconnectClient();
 
@@ -153,7 +153,7 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
      * @param reasonCode Used as the reason code for the DISCONNECT packet.
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void disconnectClient(@NotNull DisconnectReasonCode reasonCode);
 
@@ -175,7 +175,7 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
      * @param reasonString Used as the reason string for the DISCONNECT packet.
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void disconnectClient(@NotNull DisconnectReasonCode reasonCode, @NotNull String reasonString);
 
@@ -187,7 +187,7 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void nextExtensionOrDefault();
 }

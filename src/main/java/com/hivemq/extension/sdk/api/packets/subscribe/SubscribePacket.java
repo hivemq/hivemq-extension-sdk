@@ -30,7 +30,7 @@ import java.util.Optional;
  * Contains all values of an MQTT 5 SUBSCRIBE, but will also be used to represent MQTT 3 subscribe messages.
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface SubscribePacket {
@@ -39,7 +39,7 @@ public interface SubscribePacket {
      * The list of unmodifiable subscriptions of the SUBSCRIBE.
      *
      * @return The list of {@link Subscription}s.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Immutable @NotNull List<Subscription> getSubscriptions();
 
@@ -49,7 +49,7 @@ public interface SubscribePacket {
      * For an MQTT 3 client this MQTT 5 property will always contain an empty list as the user properties.
      *
      * @return The {@link UserProperties} of the SUBSCRIBE packet.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Immutable @NotNull UserProperties getUserProperties();
 
@@ -59,7 +59,7 @@ public interface SubscribePacket {
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} containing the subscription identifier of the SUBSCRIBE packet if present.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Optional<Integer> getSubscriptionIdentifier();
 
@@ -67,7 +67,7 @@ public interface SubscribePacket {
      * The packet identifier of the SUBSCRIBE packet.
      *
      * @return The packet identifier.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     int getPacketId();
 }

@@ -24,7 +24,7 @@ import com.hivemq.extension.sdk.api.auth.parameter.TopicPermission;
  * This builder allows to create {@link TopicPermission}s that can be used in the extension system.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface TopicPermissionBuilder {
@@ -41,7 +41,7 @@ public interface TopicPermissionBuilder {
      * @throws IllegalArgumentException If the topic filter contains invalid UTF-8 characters.
      * @throws IllegalArgumentException If the topic filter is longer than the configured maximum. Default maximum
      *                                  length is 65535.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicPermissionBuilder topicFilter(@NotNull String topicFilter);
 
@@ -53,7 +53,7 @@ public interface TopicPermissionBuilder {
      * @param type The {@link TopicPermission.PermissionType} to use.
      * @return The {@link TopicPermissionBuilder}.
      * @throws NullPointerException If the type is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicPermissionBuilder type(@NotNull TopicPermission.PermissionType type);
 
@@ -65,7 +65,7 @@ public interface TopicPermissionBuilder {
      * @param qos The {@link TopicPermission.Qos} to use.
      * @return The {@link TopicPermissionBuilder}.
      * @throws NullPointerException If the qos is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicPermissionBuilder qos(@NotNull TopicPermission.Qos qos);
 
@@ -77,7 +77,7 @@ public interface TopicPermissionBuilder {
      * @param activity The {@link TopicPermission.MqttActivity} to use.
      * @return The {@link TopicPermissionBuilder}.
      * @throws NullPointerException If the activity is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicPermissionBuilder activity(@NotNull TopicPermission.MqttActivity activity);
 
@@ -91,7 +91,7 @@ public interface TopicPermissionBuilder {
      * @param retain The {@link TopicPermission.Retain} to use.
      * @return The {@link TopicPermissionBuilder}.
      * @throws NullPointerException If the retain is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicPermissionBuilder retain(@NotNull TopicPermission.Retain retain);
 
@@ -105,7 +105,7 @@ public interface TopicPermissionBuilder {
      * @param sharedSubscription The {@link TopicPermission.SharedSubscription} to use.
      * @return The {@link TopicPermissionBuilder}.
      * @throws NullPointerException If the sharedSubscription is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicPermissionBuilder sharedSubscription(@NotNull TopicPermission.SharedSubscription sharedSubscription);
 
@@ -133,7 +133,7 @@ public interface TopicPermissionBuilder {
      * @throws NullPointerException     If the sharedGroup is null.
      * @throws IllegalArgumentException If an invalid shared group name is passed.
      * @throws IllegalArgumentException If the shared group contains invalid UTF-8 characters.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicPermissionBuilder sharedGroup(@NotNull String sharedGroup);
 
@@ -142,7 +142,7 @@ public interface TopicPermissionBuilder {
      *
      * @return A {@link TopicPermission} with the set parameters.
      * @throws NullPointerException If the topic is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull TopicPermission build();
 }

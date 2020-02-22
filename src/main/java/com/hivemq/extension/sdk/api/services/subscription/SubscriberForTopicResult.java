@@ -20,12 +20,13 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
  * @author Christoph Schäbel
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface SubscriberForTopicResult {
 
     /**
      * @return The subscribers MQTT client identifier.
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull String getClientId();
 }

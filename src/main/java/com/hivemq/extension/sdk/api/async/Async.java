@@ -24,7 +24,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  *
  * @author Christoph Schäbel
  * @author Georg Held
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface Async<T> {
@@ -32,7 +32,7 @@ public interface Async<T> {
     /**
      * Signal HiveMQ that the async action is done and normal extension operations can resume.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void resume();
 
@@ -40,7 +40,7 @@ public interface Async<T> {
      * Return the original output object.
      *
      * @return The original output object.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull T getOutput();
 
@@ -48,7 +48,7 @@ public interface Async<T> {
      * Return the current status of the async option.
      *
      * @return The runtime status of the async option.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Status getStatus();
 
@@ -78,25 +78,25 @@ public interface Async<T> {
      * +----------+
      * </pre>
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     enum Status {
         /**
          * The async operation is still ongoing.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         RUNNING,
         /**
          * The duration for the async operation has timed out.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         CANCELED,
         /**
          * The async operation completed before the timeout, with calling {@link Async#resume()}.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         DONE
     }

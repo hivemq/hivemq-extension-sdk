@@ -29,26 +29,26 @@ import java.util.Optional;
  * Input object for {@link ClientLifecycleEventListener} methods for disconnect events.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface DisconnectEventInput extends ClientBasedInput {
 
     /**
      * @return An {@link Optional} containing the disconnected reason code if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<DisconnectedReasonCode> getReasonCode();
 
     /**
      * @return An {@link Optional} containing the disconnect reason string if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getReasonString();
 
     /**
      * @return An {@link Optional} containing the disconnect user properties if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<UserProperties> getUserProperties();
 }

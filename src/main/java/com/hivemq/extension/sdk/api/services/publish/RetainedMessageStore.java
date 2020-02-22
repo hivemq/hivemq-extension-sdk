@@ -29,7 +29,7 @@ import java.util.concurrent.CompletableFuture;
  *
  * @author Lukas Brandl
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface RetainedMessageStore {
@@ -43,7 +43,7 @@ public interface RetainedMessageStore {
      * @param topic The topic.
      * @return A {@link CompletableFuture} which contains the retained message for the specific topic or
      *         <code>null</code>.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Optional<RetainedPublish>> getRetainedMessage(@NotNull String topic);
 
@@ -56,7 +56,7 @@ public interface RetainedMessageStore {
      *
      * @param topic The topic from which the retained message should be removed.
      * @return A {@link CompletableFuture} which returns after removal.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Void> remove(@NotNull String topic);
 
@@ -67,7 +67,7 @@ public interface RetainedMessageStore {
      * exceeded.
      *
      * @return A {@link CompletableFuture} which returns after removal.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Void> clear();
 
@@ -82,7 +82,7 @@ public interface RetainedMessageStore {
      *
      * @param retainedPublish Retained publish which should be added or replaced.
      * @return A {@link CompletableFuture} which returns after adding or replacing the retained publish.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Void> addOrReplace(@NotNull RetainedPublish retainedPublish);
 }

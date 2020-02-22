@@ -26,7 +26,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * in the topic permission.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface TopicPermission {
@@ -35,7 +35,7 @@ public interface TopicPermission {
      * The topic filter is used to define for what topic filter the topic permission is applied.
      *
      * @return The topic filter for this permission.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getTopicFilter();
 
@@ -44,7 +44,7 @@ public interface TopicPermission {
      * the PUBLISH/Subscription is authorized or not.
      *
      * @return The {@link PermissionType} for this permission.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull PermissionType getType();
 
@@ -52,7 +52,7 @@ public interface TopicPermission {
      * The quality of service (Qos) levels are used to define for which QoS levels the topic permission is applied.
      *
      * @return The {@link Qos} for this permission.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Qos getQos();
 
@@ -61,7 +61,7 @@ public interface TopicPermission {
      * applied.
      *
      * @return The {@link MqttActivity} for this permission.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull MqttActivity getActivity();
 
@@ -70,7 +70,7 @@ public interface TopicPermission {
      * applied.
      *
      * @return The {@link Retain} for this permission. Only used for PUBLISH.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Retain getPublishRetain();
 
@@ -79,7 +79,7 @@ public interface TopicPermission {
      * permission is applied.
      *
      * @return The {@link SharedSubscription} for this permission. Only used for Subscription.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull SharedSubscription getSharedSubscription();
 
@@ -87,26 +87,26 @@ public interface TopicPermission {
      * The shared group is used to check for what shared group the topic permission is applied.
      *
      * @return The shared group that this permission matches. Only used for shared subscriptions.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getSharedGroup();
 
     /**
      * Represents if the PUBLISH/Subscription that matches the topic permission is allowed or denied.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     enum PermissionType {
         /**
          * Allows the PUBLISH/Subscription.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ALLOW,
         /**
          * Denies the PUBLISH/Subscription.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         DENY
     }
@@ -114,49 +114,49 @@ public interface TopicPermission {
     /**
      * Matching quality of service levels for the topic permission.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     enum Qos {
         /**
          * Only applied for QoS 0.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ZERO,
         /**
          * Only applied for QoS 1.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ONE,
         /**
          * Only applied for QoS 2.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         TWO,
         /**
          * Applied for QoS 0 and 1.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ZERO_ONE,
         /**
          * Applied for QoS 0 and 2.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ZERO_TWO,
         /**
          * Applied for QoS 1 and 2.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ONE_TWO,
         /**
          * Applied for all QoS levels.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ALL
     }
@@ -164,25 +164,25 @@ public interface TopicPermission {
     /**
      * The activity the topic permission is applied to.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     enum MqttActivity {
         /**
          * Only applied for PUBLISHes.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         PUBLISH,
         /**
          * Only applied for Subscriptions.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         SUBSCRIBE,
         /**
          * Applied to PUBLISHes and Subscriptions.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ALL
     }
@@ -190,25 +190,25 @@ public interface TopicPermission {
     /**
      * Represents the type of PUBLISH the topic permission is applied for.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     enum Retain {
         /**
          * Only applied for retained PUBLISH messages.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         RETAINED,
         /**
          * Only applied for normal PUBLISH messages.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         NOT_RETAINED,
         /**
          * Applied for normal and retained PUBLISH messages.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ALL
     }
@@ -216,25 +216,25 @@ public interface TopicPermission {
     /**
      * Represents the typ of Subscription the topic permission is applied for.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     enum SharedSubscription {
         /**
          * Only applied for shared subscriptions.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         SHARED,
         /**
          * Only applied for normal subscriptions.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         NOT_SHARED,
         /**
          * Applied for both, normal and shared subscriptions.
          *
-         * @since 4.0.0
+         * @since 4.0.0, CE 2019.1
          */
         ALL
     }

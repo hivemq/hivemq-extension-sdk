@@ -24,7 +24,7 @@ import com.hivemq.extension.sdk.api.services.subscription.SubscriptionStore;
  * a potentially large result set.
  *
  * @author Christoph Schäbel
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @FunctionalInterface
 public interface IterationCallback<T> {
@@ -34,7 +34,7 @@ public interface IterationCallback<T> {
      *
      * @param context An {@link IterationContext} that allows for interaction with the overlaying iteration mechanism.
      * @param value   The value for this single iteration.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void iterate(@NotNull IterationContext context, @NotNull T value);
 }

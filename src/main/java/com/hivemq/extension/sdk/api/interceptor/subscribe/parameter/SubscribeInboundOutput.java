@@ -35,7 +35,7 @@ import java.time.Duration;
  * <p>
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface SubscribeInboundOutput extends AsyncOutput<SubscribeInboundOutput> {
@@ -44,7 +44,7 @@ public interface SubscribeInboundOutput extends AsyncOutput<SubscribeInboundOutp
      * Use this object to make any changes to the inbound SUBSCRIBE.
      *
      * @return A modifiable subscribe packet.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ModifiableSubscribePacket getSubscribePacket();
 
@@ -62,7 +62,7 @@ public interface SubscribeInboundOutput extends AsyncOutput<SubscribeInboundOutp
      * @param timeout  Timeout that HiveMQ waits for the result of the async operation.
      * @param fallback Fallback behaviour if a timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Override
     @NotNull Async<SubscribeInboundOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback fallback);
@@ -76,7 +76,7 @@ public interface SubscribeInboundOutput extends AsyncOutput<SubscribeInboundOutp
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Override
     @NotNull Async<SubscribeInboundOutput> async(@NotNull Duration timeout);

@@ -31,7 +31,7 @@ import com.hivemq.extension.sdk.api.interceptor.publish.parameter.PublishOutboun
  * <p>
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @FunctionalInterface
 public interface PublishOutboundInterceptor extends Interceptor {
@@ -45,7 +45,7 @@ public interface PublishOutboundInterceptor extends Interceptor {
      *
      * @param publishOutboundInput  The {@link PublishOutboundInput} parameter.
      * @param publishOutboundOutput The {@link PublishOutboundOutput} parameter.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void onOutboundPublish(
             @NotNull PublishOutboundInput publishOutboundInput, @NotNull PublishOutboundOutput publishOutboundOutput);

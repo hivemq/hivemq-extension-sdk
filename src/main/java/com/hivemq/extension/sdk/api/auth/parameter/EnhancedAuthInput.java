@@ -30,7 +30,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  *
  * @author Daniel Krüger
  * @author Florian Limpöck
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
 public interface EnhancedAuthInput extends ClientBasedInput {
@@ -39,13 +39,13 @@ public interface EnhancedAuthInput extends ClientBasedInput {
      * Provides the unmodifiable AUTH packet sent by the MQTT client that has to be authenticated.
      *
      * @return The {@link AuthPacket} sent by the client.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @Immutable @NotNull AuthPacket getAuthPacket();
 
     /**
      * @return <code>true</code> if this is an input of a re-authentication, else <code>false</code>.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     boolean isReAuthentication();
 }

@@ -26,7 +26,7 @@ import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListenerPr
  * certain events for clients.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface EventRegistry {
@@ -36,7 +36,7 @@ public interface EventRegistry {
      *
      * @param clientLifecycleEventListenerProvider A custom provider implementation for {@link ClientLifecycleEventListener}.
      * @throws NullPointerException When ClientLifecycleEventListenerProvider is <code>null</code>.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void setClientLifecycleEventListener(
             @NotNull ClientLifecycleEventListenerProvider clientLifecycleEventListenerProvider);

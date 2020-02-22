@@ -24,7 +24,7 @@ import java.lang.annotation.*;
  * This is very useful for static code analysis to prevent bugs.
  *
  * @author Dominik Obermaier
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @Documented
 @Retention(RetentionPolicy.CLASS)

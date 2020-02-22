@@ -20,6 +20,6 @@ package com.hivemq.extension.sdk.api.services.exception;
  * This exception is used to signal that the configured extension service rate limit has been exceeded.
  *
  * @author Lukas Brandl
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public class RateLimitExceededException extends RuntimeException {}

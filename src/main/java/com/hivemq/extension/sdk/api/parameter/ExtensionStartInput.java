@@ -28,7 +28,7 @@ import java.util.Optional;
  * Input object for the start of an extension.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @Immutable
 @DoNotImplement
@@ -36,7 +36,7 @@ public interface ExtensionStartInput {
 
     /**
      * @return An {@link ExtensionInformation} containing detailed information about this extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull ExtensionInformation getExtensionInformation();
 
@@ -44,14 +44,14 @@ public interface ExtensionStartInput {
      * Get information about the HiveMQ instance the extension is running in.
      *
      * @return The {@link ServerInformation} of the input.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull ServerInformation getServerInformation();
 
     /**
      * @return A {@link Map} of all currently enabled extensions. <br/> The key is the ID of the extension. <br/> The
      *         value is a {@link ExtensionInformation} containing detailed information about each extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Map<String, @NotNull ExtensionInformation> getEnabledExtensions();
 
@@ -60,7 +60,7 @@ public interface ExtensionStartInput {
      *         before. An extension is identified by its ID. A previous version is only returned if this extension has
      *         been disabled at runtime. Information about previous extension versions is not retained across a server
      *         restart.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getPreviousVersion();
 }

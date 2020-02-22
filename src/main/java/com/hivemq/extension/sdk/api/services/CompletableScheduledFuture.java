@@ -23,6 +23,6 @@ import java.util.concurrent.ScheduledFuture;
  * Abstract class for combining of {@link ScheduledFuture<T>} and {@link CompletableFuture<T>}.
  *
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public abstract class CompletableScheduledFuture<T> extends CompletableFuture<T> implements ScheduledFuture<T> {}

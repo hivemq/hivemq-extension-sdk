@@ -26,7 +26,7 @@ import java.util.Objects;
  *
  * @author Christoph Schäbel
  * @author Silvio Giebl
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public class ClusterNodeAddress {
 
@@ -40,7 +40,7 @@ public class ClusterNodeAddress {
      * @param port The cluster bind-port of the cluster node.
      * @throws NullPointerException     If host is null.
      * @throws IllegalArgumentException If port is not a valid port number (0-65535).
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public ClusterNodeAddress(final @NotNull String host, final int port) {
         Objects.requireNonNull(host, "host must not be null");
@@ -53,7 +53,7 @@ public class ClusterNodeAddress {
 
     /**
      * @return The host name.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public @NotNull String getHost() {
         return host;
@@ -61,7 +61,7 @@ public class ClusterNodeAddress {
 
     /**
      * @return The port number.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public int getPort() {
         return port;
@@ -72,7 +72,7 @@ public class ClusterNodeAddress {
      *
      * @param o The other object.
      * @return <b>true</b> if the object is also a {@link ClusterNodeAddress} with the same host and port value.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Override
     public boolean equals(final @Nullable Object o) {

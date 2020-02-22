@@ -21,6 +21,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
 import com.hivemq.extension.sdk.api.interceptor.publish.PublishInboundInterceptor;
 import com.hivemq.extension.sdk.api.packets.general.ModifiableUserProperties;
+import com.hivemq.extension.sdk.api.packets.general.UserProperties;
 
 import java.nio.ByteBuffer;
 import java.util.List;
@@ -32,7 +33,7 @@ import java.util.List;
  * handling use the {@link PublishInboundInterceptor}.
  *
  * @author Lukas Brandl
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface ModifiableOutboundPublish extends PublishPacket {
@@ -42,7 +43,7 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      * alters the retained flag sent to the subscriber.
      *
      * @param retain The new retain flag for the publish.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setRetain(boolean retain);
 
@@ -55,7 +56,7 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      * @throws IllegalArgumentException If the topic is an empty string.
      * @throws IllegalArgumentException If the topic is invalid for publish messages.
      * @throws IllegalArgumentException If the topic length exceeds the configured length for topics. Default is 65535.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setTopic(@NotNull String topic);
 
@@ -64,7 +65,7 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      * setting is ignored.
      *
      * @param payloadFormatIndicator The new payload format indicator for the publish.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setPayloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
 
@@ -76,7 +77,7 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      * @param messageExpiryInterval The new message expiry interval for the publish.
      * @throws IllegalArgumentException If the message expiry interval is less than zero or more than the configured
      *                                  maximum by HiveMQ.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setMessageExpiryInterval(long messageExpiryInterval);
 
@@ -87,7 +88,7 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      * @param responseTopic The new response topic for the publish.
      * @throws IllegalArgumentException If the response topic is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the response topic exceeds the UTF-8 string length limit.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setResponseTopic(@Nullable String responseTopic);
 
@@ -96,7 +97,7 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      * is ignored.
      *
      * @param correlationData The new correlation data for the publish.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setCorrelationData(@Nullable ByteBuffer correlationData);
 
@@ -107,7 +108,7 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      * @param contentType The new content type for the publish.
      * @throws IllegalArgumentException If the content type is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the content type exceeds the UTF-8 string length limit.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setContentType(@Nullable String contentType);
 
@@ -116,7 +117,7 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      *
      * @param payload The new payload for the publish.
      * @throws NullPointerException If payload is null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setPayload(@NotNull ByteBuffer payload);
 
@@ -128,9 +129,15 @@ public interface ModifiableOutboundPublish extends PublishPacket {
      * @param subscriptionIdentifiers The new subscription identifiers for the publish.
      * @throws NullPointerException If the subscription identifiers list is null.
      * @throws NullPointerException If one ore more of the entries are null.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void setSubscriptionIdentifiers(@NotNull List<@NotNull Integer> subscriptionIdentifiers);
 
+    /**
+     * Get the modifiable {@link UserProperties} of the PUBLISH packet.
+     *
+     * @return Modifiable user properties.
+     * @since 4.2.0, CE 2020.1
+     */
     @NotNull ModifiableUserProperties getUserProperties();
 }

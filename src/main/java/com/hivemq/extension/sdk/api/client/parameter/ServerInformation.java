@@ -26,14 +26,14 @@ import java.util.Set;
  * The server information contains specific data about HiveMQ instance the extensions runs in.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ServerInformation {
 
     /**
      * @return The version string of the HiveMQ instance.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getVersion();
 
@@ -41,7 +41,7 @@ public interface ServerInformation {
      * The location of the 'home' folder where HiveMQ is installed.
      *
      * @return The home folder of HiveMQ.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull File getHomeFolder();
 
@@ -49,7 +49,7 @@ public interface ServerInformation {
      * The location of the 'data' folder containing the data for the HiveMQ instance.
      *
      * @return The data folder of HiveMQ.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull File getDataFolder();
 
@@ -57,7 +57,7 @@ public interface ServerInformation {
      * The location of the 'log' folder containing everything related to logs.
      *
      * @return The log folder of HiveMQ.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull File getLogFolder();
 
@@ -65,7 +65,7 @@ public interface ServerInformation {
      * The location of the 'extensions' folder that contains all extension.
      *
      * @return The extension folder of HiveMQ.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull File getExtensionsFolder();
 
@@ -73,7 +73,7 @@ public interface ServerInformation {
      * All configured listeners.
      *
      * @return A set which contains a {@link Listener} instance for each configured listener.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Set<Listener> getListener();
 }

@@ -23,17 +23,24 @@ import com.hivemq.extension.sdk.api.services.builder.RetainedPublishBuilder;
 
 /**
  * @author Christoph Schäbel
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface RetainedPublish extends Publish {
 
     /**
      * @return A new {@link RetainedPublishBuilder} to create a retained publish.
+     * @since 4.0.0, CE 2019.1
      */
     static @NotNull RetainedPublishBuilder builder() {
         return Builders.retainedPublish();
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @since 4.0.0, CE 2019.1
+     */
     @Override
     default boolean getRetain() {
         return true;

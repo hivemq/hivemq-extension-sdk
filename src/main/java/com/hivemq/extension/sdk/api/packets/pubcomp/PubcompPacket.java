@@ -31,7 +31,7 @@ import java.util.Optional;
  * Contains all values of an MQTT 5 PUBCOMP, but will also used to represent MQTT 3 PUBCOMP packets.
  *
  * @author Yannick Weber
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @Immutable
 @DoNotImplement
@@ -41,7 +41,7 @@ public interface PubcompPacket {
      * The packet identifier of the PUBCOMP.
      *
      * @return The packet identifier.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     int getPacketIdentifier();
 
@@ -50,7 +50,7 @@ public interface PubcompPacket {
      *
      * @return The pubcomp reason code.
      * @see PubcompReasonCode How reason codes are translated from MQTT 5 to MQTT 3.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull PubcompReasonCode getReasonCode();
 
@@ -61,7 +61,7 @@ public interface PubcompPacket {
      * previous {@link PubcompInboundInterceptor} or {@link PubcompOutboundInterceptor}).
      *
      * @return An {@link Optional} containing the pubcomp reason string if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<String> getReasonString();
 
@@ -72,7 +72,7 @@ public interface PubcompPacket {
      * PubcompInboundInterceptor} or {@link PubcompOutboundInterceptor}).
      *
      * @return The user properties.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull UserProperties getUserProperties();
 }

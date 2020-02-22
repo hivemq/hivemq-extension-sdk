@@ -42,7 +42,7 @@ import com.hivemq.extension.sdk.api.packets.publish.AckReasonCode;
  * Subsequent calls will fail with an {@link UnsupportedOperationException}.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOutput> {
@@ -54,7 +54,7 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void authorizeSuccessfully();
 
@@ -72,7 +72,7 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void failAuthorization();
 
@@ -92,7 +92,7 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
      * @throws IllegalArgumentException      If the passed {@link AckReasonCode} is not an error code.
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void failAuthorization(@NotNull AckReasonCode reasonCode);
 
@@ -113,7 +113,7 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
      * @throws IllegalArgumentException      If the passed {@link AckReasonCode} is not an error code.
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void failAuthorization(@NotNull AckReasonCode reasonCode, @NotNull String reasonString);
 
@@ -129,7 +129,7 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void disconnectClient();
 
@@ -147,7 +147,7 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
      * @param reasonCode Used as the reason code in the DISCONNECT packet.
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void disconnectClient(@NotNull DisconnectReasonCode reasonCode);
 
@@ -166,7 +166,7 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
      * @param reasonString Used as the reason string in the DISCONNECT packet.
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void disconnectClient(@NotNull DisconnectReasonCode reasonCode, @NotNull String reasonString);
 
@@ -178,7 +178,7 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void nextExtensionOrDefault();
 }

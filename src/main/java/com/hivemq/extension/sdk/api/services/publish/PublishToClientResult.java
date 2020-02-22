@@ -20,19 +20,20 @@ package com.hivemq.extension.sdk.api.services.publish;
  * Used to inform if the publish to the client had a matching subscription.
  *
  * @author Lukas Brandl
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum PublishToClientResult {
-    /**
+
+     /**
      * The client had a matching subscription.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SUCCESSFUL,
     /**
      * The client had no matching subscription.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     NOT_SUBSCRIBED
 }

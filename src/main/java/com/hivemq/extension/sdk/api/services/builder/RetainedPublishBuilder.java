@@ -37,7 +37,7 @@ import java.nio.ByteBuffer;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface RetainedPublishBuilder {
@@ -49,7 +49,7 @@ public interface RetainedPublishBuilder {
      * @return The {@link RetainedPublishBuilder}.
      * @throws NullPointerException    If the publish packet is null.
      * @throws DoNotImplementException If the {@link PublishPacket} is implemented by the extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder fromPublish(@NotNull PublishPacket publishPacket);
 
@@ -60,7 +60,7 @@ public interface RetainedPublishBuilder {
      * @return The {@link RetainedPublishBuilder}.
      * @throws NullPointerException    If the publish is null.
      * @throws DoNotImplementException If the {@link Publish} is implemented by the extension.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder fromPublish(@NotNull Publish publish);
 
@@ -73,7 +73,7 @@ public interface RetainedPublishBuilder {
      * @return The {@link RetainedPublishBuilder}.
      * @throws NullPointerException     If the qos is null.
      * @throws IllegalArgumentException If qos is higher than the maximum configured qos by HiveMQ. Default is QoS 2.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder qos(@NotNull Qos qos);
 
@@ -88,7 +88,7 @@ public interface RetainedPublishBuilder {
      * @throws IllegalArgumentException If the topic is an empty string.
      * @throws IllegalArgumentException If the topic is invalid for publish messages.
      * @throws IllegalArgumentException If the topic length exceeds the configured length for topics. Default is 65535.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder topic(@NotNull String topic);
 
@@ -99,7 +99,7 @@ public interface RetainedPublishBuilder {
      *
      * @param payloadFormatIndicator The payload format indicator to set.
      * @return The {@link RetainedPublishBuilder}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder payloadFormatIndicator(@Nullable PayloadFormatIndicator payloadFormatIndicator);
 
@@ -115,7 +115,7 @@ public interface RetainedPublishBuilder {
      * @return The {@link RetainedPublishBuilder}.
      * @throws IllegalArgumentException If the message expiry interval is less than zero or more than the configured
      *                                  maximum by HiveMQ. Default is no expiry.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder messageExpiryInterval(long messageExpiryInterval);
 
@@ -128,7 +128,7 @@ public interface RetainedPublishBuilder {
      * @return The {@link RetainedPublishBuilder}.
      * @throws IllegalArgumentException If the response topic is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the response topic exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder responseTopic(@Nullable String responseTopic);
 
@@ -139,7 +139,7 @@ public interface RetainedPublishBuilder {
      *
      * @param correlationData The correlation data to set.
      * @return The {@link RetainedPublishBuilder}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder correlationData(@Nullable ByteBuffer correlationData);
 
@@ -152,7 +152,7 @@ public interface RetainedPublishBuilder {
      * @return The {@link RetainedPublishBuilder}.
      * @throws IllegalArgumentException If the content type is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the content type exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder contentType(@Nullable String contentType);
 
@@ -164,7 +164,7 @@ public interface RetainedPublishBuilder {
      * @param payload The payload to set.
      * @return The {@link RetainedPublishBuilder}.
      * @throws NullPointerException If the payload is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder payload(@NotNull ByteBuffer payload);
 
@@ -179,7 +179,7 @@ public interface RetainedPublishBuilder {
      * @throws NullPointerException     If the key or the value is null.
      * @throws IllegalArgumentException If the key or value is not a valid UTF-8 string.
      * @throws IllegalArgumentException If the key or value exceeds the UTF-8 string length limit.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublishBuilder userProperty(@NotNull String key, @NotNull String value);
 
@@ -188,7 +188,7 @@ public interface RetainedPublishBuilder {
      *
      * @return A {@link RetainedPublish} with the set parameters.
      * @throws NullPointerException If the topic or the payload is null.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull RetainedPublish build();
 }

@@ -22,14 +22,14 @@ package com.hivemq.extension.sdk.api.packets.disconnect;
  * MQTT 3 does not support sending a DISCONNECT packet from server to client.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum DisconnectReasonCode {
 
     /**
      * This is a success code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     NORMAL_DISCONNECTION,
     /**
@@ -37,31 +37,31 @@ public enum DisconnectReasonCode {
      * <p>
      * This is a success code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     DISCONNECT_WITH_WILL_MESSAGE,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     UNSPECIFIED_ERROR,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     MALFORMED_PACKET,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     PROTOCOL_ERROR,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     IMPLEMENTATION_SPECIFIC_ERROR,
     /**
@@ -69,7 +69,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     NOT_AUTHORIZED,
     /**
@@ -77,7 +77,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SERVER_BUSY,
     /**
@@ -85,13 +85,13 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SERVER_SHUTTING_DOWN,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     BAD_AUTHENTICATION_METHOD,
     /**
@@ -99,7 +99,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     KEEP_ALIVE_TIMEOUT,
     /**
@@ -107,13 +107,13 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SESSION_TAKEN_OVER,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      * @deprecated Must not be used for disconnect packets.
      */
     @Deprecated CLIENT_IDENTIFIER_NOT_VALID,
@@ -122,55 +122,55 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     TOPIC_FILTER_INVALID,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     TOPIC_NAME_INVALID,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     RECEIVE_MAXIMUM_EXCEEDED,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     TOPIC_ALIAS_INVALID,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     PACKET_TOO_LARGE,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     MESSAGE_RATE_TOO_HIGH,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     QUOTA_EXCEEDED,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     ADMINISTRATIVE_ACTION,
     /**
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     PAYLOAD_FORMAT_INVALID,
     /**
@@ -178,7 +178,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     RETAIN_NOT_SUPPORTED,
     /**
@@ -186,7 +186,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     QOS_NOT_SUPPORTED,
     /**
@@ -194,7 +194,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     USE_ANOTHER_SERVER,
     /**
@@ -202,7 +202,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SERVER_MOVED,
     /**
@@ -210,7 +210,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SHARED_SUBSCRIPTION_NOT_SUPPORTED,
     /**
@@ -218,7 +218,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     CONNECTION_RATE_EXCEEDED,
     /**
@@ -226,7 +226,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     MAXIMUM_CONNECT_TIME,
     /**
@@ -234,7 +234,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     SUBSCRIPTION_IDENTIFIERS_NOT_SUPPORTED,
     /**
@@ -242,7 +242,7 @@ public enum DisconnectReasonCode {
      * <p>
      * This is an unsuccessful code.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     WILDCARD_SUBSCRIPTION_NOT_SUPPORTED
 }

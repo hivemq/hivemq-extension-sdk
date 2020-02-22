@@ -31,7 +31,7 @@ import com.hivemq.extension.sdk.api.interceptor.subscribe.parameter.SubscribeInb
  * <p>
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @FunctionalInterface
 public interface SubscribeInboundInterceptor extends Interceptor {
@@ -45,7 +45,7 @@ public interface SubscribeInboundInterceptor extends Interceptor {
      *
      * @param subscribeInboundInput  The {@link SubscribeInboundInput} parameter.
      * @param subscribeInboundOutput The {@link SubscribeInboundOutput} parameter.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     void onInboundSubscribe(
             @NotNull SubscribeInboundInput subscribeInboundInput,

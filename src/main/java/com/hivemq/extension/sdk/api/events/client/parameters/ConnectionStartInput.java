@@ -27,7 +27,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * Input object for the method {@link ClientLifecycleEventListener#onMqttConnectionStart(ConnectionStartInput)}.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ConnectionStartInput extends ClientBasedInput {
@@ -36,7 +36,7 @@ public interface ConnectionStartInput extends ClientBasedInput {
      * Get the unmodifiable CONNECT packet for the MQTT client.
      *
      * @return The {@link ConnectPacket} of the input.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull ConnectPacket getConnectPacket();
 }

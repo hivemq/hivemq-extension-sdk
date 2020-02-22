@@ -23,7 +23,7 @@ import com.hivemq.extension.sdk.api.auth.parameter.TopicPermission;
  * Default behaviour when no {@link Authorizer} or {@link TopicPermission} matched for the PUBLISH/SUBSCRIBE.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum DefaultAuthorizationBehaviour {
 
@@ -31,7 +31,7 @@ public enum DefaultAuthorizationBehaviour {
      * When DENY is set and none of the default permission matches to a PUBLISH topic or topic filter in a Subscription,
      * then the client is not allowed to PUBLISH or SUBSCRIBE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     DENY,
 
@@ -39,7 +39,7 @@ public enum DefaultAuthorizationBehaviour {
      * When ALLOW is set and none of the default permission matches to a PUBLISH topic or topic filter in a
      * Subscription, then the client is allowed to PUBLISH or SUBSCRIBE.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     ALLOW
 }

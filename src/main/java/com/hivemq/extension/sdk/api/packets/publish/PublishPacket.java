@@ -33,7 +33,7 @@ import java.util.Optional;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @Immutable
 @DoNotImplement
@@ -44,7 +44,7 @@ public interface PublishPacket {
      * already been sent once to the receiver.
      *
      * @return The duplicate delivery flag.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getDupFlag();
 
@@ -52,7 +52,7 @@ public interface PublishPacket {
      * The quality of service level of the publish.
      *
      * @return The qos.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Qos getQos();
 
@@ -60,7 +60,7 @@ public interface PublishPacket {
      * If <b>true</b> this message is a retained message, for <b>false</b> this is just a normal publish.
      *
      * @return The retain flag.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     boolean getRetain();
 
@@ -68,7 +68,7 @@ public interface PublishPacket {
      * The topic filter the message is published to.
      *
      * @return The topic.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull String getTopic();
 
@@ -76,7 +76,7 @@ public interface PublishPacket {
      * The packet identifier of the publish.
      *
      * @return The packet identifier.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     int getPacketId();
 
@@ -86,7 +86,7 @@ public interface PublishPacket {
      * For an MQTT 3 PUBLISH this MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the payload format indicator if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<PayloadFormatIndicator> getPayloadFormatIndicator();
 
@@ -96,7 +96,7 @@ public interface PublishPacket {
      * For an MQTT 3 PUBLISH this MQTT 5 property will always have the value from the configured message expiry.
      *
      * @return An {@link Optional} that contains the message expiry interval if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<Long> getMessageExpiryInterval();
 
@@ -106,7 +106,7 @@ public interface PublishPacket {
      * For an MQTT 3 PUBLISH this MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the response topic if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getResponseTopic();
 
@@ -116,7 +116,7 @@ public interface PublishPacket {
      * For an MQTT 3 PUBLISH this MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the correlation data if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<@Immutable ByteBuffer> getCorrelationData();
 
@@ -126,7 +126,7 @@ public interface PublishPacket {
      * For an MQTT 3 PUBLISH this MQTT 5 property will always be an empty list.
      *
      * @return The subscription identifiers.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull List<@NotNull Integer> getSubscriptionIdentifiers();
 
@@ -136,7 +136,7 @@ public interface PublishPacket {
      * For an MQTT 3 PUBLISH this MQTT 5 property will always be empty.
      *
      * @return An {@link Optional} that contains the content type if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getContentType();
 
@@ -144,7 +144,7 @@ public interface PublishPacket {
      * If this property is present, this is the payload.
      *
      * @return An {@link Optional} that contains the payload if present.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<@Immutable ByteBuffer> getPayload();
 
@@ -154,7 +154,7 @@ public interface PublishPacket {
      * For an MQTT 3 PUBLISH this MQTT 5 property will always be an empty list.
      *
      * @return The user properties.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull UserProperties getUserProperties();
 }

@@ -20,28 +20,28 @@ package com.hivemq.extension.sdk.api.services.subscription;
  * Enum to filter the subscriptions by type.
  *
  * @author Christoph Schäbel
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public enum SubscriptionType {
 
     /**
      * Include individual and shared subscriptions.
      *
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     ALL,
 
     /**
      * Only include individual subscriptions.
      *
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     INDIVIDUAL,
 
     /**
      * Only include shared subscriptions.
      *
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     SHARED
 }

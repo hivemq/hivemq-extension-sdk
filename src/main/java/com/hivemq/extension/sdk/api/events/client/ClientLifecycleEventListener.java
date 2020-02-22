@@ -33,7 +33,7 @@ import com.hivemq.extension.sdk.api.events.client.parameters.*;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public interface ClientLifecycleEventListener {
 
@@ -46,7 +46,7 @@ public interface ClientLifecycleEventListener {
      *
      * @param connectionStartInput The {@link ConnectionStartInput} containing information about the MQTT CONNECT
      *                             packet, the client and the connection.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void onMqttConnectionStart(@NotNull ConnectionStartInput connectionStartInput);
 
@@ -55,7 +55,7 @@ public interface ClientLifecycleEventListener {
      *
      * @param authenticationSuccessfulInput The {@link AuthenticationSuccessfulInput} containing information about the
      *                                      client and the connection.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void onAuthenticationSuccessful(@NotNull AuthenticationSuccessfulInput authenticationSuccessfulInput);
 
@@ -74,7 +74,7 @@ public interface ClientLifecycleEventListener {
      *
      * @param disconnectEventInput The {@link DisconnectEventInput} containing information about the exact disconnect
      *                             reason, the client and the connection.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     void onDisconnect(@NotNull DisconnectEventInput disconnectEventInput);
 
@@ -87,7 +87,7 @@ public interface ClientLifecycleEventListener {
      *
      * @param authenticationFailedInput The {@link AuthenticationFailedInput} containing information about the exact
      *                                  disconnect reason, the client and the connection.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     default void onAuthenticationFailedDisconnect(final @NotNull AuthenticationFailedInput authenticationFailedInput) {
         onDisconnect(authenticationFailedInput);
@@ -103,7 +103,7 @@ public interface ClientLifecycleEventListener {
      *
      * @param connectionLostInput The {@link ConnectionLostInput} containing information about the client and the
      *                            connection.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     default void onConnectionLost(final @NotNull ConnectionLostInput connectionLostInput) {
         onDisconnect(connectionLostInput);
@@ -117,7 +117,7 @@ public interface ClientLifecycleEventListener {
      *
      * @param clientInitiatedDisconnectInput The {@link ClientInitiatedDisconnectInput} containing information about the
      *                                       exact disconnect reason, the client and the connection.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     default void onClientInitiatedDisconnect(
             final @NotNull ClientInitiatedDisconnectInput clientInitiatedDisconnectInput) {
@@ -133,7 +133,7 @@ public interface ClientLifecycleEventListener {
      *
      * @param serverInitiatedDisconnectInput The {@link ServerInitiatedDisconnectInput} containing information about the
      *                                       exact disconnect reason, the client and the connection.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     default void onServerInitiatedDisconnect(
             final @NotNull ServerInitiatedDisconnectInput serverInitiatedDisconnectInput) {

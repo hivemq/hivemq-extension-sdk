@@ -40,7 +40,7 @@ import java.util.function.Supplier;
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public class Builders {
 
@@ -54,7 +54,7 @@ public class Builders {
 
     /**
      * @return A builder for a {@link RetainedPublish}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull RetainedPublishBuilder retainedPublish() {
         return getClassSupplier(RetainedPublishBuilder.class).get();
@@ -62,7 +62,7 @@ public class Builders {
 
     /**
      * @return A builder for a {@link Publish}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull PublishBuilder publish() {
         return getClassSupplier(PublishBuilder.class).get();
@@ -70,7 +70,7 @@ public class Builders {
 
     /**
      * @return A builder for a {@link TopicPermission}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull TopicPermissionBuilder topicPermission() {
         return getClassSupplier(TopicPermissionBuilder.class).get();
@@ -78,7 +78,7 @@ public class Builders {
 
     /**
      * @return A builder for a {@link TopicSubscription}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull TopicSubscriptionBuilder topicSubscription() {
         return getClassSupplier(TopicSubscriptionBuilder.class).get();
@@ -86,7 +86,7 @@ public class Builders {
 
     /**
      * @return A builder for a {@link WillPublishPacket}.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     public static @NotNull WillPublishBuilder willPublish() {
         return getClassSupplier(WillPublishBuilder.class).get();

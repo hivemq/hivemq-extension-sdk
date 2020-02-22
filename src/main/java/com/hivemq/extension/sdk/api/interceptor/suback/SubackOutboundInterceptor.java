@@ -30,7 +30,7 @@ import com.hivemq.extension.sdk.api.interceptor.suback.parameter.SubackOutboundO
  * thread-safe.
  *
  * @author Robin Atherton
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @FunctionalInterface
 public interface SubackOutboundInterceptor extends Interceptor {
@@ -44,7 +44,7 @@ public interface SubackOutboundInterceptor extends Interceptor {
      *
      * @param subackOutboundInput  The {@link SubackOutboundInput} parameter.
      * @param subackOutboundOutput The {@link SubackOutboundOutput} parameter.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     void onOutboundSuback(
             @NotNull SubackOutboundInput subackOutboundInput, @NotNull SubackOutboundOutput subackOutboundOutput);

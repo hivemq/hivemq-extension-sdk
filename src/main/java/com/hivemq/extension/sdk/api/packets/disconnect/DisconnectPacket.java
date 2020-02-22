@@ -32,7 +32,7 @@ import java.util.Optional;
  *
  * @author Robin Atherton
  * @author Silvio Giebl
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @Immutable
 @DoNotImplement
@@ -45,7 +45,7 @@ public interface DisconnectPacket {
      * interceptor).
      *
      * @return An enum containing the reason for disconnecting.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull DisconnectReasonCode getReasonCode();
 
@@ -56,7 +56,7 @@ public interface DisconnectPacket {
      * previous {@link DisconnectInboundInterceptor} or {@link DisconnectOutboundInterceptor}).
      *
      * @return A string containing the disconnect reason if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<String> getReasonString();
 
@@ -70,7 +70,7 @@ public interface DisconnectPacket {
      * previous {@link DisconnectInboundInterceptor} or {@link DisconnectOutboundInterceptor}).
      *
      * @return A long representing the session expiry interval if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<Long> getSessionExpiryInterval();
 
@@ -83,7 +83,7 @@ public interface DisconnectPacket {
      * previous {@link DisconnectInboundInterceptor} or {@link DisconnectOutboundInterceptor}).
      *
      * @return A string representing the server reference if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<String> getServerReference();
 
@@ -94,7 +94,7 @@ public interface DisconnectPacket {
      * previous {@link DisconnectInboundInterceptor} or {@link DisconnectOutboundInterceptor}).
      *
      * @return The {@link UserProperties} of the DISCONNECT packet.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull UserProperties getUserProperties();
 }

@@ -28,7 +28,7 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * based information.
  *
  * @author Florian Limpöck
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 @DoNotImplement
 public interface SubscribeInboundInput extends ClientBasedInput {
@@ -37,7 +37,7 @@ public interface SubscribeInboundInput extends ClientBasedInput {
      * The unmodifiable SUBSCRIBE packet that was intercepted.
      *
      * @return An unmodifiable {@link SubscribePacket}.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @Immutable @NotNull SubscribePacket getSubscribePacket();
 }

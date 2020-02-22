@@ -32,32 +32,32 @@ import java.util.Optional;
  *
  * @author Dominik Obermaier
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
 public interface ProxyInformation {
 
     /**
      * @return The original source port of the MQTT client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     int getSourcePort();
 
     /**
      * @return The original source address of the MQTT client.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull InetAddress getSourceAddress();
 
     /**
      * @return The port of the load balancer that is used to proxy the client connection.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     int getProxyPort();
 
     /**
      * @return The address of the load balancer that is used to proxy the client connection.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull InetAddress getProxyAddress();
 
@@ -66,7 +66,7 @@ public interface ProxyInformation {
      * returns the TLS version of the original SSL connection.
      *
      * @return An {@link Optional} that contains the original TLS version if supported by the load balancer.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getTlsVersion();
 
@@ -76,7 +76,7 @@ public interface ProxyInformation {
      * client certificate (if the client used one to authenticate the SSL connection).
      *
      * @return An {@link Optional} that contains the Common Name of the X509 client certificate.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getSslCertificateCN();
 
@@ -87,7 +87,7 @@ public interface ProxyInformation {
      * The key is the byte value of the TLV type and the value is the raw TLV as byte value.
      *
      * @return A {@link Map} with raw TLVs.
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     @NotNull Map<Byte, ByteBuffer> getRawTLVs();
 }

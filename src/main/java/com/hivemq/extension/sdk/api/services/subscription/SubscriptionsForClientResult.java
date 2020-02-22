@@ -26,7 +26,7 @@ import java.util.Set;
  * This object represents a client identifier and all its subscriptions.
  *
  * @author Christoph Schäbel
- * @since 4.2.0
+ * @since 4.2.0, CE 2020.1
  */
 public interface SubscriptionsForClientResult {
 
@@ -34,7 +34,7 @@ public interface SubscriptionsForClientResult {
      * Get the client identifier for this client.
      *
      * @return The client identifier of this client.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull String getClientId();
 
@@ -43,7 +43,7 @@ public interface SubscriptionsForClientResult {
      * and identifier for this client.
      *
      * @return A {@link Set} of all the subscriptions for this client.
-     * @since 4.2.0
+     * @since 4.2.0, CE 2020.1
      */
     @NotNull Set<TopicSubscription> getSubscriptions();
 }

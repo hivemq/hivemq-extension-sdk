@@ -28,7 +28,7 @@ import java.util.Optional;
  * Represents an AUTH packet.
  *
  * @author Florian Limpöck
- * @since 4.3.0
+ * @since 4.3.0, CE 2020.1
  */
 @Immutable
 @DoNotImplement
@@ -38,7 +38,7 @@ public interface AuthPacket {
      * The authentication method of the AUTH packet.
      *
      * @return The authentication method of the AUTH packet.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull String getAuthenticationMethod();
 
@@ -46,7 +46,7 @@ public interface AuthPacket {
      * The optional authentication data of the AUTH packet.
      *
      * @return An {@link Optional} containing the authentication data if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<ByteBuffer> getAuthenticationData();
 
@@ -54,7 +54,7 @@ public interface AuthPacket {
      * The optional authentication data of the AUTH packet as a byte array.
      *
      * @return An {@link Optional} containing the authentication data if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<byte[]> getAuthenticationDataAsArray();
 
@@ -62,7 +62,7 @@ public interface AuthPacket {
      * The reason code of the AUTH packet.
      *
      * @return The reason code of the AUTH packet.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull AuthReasonCode getReasonCode();
 
@@ -70,7 +70,7 @@ public interface AuthPacket {
      * The optional reason string of the AUTH packet.
      *
      * @return An {@link Optional} containing the reason string if present.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull Optional<String> getReasonString();
 
@@ -78,7 +78,7 @@ public interface AuthPacket {
      * The user properties of the AUTH packet.
      *
      * @return The user properties of the AUTH packet.
-     * @since 4.3.0
+     * @since 4.3.0, CE 2020.1
      */
     @NotNull UserProperties getUserProperties();
 }

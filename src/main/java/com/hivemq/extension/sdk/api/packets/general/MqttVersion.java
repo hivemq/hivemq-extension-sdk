@@ -20,27 +20,28 @@ package com.hivemq.extension.sdk.api.packets.general;
  * The MQTT version of a client.
  *
  * @author Christoph Schäbel
- * @since 4.0.0
+ * @since 4.0.0, CE 2019.1
  */
 public enum MqttVersion {
+
     /**
      * MQTT 3.1 version.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     V_3_1,
 
     /**
      * MQTT 3.1.1 version.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     V_3_1_1,
 
     /**
      * MQTT 5 version.
      *
-     * @since 4.0.0
+     * @since 4.0.0, CE 2019.1
      */
     V_5
 }
