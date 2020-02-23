@@ -26,31 +26,29 @@ import com.hivemq.extension.sdk.api.auth.parameter.EnhancedAuthOutput;
  * <p>
  * Enhanced authentication can use AUTH packets (introduced in MQTT 5) to implement:
  * <ul>
- *   <li>challenge/response style authentication and</li>
- *   <li>re-authentication</li>
+ *   <li>challenge/response style authentication and
+ *   <li>re-authentication
  * </ul>
  * <p>
  * Enhanced authentication has two life cycles:
  * <ul>
  *   <li>When a client connects
  *     <ol>
- *       <li>{@link #onConnect(EnhancedAuthConnectInput, EnhancedAuthOutput)}</li>
- *       <li>({@link #onAuth(EnhancedAuthInput, EnhancedAuthOutput)})*</li>
+ *       <li>{@link #onConnect(EnhancedAuthConnectInput, EnhancedAuthOutput)}
+ *       <li>({@link #onAuth(EnhancedAuthInput, EnhancedAuthOutput)})*
  *     </ol>
- *   </li>
  *   <li>When a client triggers re-authentication
  *     <ol>
- *       <li>{@link #onReAuth(EnhancedAuthInput, EnhancedAuthOutput)}</li>
- *       <li>({@link #onAuth(EnhancedAuthInput, EnhancedAuthOutput)})*</li>
+ *       <li>{@link #onReAuth(EnhancedAuthInput, EnhancedAuthOutput)}
+ *       <li>({@link #onAuth(EnhancedAuthInput, EnhancedAuthOutput)})*
  *     </ol>
- *   </li>
  * </ul>
  * <p>
  * An EnhancedAuthenticator can be provided by an {@link com.hivemq.extension.sdk.api.services.auth.provider.EnhancedAuthenticatorProvider EnhancedAuthenticatorProvider}.
  * The provider is only called once per client connection, enabling the EnhancedAuthenticator to store state between the
  * initial authentication and later re-authentication(s).
  * <p>
- * If an implementation stores state, an object of the implementation can not be shared by different clients.<br/>
+ * If an implementation stores state, an object of the implementation can not be shared by different clients.
  * If no state is stored, the implementation has to be thread safe if it is shared by different clients.
  *
  * @author Christoph Schäbel

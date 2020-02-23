@@ -21,11 +21,10 @@ import com.hivemq.extension.sdk.api.events.client.parameters.*;
 
 /**
  * A {@link ClientLifecycleEventListener} contains methods that allow custom logic to be executed when:
- *
  * <ul>
- * <li>A client starts an MQTT connection</li>
- * <li>The authentication for a client is successful</li>
- * <li>A client is disconnected</li>
+ *   <li>A client starts an MQTT connection
+ *   <li>The authentication for a client is successful
+ *   <li>A client is disconnected
  * </ul>
  * <p>
  * The methods here are for informational purpose only and do not allow modification of the MQTT packets exchanged
@@ -64,10 +63,10 @@ public interface ClientLifecycleEventListener {
      * <p>
      * To implement custom logic for specific disconnect cases the following methods can be overridden:
      * <ul>
-     * <li>{@link ClientLifecycleEventListener#onAuthenticationFailedDisconnect(AuthenticationFailedInput)}</li>
-     * <li>{@link ClientLifecycleEventListener#onClientInitiatedDisconnect(ClientInitiatedDisconnectInput)}</li>
-     * <li>{@link ClientLifecycleEventListener#onConnectionLost(ConnectionLostInput)}</li>
-     * <li>{@link ClientLifecycleEventListener#onServerInitiatedDisconnect(ServerInitiatedDisconnectInput)}</li>
+     *   <li>{@link #onAuthenticationFailedDisconnect(AuthenticationFailedInput)}
+     *   <li>{@link #onClientInitiatedDisconnect(ClientInitiatedDisconnectInput)}
+     *   <li>{@link #onConnectionLost(ConnectionLostInput)}
+     *   <li>{@link #onServerInitiatedDisconnect(ServerInitiatedDisconnectInput)}
      * </ul>
      * <p>
      * If all the above methods are implemented, onDisconnect will never be called.
@@ -82,8 +81,8 @@ public interface ClientLifecycleEventListener {
      * This method is called when a client is disconnected by the server when the authentication for this MQTT
      * connection failed.
      * <p>
-     * By default this calls {@link ClientLifecycleEventListener#onDisconnect}. This method can be overridden to execute
-     * custom logic for the specific disconnect when the authentication fails.
+     * By default this calls {@link #onDisconnect}. This method can be overridden to execute custom logic for the
+     * specific disconnect when the authentication fails.
      *
      * @param authenticationFailedInput The {@link AuthenticationFailedInput} containing information about the exact
      *                                  disconnect reason, the client and the connection.
@@ -96,8 +95,8 @@ public interface ClientLifecycleEventListener {
     /**
      * This method is called when a client is disconnected because the connection is lost.
      * <p>
-     * By default this calls {@link ClientLifecycleEventListener#onDisconnect}. This method can be overridden to execute
-     * custom logic for the specific disconnect when the connection is lost.
+     * By default this calls {@link #onDisconnect}. This method can be overridden to execute custom logic for the
+     * specific disconnect when the connection is lost.
      * <p>
      * In this case a reason code, reason string and user properties are not present in the input.
      *
@@ -112,8 +111,8 @@ public interface ClientLifecycleEventListener {
     /**
      * This method is called when a client disconnects by sending a MQTT DISCONNECT packet to the server.
      * <p>
-     * By default this calls {@link ClientLifecycleEventListener#onDisconnect}. This method can be overridden to execute
-     * a custom logic when the client initiates the disconnect.
+     * By default this calls {@link #onDisconnect}. This method can be overridden to execute a custom logic when the
+     * client initiates the disconnect.
      *
      * @param clientInitiatedDisconnectInput The {@link ClientInitiatedDisconnectInput} containing information about the
      *                                       exact disconnect reason, the client and the connection.
@@ -128,8 +127,8 @@ public interface ClientLifecycleEventListener {
      * This method is called when a client is disconnected by the server with an MQTT DISCONNECT or CONNACK packet for
      * any other reason than a failed authentication.
      * <p>
-     * By default this calls {@link ClientLifecycleEventListener#onDisconnect}. This method can be overridden to execute
-     * custom logic when a client is disconnected by the server.
+     * By default this calls {@link #onDisconnect}. This method can be overridden to execute custom logic when a client
+     * is disconnected by the server.
      *
      * @param serverInitiatedDisconnectInput The {@link ServerInitiatedDisconnectInput} containing information about the
      *                                       exact disconnect reason, the client and the connection.

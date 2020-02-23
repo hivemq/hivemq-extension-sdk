@@ -26,16 +26,37 @@ package com.hivemq.extension.sdk.api.packets.connect;
  * The reason codes are translated as follows:
  *
  * <table border="1">
- * <tr><th>MQTT 3 CONNACK reason code</th><th>ConnackReasonCode</th></tr>
- * <tr><td>ACCEPTED</td><td>SUCCESS</td></tr>
- * <tr><td>REFUSED_UNACCEPTABLE_PROTOCOL_VERSION</td><td>UNSUPPORTED_PROTOCOL_VERSION</td></tr>
- * <tr><td>REFUSED_IDENTIFIER_REJECTED</td><td>CLIENT_IDENTIFIER_NOT_VALID</td></tr>
- * <tr><td>REFUSED_SERVER_UNAVAILABLE</td><td>SERVER_UNAVAILABLE, SERVER_BUSY, USE_ANOTHER_SERVER,
- * SERVER_MOVED</td></tr>
- * <tr><td>REFUSED_BAD_USERNAME_OR_PASSWORD</td><td>BAD_USER_NAME_OR_PASSWORD, BAD_AUTHENTICATION_METHOD</td></tr>
- * <tr><td>REFUSED_NOT_AUTHORIZED</td><td>NOT_AUTHORIZED, UNSPECIFIED_ERROR, MALFORMED_PACKET, PROTOCOL_ERROR,
- * IMPLEMENTATION_SPECIFIC_ERROR, BANNED, TOPIC_NAME_INVALID, PACKET_TOO_LARGE, QUOTA_EXCEEDED,
- * PAYLOAD_FORMAT_INVALID, RETAIN_NOT_SUPPORTED, QOS_NOT_SUPPORTED, CONNECTION_RATE_EXCEEDED</td></tr>
+ *   <tr>
+ *     <th>MQTT 3 CONNACK reason code</th>
+ *     <th>ConnackReasonCode</th>
+ *   </tr>
+ *   <tr>
+ *     <td>ACCEPTED</td>
+ *     <td>SUCCESS</td>
+ *   </tr>
+ *   <tr>
+ *     <td>REFUSED_UNACCEPTABLE_PROTOCOL_VERSION</td>
+ *     <td>UNSUPPORTED_PROTOCOL_VERSION</td>
+ *   </tr>
+ *   <tr>
+ *     <td>REFUSED_IDENTIFIER_REJECTED</td>
+ *     <td>CLIENT_IDENTIFIER_NOT_VALID</td>
+ *   </tr>
+ *   <tr>
+ *     <td>REFUSED_SERVER_UNAVAILABLE</td>
+ *     <td>SERVER_UNAVAILABLE, SERVER_BUSY, USE_ANOTHER_SERVER, SERVER_MOVED</td>
+ *   </tr>
+ *   <tr>
+ *     <td>REFUSED_BAD_USERNAME_OR_PASSWORD</td>
+ *     <td>BAD_USER_NAME_OR_PASSWORD, BAD_AUTHENTICATION_METHOD</td>
+ *   </tr>
+ *   <tr>
+ *     <td>REFUSED_NOT_AUTHORIZED</td>
+ *     <td>NOT_AUTHORIZED, UNSPECIFIED_ERROR, MALFORMED_PACKET, PROTOCOL_ERROR, IMPLEMENTATION_SPECIFIC_ERROR, BANNED,
+ *       TOPIC_NAME_INVALID, PACKET_TOO_LARGE, QUOTA_EXCEEDED, PAYLOAD_FORMAT_INVALID, RETAIN_NOT_SUPPORTED,
+ *       QOS_NOT_SUPPORTED, CONNECTION_RATE_EXCEEDED
+ *     </td>
+ *   </tr>
  * </table>
  *
  * @author Christoph Schäbel

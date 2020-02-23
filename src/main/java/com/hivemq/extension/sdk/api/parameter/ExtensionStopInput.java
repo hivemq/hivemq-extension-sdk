@@ -49,8 +49,8 @@ public interface ExtensionStopInput {
     @NotNull ServerInformation getServerInformation();
 
     /**
-     * @return A {@link Map} of all currently enabled extensions. <br/> The key is the ID of the extension. <br/> The
-     *         value is a {@link ExtensionInformation} containing detailed information about each extension.
+     * @return A {@link Map} of all currently enabled extensions. The key is the ID of the extension. The value is a
+     *         {@link ExtensionInformation} containing detailed information about each extension.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Map<String, @NotNull ExtensionInformation> getEnabledExtensions();

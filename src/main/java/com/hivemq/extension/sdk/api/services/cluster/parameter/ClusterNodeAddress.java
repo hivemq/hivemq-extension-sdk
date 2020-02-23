@@ -71,7 +71,7 @@ public class ClusterNodeAddress {
      * Compare the {@link ClusterNodeAddress} against another object.
      *
      * @param o The other object.
-     * @return <b>true</b> if the object is also a {@link ClusterNodeAddress} with the same host and port value.
+     * @return <code>true</code> if the object is also a {@link ClusterNodeAddress} with the same host and port value.
      * @since 4.0.0, CE 2019.1
      */
     @Override

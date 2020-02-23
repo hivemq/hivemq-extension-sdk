@@ -39,8 +39,8 @@ public interface EnhancedAuthenticatorProvider {
      * <p>
      * <code>null</code> can be returned if no authentication for the client is necessary.
      *
-     * @return An implementation of {@link EnhancedAuthenticator}. {@code null} is ignored and has the same effect as if
-     *         this provider would had not been set for the connecting client.
+     * @return An implementation of {@link EnhancedAuthenticator}. <code>null</code> is ignored and has the same effect
+     *         as if this provider would had not been set for the connecting client.
      * @since 4.3.0, CE 2020.1
      */
     @Nullable EnhancedAuthenticator getEnhancedAuthenticator(

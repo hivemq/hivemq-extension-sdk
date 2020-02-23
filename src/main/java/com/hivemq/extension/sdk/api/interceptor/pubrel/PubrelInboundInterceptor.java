@@ -37,9 +37,9 @@ import java.time.Duration;
  * {@link PubrelInboundOutput#async(Duration)} times out with {@link TimeoutFallback#FAILURE}, HiveMQ will ignore this
  * interceptor and will:
  * <ol>
- *    <li>Log the exception</li>
- *    <li>Revert the changes to the {@link ModifiablePubrelPacket} made by the interceptor</li>
- *    <li>Call the next {@link PubrelInboundInterceptor} or send the PUBREL to the server if no interceptor is left</li>
+ *   <li>Log the exception
+ *   <li>Revert the changes to the {@link ModifiablePubrelPacket} made by the interceptor
+ *   <li>Call the next {@link PubrelInboundInterceptor} or send the PUBREL to the server if no interceptor is left
  * </ol>
  *
  * @author Yannick Weber

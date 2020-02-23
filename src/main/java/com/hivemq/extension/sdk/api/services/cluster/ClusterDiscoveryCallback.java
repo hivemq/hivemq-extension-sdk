@@ -65,9 +65,9 @@ public interface ClusterDiscoveryCallback {
     /**
      * This method is called once by HiveMQ in one of the following cases:
      * <ul>
-     * <li>This callback is removed via {@link ClusterService#removeDiscoveryCallback(ClusterDiscoveryCallback)}</li>
-     * <li>The extension which added the callback is stopped</li>
-     * <li>The HiveMQ instance is shut down</li>
+     *   <li>This callback is removed via {@link ClusterService#removeDiscoveryCallback(ClusterDiscoveryCallback)}
+     *   <li>The extension which added the callback is stopped
+     *   <li>The HiveMQ instance is shut down
      * </ul>
      * <p>
      * It can be used to unregister this HiveMQ instance from a central registry.

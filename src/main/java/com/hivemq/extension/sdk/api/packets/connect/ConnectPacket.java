@@ -56,13 +56,13 @@ public interface ConnectPacket {
     @NotNull String getClientId();
 
     /**
-     * Flag that indicates if the existing session for the client should be continued (<b>false</b>) or the existing
-     * session should be overwritten (<b>true</b>). Has no effect if no session for the client exists.
+     * Flag that indicates if the existing session for the client should be continued (<code>false</code>) or the
+     * existing session should be overwritten (<code>true</code>). Has no effect if no session for the client exists.
      * <p>
      * For an MQTT 3 client, this MQTT 5 property can be interpreted as followed:
      * <ul>
-     * <li>cleanSession = true -&gt; cleanStart = true</li>
-     * <li>cleanSession = false -&gt; cleanStart = false</li>
+     *   <li>cleanSession = true -&gt; cleanStart = true
+     *   <li>cleanSession = false -&gt; cleanStart = false
      * </ul>
      *
      * @return The clean start flag.
@@ -83,9 +83,9 @@ public interface ConnectPacket {
      * <p>
      * For an MQTT 3 client, this MQTT 5 property can be interpreted as followed:
      * <ul>
-     * <li>cleanSession = true -&gt; sessionExpiryInterval = 0</li>
-     * <li>cleanSession = false -&gt; sessionExpiryInterval = The configured {@code <session-expiry>} in the {@code
-     * <mqtt>} config in the config.xml. Default: 4294967295</li>
+     *   <li>cleanSession = true -&gt; sessionExpiryInterval = 0
+     *   <li>cleanSession = false -&gt; sessionExpiryInterval = The configured {@code <session-expiry>} in the {@code
+     *     <mqtt>} config in the config.xml. Default: 4294967295
      * </ul>
      *
      * @return The session expiry interval.
@@ -133,8 +133,8 @@ public interface ConnectPacket {
     int getTopicAliasMaximum();
 
     /**
-     * This flag indicates if the client wants to receive Response Information in the CONNACK packet (<b>true</b>) or
-     * not (<b>false</b>).
+     * This flag indicates if the client wants to receive Response Information in the CONNACK packet (<code>true</code>)
+     * or not (<code>false</code>).
      * <p>
      * For an MQTT 3 client this MQTT 5 property will always be false.
      *
@@ -145,8 +145,8 @@ public interface ConnectPacket {
 
     /**
      * This flag indicates if the server may sent Reason String or User Properties in the case of failures. If
-     * <b>true</b> server may sent these in any MQTT packet, for <b>false</b> they may only be sent in a PUBLISH,
-     * CONNACK, or DISCONNECT packet.
+     * <code>true</code> server may sent these in any MQTT packet, for <code>false</code> they may only be sent in a
+     * PUBLISH, CONNACK, or DISCONNECT packet.
      * <p>
      * For an MQTT 3 client this MQTT 5 property will always be false. This can be ignored for MQTT 3 clients.
      *

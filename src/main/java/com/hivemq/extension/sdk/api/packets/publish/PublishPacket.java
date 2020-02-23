@@ -40,8 +40,8 @@ import java.util.Optional;
 public interface PublishPacket {
 
     /**
-     * If <b>false</b> this is the first occasion the message is sent to the receiver. If <b>true</b> the message has
-     * already been sent once to the receiver.
+     * If <code>false</code> this is the first occasion the message is sent to the receiver. If <code>true</code> the
+     * message has already been sent once to the receiver.
      *
      * @return The duplicate delivery flag.
      * @since 4.0.0, CE 2019.1
@@ -57,7 +57,7 @@ public interface PublishPacket {
     @NotNull Qos getQos();
 
     /**
-     * If <b>true</b> this message is a retained message, for <b>false</b> this is just a normal publish.
+     * If <code>true</code> this message is a retained message, for <code>false</code> this is just a normal publish.
      *
      * @return The retain flag.
      * @since 4.0.0, CE 2019.1

@@ -25,13 +25,13 @@ import com.hivemq.extension.sdk.api.auth.parameter.SimpleAuthOutput;
  * <p>
  * Simple authentication only uses CONNECT and CONNACK but no AUTH packets. This means:
  * <ul>
- *   <li>it does not support challenge/response style authentication</li>
- *   <li>it does not support re-authentication</li>
+ *   <li>it does not support challenge/response style authentication
+ *   <li>it does not support re-authentication
  * </ul>
  * <p>
  * An SimpleAuthenticator can be provided by an {@link com.hivemq.extension.sdk.api.services.auth.provider.AuthenticatorProvider AuthenticatorProvider}.
  * <p>
- * If an implementation stores state, an object of the implementation can not be shared by different clients.<br/>
+ * If an implementation stores state, an object of the implementation can not be shared by different clients.
  * If no state is stored, the implementation has to be thread safe if it is shared by different clients.
  *
  * @author Christoph Schäbel

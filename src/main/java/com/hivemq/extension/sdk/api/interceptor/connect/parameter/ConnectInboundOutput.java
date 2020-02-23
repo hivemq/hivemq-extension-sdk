@@ -28,7 +28,7 @@ import com.hivemq.extension.sdk.api.packets.publish.ModifiableConnectPacket;
  * <p>
  * It can be used to
  * <ul>
- * <li>Modify a CONNECT packet</li>
+ *   <li>Modify a CONNECT packet
  * </ul>
  *
  * @author Lukas Brandl

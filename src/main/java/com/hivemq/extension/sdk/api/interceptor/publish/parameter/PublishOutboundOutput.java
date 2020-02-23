@@ -32,8 +32,8 @@ import java.time.Duration;
  * <p>
  * It can be used to
  * <ul>
- * <li>Modify an outbound PUBLISH packet</li>
- * <li>Prevent delivery of an outbound PUBLISH packet</li>
+ *   <li>Modify an outbound PUBLISH packet
+ *   <li>Prevent delivery of an outbound PUBLISH packet
  * </ul>
  *
  * @author Lukas Brandl

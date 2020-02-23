@@ -52,10 +52,11 @@ public interface Subscription {
     /**
      * The retain handling states how a retained message should be send for a subscription.
      * <ul>
-     *   <li>{@link RetainHandling#SEND} -&gt; Send every retained message for any subscription.</li>
-     *   <li>{@link RetainHandling#SEND_IF_NEW_SUBSCRIPTION} -&gt; Send retained messages for new subscriptions only.</li>
-     *   <li>{@link RetainHandling#DO_NOT_SEND} -&gt; Do not send retained message for a subscription.</li>
+     *   <li>{@link RetainHandling#SEND} -&gt; Send every retained message for any subscription.
+     *   <li>{@link RetainHandling#SEND_IF_NEW_SUBSCRIPTION} -&gt; Send retained messages for new subscriptions only.
+     *   <li>{@link RetainHandling#DO_NOT_SEND} -&gt; Do not send retained message for a subscription.
      * </ul>
+     * <p>
      * For an MQTT 3 subscription this MQTT 5 property will always be {@link RetainHandling#SEND}.
      *
      * @return The retain handling of the subscription.
@@ -67,9 +68,9 @@ public interface Subscription {
      * The retain as published flag indicates if the client wants the retain flag preserved for received messages to the
      * topic filter of the subscription.
      * <p>
-     * If <b>true</b> the retain flag is preserved. If <b>false</b> it isn't.
+     * If <code>true</code> the retain flag is preserved. If <code>false</code> it isn't.
      * <p>
-     * For an MQTT 3 subscription this MQTT 5 property will always be <b>false</b>.
+     * For an MQTT 3 subscription this MQTT 5 property will always be <code>false</code>.
      *
      * @return The retain as published flag of the subscription.
      * @since 4.0.0, CE 2019.1
@@ -80,9 +81,9 @@ public interface Subscription {
      * The no local flag indicates if the client wants to receive messages published by itself to the topic filter of
      * the subscription.
      * <p>
-     * If <b>false</b> the client also receives it's own messages. If <b>true</b> it doesn't.
+     * If <code>false</code> the client also receives it's own messages. If <code>true</code> it doesn't.
      * <p>
-     * For an MQTT 3 subscription this MQTT 5 property will always be <b>false</b>.
+     * For an MQTT 3 subscription this MQTT 5 property will always be <code>false</code>.
      *
      * @return The no local flag of the subscription.
      * @since 4.0.0, CE 2019.1

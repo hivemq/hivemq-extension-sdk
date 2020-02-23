@@ -27,7 +27,6 @@ import com.hivemq.extension.sdk.api.auth.parameter.PublishAuthorizerOutput;
  * <p>
  * If the same instance is shared between multiple clients it can be called in different Threads and must therefore be
  * thread-safe.
- * <p>
  *
  * @author Christoph Schäbel
  * @since 4.0.0, CE 2019.1
