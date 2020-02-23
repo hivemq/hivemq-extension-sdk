@@ -35,25 +35,25 @@ import java.time.Duration;
  * <p>
  * It can be used to
  * <ul>
- *   <li>Authenticate the client successfully OR</li>
- *   <li>Fail the authentication OR</li>
- *   <li>Continue the authentication OR</li>
- *   <li>Delegate the decision to the next extension</li>
+ *   <li>Authenticate the client successfully OR
+ *   <li>Fail the authentication OR
+ *   <li>Continue the authentication OR
+ *   <li>Delegate the decision to the next extension
  * </ul>
  * <p>
  * Exactly one of the decisive methods must be called:
  * <ul>
- *   <li>{@link #authenticateSuccessfully()}</li>
- *   <li>{@link #authenticateSuccessfully(byte[])}</li>
- *   <li>{@link #authenticateSuccessfully(ByteBuffer)}</li>
- *   <li>{@link #failAuthentication()}</li>
- *   <li>{@link #failAuthentication(DisconnectedReasonCode)}</li>
- *   <li>{@link #failAuthentication(String)}</li>
- *   <li>{@link #failAuthentication(DisconnectedReasonCode, String)}</li>
- *   <li>{@link #continueAuthentication()}</li>
- *   <li>{@link #continueAuthentication(byte[])}</li>
- *   <li>{@link #continueAuthentication(ByteBuffer)}</li>
- *   <li>{@link #nextExtensionOrDefault()}</li>
+ *   <li>{@link #authenticateSuccessfully()}
+ *   <li>{@link #authenticateSuccessfully(byte[])}
+ *   <li>{@link #authenticateSuccessfully(ByteBuffer)}
+ *   <li>{@link #failAuthentication()}
+ *   <li>{@link #failAuthentication(DisconnectedReasonCode)}
+ *   <li>{@link #failAuthentication(String)}
+ *   <li>{@link #failAuthentication(DisconnectedReasonCode, String)}
+ *   <li>{@link #continueAuthentication()}
+ *   <li>{@link #continueAuthentication(byte[])}
+ *   <li>{@link #continueAuthentication(ByteBuffer)}
+ *   <li>{@link #nextExtensionOrDefault()}
  * </ul>
  * Subsequent calls will fail with an {@link UnsupportedOperationException}.
  * <p>

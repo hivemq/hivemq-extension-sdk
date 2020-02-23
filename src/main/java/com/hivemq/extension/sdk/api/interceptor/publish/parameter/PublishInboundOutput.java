@@ -34,8 +34,8 @@ import java.time.Duration;
  * <p>
  * It can be used to
  * <ul>
- * <li>Modify an inbound PUBLISH packet</li>
- * <li>Prevent delivery of an inbound PUBLISH packet</li>
+ *   <li>Modify an inbound PUBLISH packet
+ *   <li>Prevent delivery of an inbound PUBLISH packet
  * </ul>
  * <p>
  * Only one of the methods {@link #preventPublishDelivery()} may be called.

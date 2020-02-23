@@ -37,14 +37,14 @@ public interface AuthorizerProvider {
     /**
      * This method is called for each client by HiveMQ.
      * <p>
-     * Either the same {@link Authorizer} (stateless or must be thread-safe)<br/> or a new one (stateful, must not be
+     * Either the same {@link Authorizer} (stateless or must be thread-safe) or a new one (stateful, must not be
      * thread-safe) can be supplied on each call.
      * <p>
      * <code>null</code> can be returned if no authorization for the client is necessary.
      *
      * @return Either an implementation of {@link SubscriptionAuthorizer} or an implementation of {@link
-     *         PublishAuthorizer}. {@code null} is ignored and has the same effect as if this provider would had not
-     *         been set for the connecting client. Returning any other implementation of the {@link Authorizer}
+     *         PublishAuthorizer}. <code>null</code> is ignored and has the same effect as if this provider would had
+     *         not been set for the connecting client. Returning any other implementation of the {@link Authorizer}
      *         interface is an error.
      * @since 4.0.0, CE 2019.1
      */

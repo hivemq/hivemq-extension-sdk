@@ -31,11 +31,11 @@ import java.util.function.Supplier;
  * This class can be used to create builders for the following objects:
  *
  * <ul>
- * <li>{@link RetainedPublish}</li>
- * <li>{@link Publish}</li>
- * <li>{@link TopicPermission}</li>
- * <li>{@link TopicSubscription}</li>
- * <li>{@link WillPublishPacket}</li>
+ *   <li>{@link RetainedPublish}
+ *   <li>{@link Publish}
+ *   <li>{@link TopicPermission}
+ *   <li>{@link TopicSubscription}
+ *   <li>{@link WillPublishPacket}
  * </ul>
  *
  * @author Christoph Schäbel

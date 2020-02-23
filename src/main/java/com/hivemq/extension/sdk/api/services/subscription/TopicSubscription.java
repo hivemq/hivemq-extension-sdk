@@ -66,7 +66,7 @@ public interface TopicSubscription {
      * The retain as published flag indicates if the client wants the retain flag preserved for received messages to the
      * topic filter of the subscription.
      * <p>
-     * If <b>true</b> the retain flag is preserved. If <b>false</b> it isn't.
+     * If <code>true</code> the retain flag is preserved. If <code>false</code> it isn't.
      *
      * @return The retain as published flag of the subscription.
      * @since 4.0.0, CE 2019.1
@@ -77,7 +77,7 @@ public interface TopicSubscription {
      * The no local flag indicates if the client wants to receive messages published by itself to the topic filter of
      * the subscription.
      * <p>
-     * If <b>false</b> the client also receives it's own messages. If <b>true</b> it doesn't.
+     * If <code>false</code> the client also receives it's own messages. If <code>true</code> it doesn't.
      *
      * @return The no local flag of the subscription.
      * @since 4.0.0, CE 2019.1

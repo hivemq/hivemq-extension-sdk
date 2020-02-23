@@ -95,7 +95,7 @@ public interface WillPublishBuilder {
      *
      * @param retain The retain flag to set.
      * @return The {@link WillPublishBuilder}.
-     * @throws IllegalArgumentException If retain is <b>true</b>, but retained messages are disabled by HiveMQ.
+     * @throws IllegalArgumentException If retain is <code>true</code>, but retained messages are disabled by HiveMQ.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull WillPublishBuilder retain(boolean retain);

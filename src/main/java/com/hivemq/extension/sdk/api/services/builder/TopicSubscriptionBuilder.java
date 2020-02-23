@@ -92,8 +92,8 @@ public interface TopicSubscriptionBuilder {
     @NotNull TopicSubscriptionBuilder retainAsPublished(boolean retainAsPublished);
 
     /**
-     * Sets the no local flag. Do not set the no local flag to <b>true</b> if the {@link TopicSubscription} is a shared
-     * subscription.
+     * Sets the no local flag. Do not set the no local flag to <code>true</code> if the {@link TopicSubscription} is a
+     * shared subscription.
      * <p>
      * DEFAULT: <code>false</code>.
      *

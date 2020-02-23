@@ -21,10 +21,10 @@ package com.hivemq.extension.sdk.api.packets.subscribe;
  * <p>
  * MQTT 3.1 and MQTT 3.1.1 supports only:
  * <ul>
- * <li>{@link #GRANTED_QOS_0}</li>
- * <li>{@link #GRANTED_QOS_1}</li>
- * <li>{@link #GRANTED_QOS_2}</li>
- * <li>{@link #UNSPECIFIED_ERROR} (in the MQTT 3 specification known as FAILURE)</li>
+ *   <li>{@link #GRANTED_QOS_0}
+ *   <li>{@link #GRANTED_QOS_1}
+ *   <li>{@link #GRANTED_QOS_2}
+ *   <li>{@link #UNSPECIFIED_ERROR} (in the MQTT 3 specification known as FAILURE)
  * </ul>
  *
  * @author Christoph Schäbel

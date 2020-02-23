@@ -118,14 +118,13 @@ public interface TopicPermissionBuilder {
      * <p>
      * DEFAULT: <code>#</code>.
      * <p>
-     * <p>
      * Limitations for shared group:
      * <ul>
-     * <li>Must not be an empty string</li>
-     * <li>Must not contain a slash '/'</li>
-     * <li>Must not contain the wildcard '+'</li>
-     * <li>Must not contain the wildcard '#' if string length is &gt; 1</li>
-     * <li>Must not contain an invalid UTF-8 character</li>
+     *   <li>Must not be an empty string
+     *   <li>Must not contain a slash '/'
+     *   <li>Must not contain the wildcard '+'
+     *   <li>Must not contain the wildcard '#' if string length is &gt; 1
+     *   <li>Must not contain an invalid UTF-8 character
      * </ul>
      *
      * @param sharedGroup The shared group that can be used, or <code>#</code> to allow any value.

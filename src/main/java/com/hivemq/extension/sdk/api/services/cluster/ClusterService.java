@@ -24,7 +24,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  * <p>
  * It has the following functions:
  * <ul>
- * <li>Adding and removing callbacks for discovery of HiveMQ cluster nodes</li>
+ *   <li>Adding and removing callbacks for discovery of HiveMQ cluster nodes
  * </ul>
  *
  * @author Christoph Schäbel

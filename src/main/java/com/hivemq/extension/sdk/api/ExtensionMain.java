@@ -44,10 +44,10 @@ public interface ExtensionMain {
      * <p>
      * If this method returns HiveMQ assumes that this extension is finished starting up.
      * <p>
-     * There are multiple options when this method can be called by HiveMQ:<br/>
+     * There are multiple options when this method can be called by HiveMQ:
      * <ul>
-     * <li>When HiveMQ starts up</li>
-     * <li>When the extension is enabled at runtime due to an administrative action</li>
+     *   <li>When HiveMQ starts up
+     *   <li>When the extension is enabled at runtime due to an administrative action
      * </ul>
      * It is possible to abort the extension start if the extension isn't ready for use (i.e. missing configuration
      * file) with
@@ -70,10 +70,10 @@ public interface ExtensionMain {
      * <p>
      * If this method returns HiveMQ assumes that this extension is finished shutting down.
      * <p>
-     * There are multiple options when this method can be called by HiveMQ:<br/>
+     * There are multiple options when this method can be called by HiveMQ:
      * <ul>
-     * <li>When HiveMQ shuts down</li>
-     * <li>When the extension is disabled at runtime due to an administrative action</li>
+     *   <li>When HiveMQ shuts down
+     *   <li>When the extension is disabled at runtime due to an administrative action
      * </ul>
      *
      * @param extensionStopInput  A {@link ExtensionStartInput}

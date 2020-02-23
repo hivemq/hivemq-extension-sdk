@@ -42,18 +42,18 @@ import java.util.Map;
  * The following services are available:
  *
  * <ul>
- * <li>{@link InitializerRegistry}</li>
- * <li>{@link GlobalInterceptorRegistry}</li>
- * <li>{@link SecurityRegistry}</li>
- * <li>{@link ManagedExtensionExecutorService}</li>
- * <li>{@link SubscriptionStore}</li>
- * <li>{@link PublishService}</li>
- * <li>{@link ClusterService}</li>
- * <li>{@link RetainedMessageStore}</li>
- * <li>{@link MetricRegistry}</li>
- * <li>{@link EventRegistry}</li>
- * <li>{@link ClientService}</li>
- * <li>{@link AdminService}</li>
+ *   <li>{@link InitializerRegistry}
+ *   <li>{@link GlobalInterceptorRegistry}
+ *   <li>{@link SecurityRegistry}
+ *   <li>{@link ManagedExtensionExecutorService}
+ *   <li>{@link SubscriptionStore}
+ *   <li>{@link PublishService}
+ *   <li>{@link ClusterService}
+ *   <li>{@link RetainedMessageStore}
+ *   <li>{@link MetricRegistry}
+ *   <li>{@link EventRegistry}
+ *   <li>{@link ClientService}
+ *   <li>{@link AdminService}
  * </ul>
  *
  * @author Christoph Schäbel

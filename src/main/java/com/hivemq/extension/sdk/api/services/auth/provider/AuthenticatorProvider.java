@@ -35,14 +35,14 @@ public interface AuthenticatorProvider {
     /**
      * This method is called for each client by HiveMQ.
      * <p>
-     * Either the same {@link Authenticator} (stateless or must be thread-safe)<br/> or a new one (stateful, must not be
+     * Either the same {@link Authenticator} (stateless or must be thread-safe) or a new one (stateful, must not be
      * thread-safe) can be supplied on each call.
      * <p>
      * <code>null</code> can be returned if no authentication for the client is necessary.
      *
-     * @return An implementation of {@link SimpleAuthenticator}. {@code null} is ignored and has the same effect as if
-     *         this provider would had not been set for the connecting client. Returning any other implementation of the
-     *         {@link Authenticator} interface is an error.
+     * @return An implementation of {@link SimpleAuthenticator}. <code>null</code> is ignored and has the same effect as
+     *         if this provider would had not been set for the connecting client. Returning any other implementation of
+     *         the {@link Authenticator} interface is an error.
      * @since 4.0.0, CE 2019.1
      */
     @Nullable Authenticator getAuthenticator(@NotNull AuthenticatorProviderInput authenticatorProviderInput);

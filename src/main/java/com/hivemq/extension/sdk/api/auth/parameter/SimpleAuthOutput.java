@@ -34,19 +34,19 @@ import java.time.Duration;
  * <p>
  * It can be used to
  * <ul>
- *   <li>Authenticate the client successfully OR</li>
- *   <li>Fail authentication OR</li>
- *   <li>Delegate the decision to the next extension</li>
+ *   <li>Authenticate the client successfully OR
+ *   <li>Fail authentication OR
+ *   <li>Delegate the decision to the next extension
  * </ul>
  * <p>
  * Exactly one of the decisive methods must be called:
  * <ul>
- *   <li>{@link #authenticateSuccessfully()}</li>
- *   <li>{@link #failAuthentication()}</li>
- *   <li>{@link #failAuthentication(ConnackReasonCode)}</li>
- *   <li>{@link #failAuthentication(String)}</li>
- *   <li>{@link #failAuthentication(ConnackReasonCode, String)}</li>
- *   <li>{@link #nextExtensionOrDefault()}</li>
+ *   <li>{@link #authenticateSuccessfully()}
+ *   <li>{@link #failAuthentication()}
+ *   <li>{@link #failAuthentication(ConnackReasonCode)}
+ *   <li>{@link #failAuthentication(String)}
+ *   <li>{@link #failAuthentication(ConnackReasonCode, String)}
+ *   <li>{@link #nextExtensionOrDefault()}
  * </ul>
  * Subsequent calls will fail with an {@link UnsupportedOperationException}.
  * <p>
@@ -77,8 +77,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
     /**
      * Fails the authentication of the client.
      * <p>
-     * A CONNACK packet with reason code {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED
-     * NOT_AUTHORIZED} and reason string <code>Authentication failed</code> is sent to the client.
+     * A CONNACK packet with reason code {@link ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason string
+     * <code>Authentication failed</code> is sent to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
@@ -106,8 +106,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
     /**
      * Fails the authentication of the client.
      * <p>
-     * A CONNACK packet with reason code {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED
-     * NOT_AUTHORIZED} and the specified reason string is sent to the client.
+     * A CONNACK packet with reason code {@link ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and the specified
+     * reason string is sent to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *

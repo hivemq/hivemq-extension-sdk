@@ -38,8 +38,8 @@ public interface ClientLifecycleEventListenerProvider {
      * must not be thread-safe) for each MQTT connection.
      *
      * @param clientLifecycleEventListenerProviderInput The {@link ClientLifecycleEventListenerProviderInput}.
-     * @return An implementation of {@link ClientLifecycleEventListener}. The return value {@code null} is ignored and
-     *         has the same effect as if this provider would had not been set for the connecting client.
+     * @return An implementation of {@link ClientLifecycleEventListener}. The return value <code>null</code> is ignored
+     *         and has the same effect as if this provider would had not been set for the connecting client.
      * @since 4.0.0, CE 2019.1
      */
     @Nullable ClientLifecycleEventListener getClientLifecycleEventListener(

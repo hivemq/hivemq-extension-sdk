@@ -28,7 +28,6 @@ import com.hivemq.extension.sdk.api.interceptor.disconnect.parameter.DisconnectI
  * <p>
  * If the same instance is shared between multiple clients it can be called in different Threads and must therefore be
  * thread-safe.
- * </p>
  *
  * @author Robin Atherton
  * @since 4.3.0, CE 2020.1

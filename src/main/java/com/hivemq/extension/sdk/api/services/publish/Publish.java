@@ -56,7 +56,7 @@ public interface Publish {
     @NotNull Qos getQos();
 
     /**
-     * If <b>true</b> this message is a retained message, for <b>false</b> this is just a normal publish.
+     * If <code>true</code> this message is a retained message, for <code>false</code> this is just a normal publish.
      *
      * @return The retain flag.
      * @since 4.0.0, CE 2019.1

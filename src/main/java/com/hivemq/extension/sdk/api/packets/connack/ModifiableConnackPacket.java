@@ -36,7 +36,7 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      * Switching from successful to unsuccessful and vice versa is not supported.
      *
      * @param reasonCode The reason code to set.
-     * @throws NullPointerException  If reason code is <b>null</b>.
+     * @throws NullPointerException  If reason code is <code>null</code>.
      * @throws IllegalStateException If switching from successful reason code to unsuccessful reason code or vice versa.
      *                               Check out {@link ConnackReasonCode} to see what reason code counts as a success or
      *                               unsuccessful code.

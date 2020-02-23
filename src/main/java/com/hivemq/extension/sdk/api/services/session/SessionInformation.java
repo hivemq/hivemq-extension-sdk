@@ -44,7 +44,7 @@ public interface SessionInformation {
     long getSessionExpiryInterval();
 
     /**
-     * @return <b>true</b> if the client is still connected, else <b>false</b>.
+     * @return <code>true</code> if the client is still connected, else <code>false</code>.
      * @since 4.0.0, CE 2019.1
      */
     boolean isConnected();

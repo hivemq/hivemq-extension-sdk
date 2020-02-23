@@ -53,8 +53,8 @@ public interface ClientService {
      * exceeded.
      *
      * @param clientId The client identifier of the client.
-     * @return A {@link CompletableFuture} which contains <b>true</b>, if a certain client is currently connected and
-     *         <b>false</b> otherwise.
+     * @return A {@link CompletableFuture} which contains <code>true</code>, if a certain client is currently connected
+     *         and <code>false</code> otherwise.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Boolean> isClientConnected(@NotNull String clientId);
@@ -84,8 +84,8 @@ public interface ClientService {
      * exceeded.
      *
      * @param clientId The client identifier of the client to disconnect.
-     * @return A {@link CompletableFuture} which contains a {@link Boolean} that is <b>true</b> when the client has been
-     *         disconnected and <b>false</b> if no client with that id was found.
+     * @return A {@link CompletableFuture} which contains a {@link Boolean} that is <code>true</code> when the client
+     *         has been disconnected and <code>false</code> if no client with that id was found.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Boolean> disconnectClient(@NotNull String clientId);
@@ -103,10 +103,10 @@ public interface ClientService {
      * exceeded.
      *
      * @param clientId           The client identifier of the client to disconnect.
-     * @param preventWillMessage If <b>true</b> the Will message for this client is not published when the client gets
-     *                           disconnected.
-     * @return A {@link CompletableFuture} which contains a {@link Boolean} that is <b>true</b> when the client has been
-     *         disconnected and <b>false</b> if no client with that id was found.
+     * @param preventWillMessage If <code>true</code> the Will message for this client is not published when the client
+     *                           gets disconnected.
+     * @return A {@link CompletableFuture} which contains a {@link Boolean} that is <code>true</code> when the client
+     *         has been disconnected and <code>false</code> if no client with that id was found.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Boolean> disconnectClient(@NotNull String clientId, boolean preventWillMessage);
@@ -123,12 +123,12 @@ public interface ClientService {
      * exceeded.
      *
      * @param clientId           The client identifier of the client to disconnect.
-     * @param preventWillMessage If <b>true</b> the Will message for this client is not published when the client gets
-     *                           disconnected.
+     * @param preventWillMessage If <code>true</code> the Will message for this client is not published when the client
+     *                           gets disconnected.
      * @param reasonCode         The reason code for disconnecting this client.
      * @param reasonString       The user defined reason string for disconnecting this client.
-     * @return A {@link CompletableFuture} which contains a {@link Boolean} that is <b>true</b> when the client has been
-     *         disconnected and <b>false</b> if no client with that id was found.
+     * @return A {@link CompletableFuture} which contains a {@link Boolean} that is <code>true</code> when the client
+     *         has been disconnected and <code>false</code> if no client with that id was found.
      * @throws IllegalArgumentException If the disconnect reason code must not be used for outbound disconnect packets
      *                                  from the server to a client.
      * @see DisconnectReasonCode What reason codes exist for outbound disconnect packets from the server to a
@@ -152,8 +152,8 @@ public interface ClientService {
      * exists.
      *
      * @param clientId The client identifier of the client which session should be invalidated.
-     * @return A {@link CompletableFuture} succeeding with a {@link Boolean} that is <b>true</b> when the client has
-     *         been actively disconnected by the broker otherwise <b>false</b>.
+     * @return A {@link CompletableFuture} succeeding with a {@link Boolean} that is <code>true</code> when the client
+     *         has been actively disconnected by the broker otherwise <code>false</code>.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Boolean> invalidateSession(@NotNull String clientId);

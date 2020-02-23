@@ -34,7 +34,7 @@ public class InvalidTopicException extends Exception {
     private final @NotNull String topicFilter;
 
     /**
-     * Flag that if <b>true</b> will also fill in the stack trace for the exception.
+     * Flag that if <code>true</code> will also fill in the stack trace for the exception.
      *
      * @since 4.0.0, CE 2019.1
      */
