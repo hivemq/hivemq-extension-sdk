@@ -63,14 +63,14 @@ tasks.withType(Jar) {
 }
 
 tasks.javadoc {
-    title "${project.readableName} ${project.version} API"
+    title = "${project.readableName} ${project.version} API"
 
     options.charSet = 'UTF-8'
     options.encoding = 'UTF-8'
 
     options.addStringOption('Xdoclint:none', '-quiet')
     options.addStringOption('-html5')
-    options.addBooleanOption '-no-module-directories', true
+    options.addBooleanOption('-no-module-directories', true)
 
     doLast {
         javaexec {
@@ -187,8 +187,6 @@ bintray {
 /* ******************** checks ******************** */
 
 license {
-    header file("${projectDir}/HEADER")
-    mapping {
-        java = 'SLASHSTAR_STYLE'
-    }
+    header = file("${projectDir}/HEADER")
+    mapping('java', 'SLASHSTAR_STYLE')
 }
