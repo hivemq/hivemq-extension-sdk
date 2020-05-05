@@ -49,7 +49,7 @@ It covers the core concepts and shows how to set up your development environment
 
 == Example Extensions
 
-You can find many example extensions by browsing the {hivemq-github}[HiveMQ Github page].
+You can find many example extensions by browsing the {hivemq-github}[HiveMQ GitHub space].
 
 Check out the {hivemq-marketplace}[HiveMQ Marketplace] for officially supported extensions.
 
