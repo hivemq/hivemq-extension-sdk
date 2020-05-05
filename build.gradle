@@ -42,8 +42,13 @@ dependencies {
 
 /* ******************** java ******************** */
 
-sourceCompatibility = JavaVersion.VERSION_1_10
-targetCompatibility = JavaVersion.VERSION_1_10
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    withJavadocJar()
+    withSourcesJar()
+}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -57,7 +62,7 @@ tasks.withType(Jar) {
     }
 }
 
-javadoc {
+tasks.javadoc {
     title "${project.readableName} ${project.version} API"
 
     options.charSet = 'UTF-8'
@@ -75,20 +80,6 @@ javadoc {
     }
 }
 
-task javadocJar(type: Jar) {
-    group 'documentation'
-
-    from tasks.javadoc
-    classifier 'javadoc'
-}
-
-task sourcesJar(type: Jar) {
-    group 'build'
-
-    from sourceSets.main.allSource
-    classifier 'sources'
-}
-
 
 /* ******************** publishing ******************** */
 
@@ -97,8 +88,6 @@ publishing {
         extensionSdk(MavenPublication) {
 
             from components.java
-            artifact tasks.javadocJar
-            artifact tasks.sourcesJar
 
             pom {
                 name = project.readableName
@@ -132,6 +121,20 @@ publishing {
                         organization = project.vendor
                         organizationUrl = project.url
                     }
+                    developer {
+                        id = 'sauroter'
+                        name = 'Georg Held'
+                        email = 'georg.held@hivemq.com'
+                        organization = project.vendor
+                        organizationUrl = project.url
+                    }
+                    developer {
+                        id = 'SgtSilvio'
+                        name = 'Silvio Giebl'
+                        email = 'silvio.giebl@hivemq.com'
+                        organization = project.vendor
+                        organizationUrl = project.url
+                    }
                 }
                 scm {
                     connection = project.scmConnection
@@ -148,8 +151,8 @@ publishing {
 }
 
 bintray {
-    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
-    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    user = project.findProperty('bintrayUser') ?: System.getenv('BINTRAY_USER')
+    key = project.findProperty('bintrayApiKey') ?: System.getenv('BINTRAY_API_KEY')
     publications = publishing.publications.withType(MavenPublication).stream().collect { it.name }
     dryRun = false
     publish = false
@@ -164,8 +167,6 @@ bintray {
         vcsUrl = project.githubUrl + '.git'
         licenses = [project.licenseShortName]
         labels = ['hivemq', 'extension', 'sdk', 'mqtt', 'mqtt5']
-        githubRepo = project.githubOrg + '/' + project.githubRepo
-        githubReleaseNotesFile = 'README.adoc'
         publicDownloadNumbers = false
         version {
             released = new Date()
@@ -174,8 +175,8 @@ bintray {
             }
             mavenCentralSync {
                 sync = false
-                user = project.hasProperty('mavenCentralUser') ? project.property('mavenCentralUser') : System.getenv('MAVEN_CENTRAL_USER')
-                password = project.hasProperty('mavenCentralKey') ? project.property('mavenCentralKey') : System.getenv('MAVEN_CENTRAL_KEY')
+                user = project.findProperty('mavenCentralUser') ?: System.getenv('MAVEN_CENTRAL_USER')
+                password = project.findProperty('mavenCentralKey') ?: System.getenv('MAVEN_CENTRAL_KEY')
                 close = '0'
             }
         }
