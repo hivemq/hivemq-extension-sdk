@@ -3,28 +3,56 @@ plugins {
     id 'maven-publish'
     id 'com.github.hierynomus.license'
     id 'com.jfrog.bintray'
+    id 'com.github.sgtsilvio.gradle.metadata'
 }
 
 
 /* ******************** metadata ******************** */
 
 group = 'com.hivemq'
-version = '4.3.0'
 description = 'SDK for the development of HiveMQ extensions'
 
-ext {
+metadata {
     readableName = 'HiveMQ Extension SDK'
-    url = 'https://www.hivemq.com/'
-    vendor = 'dc-square GmbH'
-    githubOrg = 'hivemq'
-    githubRepo = 'hivemq-extension-sdk'
-    githubUrl = 'https://github.com/' + githubOrg + '/' + githubRepo
-    scmConnection = 'scm:git:git://github.com/' + githubOrg + '/' + githubRepo + '.git'
-    scmDeveloperConnection = 'scm:git:ssh://git@github.com/' + githubOrg + '/' + githubRepo + '.git'
-    issuesUrl = githubUrl + '/issues'
-    licenseShortName = 'Apache-2.0'
-    licenseReadableName = 'The Apache License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    organization {
+        name = 'dc-square GmbH'
+        url = 'https://www.hivemq.com/'
+    }
+    license {
+        apache2()
+    }
+    developers {
+        developer {
+            it.id = 'cschaebe'
+            it.name = 'Christoph Schaebel'
+            it.email = 'christoph.schaebel@hivemq.com'
+        }
+        developer {
+            it.id = 'lbrandl'
+            it.name = 'Lukas Brandl'
+            it.email = 'lukas.brandl@hivemq.com'
+        }
+        developer {
+            it.id = 'flimpoeck'
+            it.name = 'Florian Limpoeck'
+            it.email = 'florian.limpoeck@hivemq.com'
+        }
+        developer {
+            it.id = 'sauroter'
+            it.name = 'Georg Held'
+            it.email = 'georg.held@hivemq.com'
+        }
+        developer {
+            it.id = 'SgtSilvio'
+            it.name = 'Silvio Giebl'
+            it.email = 'silvio.giebl@hivemq.com'
+        }
+    }
+    github {
+        org = 'hivemq'
+        repo = 'hivemq-extension-sdk'
+        issues()
+    }
 }
 
 
@@ -35,8 +63,8 @@ repositories {
 }
 
 dependencies {
-    compile group: 'io.dropwizard.metrics', name: 'metrics-core', version: '4.0.2'
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'io.dropwizard.metrics', name: 'metrics-core', version: property('metrics.version')
+    compile group: 'org.slf4j', name: 'slf4j-api', version: property('slf4j.version')
 }
 
 
@@ -57,13 +85,13 @@ tasks.withType(JavaCompile) {
 tasks.withType(Jar) {
     manifest {
         attributes 'Implementation-Title': project.name
-        attributes 'Implementation-Vendor': project.vendor
+        attributes 'Implementation-Vendor': metadata.organization.name
         attributes 'Implementation-Version': project.version
     }
 }
 
 tasks.javadoc {
-    title = "${project.readableName} ${project.version} API"
+    title = "${metadata.readableName} ${project.version} API"
 
     options.charSet = 'UTF-8'
     options.encoding = 'UTF-8'
@@ -86,66 +114,7 @@ tasks.javadoc {
 publishing {
     publications {
         extensionSdk(MavenPublication) {
-
             from components.java
-
-            pom {
-                name = project.readableName
-                description = project.description
-                url = project.url
-                licenses {
-                    license {
-                        name = project.licenseReadableName
-                        url = project.licenseUrl
-                    }
-                }
-                developers {
-                    developer {
-                        id = 'cschaebe'
-                        name = 'Christoph Schaebel'
-                        email = 'christoph.schaebel@hivemq.com'
-                        organization = project.vendor
-                        organizationUrl = project.url
-                    }
-                    developer {
-                        id = 'lbrandl'
-                        name = 'Lukas Brandl'
-                        email = 'lukas.brandl@hivemq.com'
-                        organization = project.vendor
-                        organizationUrl = project.url
-                    }
-                    developer {
-                        id = 'flimpoeck'
-                        name = 'Florian Limpoeck'
-                        email = 'florian.limpoeck@hivemq.com'
-                        organization = project.vendor
-                        organizationUrl = project.url
-                    }
-                    developer {
-                        id = 'sauroter'
-                        name = 'Georg Held'
-                        email = 'georg.held@hivemq.com'
-                        organization = project.vendor
-                        organizationUrl = project.url
-                    }
-                    developer {
-                        id = 'SgtSilvio'
-                        name = 'Silvio Giebl'
-                        email = 'silvio.giebl@hivemq.com'
-                        organization = project.vendor
-                        organizationUrl = project.url
-                    }
-                }
-                scm {
-                    connection = project.scmConnection
-                    developerConnection = project.scmDeveloperConnection
-                    url = project.githubUrl
-                }
-                issueManagement {
-                    system = 'github'
-                    url = project.issuesUrl
-                }
-            }
         }
     }
 }
@@ -162,10 +131,10 @@ bintray {
         repo = 'HiveMQ'
         name = 'hivemq-extension-sdk'
         desc = project.description
-        websiteUrl = project.githubUrl
-        issueTrackerUrl = project.issuesUrl
-        vcsUrl = project.githubUrl + '.git'
-        licenses = [project.licenseShortName]
+        websiteUrl = metadata.url
+        issueTrackerUrl = metadata.issueManagement.url
+        vcsUrl = metadata.scm.url
+        licenses = [metadata.license.shortName]
         labels = ['hivemq', 'extension', 'sdk', 'mqtt', 'mqtt5']
         publicDownloadNumbers = false
         version {
