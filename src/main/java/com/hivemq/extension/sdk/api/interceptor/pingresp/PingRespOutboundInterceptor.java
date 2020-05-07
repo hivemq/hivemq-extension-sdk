@@ -38,7 +38,7 @@ public interface PingRespOutboundInterceptor extends Interceptor {
     /**
      * When a {@link PingRespOutboundInterceptor} is set through any extension, this method gets called for every
      * outbound PINGRESP packet from any MQTT client.
-     * <p/>
+     * <p>
      * The execution of interceptor delays the handling of the PINGRESP. Therefore the client may disconnect if the
      * execution of the interceptor takes to long.
      *
