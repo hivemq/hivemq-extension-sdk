@@ -20,7 +20,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ScheduledFuture;
 
 /**
- * Abstract class for combining of {@link ScheduledFuture<T>} and {@link CompletableFuture<T>}.
+ * Abstract class for combining of {@link ScheduledFuture} and {@link CompletableFuture}.
  *
  * @author Florian Limpöck
  * @since 4.0.0, CE 2019.1

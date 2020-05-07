@@ -26,6 +26,7 @@ package com.hivemq.extension.sdk.api.packets.connect;
  * The reason codes are translated as follows:
  *
  * <table border="1">
+ *   <caption>Reason code mapping</caption>
  *   <tr>
  *     <th>MQTT 3 CONNACK reason code</th>
  *     <th>ConnackReasonCode</th>
