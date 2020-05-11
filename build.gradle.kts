@@ -95,6 +95,7 @@ tasks.javadoc {
     title = "${metadata.readableName} ${project.version} API"
 
     options.encoding = "UTF-8"
+    (options as StandardJavadocDocletOptions).charSet = "UTF-8"
 
     doLast {
         javaexec {
