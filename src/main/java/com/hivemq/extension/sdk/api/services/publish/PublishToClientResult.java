@@ -24,7 +24,7 @@ package com.hivemq.extension.sdk.api.services.publish;
  */
 public enum PublishToClientResult {
 
-     /**
+    /**
      * The client had a matching subscription.
      *
      * @since 4.0.0, CE 2019.1

@@ -44,11 +44,14 @@ public interface AuthPacket {
 
     /**
      * The optional authentication data of the AUTH packet.
+     * <p>
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a {@link
+     * java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @return An {@link Optional} containing the authentication data if present.
      * @since 4.3.0, CE 2020.1
      */
-    @NotNull Optional<ByteBuffer> getAuthenticationData();
+    @NotNull Optional<@Immutable ByteBuffer> getAuthenticationData();
 
     /**
      * The optional authentication data of the AUTH packet as a byte array.
