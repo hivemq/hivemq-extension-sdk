@@ -17,6 +17,7 @@
 package com.hivemq.extension.sdk.api.client.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 import java.net.InetAddress;
@@ -85,9 +86,12 @@ public interface ProxyInformation {
      * raw TLVs that are sent by the load balancer.
      * <p>
      * The key is the byte value of the TLV type and the value is the raw TLV as byte value.
+     * <p>
+     * The ByteBuffers returned by this method are {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @return A {@link Map} with raw TLVs.
      * @since 4.0.0, CE 2019.1
      */
-    @NotNull Map<Byte, ByteBuffer> getRawTLVs();
+    @NotNull Map<Byte, @Immutable ByteBuffer> getRawTLVs();
 }

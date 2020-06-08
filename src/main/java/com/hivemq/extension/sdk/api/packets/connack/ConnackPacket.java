@@ -16,6 +16,7 @@
 
 package com.hivemq.extension.sdk.api.packets.connack;
 
+import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode;
 import com.hivemq.extension.sdk.api.packets.general.Qos;
@@ -223,9 +224,12 @@ public interface ConnackPacket {
      * contents of this data are defined by the authentication method.
      * <p>
      * For an MQTT 3 client this {@link Optional} for the MQTT 5 property will always be empty.
+     * <p>
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @return An {@link Optional} that contains the authentication data if present.
      * @since 4.2.0, CE 2020.1
      */
-    @NotNull Optional<ByteBuffer> getAuthenticationData();
+    @NotNull Optional<@Immutable ByteBuffer> getAuthenticationData();
 }

@@ -17,6 +17,7 @@
 package com.hivemq.extension.sdk.api.client.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.ThreadSafe;
 import com.hivemq.extension.sdk.api.services.exception.LimitExceededException;
@@ -88,12 +89,15 @@ public interface ConnectionAttributeStore {
 
     /**
      * Retrieves the value of the connection attribute with the given key for the connected client.
+     * <p>
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @param key The key of the connection attribute.
      * @return An {@link Optional} containing the value of the connection attribute if present.
      * @since 4.0.0, CE 2019.1
      */
-    @NotNull Optional<ByteBuffer> get(@NotNull String key);
+    @NotNull Optional<@Immutable ByteBuffer> get(@NotNull String key);
 
     /**
      * Retrieves the value of the connection attribute with the given key for the connected client as UTF-8 string.
@@ -111,7 +115,7 @@ public interface ConnectionAttributeStore {
      * @param key     The key of the connection attribute.
      * @param charset The {@link Charset} of the value of the connection attribute.
      * @return An {@link Optional} containing the value of the connection attribute as a string with the given charset
-     *         if present.
+     * if present.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getAsString(@NotNull String key, @NotNull Charset charset);
@@ -119,19 +123,25 @@ public interface ConnectionAttributeStore {
     /**
      * Retrieves all connection attributes for the connected client.
      *
+     * The ByteBuffers returned by this method are {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
+     *
      * @return An {@link Optional} containing all connection attributes as a map of key and value pairs if present.
      * @since 4.0.0, CE 2019.1
      */
-    @NotNull Optional<Map<String, ByteBuffer>> getAll();
+    @NotNull Optional<Map<String, @Immutable ByteBuffer>> getAll();
 
     /**
      * Removes the connection attribute with the given key for the connected client.
+     * <p>
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @param key The key of the connection attribute.
      * @return An {@link Optional} containing the value of the removed connection attribute if it was present.
      * @since 4.0.0, CE 2019.1
      */
-    @NotNull Optional<ByteBuffer> remove(@NotNull String key);
+    @NotNull Optional<@Immutable ByteBuffer> remove(@NotNull String key);
 
     /**
      * Clears all connection attributes for the connected client.
