@@ -3,8 +3,9 @@ import java.util.*
 plugins {
     id("java-library")
     id("maven-publish")
-    id("com.github.hierynomus.license")
     id("com.jfrog.bintray")
+    id("com.github.hierynomus.license")
+    id("com.github.sgtsilvio.gradle.utf8")
     id("com.github.sgtsilvio.gradle.metadata")
 }
 
@@ -80,10 +81,6 @@ java {
     withSourcesJar()
 }
 
-tasks.withType<JavaCompile>().configureEach {
-    options.encoding = "UTF-8"
-}
-
 tasks.withType<Jar>().configureEach {
     manifest.attributes(
             "Implementation-Title" to project.name,
@@ -93,9 +90,6 @@ tasks.withType<Jar>().configureEach {
 
 tasks.javadoc {
     title = "${metadata.readableName} ${project.version} API"
-
-    options.encoding = "UTF-8"
-    (options as StandardJavadocDocletOptions).charSet = "UTF-8"
 
     doLast {
         javaexec {
