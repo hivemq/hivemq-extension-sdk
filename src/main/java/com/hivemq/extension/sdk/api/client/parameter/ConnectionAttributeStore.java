@@ -90,8 +90,8 @@ public interface ConnectionAttributeStore {
     /**
      * Retrieves the value of the connection attribute with the given key for the connected client.
      * <p>
-     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
-     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a {@link
+     * java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @param key The key of the connection attribute.
      * @return An {@link Optional} containing the value of the connection attribute if present.
@@ -115,14 +115,14 @@ public interface ConnectionAttributeStore {
      * @param key     The key of the connection attribute.
      * @param charset The {@link Charset} of the value of the connection attribute.
      * @return An {@link Optional} containing the value of the connection attribute as a string with the given charset
-     * if present.
+     *         if present.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Optional<String> getAsString(@NotNull String key, @NotNull Charset charset);
 
     /**
      * Retrieves all connection attributes for the connected client.
-     *
+     * <p>
      * The ByteBuffers returned by this method are {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
      * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
@@ -134,8 +134,8 @@ public interface ConnectionAttributeStore {
     /**
      * Removes the connection attribute with the given key for the connected client.
      * <p>
-     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
-     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a {@link
+     * java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @param key The key of the connection attribute.
      * @return An {@link Optional} containing the value of the removed connection attribute if it was present.

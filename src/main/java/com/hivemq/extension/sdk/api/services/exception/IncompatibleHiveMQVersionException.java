@@ -32,5 +32,6 @@ public class IncompatibleHiveMQVersionException extends Exception {
         INSTANCE.setStackTrace(new StackTraceElement[0]);
     }
 
-    private IncompatibleHiveMQVersionException() {}
+    private IncompatibleHiveMQVersionException() {
+    }
 }
