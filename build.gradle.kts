@@ -19,7 +19,7 @@ description = "SDK for the development of HiveMQ extensions"
 metadata {
     readableName = "HiveMQ Extension SDK"
     organization {
-        name = "dc-square GmbH"
+        name = "HiveMQ GmbH"
         url = "https://www.hivemq.com/"
     }
     license {
