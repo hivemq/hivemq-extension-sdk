@@ -186,7 +186,7 @@ public interface ClientService {
      * @param callback An {@link IterationCallback} that is called for every returned result.
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
      *         iteration is aborted manually with the {@link IterationContext}.
-     * @throws NullPointerException If the passed callback or callbackExecutor are null.
+     * @throws NullPointerException If the passed callback is null.
      * @since 4.2.0, CE 2020.1
      */
     @NotNull CompletableFuture<Void> iterateAllClients(@NotNull IterationCallback<SessionInformation> callback);
