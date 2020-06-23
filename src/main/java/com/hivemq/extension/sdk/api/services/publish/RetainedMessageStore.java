@@ -18,11 +18,17 @@ package com.hivemq.extension.sdk.api.services.publish;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.services.ManagedExtensionExecutorService;
 import com.hivemq.extension.sdk.api.services.exception.DoNotImplementException;
+import com.hivemq.extension.sdk.api.services.exception.IncompatibleHiveMQVersionException;
+import com.hivemq.extension.sdk.api.services.exception.IterationFailedException;
 import com.hivemq.extension.sdk.api.services.exception.RateLimitExceededException;
+import com.hivemq.extension.sdk.api.services.general.IterationCallback;
+import com.hivemq.extension.sdk.api.services.general.IterationContext;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
 
 /**
  * The retained message store allows the management of retained messages from within extensions.
@@ -85,4 +91,72 @@ public interface RetainedMessageStore {
      * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Void> addOrReplace(@NotNull RetainedPublish retainedPublish);
+
+    /**
+     * Iterate over all retained messages.
+     * <p>
+     * The callback is called once for each retained message. Passed to each execution of the callback is all
+     * information about the retained message, such as its payload and its metadata. Retained messages that have
+     * exceeded their message expiry interval are not included.
+     * <p>
+     * The callback is executed in the {@link ManagedExtensionExecutorService} per default. Use the overloaded methods
+     * to pass a custom executor for the callback. If you want to collect the results of each execution of the callback
+     * in a collection please make sure to use a concurrent collection (thread-safe), as the callback might be executed
+     * in another thread as the calling thread of this method.
+     * <p>
+     * The results are not sorted in any way, no ordering of any kind is guaranteed.
+     * <p>
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
+     * <p>
+     * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
+     * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
+     * <p>
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.4.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a {@link
+     * IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node leave
+     * or node join)
+     *
+     * @param callback An {@link IterationCallback} that is called for every returned result.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
+     *         iteration is aborted manually with the {@link IterationContext}.
+     * @throws NullPointerException If the passed callback is null.
+     * @since 4.4.0, CE 2020.3
+     */
+    @NotNull CompletableFuture<Void> iterateAllRetainedMessages(@NotNull IterationCallback<RetainedPublish> callback);
+
+    /**
+     * Iterate over all retained messages.
+     * <p>
+     * The callback is called once for each retained message. Passed to each execution of the callback is all
+     * information about the retained message, such as its payload and its metadata. Retained messages that have
+     * exceeded their message expiry interval are not included.
+     * <p>
+     * The callback is executed in the passed {@link Executor}. If you want to collect the results of each execution of
+     * the callback in a collection please make sure to use a concurrent collection (thread-safe), as the callback might
+     * be executed in another thread as the calling thread of this method.
+     * <p>
+     * The results are not sorted in any way, no ordering of any kind is guaranteed.
+     * <p>
+     * CAUTION: This method can be used in large scale deployments, but it is a very expensive operation. Do not call
+     * this method in short time intervals.
+     * <p>
+     * If you are searching for a specific entry in the results and have found what you are looking for, you can abort
+     * further iteration and save resources by calling {@link IterationContext#abortIteration()}.
+     * <p>
+     * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
+     * cluster have at least version 4.4.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
+     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a {@link
+     * IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node leave
+     * or node join)
+     *
+     * @param callback An {@link IterationCallback} that is called for every returned result.
+     * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
+     *         iteration is aborted manually with the {@link IterationContext}.
+     * @throws NullPointerException If the passed callback or callbackExecutor are null.
+     * @since 4.4.0, CE 2020.3
+     */
+    @NotNull CompletableFuture<Void> iterateAllRetainedMessages(
+            @NotNull IterationCallback<RetainedPublish> callback, Executor callbackExecutor);
 }
