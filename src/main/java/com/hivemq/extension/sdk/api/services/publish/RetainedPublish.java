@@ -31,6 +31,7 @@ public interface RetainedPublish extends Publish {
     /**
      * @return A new {@link RetainedPublishBuilder} to create a retained publish.
      * @since 4.0.0, CE 2019.1
+     * @deprecated Use {@link Builders#retainedPublish()} instead
      */
     static @NotNull RetainedPublishBuilder builder() {
         return Builders.retainedPublish();
