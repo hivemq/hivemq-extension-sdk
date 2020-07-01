@@ -42,6 +42,7 @@ public interface Publish {
     /**
      * @return A new {@link PublishBuilder} to create a {@link Publish}.
      * @since 4.0.0, CE 2019.1
+     * @deprecated Use {@link Builders#publish()} instead
      */
     static PublishBuilder builder() {
         return Builders.publish();

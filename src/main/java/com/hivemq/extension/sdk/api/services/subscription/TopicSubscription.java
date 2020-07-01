@@ -41,6 +41,7 @@ public interface TopicSubscription {
     /**
      * @return A new {@link TopicSubscriptionBuilder} to create a topic subscription.
      * @since 4.0.0, CE 2019.1
+     * @deprecated Use {@link Builders#topicSubscription()} instead
      */
     static TopicSubscriptionBuilder builder() {
         return Builders.topicSubscription();
