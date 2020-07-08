@@ -33,6 +33,7 @@ public interface RetainedPublish extends Publish {
      * @since 4.0.0, CE 2019.1
      * @deprecated Use {@link Builders#retainedPublish()} instead
      */
+    @Deprecated(since = "4.4.0")
     static @NotNull RetainedPublishBuilder builder() {
         return Builders.retainedPublish();
     }
