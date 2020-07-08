@@ -44,6 +44,7 @@ public interface Publish {
      * @since 4.0.0, CE 2019.1
      * @deprecated Use {@link Builders#publish()} instead
      */
+    @Deprecated(since = "4.4.0")
     static PublishBuilder builder() {
         return Builders.publish();
     }
