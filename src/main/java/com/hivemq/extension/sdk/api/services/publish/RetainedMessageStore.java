@@ -121,7 +121,7 @@ public interface RetainedMessageStore {
      * @param callback An {@link IterationCallback} that is called for every returned result.
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
      * iteration is aborted manually with the {@link IterationContext}.
-     * @throws NullPointerException If the passed callback is null.
+     * @throws NullPointerException if the passed callback is null.
      * @since 4.4.0, CE 2020.4
      */
     @NotNull CompletableFuture<Void> iterateAllRetainedMessages(@NotNull IterationCallback<RetainedPublish> callback);
@@ -155,7 +155,7 @@ public interface RetainedMessageStore {
      * @param callbackExecutor An {@link Executor} that the {@link IterationCallback} is executed in.
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
      * iteration is aborted manually with the {@link IterationContext}.
-     * @throws NullPointerException If the passed callback or callbackExecutor are null.
+     * @throws NullPointerException if the passed callback or callbackExecutor are null.
      * @since 4.4.0, CE 2020.4
      */
     @NotNull CompletableFuture<Void> iterateAllRetainedMessages(
