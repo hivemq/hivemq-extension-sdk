@@ -138,7 +138,7 @@ public interface SubscriptionStore {
     @NotNull CompletableFuture<Set<TopicSubscription>> getSubscriptions(@NotNull String clientID);
 
     /**
-     * Iterate over all subscribers that have a subscription that matches the passed topic. Includes subscribers with
+     * Iterate over all subscribers in the HiveMQ cluster that have a subscription that matches the passed topic. Includes subscribers with
      * direct matches of the topic or a match via a wildcard topic.
      * <p>
      * Example: For topic <code>example/topic</code> we would iterate over all clients with a subscription for
@@ -177,7 +177,7 @@ public interface SubscriptionStore {
             @NotNull String topic, @NotNull IterationCallback<SubscriberForTopicResult> callback);
 
     /**
-     * Iterate over all subscribers that have a subscription that matches the passed topic. Includes subscribers with
+     * Iterate over all subscribers in the HiveMQ cluster that have a subscription that matches the passed topic. Includes subscribers with
      * direct matches of the topic or a match via a wildcard topic.
      * <p>
      * Example: For topic <code>example/topic</code> we would iterate over all clients with a subscription for
@@ -218,7 +218,7 @@ public interface SubscriptionStore {
             @NotNull IterationCallback<SubscriberForTopicResult> callback);
 
     /**
-     * Iterate over all subscribers that have a subscription that matches the passed topic. Includes subscribers with
+     * Iterate over all subscribers in the HiveMQ cluster that have a subscription that matches the passed topic. Includes subscribers with
      * direct matches of the topic or a match via a wildcard topic.
      * <p>
      * Example: For topic <code>example/topic</code> we would iterate over all clients with a subscription for
@@ -259,7 +259,7 @@ public interface SubscriptionStore {
             @NotNull Executor callbackExecutor);
 
     /**
-     * Iterate over all subscribers that have a subscription that matches the passed topic. Includes subscribers with
+     * Iterate over all subscribers in the HiveMQ cluster that have a subscription that matches the passed topic. Includes subscribers with
      * direct matches of the topic or a match via a wildcard topic.
      * <p>
      * Example: For topic <code>example/topic</code> we would iterate over all clients with a subscription for
@@ -301,7 +301,7 @@ public interface SubscriptionStore {
             @NotNull Executor callbackExecutor);
 
     /**
-     * Iterate over all subscribers that have a subscription that equals the passed topic filter. Only includes
+     * Iterate over all subscribers in the HiveMQ cluster that have a subscription that equals the passed topic filter. Only includes
      * subscribers with direct matches of the topic.
      * <p>
      * Example 1: For topic filter <code>example/topic</code> we would iterate over all clients with a subscription for
@@ -345,7 +345,7 @@ public interface SubscriptionStore {
             @NotNull String topicFilter, @NotNull IterationCallback<SubscriberWithFilterResult> callback);
 
     /**
-     * Iterate over all subscribers that have a subscription that equals the passed topic filter. Only includes
+     * Iterate over all subscribers in the HiveMQ cluster that have a subscription that equals the passed topic filter. Only includes
      * subscribers with direct matches of the topic.
      * <p>
      * Example 1: For topic filter <code>example/topic</code> we would iterate over all clients with a subscription for
@@ -391,7 +391,7 @@ public interface SubscriptionStore {
             @NotNull IterationCallback<SubscriberWithFilterResult> callback);
 
     /**
-     * Iterate over all subscribers that have a subscription that equals the passed topic filter. Only includes
+     * Iterate over all subscribers in the HiveMQ cluster that have a subscription that equals the passed topic filter. Only includes
      * subscribers with direct matches of the topic.
      * <p>
      * Example 1: For topic filter <code>example/topic</code> we would iterate over all clients with a subscription for
@@ -437,7 +437,7 @@ public interface SubscriptionStore {
             @NotNull Executor callbackExecutor);
 
     /**
-     * Iterate over all subscribers that have a subscription that equals the passed topic filter. Only includes
+     * Iterate over all subscribers in the HiveMQ cluster that have a subscription that equals the passed topic filter. Only includes
      * subscribers with direct matches of the topic.
      * <p>
      * Example 1: For topic filter <code>example/topic</code> we would iterate over all clients with a subscription for
@@ -485,7 +485,7 @@ public interface SubscriptionStore {
             @NotNull Executor callbackExecutor);
 
     /**
-     * Iterate over all subscribers and their subscriptions.
+     * Iterate over all subscribers and their subscriptions in the HiveMQ cluster.
      * <p>
      * The callback is called once for each client. Passed to each execution of the callback are the client identifier
      * and a set of all its subscriptions. Clients without subscriptions are not included.
@@ -519,7 +519,7 @@ public interface SubscriptionStore {
             @NotNull IterationCallback<SubscriptionsForClientResult> callback);
 
     /**
-     * Iterate over all subscribers and their subscriptions.
+     * Iterate over all subscribers and their subscriptions in the HiveMQ cluster.
      * <p>
      * The callback is called once for each client. Passed to each execution of the callback are the client identifier
      * and a set of all its subscriptions. Clients without subscriptions are not included.

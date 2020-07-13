@@ -93,7 +93,7 @@ public interface RetainedMessageStore {
     @NotNull CompletableFuture<Void> addOrReplace(@NotNull RetainedPublish retainedPublish);
 
     /**
-     * Iterate over all retained messages.
+     * Iterate over all retained messages in the HiveMQ cluster.
      * <p>
      * The callback is called once for each retained message. Passed to each execution of the callback is all
      * information about the retained message, such as its payload and its metadata. Retained messages that have
@@ -127,7 +127,7 @@ public interface RetainedMessageStore {
     @NotNull CompletableFuture<Void> iterateAllRetainedMessages(@NotNull IterationCallback<RetainedPublish> callback);
 
     /**
-     * Iterate over all retained messages.
+     * Iterate over all retained messages in the HiveMQ cluster.
      * <p>
      * The callback is called once for each retained message. Passed to each execution of the callback is all
      * information about the retained message, such as its payload and its metadata. Retained messages that have

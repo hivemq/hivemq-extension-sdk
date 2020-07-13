@@ -159,7 +159,7 @@ public interface ClientService {
     @NotNull CompletableFuture<Boolean> invalidateSession(@NotNull String clientId);
 
     /**
-     * Iterate over all clients and their session information.
+     * Iterate over all clients and their session information in the HiveMQ cluster.
      * <p>
      * The callback is called once for each client. Passed to each execution of the callback are the client identifier
      * and its session information. Clients that have exceeded their session expiry interval are not included.
@@ -192,7 +192,7 @@ public interface ClientService {
     @NotNull CompletableFuture<Void> iterateAllClients(@NotNull IterationCallback<SessionInformation> callback);
 
     /**
-     * Iterate over all clients and their session information.
+     * Iterate over all clients and their session information in the HiveMQ cluster.
      * <p>
      * The callback is called once for each client. Passed to each execution of the callback are the client identifier
      * and its session information. Clients that have exceeded their session expiry interval are not included.
