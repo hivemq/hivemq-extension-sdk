@@ -18,6 +18,7 @@ package com.hivemq.extension.sdk.api.auth.parameter;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extension.sdk.api.annotations.Nullable;
 
 /**
  * An instance of this interface is provided by the {@link SimpleAuthOutput} and can be used to configure client
@@ -59,4 +60,20 @@ public interface ModifiableClientSettings {
      * @since 4.2.0, CE 2020.1
      */
     @NotNull OverloadProtectionThrottlingLevel getOverloadProtectionThrottlingLevel();
+
+    /**
+     * Set the queue size maximum of the client to the given value.
+     * The new value overwrites the default maximum.
+     *
+     * @param queueSizeMaximum To be used for this client.
+     * @throws IllegalArgumentException If the value is less than 1.
+     * @since 4.4.0
+     */
+    void setClientQueueSizeMaximum(long queueSizeMaximum);
+
+    /**
+     * @return The value that will be used as queue size maximum for this client or null if the default is used.
+     * @since 4.4.0
+     */
+    @Nullable Long getQueueSizeMaximum();
 }
