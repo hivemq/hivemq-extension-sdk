@@ -20,6 +20,8 @@ import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
 
+import java.util.Optional;
+
 /**
  * An instance of this interface is provided by the {@link SimpleAuthOutput} and can be used to configure client
  * specific parameters and restrictions.
@@ -72,8 +74,8 @@ public interface ModifiableClientSettings {
     void setClientQueueSizeMaximum(long queueSizeMaximum);
 
     /**
-     * @return The value that will be used as queue size maximum for this client or null if the default is used.
+     * @return The value that will be used as queue size maximum for this client. The value is not present if the default is used.
      * @since 4.4.0
      */
-    @Nullable Long getQueueSizeMaximum();
+    @NotNull Optional<Long> getQueueSizeMaximum();
 }
