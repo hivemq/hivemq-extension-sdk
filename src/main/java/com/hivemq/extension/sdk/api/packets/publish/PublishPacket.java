@@ -163,4 +163,17 @@ public interface PublishPacket {
      * @since 4.0.0, CE 2019.1
      */
     @Immutable @NotNull UserProperties getUserProperties();
+
+    /**
+     * The arrival timestamp of the PUBLISH.
+     * <p>
+     * For an incoming PUBLISH message the timestamp is set to the moment that the message arrived at the broker.
+     * For a message created via the Extension SDK the timestamp is set to the moment that the message is passed to PublishService.
+     * <p>
+     * The returned timestamp is a UNIX timestamp since midnight, January 1, 1970 UTC in milliseconds
+     *
+     * @return The timestamp.
+     * @since 4.4.0
+     */
+    long getTimestamp();
 }
