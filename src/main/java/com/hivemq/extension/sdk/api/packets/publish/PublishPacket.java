@@ -173,7 +173,7 @@ public interface PublishPacket {
      * The returned timestamp is a UNIX timestamp since midnight, January 1, 1970 UTC in milliseconds
      *
      * @return The timestamp.
-     * @since 4.4.0
+     * @since 4.4.0, CE 2020.4
      */
     long getTimestamp();
 }
