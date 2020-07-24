@@ -72,10 +72,4 @@ public interface ModifiableClientSettings {
      * @since 4.4.0
      */
     void setClientQueueSizeMaximum(long queueSizeMaximum);
-
-    /**
-     * @return The value that will be used as queue size maximum for this client. The value is not present if the default is used.
-     * @since 4.4.0
-     */
-    @NotNull Optional<Long> getQueueSizeMaximum();
 }
