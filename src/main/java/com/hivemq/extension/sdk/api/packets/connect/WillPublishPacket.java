@@ -50,9 +50,7 @@ public interface WillPublishPacket extends PublishPacket {
     long getWillDelay();
 
     /**
-     * The creation timestamp of the Will Publish.
-     * <p>
-     * For a will publish the timestamp is set to the moment that the CONNECT message arrived at the broker.
+     * The timestamp when the CONNECT packet with the Will Publish arrived at the broker.
      * <p>
      * When the Will Publish is sent to subscribers (after the client disconnects ungracefully and the Will delay has
      * passed) the created PUBLISH packet will carry the timestamp of the delivery start.
