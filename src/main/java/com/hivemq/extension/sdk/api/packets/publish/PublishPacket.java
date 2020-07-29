@@ -167,9 +167,12 @@ public interface PublishPacket {
     /**
      * The arrival timestamp of the PUBLISH.
      * <p>
-     * For an incoming PUBLISH message the timestamp is set to the moment that the message arrived at the broker.
-     * For a message created via the Extension SDK the timestamp is set to the moment that the message is passed to
-     * PublishService.
+     * For an incoming PUBLISH message the timestamp represents the moment when the message arrived at the broker.
+     * For a message created via the Extension SDK the timestamp represents the moment when the message is passed to
+     * the PublishService.
+     * <p>
+     * For a Will Publish that is sent to subscribers, the timestamp represents the moment when the delivery started
+     * (after the client disconnected ungracefully and the Will delay has passed).
      * <p>
      * The returned timestamp is a UNIX timestamp since midnight, January 1, 1970 UTC in milliseconds.
      *

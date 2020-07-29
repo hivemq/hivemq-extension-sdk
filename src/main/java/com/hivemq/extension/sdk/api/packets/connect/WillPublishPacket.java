@@ -54,9 +54,8 @@ public interface WillPublishPacket extends PublishPacket {
      * <p>
      * For a will publish the timestamp is set to the moment that the CONNECT message arrived at the broker.
      * <p>
-     * The timestamp in the Will Publish packet that is sent to subscribers after the client disconnects is set to the
-     * moment when the Will Publish is triggered. The Will Publish is triggered after a client disconnects and the will
-     * delay is exceeded.
+     * When the Will Publish is sent to subscribers (after the client disconnects ungracefully and the Will delay has passed)
+     * the created PUBLISH packet will carry the timestamp of the delivery start.
      * <p>
      * The returned timestamp is a UNIX timestamp since midnight, January 1, 1970 UTC in milliseconds.
      *
