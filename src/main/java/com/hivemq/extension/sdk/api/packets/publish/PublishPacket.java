@@ -168,6 +168,7 @@ public interface PublishPacket {
      * The arrival timestamp of the PUBLISH.
      * <p>
      * For an incoming PUBLISH message the timestamp represents the moment when the message arrived at the broker.
+     * <p>
      * For a message created via the Extension SDK the timestamp represents the moment when the message is passed to
      * the PublishService.
      * <p>
