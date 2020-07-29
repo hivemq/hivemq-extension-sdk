@@ -48,4 +48,18 @@ public interface WillPublishPacket extends PublishPacket {
      * @since 4.0.0, CE 2019.1
      */
     long getWillDelay();
+
+    /**
+     * The timestamp when the CONNECT packet with the Will Publish arrived at the broker.
+     * <p>
+     * When the Will Publish is sent to subscribers (after the client disconnected ungracefully and the Will delay has passed)
+     * the created PUBLISH packet will carry the timestamp that represents the moment when the delivery started.
+     * <p>
+     * The returned timestamp is a UNIX timestamp since midnight, January 1, 1970 UTC in milliseconds.
+     *
+     * @return The timestamp.
+     * @since 4.4.0, CE 2020.4
+     */
+    @Override
+    long getTimestamp();
 }
