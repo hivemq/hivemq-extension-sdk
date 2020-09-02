@@ -52,6 +52,8 @@ public interface ExtensionMain {
      * It is possible to abort the extension start if the extension isn't ready for use (i.e. missing configuration
      * file) with
      * {@link ExtensionStartOutput#preventExtensionStartup(String)}.
+     * <p>
+     * CAUTION: since 4.4.1, CE 2020.5: This method blocks the HiveMQ start. Please make sure that your implementation will always return.
      *
      * @param extensionStartInput  A {@link ExtensionStartInput}.
      * @param extensionStartOutput A {@link ExtensionStartOutput}.
