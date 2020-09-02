@@ -7,6 +7,7 @@
 = HiveMQ Extension SDK
 
 image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-extension-sdk/badge.svg["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-extension-sdk"]
+image:https://javadoc.io/badge2/com.hivemq/hivemq-extension-sdk/javadoc.svg["javadoc", link=https://javadoc.io/doc/com.hivemq/hivemq-extension-sdk]
 
 The enterprise MQTT broker HiveMQ offers this free, open source extension SDK.
 The HiveMQ extension framework provides an open API that allows developers to create custom extensions that suit their specific infrastructures.
