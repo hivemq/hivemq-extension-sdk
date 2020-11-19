@@ -48,7 +48,7 @@ public interface RetainedMessageStore {
      *
      * @param topic The topic.
      * @return A {@link CompletableFuture} which contains the retained message for the specific topic or
-     * <code>null</code>.
+     *         <code>null</code>.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull CompletableFuture<Optional<RetainedPublish>> getRetainedMessage(@NotNull String topic);
@@ -120,7 +120,7 @@ public interface RetainedMessageStore {
      *
      * @param callback An {@link IterationCallback} that is called for every returned result.
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
-     * iteration is aborted manually with the {@link IterationContext}.
+     *         iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException if the passed callback is null.
      * @since 4.4.0, CE 2020.4
      */
@@ -154,7 +154,7 @@ public interface RetainedMessageStore {
      * @param callback         An {@link IterationCallback} that is called for every returned result.
      * @param callbackExecutor An {@link Executor} that the {@link IterationCallback} is executed in.
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
-     * iteration is aborted manually with the {@link IterationContext}.
+     *         iteration is aborted manually with the {@link IterationContext}.
      * @throws NullPointerException if the passed callback or callbackExecutor are null.
      * @since 4.4.0, CE 2020.4
      */
