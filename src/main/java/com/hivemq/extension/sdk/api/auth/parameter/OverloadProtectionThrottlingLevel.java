@@ -17,7 +17,7 @@
 package com.hivemq.extension.sdk.api.auth.parameter;
 
 /**
- * The enum is used to define how a client is affected be the overload protection.
+ * The enum is used to define how a client is affected by the overload protection.
  *
  * @author Lukas Brandl
  * @since 4.2.0, CE 2020.1
