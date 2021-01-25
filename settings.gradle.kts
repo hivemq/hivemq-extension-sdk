@@ -1,3 +1,5 @@
+rootProject.name = "hivemq-extension-sdk"
+
 pluginManagement {
     plugins {
         id("com.github.hierynomus.license") version "${extra["plugin.license.version"]}"
@@ -7,5 +9,3 @@ pluginManagement {
         id("com.github.sgtsilvio.gradle.javadoc-links") version "${extra["plugin.javadoc-links.version"]}"
     }
 }
-
-rootProject.name = "hivemq-extension-sdk"
