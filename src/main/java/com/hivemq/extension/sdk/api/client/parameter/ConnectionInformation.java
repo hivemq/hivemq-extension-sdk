@@ -74,10 +74,11 @@ public interface ConnectionInformation {
 
     /**
      * Information about TLS, should the client be connected to HiveMQ via an TLS listener.
+     * This information is only present if the client connected with mutual TLS.
      *
      * @return An {@link Optional} of the {@link TlsInformation} of the client.
      * @since 4.0.0, CE 2019.1
-     * @deprecated Use {@link #getClientTlsInformation()} instead
+     * @deprecated Use {@link #getClientTlsInformation()} instead.
      */
     @Deprecated
     @NotNull Optional<TlsInformation> getTlsInformation();
@@ -86,7 +87,7 @@ public interface ConnectionInformation {
      * Information about TLS, should the client be connected to HiveMQ via an TLS listener.
      *
      * @return An {@link Optional} of the {@link TlsInformation} of the client.
-     * @since 4.6.0, CE 2021.1
+     * @since 4.5.2, CE 2021.1
      */
     @NotNull Optional<ClientTlsInformation> getClientTlsInformation();
 }

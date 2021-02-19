@@ -26,38 +26,38 @@ import java.util.Optional;
  * The TLS information contains specific data about the TLS connection, should the client use TLS.
  *
  * @author Christoph Schäbel
- * @since 4.6.0, CE 2021.1
+ * @since 4.5.2, CE 2021.1
  */
 @DoNotImplement
 public interface ClientTlsInformation {
 
     /**
      * @return The certificate presented by the client.
-     * @since 4.6.0, CE 2021.1
+     * @since 4.5.2, CE 2021.1
      */
     @NotNull Optional<X509Certificate> getClientCertificate();
 
     /**
      * @return The certificate chain presented by the client.
-     * @since 4.6.0, CE 2021.1
+     * @since 4.5.2, CE 2021.1
      */
     @NotNull Optional<X509Certificate[]> getClientCertificateChain();
 
     /**
      * @return The cipher suite that is used for this client.
-     * @since 4.6.0, CE 2021.1
+     * @since 4.5.2, CE 2021.1
      */
     @NotNull String getCipherSuite();
 
     /**
      * @return The protocol that is used for this client.
-     * @since 4.6.0, CE 2021.1
+     * @since 4.5.2, CE 2021.1
      */
     @NotNull String getProtocol();
 
     /**
      * @return The hostname as sent by the client via SNI.
-     * @since 4.6.0, CE 2021.1
+     * @since 4.5.2, CE 2021.1
      */
     @NotNull Optional<String> getHostname();
 }
