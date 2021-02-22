@@ -18,6 +18,7 @@ package com.hivemq.extension.sdk.api.packets.connack;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.annotations.Nullable;
+import com.hivemq.extension.sdk.api.interceptor.connect.ConnectInboundInterceptor;
 import com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode;
 import com.hivemq.extension.sdk.api.packets.general.ModifiableUserProperties;
 import com.hivemq.extension.sdk.api.packets.general.UserProperties;
@@ -93,4 +94,24 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      * @since 4.2.0, CE 2020.1
      */
     void setServerReference(@Nullable String serverReference);
+
+    /**
+     * Set the assigned client identifier that is sent in the CONNACK packet.
+     * <p>
+     * This does not change the client identifier for HiveMQ, only the content of the CONNACK packet that is sent to the
+     * client is changed.
+     * <p>
+     * If you want to change the client identifier used by HiveMQ use a {@link ConnectInboundInterceptor} instead.
+     * <p>
+     * Set this value to <code>null</code> to prevent a assigned identifier from being sent to the client in the CONNACK
+     * packet.
+     * <p>
+     * This setting is only respected for MQTT 5 clients. For MQTT 3.x clients this setting is ignored.
+     *
+     * @param assignedClientIdentifier The assigned client identifier sent in the CONNACK.
+     * @throws IllegalArgumentException If the value is not a valid UTF-8 string.
+     * @throws IllegalArgumentException If the value exceeds the UTF-8 string length limit.
+     * @since 4.5.2, CE 2021.1
+     */
+    void setAssignedClientIdentifier(@Nullable String assignedClientIdentifier);
 }
