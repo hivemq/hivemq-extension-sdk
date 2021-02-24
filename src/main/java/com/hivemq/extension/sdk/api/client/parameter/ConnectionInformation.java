@@ -86,7 +86,7 @@ public interface ConnectionInformation {
     /**
      * Information about TLS, should the client be connected to HiveMQ via an TLS listener.
      *
-     * @return An {@link Optional} of the {@link TlsInformation} of the client.
+     * @return An {@link Optional} of the {@link ClientTlsInformation} of the client.
      * @since 4.5.2, CE 2021.1
      */
     @NotNull Optional<ClientTlsInformation> getClientTlsInformation();
