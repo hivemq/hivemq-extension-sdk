@@ -109,9 +109,11 @@ public interface ModifiableConnackPacket extends ConnackPacket {
      * This setting is only respected for MQTT 5 clients. For MQTT 3.x clients this setting is ignored.
      *
      * @param assignedClientIdentifier The assigned client identifier sent in the CONNACK.
-     * @throws IllegalArgumentException If the value is not a valid UTF-8 string.
-     * @throws IllegalArgumentException If the value exceeds the UTF-8 string length limit.
-     * @since 4.5.2, CE 2021.1
+     * @throws IllegalArgumentException If the client identifier is not a valid UTF-8 string.
+     * @throws IllegalArgumentException If the client identifier exceeds the UTF-8 string length limit.
+     * @throws IllegalArgumentException If the client identifier is empty. Use <code>null</code> to prevent sending the
+     *                                  assigned identifier
+     * @since 4.6.0, CE 2021.1
      */
     void setAssignedClientIdentifier(@Nullable String assignedClientIdentifier);
 }
