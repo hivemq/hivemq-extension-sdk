@@ -88,7 +88,7 @@ public interface ConnectionInformation {
      * This information is only present if the client connected with mutual TLS.
      *
      * @return An {@link Optional} of the {@link ClientTlsInformation} of the client.
-     * @since 4.5.2, CE 2021.1
+     * @since 4.6.0, CE 2021.1
      */
     @NotNull Optional<ClientTlsInformation> getClientTlsInformation();
 }
