@@ -8,6 +8,7 @@ plugins {
     id("com.github.sgtsilvio.gradle.utf8")
     id("com.github.sgtsilvio.gradle.metadata")
     id("com.github.sgtsilvio.gradle.javadoc-links")
+    signing
 }
 
 
@@ -117,46 +118,43 @@ tasks.javadoc {
 /* ******************** publishing ******************** */
 
 publishing {
-    publications.register<MavenPublication>("extensionSdk") {
-        from(components["java"])
-    }
-}
-
-bintray {
-    user = "${project.findProperty("bintrayUser") ?: System.getenv("BINTRAY_USER")}"
-    key = "${project.findProperty("bintrayApiKey") ?: System.getenv("BINTRAY_API_KEY")}"
-    dryRun = false
-    publish = false
-    override = false
-    pkg.apply {
-        userOrg = "hivemq"
-        repo = "HiveMQ"
-        name = "hivemq-extension-sdk"
-        desc = project.description
-        websiteUrl = metadata.url.get()
-        issueTrackerUrl = metadata.issueManagement!!.url.get()
-        vcsUrl = metadata.scm!!.url.get()
-        setLicenses(metadata.license!!.shortName.get())
-        setLabels("hivemq", "extension", "sdk", "mqtt", "mqtt5")
-        publicDownloadNumbers = false
-        version.apply {
-            released = Date().toString()
-            gpg.apply {
-                sign = true
+    publications {
+        create<MavenPublication>("extensionSdk") {
+            pom {
+                name.set(project.name)
+                description.set(project.description)
+                url.set(project.metadata.organization!!.url)
+                licenses {
+                    project.metadata.license
+                }
+                developers {
+                    project.metadata.developers
+                }
+                scm {
+                    connection.set("scm:git:git://github.com/hivemq/${project.metadata.github!!.repo}.git")
+                    developerConnection.set("scm:git:ssh://github.com/hivemq/${project.metadata.github!!.repo}.git")
+                    url.set("http://github.com/hivemq/${project.metadata.github!!.repo}/")
+                }
             }
-            mavenCentralSync.apply {
-                sync = false
-                user = "${project.findProperty("mavenCentralUser") ?: System.getenv("MAVEN_CENTRAL_USER")}"
-                password = "${project.findProperty("mavenCentralKey") ?: System.getenv("MAVEN_CENTRAL_KEY")}"
-                close = "0"
+        }
+    }
+    repositories {
+        maven {
+            url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2")
+            credentials {
+                username = "${project.findProperty("sonatypeUser") ?: System.getenv("SONATYPE_USER")}"
+                password = "${project.findProperty("sonatypePassword") ?: System.getenv("SONATYPE_PASSWORD")}"
             }
         }
     }
 }
-afterEvaluate {
-    bintray.setPublications(*publishing.publications.withType<MavenPublication>().names.toTypedArray())
-}
 
+signing {
+    val signingKey = "${project.findProperty("signingKey") ?: System.getenv("SIGNING_KEY")}";
+    val signingPassword = "${project.findProperty("signingPassword") ?: System.getenv("SIGNING_PASSWORD")}";
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign(publishing.publications["extensionSdk"])
+}
 
 /* ******************** checks ******************** */
 
