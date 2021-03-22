@@ -138,12 +138,13 @@ publishing {
             }
         }
     }
-    nexusPublishing {
-        repositories {
-            sonatype {
-                username.set("${project.findProperty("sonatypeUser") ?: System.getenv("SONATYPE_USERNAME")}")
-                password.set("${project.findProperty("sonatypePassword") ?: System.getenv("SONATYPE_PASSWORD")}")
-            }
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            username.set("${project.findProperty("sonatypeUser") ?: System.getenv("SONATYPE_USERNAME")}")
+            password.set("${project.findProperty("sonatypePassword") ?: System.getenv("SONATYPE_PASSWORD")}")
         }
     }
 }
