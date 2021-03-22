@@ -3,11 +3,11 @@ import java.util.*
 plugins {
     id("java-library")
     id("maven-publish")
-    id("com.jfrog.bintray")
     id("com.github.hierynomus.license")
     id("com.github.sgtsilvio.gradle.utf8")
     id("com.github.sgtsilvio.gradle.metadata")
     id("com.github.sgtsilvio.gradle.javadoc-links")
+    id("io.github.gradle-nexus.publish-plugin")
     signing
 }
 
@@ -138,20 +138,19 @@ publishing {
             }
         }
     }
-    repositories {
-        maven {
-            url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2")
-            credentials {
-                username = "${project.findProperty("sonatypeUser") ?: System.getenv("SONATYPE_USER")}"
-                password = "${project.findProperty("sonatypePassword") ?: System.getenv("SONATYPE_PASSWORD")}"
+    nexusPublishing {
+        repositories {
+            sonatype {
+                username.set("${project.findProperty("sonatypeUser") ?: System.getenv("SONATYPE_USERNAME")}")
+                password.set("${project.findProperty("sonatypePassword") ?: System.getenv("SONATYPE_PASSWORD")}")
             }
         }
     }
 }
 
 signing {
-    val signingKey = "${project.findProperty("signingKey") ?: System.getenv("SIGNING_KEY")}";
-    val signingPassword = "${project.findProperty("signingPassword") ?: System.getenv("SIGNING_PASSWORD")}";
+    val signingKey = "${project.findProperty("signingKey") ?: System.getenv("SIGN_KEY")}";
+    val signingPassword = "${project.findProperty("signingPassword") ?: System.getenv("SIGN_KEY_PASS")}";
     useInMemoryPgpKeys(signingKey, signingPassword)
     sign(publishing.publications["extensionSdk"])
 }
