@@ -6,7 +6,7 @@ plugins {
     id("com.github.sgtsilvio.gradle.metadata")
     id("com.github.sgtsilvio.gradle.javadoc-links")
     id("io.github.gradle-nexus.publish-plugin")
-    signing
+    id("signing")
 }
 
 
