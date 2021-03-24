@@ -19,8 +19,8 @@ jobs:
         run: ./graldew check
       - name: Publish to Maven Central
         env:
-          SIGN_KEY: ${{ secrets.SIGN_KEY }}
-          SIGN_KEY_PASS: ${{ secrets.SIGN_KEY_PASS }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.SIGN_KEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.SIGN_KEY_PASS }}
           ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPE_USERNAME }}
           ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.SONATYPE_PASSWORD }}
         run: ./gradlew clean publishToSonatype closeAndReleaseSonatypeStagingRepository
