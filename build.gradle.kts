@@ -1,5 +1,3 @@
-import java.util.*
-
 plugins {
     id("java-library")
     id("maven-publish")
@@ -142,10 +140,7 @@ publishing {
 
 nexusPublishing {
     repositories {
-        sonatype {
-            username.set("${project.findProperty("sonatypeUser") ?: System.getenv("SONATYPE_USERNAME")}")
-            password.set("${project.findProperty("sonatypePassword") ?: System.getenv("SONATYPE_PASSWORD")}")
-        }
+        sonatype()
     }
 }
 
