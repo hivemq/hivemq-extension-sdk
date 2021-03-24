@@ -118,22 +118,7 @@ tasks.javadoc {
 publishing {
     publications {
         create<MavenPublication>("extensionSdk") {
-            pom {
-                name.set(project.name)
-                description.set(project.description)
-                url.set(project.metadata.organization!!.url)
-                licenses {
-                    project.metadata.license
-                }
-                developers {
-                    project.metadata.developers
-                }
-                scm {
-                    connection.set("scm:git:git://github.com/hivemq/${project.metadata.github!!.repo}.git")
-                    developerConnection.set("scm:git:ssh://github.com/hivemq/${project.metadata.github!!.repo}.git")
-                    url.set("http://github.com/hivemq/${project.metadata.github!!.repo}/")
-                }
-            }
+            from(components["java"]);
         }
     }
 }
