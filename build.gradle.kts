@@ -130,9 +130,9 @@ nexusPublishing {
 }
 
 signing {
-    val signingKey = "${project.findProperty("signingKey")}"
-    val signingPassword = "${project.findProperty("signingPassword")}"
-    useInMemoryPgpKeys(signingKey, signingPassword)
+    val signKey = "${project.findProperty("signKey")}"
+    val signKeyPass = "${project.findProperty("signKeyPass")}"
+    useInMemoryPgpKeys(signKey, signKeyPass)
     sign(publishing.publications["extensionSdk"])
 }
 
