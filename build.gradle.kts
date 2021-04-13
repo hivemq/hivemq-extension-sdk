@@ -1,12 +1,12 @@
 plugins {
     id("java-library")
     id("maven-publish")
+    id("signing")
+    id("io.github.gradle-nexus.publish-plugin")
     id("com.github.hierynomus.license")
     id("com.github.sgtsilvio.gradle.utf8")
     id("com.github.sgtsilvio.gradle.metadata")
     id("com.github.sgtsilvio.gradle.javadoc-links")
-    id("io.github.gradle-nexus.publish-plugin")
-    id("signing")
 }
 
 
@@ -117,10 +117,17 @@ tasks.javadoc {
 
 publishing {
     publications {
-        create<MavenPublication>("extensionSdk") {
-            from(components["java"]);
+        register<MavenPublication>("maven") {
+            from(components["java"])
         }
     }
+}
+
+signing {
+    val signingKey: String? by project
+    val signingPassword: String? by project
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign(publishing.publications["maven"])
 }
 
 nexusPublishing {
@@ -129,12 +136,6 @@ nexusPublishing {
     }
 }
 
-signing {
-    val signKey = "${project.findProperty("signKey")}"
-    val signKeyPass = "${project.findProperty("signKeyPass")}"
-    useInMemoryPgpKeys(signKey, signKeyPass)
-    sign(publishing.publications["extensionSdk"])
-}
 
 /* ******************** checks ******************** */
 
