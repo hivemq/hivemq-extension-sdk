@@ -9,9 +9,9 @@ jobs:
     environment: mavenCentralPublish
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: setup java
+      - name: Setup Java
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
