@@ -125,9 +125,9 @@ publishing {
 }
 
 signing {
-    val signingKey: String? by project
-    val signingPassword: String? by project
-    useInMemoryPgpKeys(signingKey, signingPassword)
+    val signKey: String? by project
+    val signKeyPass: String? by project
+    useInMemoryPgpKeys(signKey, signKeyPass)
     sign(publishing.publications["maven"])
 }
 
