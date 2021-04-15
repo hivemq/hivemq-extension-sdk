@@ -84,9 +84,10 @@ java {
 
 tasks.withType<Jar>().configureEach {
     manifest.attributes(
-            "Implementation-Title" to project.name,
-            "Implementation-Vendor" to metadata.organization!!.name.get(),
-            "Implementation-Version" to project.version)
+        "Implementation-Title" to project.name,
+        "Implementation-Vendor" to metadata.organization!!.name.get(),
+        "Implementation-Version" to project.version
+    )
 }
 
 tasks.javadoc {
@@ -101,14 +102,14 @@ tasks.javadoc {
 
     doLast { // javadoc search fix for jdk 11 https://bugs.openjdk.java.net/browse/JDK-8215291
         copy {
-            from("$buildDir/docs/javadoc/search.js")
-            into("$buildDir/tmp/javadoc/")
+            from("$destinationDir/search.js")
+            into(temporaryDir)
             filter { line -> line.replace("if (ui.item.p == item.l) {", "if (item.m && ui.item.p == item.l) {") }
         }
-        delete("$buildDir/docs/javadoc/search.js")
+        delete("$destinationDir/search.js")
         copy {
-            from("$buildDir/tmp/javadoc/search.js")
-            into("$buildDir/docs/javadoc/")
+            from("$temporaryDir/search.js")
+            into(destinationDir!!)
         }
     }
 }
