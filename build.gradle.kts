@@ -82,7 +82,7 @@ java {
     withSourcesJar()
 }
 
-tasks.withType<Jar>().configureEach {
+tasks.withType<Jar> {
     manifest.attributes(
         "Implementation-Title" to project.name,
         "Implementation-Vendor" to metadata.organization!!.name.get(),
@@ -102,13 +102,13 @@ tasks.javadoc {
 
     doLast { // javadoc search fix for jdk 11 https://bugs.openjdk.java.net/browse/JDK-8215291
         copy {
-            from("$destinationDir/search.js")
+            from(destinationDir!!.resolve("search.js"))
             into(temporaryDir)
             filter { line -> line.replace("if (ui.item.p == item.l) {", "if (item.m && ui.item.p == item.l) {") }
         }
-        delete("$destinationDir/search.js")
+        delete(destinationDir!!.resolve("search.js"))
         copy {
-            from("$temporaryDir/search.js")
+            from(temporaryDir.resolve("search.js"))
             into(destinationDir!!)
         }
     }
@@ -142,6 +142,6 @@ nexusPublishing {
 /* ******************** checks ******************** */
 
 license {
-    header = file("$projectDir/HEADER")
+    header = projectDir.resolve("HEADER")
     mapping("java", "SLASHSTAR_STYLE")
 }
