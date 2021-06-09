@@ -26,7 +26,7 @@ Resources:
 * Web Site: {hivemq-website}
 * Documentation: {hivemq-extensions-docu}
 * Community Forum: {hivemq-community-forum}
-* Contribution Guidelines: link:CONTRIBUTING.adoc[Contributing.adoc]
+* Contribution Guidelines: link:CONTRIBUTING.md[Contributing.adoc]
 * License: The source files in this repository are made available under the link:LICENSE[Apache License Version 2.0].
 
 == Using the SDK
@@ -39,7 +39,7 @@ To use the SDK, add the following dependency to your Maven project:
 <dependency>
     <groupId>com.hivemq</groupId>
     <artifactId>hivemq-extension-sdk</artifactId>
-    <version>4.5.4</version>
+    <version>4.5.5</version>
 </dependency>
 ----
 
