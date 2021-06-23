@@ -19,7 +19,7 @@ plugins {
 
 if (gradle.includedBuilds.find { it.name == "plugins"} != null) {
     apply(plugin = "com.hivemq.version-updater")
-    project.ext.set("versionUpdaterFiles", files("README.adoc"))
+    project.ext.set("versionUpdaterFiles", arrayOf("README.adoc"))
 }
 
 /* ******************** metadata ******************** */
