@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        if (gradle.includedBuilds.find { it.name == "plugins"} != null) {
+        if (gradle.includedBuilds.find { it.name == "plugins" } != null) {
             classpath("com.hivemq:plugins")
         }
     }
@@ -17,7 +17,7 @@ plugins {
     id("com.github.sgtsilvio.gradle.javadoc-links")
 }
 
-if (gradle.includedBuilds.find { it.name == "plugins"} != null) {
+if (gradle.includedBuilds.find { it.name == "plugins" } != null) {
     apply(plugin = "com.hivemq.version-updater")
     project.ext.set("versionUpdaterFiles", arrayOf("README.adoc"))
 }
