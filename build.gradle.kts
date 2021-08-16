@@ -100,8 +100,7 @@ tasks.javadoc {
 
     doLast {
         javaexec {
-            main = "-jar"
-            args("$projectDir/gradle/tools/javadoc-cleaner-1.0.jar")
+            classpath(projectDir.resolve("gradle/tools/javadoc-cleaner-1.0.jar"))
         }
     }
 
