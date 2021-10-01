@@ -146,17 +146,3 @@ license {
     header = projectDir.resolve("HEADER")
     mapping("java", "SLASHSTAR_STYLE")
 }
-
-/* ******************** artifacts ******************** */
-
-val javadoc by configurations.creating {
-    isCanBeConsumed = true
-    isCanBeResolved = false
-    attributes {
-        attribute(Category.CATEGORY_ATTRIBUTE, objects.named("javadocs"))
-    }
-}
-
-artifacts {
-    add(javadoc.name, tasks.named("javadocJar"))
-}
