@@ -1,5 +1,5 @@
 buildscript {
-    if (gradle.includedBuilds.find { it.name == "plugins" } != null) {
+    if (gradle.includedBuilds.any { it.name == "plugins" }) {
         plugins {
             id("com.hivemq.version-updater")
         }
