@@ -6,8 +6,8 @@
 
 = HiveMQ Extension SDK
 
-image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-extension-sdk/badge.svg["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-extension-sdk"]
-image:https://javadoc.io/badge2/com.hivemq/hivemq-extension-sdk/javadoc.svg["javadoc", link=https://javadoc.io/doc/com.hivemq/hivemq-extension-sdk]
+image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-extension-sdk/badge.svg?style=for-the-badge["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-extension-sdk"]
+image:https://javadoc.io/badge2/com.hivemq/hivemq-extension-sdk/javadoc.svg?style=for-the-badge["javadoc",link=https://javadoc.io/doc/com.hivemq/hivemq-extension-sdk]
 
 The enterprise MQTT broker HiveMQ offers this free, open source extension SDK.
 The HiveMQ extension framework provides an open API that allows developers to create custom extensions that suit their specific infrastructures.
@@ -56,7 +56,7 @@ You can find many example extensions by browsing the {hivemq-github}[HiveMQ GitH
 
 Check out the {hivemq-marketplace}[HiveMQ Marketplace] for officially supported extensions.
 
-== Need help ?
+== Need Help?
 
 If you need help with custom HiveMQ extensions please contact support@hivemq.com.
 
