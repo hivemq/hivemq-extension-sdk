@@ -94,6 +94,14 @@ public interface ModifiableConnectPacket extends ConnectPacket {
     void setSessionExpiryInterval(long expiryInterval);
 
     /**
+     * Set whether the session expiry interval was overridden.
+     *
+     * @param sessionExpiryOverridden The new value of flag that captures whether the sesson expiry was overriden.
+     * @since 4.5.0, CE 2022.1
+     */
+    void setSessionExpiryOverridden(boolean sessionExpiryOverridden);
+
+    /**
      * Set the keep alive.
      *
      * @param keepAlive The new keep alive for the CONNECT.
