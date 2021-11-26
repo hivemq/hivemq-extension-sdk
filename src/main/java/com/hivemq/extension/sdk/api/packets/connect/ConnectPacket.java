@@ -94,6 +94,15 @@ public interface ConnectPacket {
     long getSessionExpiryInterval();
 
     /**
+     * A flag that signifies whether the session expiry interval was overridden by the MaxSessionExpiryInterval
+     * configuration value.
+     *
+     * @return A flag that shows whether the session expiry interval was overridden.
+     * @since 4.5.0, CE 2022.1
+     */
+    boolean getSessionExpiryOverridden();
+
+    /**
      * An interval in seconds in which the client has to send any MQTT control packet, so that HiveMQ doesn't end the
      * connection.
      *
