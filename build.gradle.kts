@@ -99,7 +99,7 @@ tasks.javadoc {
 
     doLast {
         javaexec {
-            classpath(projectDir.resolve("gradle/tools/javadoc-cleaner-1.0.jar"))
+            classpath("gradle/tools/javadoc-cleaner-1.0.jar")
         }
     }
 
@@ -143,6 +143,6 @@ nexusPublishing {
 /* ******************** checks ******************** */
 
 license {
-    header = projectDir.resolve("HEADER")
+    header = file("HEADER")
     mapping("java", "SLASHSTAR_STYLE")
 }
