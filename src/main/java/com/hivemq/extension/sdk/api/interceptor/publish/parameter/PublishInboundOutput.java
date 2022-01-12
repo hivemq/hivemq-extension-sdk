@@ -102,6 +102,7 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      * @param reasonCode      The reason code sent in PUBACK/PUBREC when timeout occurs.
      * @param reasonString    The reason string sent in PUBACK/PUBREC when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @return an {@link Async} object, containing the {@link PublishInboundOutput}
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<PublishInboundOutput> async(
@@ -124,6 +125,7 @@ public interface PublishInboundOutput extends AsyncOutput<PublishInboundOutput> 
      *                        If the fallback is FAILURE then the publish will be dropped.
      * @param reasonCode      The reason code sent in PUBACK/PUBREC when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @return an {@link Async} object, containing the {@link PublishInboundOutput}
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<PublishInboundOutput> async(

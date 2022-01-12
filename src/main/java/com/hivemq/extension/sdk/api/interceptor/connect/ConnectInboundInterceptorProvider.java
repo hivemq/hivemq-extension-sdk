@@ -37,6 +37,7 @@ public interface ConnectInboundInterceptorProvider {
      * <p>
      * <code>null</code> can be returned if a CONNECT message should not be intercepted.
      *
+     * @param input The {@link ConnectInboundProviderInput}.
      * @return An implementation of the {@link ConnectInboundInterceptor} or null if the CONNECT should not be
      *         intercepted.
      * @since 4.2.0, CE 2020.1
