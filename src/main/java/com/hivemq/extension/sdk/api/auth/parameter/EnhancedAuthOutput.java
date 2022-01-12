@@ -353,6 +353,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                                       during authentication.
      * @throws IllegalArgumentException      when {@link DisconnectedReasonCode} is set to a CONNACK only reason code
      *                                       during re-authentication.
+     * @return an {@link Async} object, usually containing the {@link EnhancedAuthOutput}
      * @since 4.3.0, CE 2020.1
      */
     @NotNull Async<EnhancedAuthOutput> async(
@@ -376,6 +377,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                        specified reason string.
      * @param reasonString    The reason string sent in CONNACK or DISCONNECT when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @return an {@link Async} object, containing the {@link EnhancedAuthOutput}
      * @since 4.3.0, CE 2020.1
      */
     @NotNull Async<EnhancedAuthOutput> async(
@@ -401,6 +403,7 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      *                                       during authentication.
      * @throws IllegalArgumentException      when {@link DisconnectedReasonCode} is set to a CONNACK only reason code
      *                                       during re-authentication.
+     * @return an {@link Async} object, containing the {@link EnhancedAuthOutput}
      * @since 4.3.0, CE 2020.1
      */
     @NotNull Async<EnhancedAuthOutput> async(
