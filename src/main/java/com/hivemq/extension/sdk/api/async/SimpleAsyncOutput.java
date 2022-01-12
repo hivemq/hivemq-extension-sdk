@@ -37,6 +37,7 @@ public interface SimpleAsyncOutput<T> {
      *
      * @param timeout Timeout that HiveMQ waits for the result of the async operation.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @return an {@link Async} object, usually containing the output object
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<T> async(@NotNull Duration timeout);

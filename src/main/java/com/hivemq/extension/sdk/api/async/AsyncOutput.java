@@ -40,6 +40,7 @@ public interface AsyncOutput<T> extends SimpleAsyncOutput<T> {
      * @param fallback Fallback behaviour if a timeout occurs. The outcome of the output for the fallback {@link
      *                 TimeoutFallback#SUCCESS} or {@link TimeoutFallback#FAILURE} is specified in the implementation.
      * @throws UnsupportedOperationException If async is called more than once.
+     * @return an {@link Async} object, usually containing the output object
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<T> async(@NotNull Duration timeout, @NotNull TimeoutFallback fallback);
