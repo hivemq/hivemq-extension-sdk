@@ -38,6 +38,7 @@ public interface ConnackOutboundInterceptorProvider {
      * <p>
      * <code>null</code> can be returned if a CONNACK message should not be intercepted.
      *
+     * @param connackOutboundProviderInput The {@link ConnackOutboundProviderInput}.
      * @return An implementation of the {@link ConnackOutboundInterceptor} or null if the CONNECT should not be
      *         intercepted.
      * @since 4.2.0, CE 2020.1
