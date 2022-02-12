@@ -9,9 +9,7 @@ pluginManagement {
         id("com.github.sgtsilvio.gradle.javadoc-links") version "${extra["plugin.javadoc-links.version"]}"
     }
 
-    if (file("../plugins").exists()) {
-        includeBuild("../plugins")
-    } else if(file("../hivemq/plugins").exists()) {
+    if (file("../hivemq/plugins").exists()) {
         includeBuild("../hivemq/plugins")
     }
 }
