@@ -205,7 +205,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      *                        timed out</code>.
      * @param reasonCode      The reason code sent in CONNACK when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @return an {@link Async} object, containing the {@link SimpleAuthOutput}
+     * @return An {@link Async} object, containing the {@link SimpleAuthOutput}.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<SimpleAuthOutput> async(
@@ -227,7 +227,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      *                        reason string.
      * @param reasonString    The reason string sent in CONNACK when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @return an {@link Async} object, containing the {@link SimpleAuthOutput}
+     * @return An {@link Async} object, containing the {@link SimpleAuthOutput}.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<SimpleAuthOutput> async(
@@ -249,7 +249,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @param reasonCode      The reason code sent in CONNACK when timeout occurs.
      * @param reasonString    The reason string sent in CONNACK when timeout occurs.
      * @throws UnsupportedOperationException If async is called more than once.
-     * @return an {@link Async} object, usually containing the {@link SimpleAuthOutput}
+     * @return An {@link Async} object, usually containing the {@link SimpleAuthOutput}.
      * @since 4.0.0, CE 2019.1
      */
     @NotNull Async<SimpleAuthOutput> async(
