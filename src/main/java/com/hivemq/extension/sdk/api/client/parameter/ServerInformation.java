@@ -32,6 +32,12 @@ import java.util.Set;
 public interface ServerInformation {
 
     /**
+     * The version syntax differs depending on the HiveMQ edition in use.
+     * <p>
+     * For the community edition it's "year.release-number", so for example 2019.1 (first release in 2019).
+     * <p>
+     * For the enterprise edition it's "major.minor.patch", so for example 4.5.10.
+     *
      * @return The version string of the HiveMQ instance.
      * @since 4.0.0, CE 2019.1
      */
