@@ -35,7 +35,7 @@ public interface PublishService {
 
     /**
      * Publishes a new MQTT {@link Publish} message. The standard MQTT topic matching mechanism of HiveMQ will apply and
-     * only subscribed MQTT clients will receive the published message.
+     * only subscribed MQTT clients and consumers will receive the published message.
      * <p>
      * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
      * exceeded.
