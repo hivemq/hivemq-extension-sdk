@@ -21,10 +21,12 @@ import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
 /**
- * Input object for the method {@link ClientLifecycleEventListener#onAuthenticationSuccessful(AuthenticationSuccessfulInput)}.
+ * Input object for the method
+ * {@link ClientLifecycleEventListener#onAuthenticationSuccessful(AuthenticationSuccessfulInput)}.
  *
  * @author Christoph Schäbel
  * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
-public interface AuthenticationSuccessfulInput extends ClientBasedInput {}
+public interface AuthenticationSuccessfulInput extends ClientBasedInput {
+}

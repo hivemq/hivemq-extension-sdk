@@ -17,7 +17,13 @@
 package com.hivemq.extension.sdk.api.events.client;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
-import com.hivemq.extension.sdk.api.events.client.parameters.*;
+import com.hivemq.extension.sdk.api.events.client.parameters.AuthenticationFailedInput;
+import com.hivemq.extension.sdk.api.events.client.parameters.AuthenticationSuccessfulInput;
+import com.hivemq.extension.sdk.api.events.client.parameters.ClientInitiatedDisconnectInput;
+import com.hivemq.extension.sdk.api.events.client.parameters.ConnectionLostInput;
+import com.hivemq.extension.sdk.api.events.client.parameters.ConnectionStartInput;
+import com.hivemq.extension.sdk.api.events.client.parameters.DisconnectEventInput;
+import com.hivemq.extension.sdk.api.events.client.parameters.ServerInitiatedDisconnectInput;
 
 /**
  * A {@link ClientLifecycleEventListener} contains methods that allow custom logic to be executed when:
