@@ -25,4 +25,5 @@ import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
  * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
-public interface ExtensionStopOutput {}
+public interface ExtensionStopOutput {
+}

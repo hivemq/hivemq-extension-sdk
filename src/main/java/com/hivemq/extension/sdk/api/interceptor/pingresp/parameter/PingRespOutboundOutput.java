@@ -27,4 +27,5 @@ import com.hivemq.extension.sdk.api.interceptor.pingresp.PingRespOutboundInterce
  * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
-public interface PingRespOutboundOutput extends SimpleAsyncOutput<PingRespOutboundOutput> {}
+public interface PingRespOutboundOutput extends SimpleAsyncOutput<PingRespOutboundOutput> {
+}
