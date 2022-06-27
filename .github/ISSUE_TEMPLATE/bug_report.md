@@ -12,10 +12,12 @@ assignees: ''
 ## Actual behavior
 
 ## To Reproduce
+
 ### Steps
 
 ### Reproducer code
 
 ## Details
-- Affected HiveMQ version(s): 
+
+- Affected HiveMQ version(s):
 - Used JVM version:

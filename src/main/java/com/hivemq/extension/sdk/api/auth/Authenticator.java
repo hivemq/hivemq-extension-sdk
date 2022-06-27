@@ -28,4 +28,5 @@ import com.hivemq.extension.sdk.api.services.auth.provider.AuthenticatorProvider
  * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
-public interface Authenticator {}
+public interface Authenticator {
+}

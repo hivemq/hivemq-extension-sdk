@@ -19,7 +19,12 @@ package com.hivemq.extension.sdk.api.services.subscription;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.services.ManagedExtensionExecutorService;
-import com.hivemq.extension.sdk.api.services.exception.*;
+import com.hivemq.extension.sdk.api.services.exception.DoNotImplementException;
+import com.hivemq.extension.sdk.api.services.exception.IncompatibleHiveMQVersionException;
+import com.hivemq.extension.sdk.api.services.exception.InvalidTopicException;
+import com.hivemq.extension.sdk.api.services.exception.IterationFailedException;
+import com.hivemq.extension.sdk.api.services.exception.NoSuchClientIdException;
+import com.hivemq.extension.sdk.api.services.exception.RateLimitExceededException;
 import com.hivemq.extension.sdk.api.services.general.IterationCallback;
 import com.hivemq.extension.sdk.api.services.general.IterationContext;
 
