@@ -33,7 +33,8 @@ import com.hivemq.extension.sdk.api.services.cluster.parameter.ClusterDiscoveryO
 public interface ClusterDiscoveryCallback {
 
     /**
-     * This method is called once by HiveMQ when this callback is added via {@link ClusterService#addDiscoveryCallback(ClusterDiscoveryCallback)}.
+     * This method is called once by HiveMQ when this callback is added via
+     * {@link ClusterService#addDiscoveryCallback(ClusterDiscoveryCallback)}.
      * <p>
      * It can be used to register this HiveMQ instance with some kind of central registry or to save it to a database or
      * file server for example.

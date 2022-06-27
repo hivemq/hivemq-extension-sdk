@@ -20,10 +20,12 @@ import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
 
 /**
- * Input object for the method {@link ClientLifecycleEventListener#onAuthenticationFailedDisconnect(AuthenticationFailedInput)}.
+ * Input object for the method
+ * {@link ClientLifecycleEventListener#onAuthenticationFailedDisconnect(AuthenticationFailedInput)}.
  *
  * @author Christoph Schäbel
  * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
-public interface AuthenticationFailedInput extends DisconnectEventInput {}
+public interface AuthenticationFailedInput extends DisconnectEventInput {
+}

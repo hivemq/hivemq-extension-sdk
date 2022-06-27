@@ -27,4 +27,5 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
  * @since 4.3.0, CE 2020.1
  */
 @DoNotImplement
-public interface PingRespOutboundInput extends ClientBasedInput {}
+public interface PingRespOutboundInput extends ClientBasedInput {
+}
