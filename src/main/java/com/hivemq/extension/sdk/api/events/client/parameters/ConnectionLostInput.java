@@ -26,4 +26,5 @@ import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListener;
  * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
-public interface ConnectionLostInput extends DisconnectEventInput {}
+public interface ConnectionLostInput extends DisconnectEventInput {
+}
