@@ -25,4 +25,5 @@ import java.util.concurrent.ScheduledFuture;
  * @author Florian Limpöck
  * @since 4.0.0, CE 2019.1
  */
-public abstract class CompletableScheduledFuture<T> extends CompletableFuture<T> implements ScheduledFuture<T> {}
+public abstract class CompletableScheduledFuture<T> extends CompletableFuture<T> implements ScheduledFuture<T> {
+}

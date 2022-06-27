@@ -34,7 +34,8 @@ public interface EventRegistry {
     /**
      * Sets a provider for {@link ClientLifecycleEventListener}.
      *
-     * @param clientLifecycleEventListenerProvider A custom provider implementation for {@link ClientLifecycleEventListener}.
+     * @param clientLifecycleEventListenerProvider A custom provider implementation for
+     *                                             {@link ClientLifecycleEventListener}.
      * @throws NullPointerException When ClientLifecycleEventListenerProvider is <code>null</code>.
      * @since 4.0.0, CE 2019.1
      */
