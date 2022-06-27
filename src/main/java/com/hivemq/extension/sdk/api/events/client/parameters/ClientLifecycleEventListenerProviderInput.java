@@ -21,10 +21,13 @@ import com.hivemq.extension.sdk.api.events.client.ClientLifecycleEventListenerPr
 import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 
 /**
- * Input object for the method {@link ClientLifecycleEventListenerProvider#getClientLifecycleEventListener(ClientLifecycleEventListenerProviderInput)}.
+ * Input object for the method
+ * {@link
+ * ClientLifecycleEventListenerProvider#getClientLifecycleEventListener(ClientLifecycleEventListenerProviderInput)}.
  *
  * @author Christoph Schäbel
  * @since 4.0.0, CE 2019.1
  */
 @DoNotImplement
-public interface ClientLifecycleEventListenerProviderInput extends ClientBasedInput {}
+public interface ClientLifecycleEventListenerProviderInput extends ClientBasedInput {
+}

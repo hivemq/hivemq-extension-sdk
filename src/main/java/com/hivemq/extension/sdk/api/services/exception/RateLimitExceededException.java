@@ -22,4 +22,5 @@ package com.hivemq.extension.sdk.api.services.exception;
  * @author Lukas Brandl
  * @since 4.0.0, CE 2019.1
  */
-public class RateLimitExceededException extends RuntimeException {}
+public class RateLimitExceededException extends RuntimeException {
+}
