@@ -172,8 +172,8 @@ public interface ConnectPacket {
      * <p>
      * For an MQTT 3 client this property can be set in the {@link ConnectInboundInterceptor}.
      * <p>
-     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a {@link
-     * java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @return An {@link Optional} that contains the authentication data if present.
      * @since 4.0.0, CE 2019.1
@@ -201,8 +201,8 @@ public interface ConnectPacket {
     /**
      * If this property is present, this is the password for the client.
      * <p>
-     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a {@link
-     * java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @return An {@link Optional} that contains the password if present.
      * @since 4.0.0, CE 2019.1

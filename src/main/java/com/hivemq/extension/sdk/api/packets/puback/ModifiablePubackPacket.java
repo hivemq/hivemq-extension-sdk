@@ -38,8 +38,8 @@ public interface ModifiablePubackPacket extends PubackPacket {
     /**
      * Set a {@link AckReasonCode} to the PUBACK packet.
      * <p>
-     * Switching from successful to unsuccessful and vice versa is not supported, in that case an {@link
-     * IllegalStateException} is thrown.
+     * Switching from successful to unsuccessful and vice versa is not supported, in that case an
+     * {@link IllegalStateException} is thrown.
      *
      * @param reasonCode The reason code to set.
      * @throws NullPointerException  If reason code is <code>null</code>.

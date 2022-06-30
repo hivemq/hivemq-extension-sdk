@@ -35,8 +35,8 @@ public interface ClientInitializer {
      *
      * @param initializerInput The {@link InitializerInput} containing information about, server, client and
      *                         connection.
-     * @param clientContext    The {@link ClientContext} to add/remove: {@link Interceptor}s or {@link
-     *                         TopicPermission}s.
+     * @param clientContext    The {@link ClientContext} to add/remove: {@link Interceptor}s or
+     *                         {@link TopicPermission}s.
      * @since 4.0.0, CE 2019.1
      */
     void initialize(@NotNull InitializerInput initializerInput, @NotNull ClientContext clientContext);

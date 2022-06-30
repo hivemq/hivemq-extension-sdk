@@ -37,8 +37,9 @@ public interface AsyncOutput<T> extends SimpleAsyncOutput<T> {
      * Do not call this method more than once. If an async method is called multiple times an exception is thrown.
      *
      * @param timeout  Timeout that HiveMQ waits for the result of the async operation.
-     * @param fallback Fallback behaviour if a timeout occurs. The outcome of the output for the fallback {@link
-     *                 TimeoutFallback#SUCCESS} or {@link TimeoutFallback#FAILURE} is specified in the implementation.
+     * @param fallback Fallback behaviour if a timeout occurs. The outcome of the output for the fallback
+     *                 {@link TimeoutFallback#SUCCESS} or {@link TimeoutFallback#FAILURE} is specified in the
+     *                 implementation.
      * @return An {@link Async} object, usually containing the output object.
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0, CE 2019.1

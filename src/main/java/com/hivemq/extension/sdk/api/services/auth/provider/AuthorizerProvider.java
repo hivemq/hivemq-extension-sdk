@@ -43,9 +43,9 @@ public interface AuthorizerProvider {
      * <code>null</code> can be returned if no authorization for the client is necessary.
      *
      * @param authorizerProviderInput The {@link AuthorizerProviderInput}.
-     * @return Either an implementation of {@link SubscriptionAuthorizer} or an implementation of {@link
-     *         PublishAuthorizer}. <code>null</code> is ignored and has the same effect as if this provider would had
-     *         not been set for the connecting client. Returning any other implementation of the {@link Authorizer}
+     * @return Either an implementation of {@link SubscriptionAuthorizer} or an implementation of
+     *         {@link PublishAuthorizer}. <code>null</code> is ignored and has the same effect as if this provider would
+     *         had not been set for the connecting client. Returning any other implementation of the {@link Authorizer}
      *         interface is an error.
      * @since 4.0.0, CE 2019.1
      */

@@ -95,11 +95,11 @@ public interface ModifiableDefaultPermissions {
      * Overrides the default behaviour that is used when none of the default permissions matches a PUBLISH topic or a
      * topic filter from a Subscription.
      * <p>
-     * Defaults to {@link DefaultAuthorizationBehaviour#ALLOW} if no permissions are added, defaults to {@link
-     * DefaultAuthorizationBehaviour#DENY} if permissions are added.
+     * Defaults to {@link DefaultAuthorizationBehaviour#ALLOW} if no permissions are added, defaults to
+     * {@link DefaultAuthorizationBehaviour#DENY} if permissions are added.
      * <p>
-     * If the value is overridden with this method, the value does not change automatically on {@link
-     * #add(TopicPermission)} or {@link #addAll(Collection)}.
+     * If the value is overridden with this method, the value does not change automatically on
+     * {@link #add(TopicPermission)} or {@link #addAll(Collection)}.
      *
      * @param defaultBehaviour The default behaviour to use.
      * @since 4.0.0, CE 2019.1
