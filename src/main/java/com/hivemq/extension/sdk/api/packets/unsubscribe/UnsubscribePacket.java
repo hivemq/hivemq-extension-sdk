@@ -55,8 +55,8 @@ public interface UnsubscribePacket {
     /**
      * The user properties from the UNSUBSCRIBE packet.
      * <p>
-     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous {@link
-     * UnsubscribeInboundInterceptor}).
+     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous
+     * {@link UnsubscribeInboundInterceptor}).
      *
      * @return The {@link UserProperties} of the UNSUBSCRIBE packet.
      * @since 4.3.0, CE 2020.1

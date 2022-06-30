@@ -48,8 +48,8 @@ public interface ClusterService {
     void addDiscoveryCallback(@NotNull ClusterDiscoveryCallback clusterDiscoveryCallback);
 
     /**
-     * Removes a {@link ClusterDiscoveryCallback} from the callbacks added by {@link
-     * #addDiscoveryCallback(ClusterDiscoveryCallback)}.
+     * Removes a {@link ClusterDiscoveryCallback} from the callbacks added by
+     * {@link #addDiscoveryCallback(ClusterDiscoveryCallback)}.
      * <p>
      * The removed callback will not be used anymore by HiveMQ to discover cluster nodes.
      * <p>

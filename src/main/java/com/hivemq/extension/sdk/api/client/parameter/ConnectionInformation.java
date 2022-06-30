@@ -73,8 +73,8 @@ public interface ConnectionInformation {
     @NotNull ConnectionAttributeStore getConnectionAttributeStore();
 
     /**
-     * Information about TLS, should the client be connected to HiveMQ via an TLS listener.
-     * This information is only present if the client connected with mutual TLS.
+     * Information about TLS, should the client be connected to HiveMQ via an TLS listener. This information is only
+     * present if the client connected with mutual TLS.
      *
      * @return An {@link Optional} of the {@link TlsInformation} of the client.
      * @since 4.0.0, CE 2019.1
@@ -84,8 +84,8 @@ public interface ConnectionInformation {
     @NotNull Optional<TlsInformation> getTlsInformation();
 
     /**
-     * Information about TLS, should the client be connected to HiveMQ via an TLS listener.
-     * This information is only present if the client connected with mutual TLS.
+     * Information about TLS, should the client be connected to HiveMQ via an TLS listener. This information is only
+     * present if the client connected with mutual TLS.
      *
      * @return An {@link Optional} of the {@link ClientTlsInformation} of the client.
      * @since 4.6.0, CE 2021.1
