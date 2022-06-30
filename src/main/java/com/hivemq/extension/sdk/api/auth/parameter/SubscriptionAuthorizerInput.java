@@ -27,8 +27,8 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 import java.util.Optional;
 
 /**
- * This is the input parameter of any {@link SubscriptionAuthorizer} providing unmodifiable information about the {@link
- * Subscription} and {@link ClientBasedInput}.
+ * This is the input parameter of any {@link SubscriptionAuthorizer} providing unmodifiable information about the
+ * {@link Subscription} and {@link ClientBasedInput}.
  *
  * @author Christoph Schäbel
  * @author Florian Limpöck

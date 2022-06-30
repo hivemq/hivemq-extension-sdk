@@ -77,8 +77,8 @@ public interface ClientService {
     /**
      * Forcefully disconnect a client with the specified clientId.
      * <p>
-     * If the client specified a Will message, it will be sent. To prevent the sending of Will messages, use the {@link
-     * #disconnectClient(String, boolean)} method.
+     * If the client specified a Will message, it will be sent. To prevent the sending of Will messages, use the
+     * {@link #disconnectClient(String, boolean)} method.
      * <p>
      * {@link CompletableFuture} fails with a {@link RateLimitExceededException} if the extension service rate limit was
      * exceeded.
@@ -93,8 +93,8 @@ public interface ClientService {
     /**
      * Forcefully disconnect a client with the specified clientId.
      * <p>
-     * If a specific reason code and/or reason string should be sent with the DISCONNECT packet use {@link
-     * ClientService#disconnectClient(String, boolean, DisconnectReasonCode, String)}.
+     * If a specific reason code and/or reason string should be sent with the DISCONNECT packet use
+     * {@link ClientService#disconnectClient(String, boolean, DisconnectReasonCode, String)}.
      * <p>
      * Setting the boolean parameter to true will prevent the sending of potential Will messages the client may have
      * specified in its CONNECT packet.
@@ -179,9 +179,9 @@ public interface ClientService {
      * <p>
      * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
      * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
-     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a {@link
-     * IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node leave
-     * or node join)
+     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a
+     * {@link IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node
+     * leave or node join)
      *
      * @param callback An {@link IterationCallback} that is called for every returned result.
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no match is found or the
@@ -211,9 +211,9 @@ public interface ClientService {
      * <p>
      * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
      * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
-     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a {@link
-     * IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node leave
-     * or node join)
+     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a
+     * {@link IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node
+     * leave or node join)
      *
      * @param callback         An {@link IterationCallback} that is called for every returned result.
      * @param callbackExecutor An {@link Executor} in which the callback for each iteration is executed.
