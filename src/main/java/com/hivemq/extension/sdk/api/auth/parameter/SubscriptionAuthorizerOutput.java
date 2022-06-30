@@ -191,8 +191,9 @@ public interface SubscriptionAuthorizerOutput extends AsyncOutput<SubscriptionAu
     /**
      * The outcome of the authorization is determined by the next extension with a {@link SubscriptionAuthorizer}.
      * <p>
-     * If no extension with a SubscriptionAuthorizer is left the default permissions (see {@link
-     * ModifiableDefaultPermissions}) are used. If no default permissions are set, then the authorization is denied.
+     * If no extension with a SubscriptionAuthorizer is left the default permissions (see
+     * {@link ModifiableDefaultPermissions}) are used. If no default permissions are set, then the authorization is
+     * denied.
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.

@@ -69,8 +69,8 @@ public interface PubackPacket {
     /**
      * The user properties from the PUBACK packet.
      * <p>
-     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous {@link
-     * PubackOutboundInterceptor} or {@link PubackInboundInterceptor}).
+     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous
+     * {@link PubackOutboundInterceptor} or {@link PubackInboundInterceptor}).
      *
      * @return The user properties.
      * @since 4.3.0, CE 2020.1
