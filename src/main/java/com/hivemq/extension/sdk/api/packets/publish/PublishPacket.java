@@ -115,8 +115,8 @@ public interface PublishPacket {
      * <p>
      * For an MQTT 3 PUBLISH this MQTT 5 property will always be empty.
      * <p>
-     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a {@link
-     * java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @return An {@link Optional} that contains the correlation data if present.
      * @since 4.0.0, CE 2019.1
@@ -146,8 +146,8 @@ public interface PublishPacket {
     /**
      * If this property is present, this is the payload.
      * <p>
-     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a {@link
-     * java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @return An {@link Optional} that contains the payload if present.
      * @since 4.0.0, CE 2019.1

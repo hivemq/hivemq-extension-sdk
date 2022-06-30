@@ -182,8 +182,8 @@ public interface PublishAuthorizerOutput extends AsyncOutput<PublishAuthorizerOu
     /**
      * The outcome of the authorization is determined by the next extension with a {@link PublishAuthorizer}.
      * <p>
-     * If no extension with a PublishAuthorizer is left the default permissions (see {@link
-     * ModifiableDefaultPermissions}) are used.
+     * If no extension with a PublishAuthorizer is left the default permissions (see
+     * {@link ModifiableDefaultPermissions}) are used.
      *
      * @throws UnsupportedOperationException When authorizeSuccessfully, failAuthorization, disconnectClient or
      *                                       nextExtensionOrDefault has already been called.
