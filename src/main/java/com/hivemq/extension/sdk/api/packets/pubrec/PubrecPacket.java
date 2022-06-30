@@ -70,8 +70,8 @@ public interface PubrecPacket {
     /**
      * The user properties from the PUBREC packet.
      * <p>
-     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous {@link
-     * PubrecInboundInterceptor} or {@link PubrecOutboundInterceptor}).
+     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous
+     * {@link PubrecInboundInterceptor} or {@link PubrecOutboundInterceptor}).
      *
      * @return The user properties.
      * @since 4.3.0, CE 2020.1

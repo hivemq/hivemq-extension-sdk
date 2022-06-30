@@ -510,9 +510,9 @@ public interface SubscriptionStore {
      * <p>
      * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
      * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
-     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a {@link
-     * IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node leave
-     * or node join).
+     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a
+     * {@link IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node
+     * leave or node join).
      *
      * @param callback An {@link IterationCallback} that is called for every returned result.
      * @return A {@link CompletableFuture} that is completed after all iterations are executed, no subscriptions exist
@@ -543,9 +543,9 @@ public interface SubscriptionStore {
      * <p>
      * {@link CompletableFuture} fails with an {@link IncompatibleHiveMQVersionException} if not all HiveMQ nodes in the
      * cluster have at least version 4.2.0. {@link CompletableFuture} fails with a {@link RateLimitExceededException} if
-     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a {@link
-     * IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node leave
-     * or node join).
+     * the extension service rate limit was exceeded. {@link CompletableFuture} fails with a
+     * {@link IterationFailedException} if the cluster topology changed during the iteration (e.g. a network-split, node
+     * leave or node join).
      *
      * @param callback         An {@link IterationCallback} that is called for every returned result.
      * @param callbackExecutor An {@link Executor} in which the callback for each iteration is executed.

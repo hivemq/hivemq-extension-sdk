@@ -51,8 +51,8 @@ public interface ClusterDiscoveryCallback {
     /**
      * This method is called regularly by HiveMQ to discover all current available cluster nodes.
      * <p>
-     * The interval between calls to this method is 60 seconds by default and can be overwritten by an individual {@link
-     * ClusterDiscoveryCallback} via {@link ClusterDiscoveryOutput#setReloadInterval(int)}.
+     * The interval between calls to this method is 60 seconds by default and can be overwritten by an individual
+     * {@link ClusterDiscoveryCallback} via {@link ClusterDiscoveryOutput#setReloadInterval(int)}.
      *
      * @param clusterDiscoveryInput  The object providing input information for cluster discovery.
      * @param clusterDiscoveryOutput The object for providing output information for cluster discovery, e.g. the

@@ -68,8 +68,8 @@ public interface SubackPacket {
     /**
      * The {@link UserProperties} of this SUBACK packet.
      * <p>
-     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous {@link
-     * SubackOutboundInterceptor}).
+     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous
+     * {@link SubackOutboundInterceptor}).
      *
      * @return The user properties.
      * @since 4.3.0, CE 2020.1
