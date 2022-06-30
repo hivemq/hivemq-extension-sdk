@@ -72,8 +72,8 @@ public interface UnsubackPacket {
     /**
      * The user properties from the UNSUBACK packet.
      * <p>
-     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous {@link
-     * UnsubackOutboundInterceptor}).
+     * For an MQTT 3 client this MQTT 5 property will always be empty (if not modified by a previous
+     * {@link UnsubackOutboundInterceptor}).
      *
      * @return The {@link UserProperties} of the UNSUBACK packet.
      * @since 4.3.0, CE 2020.1

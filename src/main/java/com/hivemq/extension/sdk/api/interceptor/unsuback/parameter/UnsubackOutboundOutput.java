@@ -37,8 +37,8 @@ public interface UnsubackOutboundOutput extends SimpleAsyncOutput<UnsubackOutbou
      * Use this object to make any changes to the outbound UNSUBACK.
      * <p>
      * For MQTT 3 clients you should skip modifying this packet, as the changeable properties only exists since MQTT 5
-     * and will therefore not be send to the MQTT 3 client. You can find out the MQTT version via the {@link
-     * UnsubackOutboundInput#getConnectionInformation()}.
+     * and will therefore not be send to the MQTT 3 client. You can find out the MQTT version via the
+     * {@link UnsubackOutboundInput#getConnectionInformation()}.
      *
      * @return A modifiable UNSUBACK packet.
      * @since 4.3.0, CE 2020.1

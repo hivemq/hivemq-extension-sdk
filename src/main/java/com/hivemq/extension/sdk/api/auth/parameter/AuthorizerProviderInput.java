@@ -23,8 +23,8 @@ import com.hivemq.extension.sdk.api.parameter.ClientBasedInput;
 import com.hivemq.extension.sdk.api.services.auth.provider.AuthorizerProvider;
 
 /**
- * This is the input parameter of any {@link AuthorizerProvider} providing {@link ServerInformation} and {@link
- * ClientBasedInput}.
+ * This is the input parameter of any {@link AuthorizerProvider} providing {@link ServerInformation} and
+ * {@link ClientBasedInput}.
  *
  * @author Florian Limpöck
  * @since 4.0.0, CE 2019.1
