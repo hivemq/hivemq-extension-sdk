@@ -34,10 +34,10 @@ import java.util.Optional;
  * MQTT client connection. All data is stored in-memory and the maximum amount of a single key-value pair is 10
  * kilobytes.
  * <p>
- * A Connection Attribute is arbitrary binary data. For convenience purposes methods like {@link #putAsString(String,
- * String)} are available in case String representations should be stored. If complex objects are desired to be stored
- * in the ConnectionAttributeStore, manual serialization and deserialization must be implemented by the extension
- * developer.
+ * A Connection Attribute is arbitrary binary data. For convenience purposes methods like
+ * {@link #putAsString(String, String)} are available in case String representations should be stored. If complex
+ * objects are desired to be stored in the ConnectionAttributeStore, manual serialization and deserialization must be
+ * implemented by the extension developer.
  * <p>
  * The ConnectionAttributeStore is useful for storing temporary data or data that needs to be cleaned up automatically
  * after the MQTT client disconnected. This store is also useful for storing temporary information that needs to be
@@ -90,8 +90,8 @@ public interface ConnectionAttributeStore {
     /**
      * Retrieves the value of the connection attribute with the given key for the connected client.
      * <p>
-     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a {@link
-     * java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @param key The key of the connection attribute.
      * @return An {@link Optional} containing the value of the connection attribute if present.
@@ -134,8 +134,8 @@ public interface ConnectionAttributeStore {
     /**
      * Removes the connection attribute with the given key for the connected client.
      * <p>
-     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a {@link
-     * java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
+     * The ByteBuffer returned by this method is {@link ByteBuffer#asReadOnlyBuffer() read only} and will throw a
+     * {@link java.nio.ReadOnlyBufferException ReadOnlyBufferException} if handled incorrectly.
      *
      * @param key The key of the connection attribute.
      * @return An {@link Optional} containing the value of the removed connection attribute if it was present.

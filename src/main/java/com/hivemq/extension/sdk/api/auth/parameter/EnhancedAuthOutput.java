@@ -76,8 +76,8 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * packet in response from the client.
      * <p>
      * Sends an AUTH packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#CONTINUE_AUTHENTICATION
-     * CONTINUE_AUTHENTICATION} and no authentication data to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#CONTINUE_AUTHENTICATION CONTINUE_AUTHENTICATION}
+     * and no authentication data to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
@@ -94,8 +94,8 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * packet in response from the client.
      * <p>
      * Sends an AUTH packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#CONTINUE_AUTHENTICATION
-     * CONTINUE_AUTHENTICATION} and the specified authentication data to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#CONTINUE_AUTHENTICATION CONTINUE_AUTHENTICATION}
+     * and the specified authentication data to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
@@ -113,8 +113,8 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * packet in response from the client.
      * <p>
      * Sends AUTH packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#CONTINUE_AUTHENTICATION
-     * CONTINUE_AUTHENTICATION} and the specified authentication data to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#CONTINUE_AUTHENTICATION CONTINUE_AUTHENTICATION}
+     * and the specified authentication data to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
@@ -131,12 +131,12 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * Successfully authenticates the client.
      * <p>
      * During authentication a CONNACK packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#SUCCESS
-     * SUCCESS} and no authentication data is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#SUCCESS SUCCESS} and no authentication data
+     * is sent to the client.
      * <p>
      * During re-authentication an AUTH packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#SUCCESS
-     * SUCCESS} and no authentication data is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#SUCCESS SUCCESS} and no authentication data is
+     * sent to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
@@ -150,12 +150,12 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * Successfully authenticates the client.
      * <p>
      * During authentication a CONNACK packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#SUCCESS
-     * SUCCESS} and the specified authentication data is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#SUCCESS SUCCESS} and the specified
+     * authentication data is sent to the client.
      * <p>
      * During re-authentication an AUTH packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#SUCCESS
-     * SUCCESS} and the specified authentication data is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#SUCCESS SUCCESS} and the specified authentication
+     * data is sent to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
@@ -170,12 +170,12 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * Successfully authenticates the client.
      * <p>
      * During authentication a CONNACK packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#SUCCESS
-     * SUCCESS} and the specified authentication data is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#SUCCESS SUCCESS} and the specified
+     * authentication data is sent to the client.
      * <p>
      * During re-authentication an AUTH packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#SUCCESS
-     * SUCCESS} and the specified authentication data is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.auth.AuthReasonCode#SUCCESS SUCCESS} and the specified authentication
+     * data is sent to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
@@ -190,12 +190,12 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * Fails the authentication of the client.
      * <p>
      * During authentication a CONNACK packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED
-     * NOT_AUTHORIZED} and reason string <code>Authentication failed</code> is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason
+     * string <code>Authentication failed</code> is sent to the client.
      * <p>
      * During re-authentication a DISCONNECT packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.disconnect.DisconnectReasonCode#NOT_AUTHORIZED
-     * NOT_AUTHORIZED} and reason string <code>Re-authentication failed</code> is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.disconnect.DisconnectReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and
+     * reason string <code>Re-authentication failed</code> is sent to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
@@ -231,12 +231,12 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * Fails the authentication of the client.
      * <p>
      * During authentication a CONNACK packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED
-     * NOT_AUTHORIZED} and the specified reason string is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and the
+     * specified reason string is sent to the client.
      * <p>
      * During re-authentication a DISCONNECT packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.disconnect.DisconnectReasonCode#NOT_AUTHORIZED
-     * NOT_AUTHORIZED} and the specified reason string is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.disconnect.DisconnectReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and
+     * the specified reason string is sent to the client.
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
@@ -288,12 +288,13 @@ public interface EnhancedAuthOutput extends AsyncOutput<EnhancedAuthOutput> {
      * This only applies if continueAuthentication is called.
      * <p>
      * If the authentication times out a CONNACK packet with reason code
-     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED
-     * NOT_AUTHORIZED} and reason string <code>Authentication failed, timeout before the client provided required
-     * authentication data</code> is sent to the client.
+     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason
+     * string <code>Authentication failed, timeout before the client provided required authentication data</code> is
+     * sent to the client.
      * <p>
-     * If the re-authentication times out a DISCONNECT packet with reason code {@link
-     * com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason string
+     * If the re-authentication times out a DISCONNECT packet with reason code
+     * {@link com.hivemq.extension.sdk.api.packets.connect.ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason
+     * string
      * <code>Re-authentication failed, timeout before the client provided required authentication data</code> is sent
      * to the client.
      *
