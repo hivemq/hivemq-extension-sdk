@@ -39,7 +39,7 @@ To use the SDK, add the following dependency to your Maven project:
 <dependency>
     <groupId>com.hivemq</groupId>
     <artifactId>hivemq-extension-sdk</artifactId>
-    <version>4.7.9</version>
+    <version>4.7.10</version>
 </dependency>
 ----
 
