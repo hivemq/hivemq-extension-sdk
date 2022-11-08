@@ -39,6 +39,13 @@ public enum LicenseEdition {
     TRIAL,
 
     /**
+     * Starter edition of HiveMQ.
+     *
+     * @since 4.10.0, CE 2022.2
+     */
+    STARTER,
+
+    /**
      * Professional edition of HiveMQ.
      *
      * @since 4.2.0, CE 2020.1
