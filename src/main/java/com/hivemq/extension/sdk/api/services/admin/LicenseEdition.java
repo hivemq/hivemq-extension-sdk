@@ -55,7 +55,7 @@ public enum LicenseEdition {
     /**
      * Starter edition of HiveMQ.
      *
-     * @since 4.10.0, CE 2022.2
+     * @since 4.11.0, CE 2022.2
      */
     STARTER,
 }
