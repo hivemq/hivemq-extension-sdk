@@ -4,5 +4,4 @@ slf4j = "1.7.32"
 
 [libraries]
 dropwizard-metrics = { module = "io.dropwizard.metrics:metrics-core", version.ref = "dropwizard-metrics" }
-
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
