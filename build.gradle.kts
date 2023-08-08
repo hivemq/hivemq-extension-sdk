@@ -56,8 +56,6 @@ metadata {
         }
     }
     github {
-        org.set("hivemq")
-        repo.set("hivemq-extension-sdk")
         issues()
     }
 }
@@ -67,8 +65,8 @@ repositories {
 }
 
 dependencies {
-    api("io.dropwizard.metrics:metrics-core:${property("metrics.version")}")
-    api("org.slf4j:slf4j-api:${property("slf4j.version")}")
+    api(libs.dropwizard.metrics)
+    api(libs.slf4j.api)
 }
 
 /* ******************** java ******************** */
