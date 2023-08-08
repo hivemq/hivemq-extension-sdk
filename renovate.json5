@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "github>hivemq/hivemq-renovate-config:renovate.json5"
+        "local>hivemq/hivemq-renovate-config:renovate.json5"
     ],
     baseBranches: [
         "master",
