@@ -10,11 +10,11 @@ plugins {
     `java-library`
     `maven-publish`
     signing
-    id("io.github.gradle-nexus.publish-plugin")
-    id("io.github.sgtsilvio.gradle.defaults")
-    id("io.github.sgtsilvio.gradle.metadata")
-    id("io.github.sgtsilvio.gradle.javadoc-links")
-    id("com.github.hierynomus.license")
+    alias(libs.plugins.nexusPublish)
+    alias(libs.plugins.defaults)
+    alias(libs.plugins.metadata)
+    alias(libs.plugins.javadocLinks)
+    alias(libs.plugins.license)
 }
 
 plugins.withId("com.hivemq.version-updater") {
