@@ -8,5 +8,6 @@
         "master-4.9",
         "renovate-playground"
     ],
-    "useBaseBranchConfig": "merge"
+    "useBaseBranchConfig": "merge",
+    "branchPrefix": "renovate/hmqesdk_"
 }
