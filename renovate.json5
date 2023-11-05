@@ -9,5 +9,5 @@
         "renovate-playground"
     ],
     "useBaseBranchConfig": "merge",
-    "branchPrefix": "renovate/hmqesdk_"
+    "branchPrefix": "renovate/hivemq-extension-sdk/"
 }
