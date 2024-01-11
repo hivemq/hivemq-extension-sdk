@@ -128,7 +128,7 @@ signing {
 }
 
 nexusPublishing {
-    this.repositories {
+    repositories {
         sonatype()
     }
 }
