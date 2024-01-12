@@ -25,34 +25,34 @@ group = "com.hivemq"
 description = "SDK for the development of HiveMQ extensions"
 
 metadata {
-    readableName = "HiveMQ Extension SDK"
+    readableName.set("HiveMQ Extension SDK")
     organization {
-        name = "HiveMQ GmbH"
-        url = "https://www.hivemq.com/"
+        name.set("HiveMQ GmbH")
+        url.set("https://www.hivemq.com/")
     }
     license {
         apache2()
     }
     developers {
         register("cschaebe") {
-            fullName = "Christoph Schaebel"
-            email = "christoph.schaebel@hivemq.com"
+            fullName.set("Christoph Schaebel")
+            email.set("christoph.schaebel@hivemq.com")
         }
         register("lbrandl") {
-            fullName = "Lukas Brandl"
-            email = "lukas.brandl@hivemq.com"
+            fullName.set("Lukas Brandl")
+            email.set("lukas.brandl@hivemq.com")
         }
         register("flimpoeck") {
-            fullName = "Florian Limpoeck"
-            email = "florian.limpoeck@hivemq.com"
+            fullName.set("Florian Limpoeck")
+            email.set("florian.limpoeck@hivemq.com")
         }
         register("sauroter") {
-            fullName = "Georg Held"
-            email = "georg.held@hivemq.com"
+            fullName.set("Georg Held")
+            email.set("georg.held@hivemq.com")
         }
         register("SgtSilvio") {
-            fullName = "Silvio Giebl"
-            email = "silvio.giebl@hivemq.com"
+            fullName.set("Silvio Giebl")
+            email.set("silvio.giebl@hivemq.com")
         }
     }
     github {
@@ -73,7 +73,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
+        languageVersion.set(JavaLanguageVersion.of(11))
     }
     withJavadocJar()
     withSourcesJar()
