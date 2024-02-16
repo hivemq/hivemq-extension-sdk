@@ -1,4 +1,4 @@
-MASTER_BRANCH = 'master'
+MASTER_BRANCH = 'master-4.25'
 
 pipeline {
     agent { label 'jenkins-worker' }
