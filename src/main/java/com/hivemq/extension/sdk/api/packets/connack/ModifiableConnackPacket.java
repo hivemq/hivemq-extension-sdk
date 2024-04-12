@@ -120,8 +120,11 @@ public interface ModifiableConnackPacket extends ConnackPacket {
     /**
      * Set the session present flag that is sent in the CONNACK packet.
      * <p>
-     * This does not change any client session behavior for HiveMQ, only the content of the CONNACK packet that is sent to the
-     * client is changed.
+     * This does not change any client session behavior for HiveMQ, only the content of the CONNACK packet that is sent
+     * to the client is changed.
+     * <p>
+     * CAUTION: Setting this to false may have an impact on pending QoS 2 message flows since most client implementations clear
+     * their previous state when receiving sessionPresent = false.
      *
      * @param sessionPresent The session present flag sent in the CONNACK.
      * @since 4.28.0, CE 2024.4
