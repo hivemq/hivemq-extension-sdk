@@ -82,8 +82,8 @@ java {
 tasks.withType<Jar>().configureEach {
     manifest.attributes(
         "Implementation-Title" to project.name,
-        "Implementation-Vendor" to metadata.organization.get().name.get(),
-        "Implementation-Version" to project.version,
+        "Implementation-Vendor" to metadata.organization.provider.flatMap { it.name },
+        "Implementation-Version" to provider { project.version.toString() },
     )
 }
 
