@@ -1,5 +1,5 @@
 [versions]
-dropwizard-metrics = "4.2.27"
+dropwizard-metrics = "4.2.28"
 slf4j = "2.0.16"
 
 [libraries]
