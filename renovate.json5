@@ -6,7 +6,6 @@
     baseBranches: [
         "master",
         "master-4.28",
-        "master-4.9",
         "renovate-playground",
     ],
     useBaseBranchConfig: "merge",
