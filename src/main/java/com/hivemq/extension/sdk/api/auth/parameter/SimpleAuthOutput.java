@@ -62,6 +62,12 @@ import java.time.Duration;
 public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
 
     /**
+     * @return true if the authentication password is to be removed from the server once it has been used for
+     *         authentication.
+     */
+    boolean forgetAuthPassword();
+
+    /**
      * Successfully authenticates the client.
      * <p>
      * A CONNACK packet with reason code {@link ConnackReasonCode#SUCCESS SUCCESS} is sent to the client.
@@ -153,7 +159,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @return The {@link ModifiableUserProperties} of the CONNACK packet.
      * @since 4.0.0, CE 2019.1
      */
-    @NotNull ModifiableUserProperties getOutboundUserProperties();
+    @NotNull
+    ModifiableUserProperties getOutboundUserProperties();
 
     /**
      * Provides {@link ModifiableDefaultPermissions} to configure client specific default permissions.
@@ -164,7 +171,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @return The {@link ModifiableDefaultPermissions} for the client.
      * @since 4.0.0, CE 2019.1
      */
-    @NotNull ModifiableDefaultPermissions getDefaultPermissions();
+    @NotNull
+    ModifiableDefaultPermissions getDefaultPermissions();
 
     /**
      * Provides {@link ModifiableClientSettings} to configure client specific parameters and restrictions.
@@ -172,7 +180,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @return The {@link ModifiableClientSettings} for the client.
      * @since 4.2.0, CE 2020.1
      */
-    @NotNull ModifiableClientSettings getClientSettings();
+    @NotNull
+    ModifiableClientSettings getClientSettings();
 
     /**
      * {@inheritDoc}
@@ -187,7 +196,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @since 4.0.0, CE 2019.1
      */
     @Override
-    @NotNull Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback);
+    @NotNull
+    Async<SimpleAuthOutput> async(@NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback);
 
     /**
      * If the timeout is expired before {@link Async#resume()} is called then the outcome is handled either as failed or
@@ -208,7 +218,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0, CE 2019.1
      */
-    @NotNull Async<SimpleAuthOutput> async(
+    @NotNull
+    Async<SimpleAuthOutput> async(
             @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @NotNull ConnackReasonCode reasonCode);
 
     /**
@@ -230,7 +241,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0, CE 2019.1
      */
-    @NotNull Async<SimpleAuthOutput> async(
+    @NotNull
+    Async<SimpleAuthOutput> async(
             @NotNull Duration timeout, @NotNull TimeoutFallback timeoutFallback, @Nullable String reasonString);
 
     /**
@@ -252,7 +264,8 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @throws UnsupportedOperationException If async is called more than once.
      * @since 4.0.0, CE 2019.1
      */
-    @NotNull Async<SimpleAuthOutput> async(
+    @NotNull
+    Async<SimpleAuthOutput> async(
             @NotNull Duration timeout,
             @NotNull TimeoutFallback timeoutFallback,
             @NotNull ConnackReasonCode reasonCode,
