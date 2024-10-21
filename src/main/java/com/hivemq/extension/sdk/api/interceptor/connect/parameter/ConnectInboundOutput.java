@@ -44,4 +44,12 @@ public interface ConnectInboundOutput extends AsyncOutput<ConnectInboundOutput> 
      * @since 4.2.0, CE 2020.1
      */
     @NotNull ModifiableConnectPacket getConnectPacket();
+
+    /**
+     * @return true if the authentication password is to be removed from the server once it has been used for
+     *         authentication.
+     */
+    default boolean forgetAuthPassword() {
+        return false;
+    }
 }
