@@ -75,6 +75,20 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
     void authenticateSuccessfully();
 
     /**
+     * Successfully authenticates the client.
+     * <p>
+     * A CONNACK packet with reason code {@link ConnackReasonCode#SUCCESS SUCCESS} is sent to the client.
+     * <p>
+     * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
+     *
+     * @param clearPasswordAfterAuth Defines if the password will be cleared after authentication.
+     * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
+     *                                       has already been called.
+     * @since 4.34.0, 4.28.8 CE 2024.8
+     */
+    void authenticateSuccessfully(boolean clearPasswordAfterAuth);
+
+    /**
      * Fails the authentication of the client.
      * <p>
      * A CONNACK packet with reason code {@link ConnackReasonCode#NOT_AUTHORIZED NOT_AUTHORIZED} and reason string
