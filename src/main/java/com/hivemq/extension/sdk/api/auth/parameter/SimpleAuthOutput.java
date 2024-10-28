@@ -81,7 +81,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * <p>
      * This is a final decision, authenticators of the next extensions (with lower priority) are not called.
      *
-     * @param clearPasswordAfterAuth defines if the password will be cleared after authentication.
+     * @param clearPasswordAfterAuth Defines if the password will be cleared after authentication.
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
      * @since 4.30.0, CE 2019.1
