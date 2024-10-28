@@ -84,7 +84,7 @@ public interface SimpleAuthOutput extends AsyncOutput<SimpleAuthOutput> {
      * @param clearPasswordAfterAuth Defines if the password will be cleared after authentication.
      * @throws UnsupportedOperationException When authenticateSuccessfully, failAuthentication or nextExtensionOrDefault
      *                                       has already been called.
-     * @since 4.30.0, CE 2019.1
+     * @since 4.34.0, 4.28.8 CE 2024.8
      */
     void authenticateSuccessfully(boolean clearPasswordAfterAuth);
 
