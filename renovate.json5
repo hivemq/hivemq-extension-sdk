@@ -1,16 +1,16 @@
 {
-    $schema: "https://docs.renovatebot.com/renovate-schema.json",
+    $schema: 'https://docs.renovatebot.com/renovate-schema.json',
     extends: [
-        "local>hivemq/renovate-config:default.json5",
+        'local>hivemq/renovate-config:default.json5',
     ],
-    baseBranches: [
-        "master",
-        "master-4.28",
-        "renovate-playground",
+    baseBranchPatterns: [
+        'master',
+        'master-4.28',
+        'renovate-playground',
     ],
-    useBaseBranchConfig: "merge",
-    branchPrefix: "renovate/hivemq-extension-sdk/",
+    useBaseBranchConfig: 'merge',
+    branchPrefix: 'renovate/hivemq-extension-sdk/',
     addLabels: [
-        "broker-feature-team",
+        'broker-feature-team',
     ],
 }
