@@ -11,6 +11,6 @@
     useBaseBranchConfig: 'merge',
     branchPrefix: 'renovate/hivemq-extension-sdk/',
     addLabels: [
-        'broker-feature-team',
+        'broker-core-team',
     ],
 }
