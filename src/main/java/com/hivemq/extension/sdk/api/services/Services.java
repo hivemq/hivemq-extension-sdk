@@ -62,9 +62,7 @@ import java.util.Map;
  */
 public class Services {
 
-    private static final String NO_ACCESS_MESSAGE =
-            "Static class Services cannot be called from a thread \"%s\" which" +
-                    " does not have a HiveMQ extension classloader as its context classloader.";
+    private static final @NotNull String NO_ACCESS_MESSAGE = "Only HiveMQ Extensions can access Services.";
 
     //this map is filled by HiveMQ with implementations for all services
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
@@ -169,17 +167,18 @@ public class Services {
     private static <T> @NotNull T getClassObject(@NotNull final Class<T> clazz) {
 
         if (services == null) {
-            throw new RuntimeException(String.format(NO_ACCESS_MESSAGE, Thread.currentThread().getName()));
+            throw new RuntimeException(NO_ACCESS_MESSAGE);
         }
 
         final Object object = services.get(clazz.getCanonicalName());
         if (object == null) {
             //don't cache this exception to keep the stacktrace, this is not expected to happen very often
-            throw new RuntimeException(String.format(NO_ACCESS_MESSAGE, Thread.currentThread().getName()));
+            throw new RuntimeException(NO_ACCESS_MESSAGE);
         }
         if (clazz.isInstance(object)) {
+            //noinspection unchecked
             return (T) object;
         }
-        throw new RuntimeException(String.format(NO_ACCESS_MESSAGE, Thread.currentThread().getName()));
+        throw new RuntimeException(NO_ACCESS_MESSAGE);
     }
 }

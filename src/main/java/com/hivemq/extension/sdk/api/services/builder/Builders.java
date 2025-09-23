@@ -44,9 +44,7 @@ import java.util.function.Supplier;
  */
 public class Builders {
 
-    private static final String NO_ACCESS_MESSAGE =
-            "Static class Builders cannot be called from a thread \"%s\" which" +
-                    " does not have a HiveMQ extension classloader as its context classloader.";
+    private static final @NotNull String NO_ACCESS_MESSAGE = "Only HiveMQ Extensions can access Builders.";
 
     //this map is filled by HiveMQ with implementations for all builders
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
@@ -95,13 +93,13 @@ public class Builders {
     private static <T> @NotNull Supplier<T> getClassSupplier(final @NotNull Class<T> clazz) {
 
         if (builders == null) {
-            throw new RuntimeException(String.format(NO_ACCESS_MESSAGE, Thread.currentThread().getName()));
+            throw new RuntimeException(NO_ACCESS_MESSAGE);
         }
 
         final Supplier<Object> objectSupplier = builders.get(clazz.getCanonicalName());
         if (objectSupplier == null) {
             //don't cache this exception to keep the stacktrace, this is not expected to happen very often
-            throw new RuntimeException(String.format(NO_ACCESS_MESSAGE, Thread.currentThread().getName()));
+            throw new RuntimeException(NO_ACCESS_MESSAGE);
         }
         //noinspection unchecked: HiveMQ takes care of placing the right supplier in the map
         return (Supplier<T>) objectSupplier;
