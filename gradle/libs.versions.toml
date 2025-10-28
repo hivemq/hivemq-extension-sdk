@@ -4,7 +4,7 @@ slf4j = "2.0.17"
 
 [libraries]
 dropwizard-metrics-bom = { module = "io.dropwizard.metrics:metrics-bom", version.ref = "dropwizard-metrics" }
-dropwizard-metrics-core = { module = "io.dropwizard.metrics:metrics-core" }
+dropwizard-metrics-core = { module = "io.dropwizard.metrics:metrics-core", version.ref = "dropwizard-metrics" }
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 [plugins]
