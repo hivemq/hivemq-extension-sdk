@@ -65,7 +65,6 @@ repositories {
 }
 
 dependencies {
-    api(platform(libs.dropwizard.metrics.bom))
     api(libs.dropwizard.metrics.core)
     api(libs.slf4j.api)
 }
