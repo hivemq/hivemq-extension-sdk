@@ -1,0 +1,35 @@
+language: java
+
+jdk:
+  - openjdk11
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+before_install:
+  - chmod +x gradlew
+
+install: true
+
+script:
+  - ./gradlew check
+
+deploy:
+  - provider: script
+    script: ./gradlew publishToMavenCentral
+    skip_cleanup: true
+    on:
+      tags: true
+
+env:
+  global:
+    - ORG_GRADLE_PROJECT_signingKey=$SIGNING_KEY
+    - ORG_GRADLE_PROJECT_signingPassword=$SIGNING_PASSWORD
+    - ORG_GRADLE_PROJECT_mavenCentralUsername=$MAVEN_CENTRAL_USERNAME
+    - ORG_GRADLE_PROJECT_mavenCentralPassword=$MAVEN_CENTRAL_PASSWORD
