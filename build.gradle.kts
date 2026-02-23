@@ -91,23 +91,11 @@ tasks.withType<Jar>().configureEach {
 tasks.javadoc {
     title = "${metadata.readableName.get()} ${project.version} API"
 
+    val javadocCleanerResult = providers.javaexec {
+        classpath("gradle/tools/javadoc-cleaner-1.0.jar")
+    }.result
     doLast {
-        javaexec {
-            classpath("gradle/tools/javadoc-cleaner-1.0.jar")
-        }
-    }
-
-    doLast { // javadoc search fix for jdk 11 https://bugs.openjdk.java.net/browse/JDK-8215291
-        copy {
-            from(destinationDir!!.resolve("search.js"))
-            into(temporaryDir)
-            filter { line -> line.replace("if (ui.item.p == item.l) {", "if (item.m && ui.item.p == item.l) {") }
-        }
-        delete(destinationDir!!.resolve("search.js"))
-        copy {
-            from(temporaryDir.resolve("search.js"))
-            into(destinationDir!!)
-        }
+        javadocCleanerResult.get()
     }
 }
 
