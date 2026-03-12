@@ -14,7 +14,7 @@ plugins {
     alias(libs.plugins.defaults)
     alias(libs.plugins.metadata)
     alias(libs.plugins.javadocLinks)
-    alias(libs.plugins.license)
+    alias(libs.plugins.spotless)
 }
 
 plugins.withId("com.hivemq.version-updater") {
@@ -119,7 +119,8 @@ signing {
 
 /* ******************** checks ******************** */
 
-license {
-    header = file("HEADER")
-    mapping("java", "SLASHSTAR_STYLE")
+spotless {
+    java {
+        licenseHeaderFile(rootDir.resolve("HEADER"))
+    }
 }
