@@ -1,6 +1,6 @@
 [versions]
 dropwizard-metrics = "4.2.40"
-slf4j = "2.0.18"
+slf4j = "2.0.19"
 
 [libraries]
 dropwizard-metrics-bom = { module = "io.dropwizard.metrics:metrics-bom", version.ref = "dropwizard-metrics" }
