@@ -1,2 +1,2 @@
 @Library('hivemq-composite@master') _
-compositeTrigger()
+compositeTrigger(masterBranch: 'master-4.55')
