@@ -7,7 +7,6 @@
         'master',
         'master-4.28',
         'master-4.55',
-        'renovate-playground',
     ],
     useBaseBranchConfig: 'merge',
     branchPrefix: 'renovate/hivemq-extension-sdk/',
